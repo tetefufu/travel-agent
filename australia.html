@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Australia 🇦🇺</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇦🇺 Australia</h1>
+    <div class="meta">Dubai → Sydney + Gold Coast &nbsp;·&nbsp; 12 days &nbsp;·&nbsp; 11 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Best: Sep–Nov (Spring)</span>
+    <span class="tag">🏨 Ultra-Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 ETA required</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Mar–Apr</td><td>22–26°C</td><td>Low–Med</td><td>↓</td><td><span class="badge b-green">Good</span></td></tr>
+    <tr><td>Jun–Aug (winter)</td><td>12–18°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-red">Too cold for beaches</span></td></tr>
+    <tr><td><b>Sep–Nov</b></td><td>20–28°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Best — Spring</span></td></tr>
+    <tr><td>Dec–Feb (summer)</td><td>26–32°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Peak school holidays</span></td></tr>
+    <tr><td>Oct (sweet spot)</td><td>22–27°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Ideal</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7 2026.</b> Australia in June = mid-winter — cool in Sydney (12–17°C), not ideal for beaches. <b>Recommend booking for October instead.</b> Eid al-Fitr (Mar 30–31) aligns better with autumn shoulder season — comfortable 22–26°C, good availability.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → SYD (Sydney)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,200 – 4,800</b> <span class="badge b-est">📊 Est. 2026</span></td>
+      <td>Emirates (direct) · Qantas via MEL · Singapore Airlines via SIN</td>
+      <td>~14h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-SYD" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>14,500 – 24,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates (lie-flat, direct) · Qantas · Singapore Airlines</td>
+      <td>~14h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-SYD" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Emirates flies <b>direct DXB→SYD daily</b> — A380 with fully flat business beds · Onboard bar</li>
+  <li>Internal flight SYD → OOL (Gold Coast) ~AED 180–380 pp via Jetstar/Virgin Australia (~1.5h)</li>
+  <li>Book 8–12 weeks out for Oct · Cheapest months: May–Jun (~2,800 AED economy)</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>5 nights Park Hyatt / Capella Sydney</b> + <b>2 nights Halcyon House</b> (Cabarita) + <b>3 nights Gold Coast</b>. All AED. 1 AUD ≈ 2.3 AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Location</th><th>Tier</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Capella Sydney</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Sydney CBD</td>
+      <td>Ultra-luxury</td>
+      <td>3,700 – 6,900</td>
+      <td>✅ Rooftop pool, stunning</td>
+      <td>5.0 ★ (600+)</td>
+      <td><a href="https://www.capellahotels.com/en/capella-sydney" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/au/capella-sydney.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Park Hyatt Sydney</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Circular Quay</td>
+      <td>Ultra-luxury</td>
+      <td>3,200 – 5,500</td>
+      <td>✅ Rooftop pool + Opera House views</td>
+      <td>4.5 ★ (3,500+)</td>
+      <td><a href="https://www.hyatt.com/en-US/hotel/australia/park-hyatt-sydney/sydph" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/au/park-hyatt-sydney.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Halcyon House</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Cabarita Beach (NSW)</td>
+      <td>Ultra-luxury boutique</td>
+      <td>2,300 – 4,100</td>
+      <td>✅ Stunning pool · beach access</td>
+      <td>5.0 ★ (900+)</td>
+      <td><a href="https://www.halcyonhouse.com.au" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>The Langham Gold Coast</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Surfers Paradise</td>
+      <td>Luxury</td>
+      <td>1,800 – 3,200</td>
+      <td>✅ Large pool, great</td>
+      <td>4.5 ★ (2,200+)</td>
+      <td><a href="https://www.langhamhotels.com/en/the-langham/gold-coast" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>The Star Grand Gold Coast</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Broadbeach</td>
+      <td>Luxury</td>
+      <td>1,400 – 2,600</td>
+      <td>✅ Multiple pools</td>
+      <td>4.5 ★ (1,800+)</td>
+      <td><a href="https://www.star.com.au/goldcoast/hotel/the-star-grand" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Sofitel Sydney Darling Harbour</td>
+      <td style="color:#aaa">Darling Harbour</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">900 – 1,600</td>
+      <td style="color:#aaa">⚠️ Small pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Capella Sydney — Rooftop Pool</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Rooftop pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&q=80" alt="Suite" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛏️ Suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Halcyon House — Cabarita Beach</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Beach" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏖️ Beach access</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Pool</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 12 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Sydney</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Sydney Harbour" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly Emirates direct DXB→SYD (~14h)</li><li>Transfer to Capella or Park Hyatt</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · rooftop pool · recover</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Light dinner: Quay Restaurant (vegetarian degustation)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Sydney Harbour · Opera House · CBD</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=900&q=80" alt="Sydney Opera House" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Walk Circular Quay at sunrise</li><li>Opera House exterior + guided tour</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Royal Botanic Garden walk</li><li>Macquarie's Chair viewpoint</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Tetsuya's (veg tasting menu)</li><li>Harbour bridge lit up at night</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Bondi Beach · Eastern Suburbs</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Bondi Beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Bondi to Coogee coastal walk (6km)</li><li>Best: 7–9am, golden light</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Bondi Beach · swim · Icebergs pool</li><li>Lunch: Icebergs Dining Room</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return to hotel · spa treatment</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Blue Mountains Day Trip</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=900&q=80" alt="Blue Mountains" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Private car to Blue Mountains (~2h)</li><li>Scenic World gondola ride</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Three Sisters viewpoint</li><li>Leura village lunch</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return to Sydney · hotel dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Sydney Darling Harbour · The Rocks</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Darling Harbour" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>The Rocks heritage walk</li><li>Cadman's Cottage · Observatory Hill</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Darling Harbour · pool at hotel</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset harbour cruise</li><li>Dinner: Cafe Sydney (rooftop views)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Transfer → Cabarita Beach · Halcyon House</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Cabarita Beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Flight SYD→OOL (~1.5h)</li><li>Car hire · drive to Cabarita Beach</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in Halcyon House · pool · beach</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Paper Daisy (Halcyon's own restaurant)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Cabarita Beach · Byron Bay</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=80" alt="Byron Bay" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Sunrise at Cape Byron lighthouse</li><li>Most easterly point of Australia</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Byron Bay town · The Pass beach</li><li>Arakwal Bora Ground walk</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return to Halcyon · pool cocktails</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 8</span><div class="loc">Transfer → Gold Coast</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Gold Coast" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout Halcyon · drive Gold Coast (~1.5h)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in The Langham · pool</li><li>Surfers Paradise beach walk</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Q1 SkyPoint observation deck (230m)</li><li>Dinner in Broadbeach</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 9</span><div class="loc">Gold Coast Hinterland · Springbrook</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80" alt="Hinterland" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Drive Springbrook National Park</li><li>Natural Bridge (glow-worm cave)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Canyon Lookout · rainforest walks</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return · Langham spa</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Gold Coast Beaches · Broadbeach</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=80" alt="Gold Coast beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Surf lesson at Coolangatta</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Currumbin Wildlife Sanctuary</li><li>Hold a koala</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Pool · sunset cocktails · farewell dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 11</span><div class="loc">Leisure Day · Gold Coast</div></div>
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Late checkout or pool morning</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pacific Fair shopping</li><li>HOTA (Home of the Arts)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Transfer to OOL airport</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 12</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">✈️ Departure</div><ul><li>OOL → DXB via SYD or BNE · ~16h total</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Australia has excellent vegetarian dining — plant-based culture is strong in Sydney and Byron Bay.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Location</th><th>Cuisine</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Quay Restaurant</b></td><td>Sydney CBD</td><td>Modern Australian</td><td><span class="veg">✅ Veg degustation available</span></td><td><a href="https://www.quay.com.au" class="ext" target="_blank">quay.com.au</a></td></tr>
+    <tr><td><b>Tetsuya's</b></td><td>Sydney CBD</td><td>Japanese-French fusion</td><td><span class="veg">✅ Veg tasting menu on request</span></td><td><a href="https://www.tetsuyas.com" class="ext" target="_blank">tetsuyas.com</a></td></tr>
+    <tr><td><b>Icebergs Dining Room</b></td><td>Bondi Beach</td><td>Italian-Mediterranean</td><td><span class="veg">✅ Excellent pasta/veg dishes</span></td><td><a href="https://www.idrb.com" class="ext" target="_blank">idrb.com</a></td></tr>
+    <tr><td><b>Paper Daisy</b></td><td>Halcyon House, Cabarita</td><td>Modern Australian</td><td><span class="veg">✅ Strong veg menu, fresh produce</span></td><td><a href="https://www.halcyonhouse.com.au/paper-daisy" class="ext" target="_blank">halcyonhouse.com.au</a></td></tr>
+    <tr><td><b>Three Blue Ducks</b></td><td>Byron Bay</td><td>Farm-to-table</td><td><span class="veg">✅ Outstanding veg options</span></td><td><a href="https://www.threeblueducks.com" class="ext" target="_blank">threeblueducks.com</a></td></tr>
+    <tr><td><b>Gaia Retreat Café</b></td><td>Byron Bay hinterland</td><td>Wellness / vegetarian</td><td><span class="veg">✅ Mostly vegetarian menu</span></td><td><a href="https://www.gaiaretreat.com.au" class="ext" target="_blank">gaiaretreat.com.au</a></td></tr>
+    <tr><td><b>Cafe Sydney</b></td><td>Sydney CBD</td><td>Modern Australian</td><td><span class="veg">✅ Good veg options</span></td><td><a href="https://www.cafesydney.com" class="ext" target="_blank">cafesydney.com</a></td></tr>
+    <tr><td>Broadbeach dining strip</td><td>Gold Coast</td><td>Various</td><td><span class="veg">✅ Many vegetarian cafes</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=400&q=80" alt="Opera House" onerror="this.parentElement.style.display='none'"><p><b>Opera House at sunrise</b> — Circular Quay · #SydneyOperaHouse</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Bondi Beach" onerror="this.parentElement.style.display='none'"><p><b>Bondi to Coogee walk</b> — coastal cliffs · golden hour · #BondiBeach</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=400&q=80" alt="Blue Mountains" onerror="this.parentElement.style.display='none'"><p><b>Three Sisters, Blue Mountains</b> — misty valley views</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Capella rooftop" onerror="this.parentElement.style.display='none'"><p><b>Capella Sydney rooftop pool</b> — heritage building backdrop</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" alt="Byron Bay lighthouse" onerror="this.parentElement.style.display='none'"><p><b>Cape Byron Lighthouse</b> — most easterly point of Australia · sunrise</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Gold Coast skyline" onerror="this.parentElement.style.display='none'"><p><b>Surfers Paradise skyline</b> — from the beach at dusk · #GoldCoast</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — October 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>Vivid Sydney</b></td><td>Late May–Jun</td><td>Light festival</td><td>Outside Oct window (if going Jun, Eid Adha – cold but spectacular event)</td></tr>
+    <tr><td><b>Gold Coast Film Festival</b></td><td>Typically Apr</td><td>Arts</td><td>Check 2026 dates</td></tr>
+    <tr><td><b>Byron Bay Bluesfest</b></td><td>Easter weekend</td><td>Music festival</td><td>Aligns with Eid al-Fitr Mar 30–31 2026 — ⭐ great combo</td></tr>
+    <tr><td><b>Sculpture by the Sea, Bondi</b></td><td>Late Oct–Nov</td><td>Outdoor art</td><td>⭐ Ideal for Oct visit · free</td></tr>
+    <tr><td style="color:#2e7d32"><b>Spring Racing Carnival (Melbourne)</b></td><td>Oct–Nov</td><td>Horse racing / social</td><td>Melbourne Cup Nov 3 — day trip from Sydney</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>ETA (Electronic Travel Authority) required · UK passport · Apply at <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/electronic-travel-authority-601" class="ext" target="_blank">eta.homeaffairs.gov.au</a> · ~AUD 20 (≈ AED 46) · instant approval</dd>
+  <dt>💰 Currency</dt><dd>Australian Dollar (AUD) · 1 AUD ≈ 2.3 AED · ATMs everywhere · card widely accepted</dd>
+  <dt>💸 Tipping</dt><dd>Not obligatory in Australia · 10% appreciated at fine dining · No pressure at cafes</dd>
+  <dt>🚗 Getting around</dt><dd>Sydney: Opal card for trains/ferries · Uber widely available · Car hire for Gold Coast hinterland</dd>
+  <dt>🗣️ Language</dt><dd>English · No language barrier from Dubai</dd>
+  <dt>⏰ Time zone</dt><dd>AEST: UTC+10 (Sydney) · 6h ahead of UAE in Oct</dd>
+  <dt>🌡️ Weather Oct</dt><dd>Sydney: 16–24°C · Gold Coast: 20–28°C · Low rainfall · Ideal</dd>
+  <dt>🏥 Health</dt><dd>No vaccinations required · Tap water safe to drink · EHIC not valid — buy travel insurance</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Australia 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Capella Sydney / Park Hyatt Sydney</li>
+    <li>Sydney Opera House</li>
+    <li>Royal Botanic Garden</li>
+    <li>Bondi to Coogee Coastal Walk</li>
+    <li>Icebergs Dining Room & Bar</li>
+    <li>Blue Mountains National Park</li>
+    <li>Three Sisters Lookout</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Halcyon House, Cabarita Beach</li>
+    <li>Cape Byron Lighthouse</li>
+    <li>Springbrook National Park</li>
+    <li>The Langham Gold Coast</li>
+    <li>Q1 SkyPoint Observation Deck</li>
+    <li>Currumbin Wildlife Sanctuary</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB→SYD (economy ×2 return)</td><td>6,400</td><td>9,600</td><td>Emirates direct</td></tr>
+    <tr><td>✈️ Internal flight SYD→OOL (×2)</td><td>720</td><td>1,520</td><td>Jetstar/Virgin, ~180–380 pp</td></tr>
+    <tr><td>🏨 Capella / Park Hyatt Sydney (5 nts)</td><td>16,000</td><td>34,500</td><td>3,200–6,900/nt</td></tr>
+    <tr><td>🏨 Halcyon House (2 nts)</td><td>4,600</td><td>8,200</td><td>2,300–4,100/nt</td></tr>
+    <tr><td>🏨 The Langham Gold Coast (3 nts)</td><td>5,400</td><td>9,600</td><td>1,800–3,200/nt</td></tr>
+    <tr><td>🚗 Car hire + activities + day trips</td><td>2,200</td><td>4,500</td><td>Blue Mts, hinterland, wildlife sanctuary</td></tr>
+    <tr><td>🍽️ Fine dining (10 dinners est.)</td><td>3,600</td><td>7,300</td><td>~360–730 AED per couple per dinner</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>38,920</b></td><td><b>75,220</b></td><td><b>56–107% of monthly income · Plan for mid-range ~57,000 AED</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">1 AUD ≈ 2.3 AED used throughout. Prices marked 📊 Est. are search-sourced Apr 2026; check live booking links for current rates. Business class upgrade adds ~28,000–48,000 AED for two return.</p>
+
+<div class="footnote">🇦🇺 Australia Travel Plan · Generated Apr 2026 · Dubai → Sydney + Gold Coast · 12 days</div>
+
+</div>
+</body>
+</html>

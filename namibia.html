@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namibia 🇳🇦</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇳🇦 Namibia</h1>
+    <div class="meta">Dubai → Windhoek (WDH) &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">📸 Red Dunes · Dead Vlei · Dark Skies</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 Visa-free 90 days</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp (Sossusvlei)</th><th>Conditions</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>35–42°C</td><td>Extreme heat, rare rain</td><td>↓</td><td><span class="badge b-red">Dangerous heat — avoid</span></td></tr>
+    <tr><td>Apr–May</td><td>28–34°C</td><td>Cooling, good light</td><td>↑</td><td><span class="badge b-green">Good (shoulder)</span></td></tr>
+    <tr><td><b>Jun–Aug</b></td><td>22–28°C (cold nights)</td><td>Perfect — dry, clear, stunning</td><td>↑↑</td><td><span class="badge b-gold">⭐ Peak season — best photography</span></td></tr>
+    <tr><td>Sep–Oct</td><td>26–34°C</td><td>Warming up, still excellent</td><td>↑</td><td><span class="badge b-gold">⭐ Excellent</span></td></tr>
+    <tr><td>Nov–Dec</td><td>32–40°C</td><td>Green season starts</td><td>↓</td><td><span class="badge b-green">Good (lush but hot)</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha 2026: Jun 6–7.</b> <b>Absolutely perfect timing.</b> June is Namibia's finest month — cool crisp days (22–28°C), cold star-filled nights, zero humidity, and the red dunes of Sossusvlei glow most intensely in the winter morning sun. Etosha game viewing peaks in June as animals concentrate at waterholes. Book lodges 6+ months ahead — winter is peak and fills fast. <b>Highest recommendation for this Eid window.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → WDH (Windhoek Hosea Kutako)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,300 – 5,500</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates via JNB · Kenya Airways via NBO · Ethiopian via ADD</td>
+      <td>~14–18h (1–2 stops)</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>14,700 – 25,700 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business (DXB→JNB) + Air Namibia / SA Express (JNB→WDH)</td>
+      <td>~14–16h</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+    <tr>
+      <td>Domestic WDH→GOG (Sossusvlei airstrip)</td>
+      <td>880 – 1,650 <span class="badge b-est">📊 Est.</span></td>
+      <td>Westair Aviation · Namibia Commercial Aviation</td>
+      <td>~1h 15min</td>
+      <td><a href="https://www.westair.com.na" class="ext" target="_blank">Westair</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>Best routing: <b>DXB → JNB (Emirates)</b> → <b>JNB→WDH</b> (South African Airways / Airlink ~2h)</li>
+  <li>Luxury lodges can arrange <b>private charter flights</b> between Windhoek, Sossusvlei, and Etosha — strongly recommended given road distances</li>
+  <li>Driving between destinations is possible (4x4 recommended) but very long — Windhoek→Sossusvlei is 5.5h on gravel roads</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels &amp; Lodges</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>1 night Windhoek (The Olive Grove)</b> · <b>3 nights Sossusvlei (&amp;Beyond Desert Lodge)</b> · <b>3 nights Etosha (Ongava Tented Camp)</b> · <b>2 nights return / Wolwedans</b>. All AED. Note: most lodge rates are <em>all-inclusive</em> (meals, activities, park fees).</p>
+<table>
+  <thead><tr><th>Hotel / Lodge</th><th>Location</th><th>Tier</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>&amp;Beyond Sossusvlei Desert Lodge</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>NamibRand Reserve</td>
+      <td>Ultra-luxury</td>
+      <td>18,300 – 29,300 <span style="font-size:0.7rem;color:#888">(per couple, all-incl.)</span></td>
+      <td>✅ Private plunge + communal desert pool</td>
+      <td>5.0 ★ (700+)</td>
+      <td><a href="https://www.andbeyond.com/our-lodges/africa/namibia/namib-rand-nature-reserve/andbeyond-sossusvlei-desert-lodge/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Wolwedans Dunes Lodge</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>NamibRand Reserve</td>
+      <td>Ultra-luxury</td>
+      <td>11,000 – 18,300 <span style="font-size:0.7rem;color:#888">(per couple, all-incl.)</span></td>
+      <td>✅ Infinity pool · dune views</td>
+      <td>5.0 ★ (900+)</td>
+      <td><a href="https://www.wolwedans.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Ongava Tented Camp</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ongava Reserve (Etosha border)</td>
+      <td>Ultra-luxury tented</td>
+      <td>11,000 – 18,300 <span style="font-size:0.7rem;color:#888">(per couple, all-incl.)</span></td>
+      <td>✅ Pool overlooking waterhole</td>
+      <td>5.0 ★ (600+)</td>
+      <td><a href="https://www.ongava.com/ongava-tented-camp/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>The Olive Grove Guest House</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Windhoek</td>
+      <td>Luxury boutique</td>
+      <td>2,200 – 3,700</td>
+      <td>✅ Garden pool</td>
+      <td>4.9 ★ (800+)</td>
+      <td><a href="https://www.theolivetrail.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Hilton Windhoek</td>
+      <td style="color:#aaa">Windhoek</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">1,100 – 1,830</td>
+      <td style="color:#aaa">⚠️ Basic pool</td>
+      <td style="color:#aaa">4.2 ★</td>
+      <td style="color:#aaa">— (ref.)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Wolwedans — NamibRand Reserve</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&q=80" alt="Desert dunes" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏜️ Red dunes at dawn</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Lodge pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Infinity pool · desert view</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Ongava — Etosha</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Etosha elephant" onerror="this.parentElement.style.display='none'">
+        <figcaption>🐘 Etosha waterhole</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="African stars" onerror="this.parentElement.style.display='none'">
+        <figcaption>✨ Namibia's legendary dark skies</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Windhoek</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&q=80" alt="Namibia landscape" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into WDH · transfer to The Olive Grove</li><li>Windhoek overview: population 500k, clean and safe</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Namibia Craft Centre</li><li>Independence Memorial Museum</li><li>Garden pool relaxation</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: The Gourmet (Windhoek's best)</li><li>Early night — charter flight departs at dawn</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 2–4</span><div class="loc">Sossusvlei · Dead Vlei · Red Dunes</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900&q=80" alt="Sossusvlei dunes" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Sunrises (priority)</div><ul><li>5am departure — red dunes at first light</li><li>Dune 45 climb at sunrise (iconic shot)</li><li>Dead Vlei ancient trees + white salt pan</li></ul></div>
+      <div class="session"><div class="slab">☀️ Middays</div><ul><li>Return lodge 9am — desert heat</li><li>Pool · photography editing · spa</li><li>Star gazing pre-arranged (NamibRand is Dark Sky Reserve)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evenings</div><ul><li>Sunset ballon ride over dunes (Day 3)</li><li>Bush dinner on the dune crest</li><li>Milky Way photography session (guide provided)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Transfer → Etosha National Park</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80" alt="Etosha wildlife" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final dune sunrise (optional)</li><li>Charter flight WDH → Ondangwa (near Etosha ~2h)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Transfer to Ongava Tented Camp</li><li>Afternoon game drive orientation</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Waterhole viewing from elevated deck</li><li>Rhino sighting (Ongava private reserve)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 6–8</span><div class="loc">Etosha — Game Drives · Waterholes</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=900&q=80" alt="Etosha pan" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 AM Drives</div><ul><li>5:30am drives — lion, elephant, giraffe, zebra</li><li>Etosha Pan (vast white salt flat)</li><li>Black rhino — Namibia has 1/3 of world population</li></ul></div>
+      <div class="session"><div class="slab">☀️ Midday</div><ul><li>Waterhole deck — animals come throughout day</li><li>Guided bush walk (Day 7)</li><li>Pool time · camp photography</li></ul></div>
+      <div class="session"><div class="slab">🌙 PM Drives</div><ul><li>Floodlit waterhole at night — incredible</li><li>Night drives — owls, aardvark, honey badger</li><li>3-course lodge dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 9–10</span><div class="loc">Damaraland · Spitzkoppe · Departure</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&q=80" alt="Spitzkoppe" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Day 9</div><ul><li>Optional: Damaraland — desert elephant tracking</li><li>Twyfelfontein rock engravings (UNESCO)</li><li>Return Windhoek overnight</li></ul></div>
+      <div class="session"><div class="slab">☀️ Day 10</div><ul><li>Spitzkoppe granite inselberg (iconic)</li><li>San Bushmen rock art</li><li>Last pool lunch at Olive Grove</li></ul></div>
+      <div class="session"><div class="slab">🌙 Departure</div><ul><li>Evening WDH → JNB → DXB (Emirates)</li><li>Overnight flight — arrive Dubai next morning</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants &amp; Vegetarian Guide</h2>
+<div class="rbox"><b>⚠️ Vegetarian note:</b> Namibia is a meat-heavy culture (game meat — oryx, kudu, springbok are national staples). However, all <b>luxury lodges will prepare bespoke vegetarian menus</b> with advance notice — their chefs are world-class. In Windhoek, a small but growing selection of cafes cater to vegetarians. Always inform your lodge at booking. The good news: fresh vegetables, local cheeses, and international-standard lodge cooking means you will eat well.</div>
+<table>
+  <thead><tr><th>Restaurant</th><th>Location</th><th>Cuisine</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>&amp;Beyond lodge kitchen</b></td><td>Sossusvlei</td><td>Gourmet camp cuisine</td><td><span class="veg">✅ Fully customised veg menu</span></td><td><a href="https://www.andbeyond.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Ongava lodge dining</b></td><td>Etosha border</td><td>Gourmet safari</td><td><span class="veg">✅ Veg menu prepared on request</span></td><td><a href="https://www.ongava.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Wolwedans dining</b></td><td>NamibRand</td>  <td>Fine dining in the desert</td><td><span class="veg">✅ Veg accommodated — notify at booking</span></td><td><a href="https://www.wolwedans.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>The Gourmet</b></td><td>Windhoek</td><td>International fine dining</td><td><span class="veg">✅ Good veg selection</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td>Craft Café</td><td>Windhoek</td><td>Café / light meals</td><td><span class="veg">✅ Wraps, salads, veg options</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td>Joe's Beerhouse</td><td>Windhoek</td><td>Pan-African / touristy</td><td><span class="veg">⚠️ Meat-focused but has veg dishes</span></td><td><a href="https://joesbeerhouse.com" class="ext" target="_blank">Web</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots — Namibia is a Photographer's Paradise</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&q=80" alt="Sossusvlei dunes" onerror="this.parentElement.style.display='none'"><p><b>Dead Vlei at sunrise</b> — ancient black trees on white clay · 5am start · #DeadVlei</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&q=80" alt="Dune 45" onerror="this.parentElement.style.display='none'"><p><b>Dune 45 — Sossusvlei</b> — world's most photographed dune · dawn silhouette · #Dune45</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Milky Way Namibia" onerror="this.parentElement.style.display='none'"><p><b>Milky Way over NamibRand</b> — world's best dark skies · #NamibiaNightSky</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80" alt="Etosha elephants" onerror="this.parentElement.style.display='none'"><p><b>Etosha waterhole at dusk</b> — elephant herd with flamingo-pink sky · #EtoshaPan</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Safari sunset" onerror="this.parentElement.style.display='none'"><p><b>Oryx silhouette</b> — Namibia's national animal on dune ridge · #OranguSunset</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=400&q=80" alt="Spitzkoppe" onerror="this.parentElement.style.display='none'"><p><b>Spitzkoppe</b> — "Matterhorn of Namibia" · golden hour · #Spitzkoppe</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events &amp; Highlights — June 2026</h2>
+<table>
+  <thead><tr><th>Event / Highlight</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>NamibRand Dark Sky Reserve</b></td><td>Year-round (best Jun–Aug)</td><td>Stargazing</td><td>Africa's first International Dark Sky Reserve · Milky Way centre is visible</td></tr>
+    <tr><td>Hot air balloon — Sossusvlei</td><td>Year-round</td><td>Adventure activity</td><td>Book with Namib Sky Balloon Safaris · ~1,100 AED/person</td></tr>
+    <tr><td>Etosha waterhole floodlighting</td><td>Year-round</td><td>Night wildlife viewing</td><td>Okaukuejo rest camp · free with park entry · extraordinary in June</td></tr>
+    <tr><td>Walvis Bay Flamingos</td><td>Year-round</td><td>Nature spectacle</td><td>Day trip from Swakopmund · 10,000+ flamingos</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Peak game viewing + best photography light of the year</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>None — UK passport · 90 days visa-free</dd>
+  <dt>💵 Currency</dt><dd>Namibian Dollar (NAD) · 1:1 with South African Rand · 1 NAD ≈ 0.2 AED · Cards at lodges only; carry cash for small stops</dd>
+  <dt>💸 Tipping</dt><dd>Very important at lodges: N$100–200/day/person (~20–40 AED) · ranger tip: N$150–200/day</dd>
+  <dt>🚗 Getting around</dt><dd>Private charter flights between destinations strongly recommended (~1,100–2,200 AED/segment). Driving is possible but distances are extreme — Windhoek→Sossusvlei = 5.5h on gravel</dd>
+  <dt>🌡️ June weather</dt><dd>Sossusvlei: 22–28°C days, 5–10°C nights (cold!) · bring warm layers for pre-dawn dune walks</dd>
+  <dt>🦟 Health</dt><dd>Malaria risk: LOW in Sossusvlei and southern Namibia. HIGHER in Caprivi/northern areas. Consult travel doctor.</dd>
+  <dt>📷 Photography tips</dt><dd>Bring wide-angle (16–35mm) for dunes + long (300mm+) for wildlife. 16GB+ cards. Dead Vlei is best 6–8am only.</dd>
+  <dt>🔌 Connectivity</dt><dd>Very limited at lodges — expect little/no signal. This is intentional — embrace the disconnect.</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Namibia 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>The Olive Grove, Windhoek</li>
+    <li>&amp;Beyond Sossusvlei Desert Lodge</li>
+    <li>Wolwedans Dunes Lodge, NamibRand</li>
+    <li>Dead Vlei, Sossusvlei</li>
+    <li>Dune 45, Sossusvlei</li>
+    <li>Sesriem Canyon</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Ongava Tented Camp, Etosha</li>
+    <li>Okaukuejo Waterhole (floodlit)</li>
+    <li>Etosha National Park entrance</li>
+    <li>Spitzkoppe inselberg</li>
+    <li>Twyfelfontein rock engravings</li>
+    <li>Walvis Bay Flamingo Point</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights — economy ×2 return DXB→WDH</td><td>6,600</td><td>11,000</td><td>Emirates DXB→JNB→WDH</td></tr>
+    <tr><td>✈️ Domestic charter flights (×3 segments)</td><td>6,600</td><td>13,200</td><td>WDH→Sossusvlei, Sossusvlei→Etosha, Etosha→WDH</td></tr>
+    <tr><td>🏜️ &amp;Beyond / Wolwedans Sossusvlei (3 nts)</td><td>33,000</td><td>88,000</td><td>11,000–29,300/nt per couple all-incl.</td></tr>
+    <tr><td>🦁 Ongava Tented Camp Etosha (3 nts)</td><td>33,000</td><td>55,000</td><td>11,000–18,300/nt per couple all-incl.</td></tr>
+    <tr><td>🏨 Windhoek Olive Grove (1 nt)</td><td>2,200</td><td>3,700</td><td>Per couple</td></tr>
+    <tr><td>🎈 Hot air balloon Sossusvlei (×2)</td><td>2,200</td><td>2,200</td><td>~1,100 AED/person — unmissable</td></tr>
+    <tr><td>🗺️ Activities &amp; Day 9–10 Damaraland</td><td>1,500</td><td>3,700</td><td>Guided excursions, rock art fees</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>85,100</b></td><td><b>176,800</b></td><td><b>122–252% of monthly income — ultra-exclusive trip</b></td></tr>
+  </tbody>
+</table>
+<div class="rbox" style="margin-top:10px"><b>💡 Budget note:</b> Namibia's remoteness means luxury comes at a premium. The <b>Wolwedans Dunes Lodge</b> (vs &amp;Beyond) and <b>Ongava Lodge</b> (vs Tented Camp) reduce cost by ~30% while maintaining near-identical quality. Namibia is genuinely once-in-a-lifetime — budget accordingly.</div>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">All-inclusive lodge rates cover meals, game drives, park fees, and guiding. Prices marked 📊 Est. are Apr 2026 estimates; check live booking links — Namibia luxury inventory is very limited and sells out 6–12 months ahead.</p>
+
+<div class="footnote">🇳🇦 Namibia Travel Plan · Generated Apr 2026 · Dubai → Windhoek + Sossusvlei + Etosha · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

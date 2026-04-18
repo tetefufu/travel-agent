@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tennessee 🇺🇸</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇺🇸 Tennessee — Nashville</h1>
+    <div class="meta">Dubai → Nashville BNA &nbsp;·&nbsp; 5 days &nbsp;·&nbsp; 4 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">🎸 Music City</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 ESTA $21 (~77 AED)</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Feb</td><td>5–10°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-green">Good (off-peak)</span></td></tr>
+    <tr><td><b>Mar–May</b></td><td>15–24°C</td><td>Medium–High</td><td>↑</td><td><span class="badge b-gold">⭐ Best (spring)</span></td></tr>
+    <tr><td>Jun</td><td>28–32°C</td><td>High</td><td>↑↑</td><td><span class="badge b-gold">✅ Eid al-Adha window</span></td></tr>
+    <tr><td>Jul–Aug</td><td>32–35°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Hot &amp; busy</span></td></tr>
+    <tr><td>Sep–Oct</td><td>18–26°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Great (fall foliage)</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha 2026: Jun 6–7.</b> Nashville in early June = warm, lively, CMA Fest nearby. Manageable crowds. Best overall window is <b>Apr–May</b> for pleasant weather. <b>ESTA required</b> — apply online 72h before travel at esta.cbp.dhs.gov ($21 ≈ 77 AED per person).</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → BNA (Nashville)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>4,400 – 6,600</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates via JFK/EWR then connection · American Airlines · United</td>
+      <td>~18–22h (1 stop)</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>18,300 – 29,300 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business + domestic first class connection</td>
+      <td>~18–22h (1 stop)</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>No direct DXB→BNA — best routing: <b>DXB → JFK (Emirates)</b> then JFK→BNA (American/Delta ~2h30m)</li>
+  <li>Alternative: DXB → ORD (Chicago) → BNA (~2h)</li>
+  <li>Nashville BNA is 20min from downtown — Lyft/Uber ~110 AED</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>4 nights The Joseph Nashville</b> or <b>1 Hotel Nashville</b>. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>The Joseph Nashville</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 4,400</td>
+      <td>8,800 – 17,600 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Rooftop pool</td>
+      <td>4.9 ★ (1,100+)</td>
+      <td><a href="https://www.thejosephnashville.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>1 Hotel Nashville</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,600 – 5,100</td>
+      <td>10,300 – 20,500 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Rooftop pool + stunning views</td>
+      <td>4.8 ★ (800+)</td>
+      <td><a href="https://www.1hotels.com/nashville" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Virgin Hotels Nashville</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Luxury</td>
+      <td>1,500 – 2,900</td>
+      <td>6,000 – 11,700 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Pool</td>
+      <td>4.7 ★ (1,400+)</td>
+      <td><a href="https://virginhotels.com/nashville" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Thompson Nashville</td>
+      <td>Luxury</td>
+      <td>1,470 – 2,900</td>
+      <td>— (alt.)</td>
+      <td>✅ Rooftop pool</td>
+      <td>4.7 ★ (1,600+)</td>
+      <td><a href="https://www.thompsonhotels.com/hotels/tennessee/nashville" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Omni Nashville Hotel</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">730 – 1,300</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Indoor pool</td>
+      <td style="color:#aaa">4.4 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">The Joseph Nashville</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Rooftop pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Rooftop pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=400&q=80" alt="Luxury room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛏️ Luxury suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">1 Hotel Nashville</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&q=80" alt="City views" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌆 Nashville skyline views</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Bathroom" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Bathroom</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 5 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Broadway · Lower Honky Tonk Row</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1545128485-c400e7702796?w=900&q=80" alt="Nashville" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into BNA · Lyft to hotel (~20min)</li><li>Check in The Joseph / 1 Hotel</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Rooftop pool · recover from travel</li><li>Hotel bar cocktails</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Broadway honky tonk crawl</li><li>Dinner: Fifty First Kitchen (veg-friendly)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Music Row · Country Music Hall of Fame · 12South</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Nashville Music" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Country Music Hall of Fame (2h)</li><li>RCA Studio B tour (add-on)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>12South neighborhood</li><li>Imogene + Willie vintage shopping</li><li>Frothy Monkey brunch (veg options)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: The 404 Kitchen (farm-to-table)</li><li>Live music: Ryman Auditorium</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">East Nashville · Centennial Park · Spa Day</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1572036406984-b8d2e93e3b37?w=900&q=80" alt="Nashville park" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Hotel spa treatment</li><li>Pool morning session</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Centennial Park — Parthenon replica</li><li>East Nashville — Five Points district</li><li>Barista Parlor coffee</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Bastion (tasting menu, veg accommodated)</li><li>Americana bar hopping, 5 Points area</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">The Gulch · Germantown · Grand Ole Opry</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=900&q=80" alt="Live music" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>The Gulch neighborhood</li><li>Wings murals (famous Instagram spot)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Germantown — boutique shopping</li><li>Corsair Artisan Distillery tour</li><li>Nashville Farmers Market</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Grand Ole Opry show (book ahead)</li><li>Dinner: City House (Germantown)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · last rooftop pool session</li><li>Brunch: Loveless Cafe (biscuits — get cheese grits, veg-friendly)</li><li>Lyft to BNA (~20min) · fly back via JFK → DXB</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants &amp; Vegetarian Guide</h2>
+<div class="rbox"><b>⚠️ Vegetarian note:</b> Nashville is traditionally a meat-heavy BBQ city, but the dining scene has evolved rapidly. Several farm-to-table and modern American restaurants offer excellent vegetarian menus. Hot chicken restaurants are almost entirely meat-based — skip those. The best vegetarian experiences are at upscale farm-to-table spots.</div>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Bastion</b></td><td>Modern American (tasting menu)</td><td>Fine dining</td><td><span class="veg">✅ Vegetarian menu on request</span></td><td><a href="https://www.bastionnashville.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>The 404 Kitchen</b></td><td>Farm-to-table</td><td>Fine dining</td><td><span class="veg">✅ Seasonal veg dishes</span></td><td><a href="https://the404nashville.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>City House</b></td><td>Italian-American</td><td>Upscale casual</td><td><span class="veg">✅ Good veg pasta selection</span></td><td><a href="https://www.cityhousenashville.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Frothy Monkey</b></td><td>Cafe / brunch</td><td>Casual</td><td><span class="veg">✅ Excellent veg brunch</span></td><td><a href="https://frothymonkey.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Fifty First Kitchen</b></td><td>Modern American</td><td>Upscale</td><td><span class="veg">✅ Veg-forward menu</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td>The Joseph Dining</td><td>Southern fine dining</td><td>Hotel restaurant</td><td><span class="veg">✅ Veg menu on request</span></td><td><a href="https://www.thejosephnashville.com/dining" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td>Biscuit Love</td><td>Southern brunch</td><td>Brunch</td><td><span class="veg">⚠️ Limited but has cheese biscuits, French toast</span></td><td><a href="https://biscuitlove.com" class="ext" target="_blank">Web</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1545128485-c400e7702796?w=400&q=80" alt="Nashville Broadway" onerror="this.parentElement.style.display='none'"><p><b>Broadway at night</b> — neon lights · best shot from Bridgestone Arena end · #NashvilleNights</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80" alt="Live music" onerror="this.parentElement.style.display='none'"><p><b>Ryman Auditorium</b> — "Mother Church of Country Music" · #Ryman</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1572036406984-b8d2e93e3b37?w=400&q=80" alt="Nashville skyline" onerror="this.parentElement.style.display='none'"><p><b>Rooftop pool at 1 Hotel</b> — Nashville skyline backdrop · #1HotelNashville</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1551524163-2c9ba18de1e8?w=400&q=80" alt="Guitar shop" onerror="this.parentElement.style.display='none'"><p><b>The Gulch Wings Mural</b> — Nashville's most photographed mural · #IBelieveInNashville</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Country music" onerror="this.parentElement.style.display='none'"><p><b>Country Music Hall of Fame</b> — glass facade reflection · #CountryMusicHOF</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Centennial Park" onerror="this.parentElement.style.display='none'"><p><b>Parthenon, Centennial Park</b> — full-size replica · #NashvilleParthenon</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>CMA Fest</b></td><td>Early Jun (check 2026)</td><td>Country music festival</td><td>Book hotel months ahead — city fills up</td></tr>
+    <tr><td>Nashville Symphony</td><td>Year-round</td><td>Classical / pops</td><td>Schermerhorn Symphony Center</td></tr>
+    <tr><td>Live at the Ryman</td><td>Year-round</td><td>Americana / country</td><td>Book specific shows ahead</td></tr>
+    <tr><td>Grand Ole Opry</td><td>Every Fri–Sat</td><td>Country music institution</td><td>Book online, ~220 AED/person</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Check if CMA Fest overlaps — hotels fill fast</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>ESTA required — UK passport · apply at <a href="https://esta.cbp.dhs.gov" class="ext" target="_blank">esta.cbp.dhs.gov</a> · $21 ≈ 77 AED · valid 2 years</dd>
+  <dt>💵 Currency</dt><dd>US Dollar ($) · 1 USD ≈ 3.67 AED · Cards widely accepted</dd>
+  <dt>💸 Tipping</dt><dd>Expected — 18–22% at restaurants · $2–5 for hotel staff · $1–2 per drink at bars</dd>
+  <dt>🚗 Getting around</dt><dd>Lyft/Uber recommended · Nashville has limited public transport · rent a car for day trips</dd>
+  <dt>🗣️ Language</dt><dd>English · Southern hospitality guaranteed</dd>
+  <dt>🌡️ June weather</dt><dd>27–32°C · humid · afternoon thunderstorms possible</dd>
+  <dt>📻 Music tips</dt><dd>Book Ryman Auditorium &amp; Grand Ole Opry 4–6 weeks ahead for best seats</dd>
+  <dt>🏠 Best base</dt><dd>Downtown / The Gulch area — walking distance to Broadway</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Nashville 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>The Joseph Nashville Hotel</li>
+    <li>1 Hotel Nashville</li>
+    <li>Ryman Auditorium</li>
+    <li>Country Music Hall of Fame</li>
+    <li>Broadway Honky Tonk Row</li>
+    <li>The Gulch Wings Mural</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Bastion Restaurant</li>
+    <li>City House, Germantown</li>
+    <li>Centennial Park / Parthenon</li>
+    <li>12South neighborhood</li>
+    <li>East Nashville, Five Points</li>
+    <li>Grand Ole Opry House</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights — economy ×2 return</td><td>8,800</td><td>13,200</td><td>DXB→JFK→BNA, 1-stop</td></tr>
+    <tr><td>🛂 ESTA ×2</td><td>154</td><td>154</td><td>$21/person ≈ 77 AED</td></tr>
+    <tr><td>🏨 The Joseph / 1 Hotel (4 nts)</td><td>8,800</td><td>20,500</td><td>2,200–5,100/nt</td></tr>
+    <tr><td>🎵 Events (Ryman + Grand Ole Opry + CMA)</td><td>1,100</td><td>2,900</td><td>Depends on shows selected</td></tr>
+    <tr><td>🚗 Transport (Lyft/Uber, 5 days)</td><td>550</td><td>1,100</td><td>Downtown walkable; Opry needs ride</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>19,404</b></td><td><b>37,854</b></td><td><b>28–54% of monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food excluded. Prices marked 📊 Est. are Apr 2026 estimates. CMA Fest week (early June) commands significant hotel price premiums — check exact dates and book early.</p>
+
+<div class="footnote">🇺🇸 Tennessee / Nashville Travel Plan · Generated Apr 2026 · Dubai → Nashville BNA · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

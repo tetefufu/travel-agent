@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los Angeles 🌴</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🌴 Los Angeles — Beverly Hills &amp; Beyond</h1>
+    <div class="meta">Dubai → Los Angeles (LAX) &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian ⭐ Outstanding</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 ESTA $21 required</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>15–20°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-green">Good — mild, Oscars season (Mar)</span></td></tr>
+    <tr><td>Apr–May</td><td>18–24°C</td><td>Medium</td><td>↓</td><td><span class="badge b-gold">⭐ Excellent — warm, no crowds, wildflowers</span></td></tr>
+    <tr><td><b>Jun</b></td><td>22–27°C</td><td>High</td><td>↑</td><td><span class="badge b-gold">⭐ Great — June Gloom clears by 11am, perfect afternoons</span></td></tr>
+    <tr><td>Jul–Aug</td><td>28–32°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Peak summer — high prices, traffic</span></td></tr>
+    <tr><td>Sep–Oct</td><td>24–28°C</td><td>Medium</td><td>↓</td><td><span class="badge b-gold">⭐ Best overall — warm, clear, fashion week buzz</span></td></tr>
+    <tr><td>Nov–Dec</td><td>18–22°C</td><td>Medium</td><td>↓</td><td><span class="badge b-green">Good — awards season begins</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7 — Very good for LA.</b> June in LA means warm afternoons (25–27°C), long days, and manageable crowds. The famous "June Gloom" (coastal morning fog) burns off by 11am — go to the pool after noon and you get perfect conditions. <b>Beverly Hills hotel pools peak June–September.</b> Eid al-Fitr (Mar 30–31) also excellent — Oscars buzz fading, wildflower season, lower hotel prices.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → LAX (Los Angeles International)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>4,400 – 8,800</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates (direct A380) · Etihad via AUH · Qatar via DOH</td>
+      <td>~16h direct (Emirates)</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-LAX" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>22,000 – 44,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates A380 Business (flat bed · bar) · Etihad Business Studio</td>
+      <td>~16h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-LAX" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ <b>Emirates flies DXB → LAX direct on A380</b> — the best option, daily flights, ~16h non-stop</li>
+  <li>Business upgrade makes the 16h manageable — Emirates A380 upper deck business is world-class</li>
+  <li>ESTA required for UK passport — $21 (~77 AED) at <a href="https://esta.cbp.dhs.gov" class="ext" target="_blank">esta.cbp.dhs.gov</a></li>
+  <li>LAX to Beverly Hills: Uber ~$35–50 (130–185 AED) or hotel car service</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Base in Beverly Hills / West Hollywood. Plan: <b>3–4 nights Four Seasons Beverly Hills</b> + optional night Sunset Tower or Hotel Bel-Air. All prices AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Four Seasons Beverly Hills</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>4,400 – 10,300</td>
+      <td>26,400 – 61,800 <span style="font-size:0.7rem;color:#888">(6 nts)</span></td>
+      <td>✅ Iconic outdoor pool deck · celebrity scene</td>
+      <td>5.0 ★ (2,500+)</td>
+      <td><a href="https://www.fourseasons.com/losangeles/" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/us/four-seasons-los-angeles-at-beverly-hills.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Hotel Bel-Air</b> (Dorchester Collection) <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>5,500 – 18,300</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt. / split stay)</span></td>
+      <td>✅ Legendary pool garden · Swan Lake</td>
+      <td>5.0 ★ (1,500+)</td>
+      <td><a href="https://www.dorchestercollection.com/en/los-angeles/hotel-bel-air/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Sunset Tower Hotel</b> (West Hollywood)</td>
+      <td>Ultra-luxury / Iconic</td>
+      <td>3,300 – 7,300</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Rooftop pool · Hollywood Hills views</td>
+      <td>4.5 ★ (1,800+)</td>
+      <td><a href="https://www.sunsettowerhotel.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Chateau Marmont (West Hollywood)</td>
+      <td>Luxury / Iconic</td>
+      <td>3,700 – 11,000</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Garden pool · celebrity enclave</td>
+      <td>4.5 ★ (1,200+)</td>
+      <td><a href="https://www.chateaumarmont.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>The Beverly Hills Hotel</td>
+      <td>Ultra-luxury / Iconic</td>
+      <td>5,100 – 14,700</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Legendary pool — the original Hollywood pool</td>
+      <td>4.5 ★ (1,400+)</td>
+      <td><a href="https://www.dorchestercollection.com/en/los-angeles/the-beverly-hills-hotel/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Hyatt Regency Century Plaza</td>
+      <td style="color:#aaa">Standard ref.</td>
+      <td style="color:#aaa">1,100 – 2,600</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">✅ Pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Pool priority:</b> <b>Four Seasons Beverly Hills</b> — the most famous hotel pool in LA, outdoor deck, daily celebrity sightings, excellent food service at poolside. <b>Hotel Bel-Air</b> has the most romantic garden pool — Swan Lake, bougainvillea, ultimate tranquility. <b>Beverly Hills Hotel</b> pool is the classic Hollywood icon (pink umbrellas). Consider a 3+3 split.</div>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Four Seasons Beverly Hills</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&q=80" alt="Beverly Hills pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Pool deck</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&q=80" alt="Luxury suite" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛏️ Suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Hotel Bel-Air</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Hotel Bel-Air garden pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌸 Swan Lake garden</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Bathroom" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Luxury bathroom</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 7 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Beverly Hills Check-in</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80" alt="Beverly Hills" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Emirates A380 DXB→LAX ~16h direct</li><li>Uber / hotel car to Four Seasons</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · pool deck afternoon</li><li>Recover from flight · spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Spago Beverly Hills (Wolfgang Puck)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Beverly Hills · Rodeo Drive · LACMA</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=900&q=80" alt="Rodeo Drive" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Rodeo Drive walk · Cartier · Chanel · Hermès</li><li>Beverly Gardens Park rose garden</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>LACMA · outdoor art installations</li><li>Urban Light sculpture (iconic photo)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Nobu Malibu (scenic PCH drive)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Malibu · Santa Monica · Venice</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=900&q=80" alt="Malibu" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Drive PCH to Malibu</li><li>Getty Villa (Greek/Roman antiquities)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Santa Monica Pier · Third Street Promenade</li><li>Venice Boardwalk · Abbot Kinney</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Gjusta Bakery area · Gjelina (Venice)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Transfer → Hotel Bel-Air · Bel-Air Estates</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=900&q=80" alt="Bel Air" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Check out Four Seasons</li><li>Hotel Bel-Air check-in · garden walk</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Swan Lake pool · bougainvillea garden</li><li>Most romantic pool in LA</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Hotel Bel-Air restaurant</li><li>Fireplace lounge drinks</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Hollywood · Griffith Park · Sunset Strip</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=900&q=80" alt="Hollywood" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Griffith Observatory · Hollywood sign hike</li><li>Best sunrise LA panorama</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Hollywood Walk of Fame</li><li>TCL Chinese Theatre · Dolby Theatre</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset Strip bar hop</li><li>Dinner: Craig's (celebrity WeHo spot)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Arts District · Silver Lake · Echo Park</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1524813686514-a57563d77965?w=900&q=80" alt="LA Arts District" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>LA Arts District street art tour</li><li>Blue Bottle Coffee, Zinc café</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Silver Lake vintage shops</li><li>Echo Park Lake · paddle boats</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Bestia (Arts District Italian)</li><li>Drinks: The NoMad Bar</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Departure — LAX → DXB</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final pool morning at Bel-Air</li><li>Checkout · Erewhon Market (superfood for the road)</li><li>Hotel car to LAX · Emirates DXB flight</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants — Outstanding Indian, Pan-Asian &amp; Plant-Based Scene</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">LA has one of the world's best vegetarian dining scenes — Indian, Mexican, Japanese, and dedicated plant-based restaurants all excel here. Highlight for this couple.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Spago Beverly Hills</b> 🌟</td><td>Contemporary Californian</td><td>Fine dining — Wolfgang Puck flagship</td><td><span class="veg">✅ Excellent veg tasting menu available</span></td><td><a href="https://www.wolfgangpuck.com/dining/spago-beverly-hills/" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Nobu Malibu</b></td><td>Japanese / Peruvian</td><td>Fine dining</td><td><span class="veg">✅ Excellent veg dishes — edamame, vegetable maki, tofu dishes</span></td><td><a href="https://www.noburestaurants.com/malibu/" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Jitlada</b> (Thai Town)</td><td>Southern Thai</td><td>Local gem / iconic</td><td><span class="veg">✅ Extensive veg Thai menu — NY Times approved</span></td><td><a href="https://www.jitladala.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Bestia</b> (Arts District)</td><td>Italian</td><td>Fine casual</td><td><span class="veg">✅ Outstanding pasta — veg menu on request</span></td><td><a href="https://www.bestiala.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Gjelina</b> (Venice)</td><td>Californian / Mediterranean</td><td>Casual fine</td><td><span class="veg">✅ 70% of menu is vegetarian — famous pizzas</span></td><td><a href="https://gjelina.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Crossroads Kitchen</b> (West Hollywood)</td><td>Upscale Vegan Mediterranean</td><td>Fine dining — entirely plant-based</td><td><span class="veg">✅ 100% plant-based fine dining — world-class</span></td><td><a href="https://www.crossroadskitchen.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>E.P. &amp; L.P.</b> (West Hollywood)</td><td>Southeast Asian</td><td>Rooftop fine dining</td><td><span class="veg">✅ Many vegetarian Southeast Asian dishes</span></td><td><a href="https://www.eplrestaurant.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Saffron Indian Bistro</b> (various LA)</td><td>North Indian</td><td>Indian fine casual</td><td><span class="veg">✅ Outstanding North Indian vegetarian — dal makhani, paneer</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Mercado</b> (various LA)</td><td>Mexican</td><td>Upscale Mexican</td><td><span class="veg">✅ Excellent veg Mexican — enchiladas, tacos</span></td><td><a href="https://www.mercadorestaurant.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td>Erewhon Market (various)</td><td>Health food / superfood</td><td>Gourmet grocery</td><td><span class="veg">✅ LA's iconic health food store — grab &amp; go veg heaven</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=80" alt="Beverly Hills" onerror="this.parentElement.style.display='none'"><p><b>Rodeo Drive</b> — palm trees + designer flags · #RodeoDrive</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=400&q=80" alt="Malibu PCH" onerror="this.parentElement.style.display='none'"><p><b>Pacific Coast Highway</b> — Malibu coastline drive · #PCH #Malibu</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400&q=80" alt="Griffith Observatory" onerror="this.parentElement.style.display='none'"><p><b>Griffith Observatory at dawn</b> — Hollywood sign behind · #GriffithPark</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="Venice Beach" onerror="this.parentElement.style.display='none'"><p><b>Venice Canals at sunset</b> — golden reflections · #VeniceCanals</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400&q=80" alt="LACMA Urban Light" onerror="this.parentElement.style.display='none'"><p><b>LACMA Urban Light</b> — lamp post forest at dusk · #LACMA #UrbanLight</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&q=80" alt="Hotel pool" onerror="this.parentElement.style.display='none'"><p><b>Four Seasons pool deck</b> — palms, cabanas, sunshine · #FourSeasonsBH</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>LA Pride</b></td><td>Typically 2nd weekend June</td><td>Festival / parade</td><td><b>West Hollywood parade — vibrant, colourful, world-class</b></td></tr>
+    <tr><td>Taste of Soul LA</td><td>Typically October</td><td>Food festival</td><td>Outside June window</td></tr>
+    <tr><td>LA Film Festival</td><td>Varies 2026</td><td>Cinema</td><td>Check 2026 dates</td></tr>
+    <tr><td>Coachella (Indio)</td><td>April</td><td>Music festival</td><td>2h drive — outside June window</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Perfect LA timing — long summer days, pool weather, vibrant WeHo scene</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa / ESTA</dt><dd>ESTA required · $21 (≈77 AED) · <a href="https://esta.cbp.dhs.gov" class="ext" target="_blank">esta.cbp.dhs.gov</a> · instant approval for UK passports</dd>
+  <dt>💵 Currency</dt><dd>US Dollar (USD) · 1 USD ≈ 3.67 AED · Cards everywhere · no cash ATM needed at luxury hotels</dd>
+  <dt>💸 Tipping</dt><dd>18–22% at restaurants · $5/bag bellhop · $10/night housekeeping · Uber auto-tip</dd>
+  <dt>🚗 Getting around</dt><dd>LA requires a car or Uber — no viable public transport for Beverly Hills. Rent from LAX or use Uber/Lyft throughout</dd>
+  <dt>🌤️ June weather</dt><dd>22–27°C afternoons · "June Gloom" (morning fog) clears by 11am · sunscreen essential</dd>
+  <dt>🗣️ Language</dt><dd>English · large Arabic and Farsi-speaking community in Beverly Hills</dd>
+  <dt>🛍️ Shopping</dt><dd>Rodeo Drive · Melrose · Venice Abbot Kinney · La Brea (vintage) · Beverly Center mall</dd>
+  <dt>📸 Photography</dt><dd>Golden Hour: 6:30–7:30pm is magical · Griffith Observatory for sunrise cityscape</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Los Angeles 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Four Seasons Los Angeles, Beverly Hills</li>
+    <li>Hotel Bel-Air, Stone Canyon Road</li>
+    <li>Sunset Tower Hotel, Sunset Blvd</li>
+    <li>Rodeo Drive, Beverly Hills</li>
+    <li>Griffith Observatory</li>
+    <li>LACMA, Wilshire Blvd</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Venice Beach / Abbot Kinney Blvd</li>
+    <li>Santa Monica Pier</li>
+    <li>Nobu Malibu, PCH</li>
+    <li>Crossroads Kitchen, Melrose Ave</li>
+    <li>Gjelina, Abbot Kinney, Venice</li>
+    <li>Erewhon Market, Beverly Hills</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB↔LAX (economy ×2 return)</td><td>8,800</td><td>17,600</td><td>Emirates A380 direct</td></tr>
+    <tr><td>✈️ Flights (business upgrade — optional)</td><td>44,000</td><td>88,000</td><td>Emirates A380 upper deck business</td></tr>
+    <tr><td>🏨 Four Seasons Beverly Hills (3 nts)</td><td>26,400</td><td>61,800</td><td>Pool deck · iconic</td></tr>
+    <tr><td>🏨 Hotel Bel-Air (3 nts)</td><td>33,000</td><td>109,800</td><td>Garden pool · Swan Lake</td></tr>
+    <tr><td>🚗 Car rental / Uber (6 days)</td><td>2,200</td><td>4,400</td><td>Essential in LA</td></tr>
+    <tr><td>🛂 ESTA (×2)</td><td>154</td><td>154</td><td>$21 p/p</td></tr>
+    <tr><td>🍽️ Dining (7 meals out)</td><td>3,700</td><td>7,300</td><td>Fine dining avg. $250–500 per meal couple</td></tr>
+    <tr><td>🛍️ Shopping · Rodeo Drive · etc.</td><td>2,000</td><td>50,000+</td><td>Variable — Rodeo Drive is limitless</td></tr>
+    <tr class="budget-total"><td><b>Total (economy flights)</b></td><td><b>76,254</b></td><td><b>251,054+</b></td><td><b>109–358%+ monthly income (shopping variable)</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Shopping excluded from upper bound — Rodeo Drive and Melrose purchases are unlimited. Prices marked 📊 Est. are Apr 2026 estimates; check live booking links for current rates. USD/AED: 1 USD ≈ 3.67 AED.</p>
+
+<div class="footnote">🌴 Los Angeles Travel Plan · Generated Apr 2026 · Dubai → LAX · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

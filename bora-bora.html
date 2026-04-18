@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bora Bora 🇵🇫</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇵🇫 Bora Bora — Overwater Paradise</h1>
+    <div class="meta">Dubai → Papeete (PPT) → Bora Bora (BOB) &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Ultra-Luxury Overwater</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Overwater + Infinity Pools</span>
+    <span class="tag">🇬🇧 Visa-free 90 days</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>28–30°C</td><td>Medium</td><td>↑↑</td><td><span class="badge b-red">Wet season — afternoon showers</span></td></tr>
+    <tr><td>Apr–May</td><td>28°C</td><td>Low</td><td>↓</td><td><span class="badge b-green">Good — transition, lower prices</span></td></tr>
+    <tr><td><b>Jun–Aug</b></td><td>26–28°C</td><td>High</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Best — dry season, clearest water</span></td></tr>
+    <tr><td>Sep–Nov</td><td>27°C</td><td>Medium</td><td>↓</td><td><span class="badge b-green">Good — quiet, beautiful conditions</span></td></tr>
+    <tr><td>Dec</td><td>29°C</td><td>High</td><td>↑↑</td><td><span class="badge b-gold">Good — festive season</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7 — Ideal timing.</b> June is Bora Bora's dry season — low humidity, clear turquoise lagoon, perfect snorkelling visibility. The overwater bungalows are in peak condition. <b>This is the best possible time to visit Bora Bora.</b> Book hotels 6+ months ahead — June sells out fast. Eid al-Fitr (Mar 30–31) falls in the wet season — not recommended.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → PPT → BOB (Bora Bora)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>8,800 – 14,700</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates / Air France via CDG → PPT · Air Tahiti Nui DXB via CDG</td>
+      <td>~22–26h total (2 stops)</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-BOB" class="ext" target="_blank">KAYAK</a> · <a href="https://www.airtahitinui.com" class="ext" target="_blank">Air Tahiti Nui</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>36,700 – 73,400 <span class="badge b-est">📊 Est.</span></td>
+      <td>Air France Business via CDG · Air Tahiti Nui Business</td>
+      <td>~22–26h</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-BOB" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>Route: DXB → CDG (Paris) → PPT (Papeete, Tahiti) → BOB (Bora Bora — short Air Tahiti hop ~45min)</li>
+  <li>Air Tahiti Nui is the preferred carrier DXB–PPT via Paris; daily Air Tahiti island hop PPT→BOB (~4,000 AED return p/p)</li>
+  <li>Business class strongly recommended given 22h+ travel — flat beds on Air France CDG→PPT leg essential</li>
+  <li>Allow 1 night in Papeete/Moorea if long connection</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels — Overwater Bungalows</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>3 nights Four Seasons Bora Bora</b> + <b>3 nights Conrad Bora Bora Nui</b>. All prices AED. All properties have overwater bungalows with glass floors.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Four Seasons Bora Bora</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>8,800 – 22,000 <span style="font-size:0.7rem;color:#888">(overwater)</span></td>
+      <td>26,400 – 66,000 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Infinity pool + private overwater deck</td>
+      <td>5.0 ★ (1,800+)</td>
+      <td><a href="https://www.fourseasons.com/borabora/" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/pf/four-seasons-resort-bora-bora.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Conrad Bora Bora Nui</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>6,600 – 16,500 <span style="font-size:0.7rem;color:#888">(overwater)</span></td>
+      <td>19,800 – 49,500 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Overwater infinity pool — best view of Mount Otemanu</td>
+      <td>5.0 ★ (1,600+)</td>
+      <td><a href="https://www.hilton.com/en/hotels/borboci-conrad-bora-bora-nui/" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/pf/hilton-bora-bora-nui-resort-spa.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>InterContinental Thalasso</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>5,500 – 13,200</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Seawater pool + overwater pool</td>
+      <td>4.5 ★ (2,000+)</td>
+      <td><a href="https://www.ihg.com/intercontinental/hotels/gb/en/bora-bora/bobha/hoteldetail" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>St Regis Bora Bora Resort</td>
+      <td>Ultra-luxury</td>
+      <td>7,300 – 18,300</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Overwater infinity pool</td>
+      <td>5.0 ★ (1,200+)</td>
+      <td><a href="https://www.marriott.com/hotels/travel/bobxr-the-st-regis-bora-bora-resort/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Le Méridien Bora Bora</td>
+      <td style="color:#aaa">Standard ref.</td>
+      <td style="color:#aaa">2,200 – 4,400</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">✅ Pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Pool priority verdict:</b> <b>Conrad Bora Bora Nui</b> has the most spectacular overwater infinity pool — glass-floored deck suspended over the lagoon with Mount Otemanu as backdrop. <b>Four Seasons</b> has private deck plunge pools on overwater bungalows — ultimate privacy. Split your stay across both for maximum experience.</div>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Four Seasons Bora Bora</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=400&q=80" alt="Overwater bungalow" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌊 Overwater bungalow</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Infinity pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Infinity pool</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Conrad Bora Bora Nui</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=400&q=80" alt="Lagoon view" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌅 Mount Otemanu view</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Overwater deck" onerror="this.parentElement.style.display='none'">
+        <figcaption>🐠 Glass floor deck</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 7 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Four Seasons Check-in</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=900&q=80" alt="Bora Bora arrival" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>DXB → CDG → PPT → BOB</li><li>Air Tahiti boat transfer to resort</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in to overwater bungalow</li><li>Dive into lagoon from deck</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset from overwater deck</li><li>In-bungalow dining or resort restaurant</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Four Seasons · Lagoon &amp; Snorkel</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=900&q=80" alt="Bora Bora lagoon" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Sunrise from overwater deck</li><li>Snorkel in resort lagoon</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Infinity pool · cocktails</li><li>Optional: shark &amp; ray feeding tour</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Fare Hoa (resort restaurant)</li><li>Polynesian dance show</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Four Seasons · Spa &amp; Mount Otemanu</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=900&q=80" alt="Bora Bora mountain" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>4WD tour of Bora Bora island</li><li>Mount Otemanu views</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Four Seasons Spa (2h treatment)</li><li>Private plunge pool</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Overwater candle-lit dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Transfer → Conrad Bora Bora Nui</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1568097283100-37e584ba5882?w=900&q=80" alt="Conrad Bora Bora" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Boat transfer to Conrad (~10 min)</li><li>New overwater bungalow check-in</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Conrad overwater infinity pool</li><li>Glass floor lagoon exploration</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset cocktails at overwater bar</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Conrad · Lagoon Day Trip</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80" alt="Snorkelling" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Private lagoon boat tour</li><li>Coral garden snorkelling</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Motu picnic lunch (private island)</li><li>Kayaking around lagoon</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Conrad fine dining — mountain backdrop</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Conrad · Pure Relaxation Day</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=900&q=80" alt="Relaxation" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>In-room breakfast delivery to deck</li><li>Morning dip from bungalow stairs</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool · spa · absolute rest</li><li>Photography — golden light at 4pm</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Final sunset from overwater deck</li><li>Farewell dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Departure — BOB → PPT → DXB</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Late checkout · final lagoon swim</li><li>Boat transfer · Air Tahiti BOB→PPT · long-haul home</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Bora Bora dining is resort-centred. Fresh fish dominates but vegetarian options are always available. French Polynesian cuisine features tropical fruits, coconut, and local produce.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Fare Hoa</b> (Four Seasons)</td><td>French Polynesian / Contemporary</td><td>Resort fine dining</td><td><span class="veg">✅ Good veg menu on request</span></td><td><a href="https://www.fourseasons.com/borabora/dining/" class="ext" target="_blank">Four Seasons</a></td></tr>
+    <tr><td><b>Iriatai</b> (Conrad Nui)</td><td>International / French</td><td>Resort fine dining</td><td><span class="veg">✅ Chef accommodates veg</span></td><td><a href="https://www.hilton.com/en/hotels/borboci-conrad-bora-bora-nui/dining/" class="ext" target="_blank">Conrad</a></td></tr>
+    <tr><td><b>InterContinental Restaurant</b></td><td>French Polynesian</td><td>Fine dining</td><td><span class="veg">✅ Veg options</span></td><td><a href="https://www.ihg.com" class="ext" target="_blank">IHG</a></td></tr>
+    <tr><td>Bloody Mary's (Vaitape)</td><td>Local / Seafood</td><td>Iconic local landmark</td><td>⚠️ Fish-heavy but side dishes veg</td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td>La Villa Mahana (Vaitape)</td><td>Contemporary French Polynesian</td><td>Fine dining</td><td><span class="veg">✅ Can arrange full veg dinner</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.78rem;color:#888;margin-top:6px">⚠️ Always pre-notify resorts of vegetarian dietary requirements — all luxury properties will create custom menus with advance notice.</p>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=400&q=80" alt="Overwater bungalow" onerror="this.parentElement.style.display='none'"><p><b>Overwater bungalow deck</b> — turquoise lagoon, glass floor · #BoraBoraLife</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=400&q=80" alt="Mount Otemanu" onerror="this.parentElement.style.display='none'"><p><b>Mount Otemanu at dawn</b> — coral pink sky · #MountOtemanu</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400&q=80" alt="Infinity pool" onerror="this.parentElement.style.display='none'"><p><b>Overwater infinity pool</b> — Conrad Nui · #InfinityPool</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" alt="Snorkelling" onerror="this.parentElement.style.display='none'"><p><b>Lagoon coral garden</b> — rays, reef fish · #BoraBoraSnorkel</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1568097283100-37e584ba5882?w=400&q=80" alt="Sunset" onerror="this.parentElement.style.display='none'"><p><b>Sunset over the lagoon</b> — from your deck · #BoraBoraSunset</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Motu picnic" onerror="this.parentElement.style.display='none'"><p><b>Private motu picnic</b> — deserted island lunch · #PrivateIsland</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>Heiva i Tahiti Festival</b></td><td>Typically July</td><td>Culture / dance / music</td><td><b>Largest Polynesian cultural festival — worth extending trip</b></td></tr>
+    <tr><td>Hawaiki Nui Va'a Canoe Race</td><td>October/November</td><td>Sports</td><td>World's most famous outrigger canoe race</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Perfect — June is peak dry season, tranquil, no events clashing</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>Visa-free · UK passport · French Polynesia (France) · 90 days</dd>
+  <dt>💶 Currency</dt><dd>CFP Franc (XPF) · 1 EUR ≈ 119 XPF · Cards accepted at resorts · 1 USD ≈ 110 XPF ≈ 3.67 AED</dd>
+  <dt>💸 Tipping</dt><dd>Not customary in French Polynesia · service included at all luxury resorts</dd>
+  <dt>🚤 Getting around</dt><dd>Resort speedboat transfers · Water taxis between properties · 4WD for island tour</dd>
+  <dt>🗣️ Language</dt><dd>French &amp; Tahitian · All luxury resort staff speak excellent English</dd>
+  <dt>⏰ Time zone</dt><dd>UTC-10 · 14 hours behind Dubai · allow full day for arrival jet lag</dd>
+  <dt>🌊 Water</dt><dd>Lagoon warm ~28°C · excellent visibility in June · reef-safe sunscreen mandatory</dd>
+  <dt>📡 Connectivity</dt><dd>Good WiFi at all luxury resorts · disconnect and enjoy</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Bora Bora 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Four Seasons Resort Bora Bora</li>
+    <li>Conrad Bora Bora Nui</li>
+    <li>InterContinental Thalasso Bora Bora</li>
+    <li>Mount Otemanu viewpoint</li>
+    <li>Vaitape (main town)</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Coral Garden Snorkel Site</li>
+    <li>Bloody Mary's Restaurant</li>
+    <li>La Villa Mahana</li>
+    <li>Bora Bora Airport (BOB)</li>
+    <li>Motu Tapu (private island)</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB→PPT (economy ×2 return)</td><td>17,600</td><td>29,400</td><td>Via CDG — long-haul</td></tr>
+    <tr><td>✈️ Internal Air Tahiti PPT↔BOB (×2 return)</td><td>5,900</td><td>8,100</td><td>~45min island hop</td></tr>
+    <tr><td>🏨 Four Seasons Bora Bora (3 nts couple)</td><td>52,800</td><td>132,000</td><td>Overwater bungalow</td></tr>
+    <tr><td>🏨 Conrad Bora Bora Nui (3 nts couple)</td><td>39,600</td><td>99,000</td><td>Overwater bungalow</td></tr>
+    <tr><td>🚤 Excursions (lagoon tour, 4WD, spa)</td><td>3,700</td><td>7,300</td><td>~$1,000–2,000 for 6 days</td></tr>
+    <tr><td>🍽️ Dining beyond resort (2 dinners out)</td><td>1,500</td><td>3,000</td><td>La Villa Mahana etc.</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>121,100</b></td><td><b>278,800</b></td><td><b>173–398% monthly income · bucket list</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Bora Bora is one of the world's most expensive destinations — budget accordingly. Business class flights highly recommended given 22h+ journey. Prices marked 📊 Est. are Apr 2026 estimates; check live booking links for current rates.</p>
+
+<div class="footnote">🇵🇫 Bora Bora Travel Plan · Generated Apr 2026 · Dubai → French Polynesia · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

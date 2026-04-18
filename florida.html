@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florida — Miami Beach 🌴</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🌴 Florida — Miami Beach</h1>
+    <div class="meta">Dubai → Miami MIA &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 ESTA ($21 / ~77 AED)</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>22–26°C</td><td>High (snowbirds)</td><td>↑↑</td><td><span class="badge b-gold">⭐ Peak season — best weather</span></td></tr>
+    <tr><td>Apr–May</td><td>27–30°C</td><td>Medium</td><td>↓</td><td><span class="badge b-green">Great value</span></td></tr>
+    <tr><td><b>June</b></td><td>30–33°C</td><td>Medium</td><td>↓</td><td><span class="badge b-gold">⭐ Good (Eid — hot, rainy afternoons)</span></td></tr>
+    <tr><td>Jul–Aug</td><td>32–34°C</td><td>High</td><td>↑</td><td><span class="badge b-green">Busy · humid · afternoon storms</span></td></tr>
+    <tr><td>Sep–Oct</td><td>29–31°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-green">Best value · hurricane season</span></td></tr>
+    <tr><td>Nov–Dec</td><td>23–27°C</td><td>Rising</td><td>↑</td><td><span class="badge b-green">Lovely shoulder</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7.</b> Miami in June = hot and humid (30–33°C) with brief afternoon thunderstorms. But <b>pools and beach life are incredible</b>, hotel prices drop vs peak season, and the city is lively. <b>Plan beach/pool mornings, indoor/dining afternoons. Recommended for the pool-luxury experience at better rates.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → MIA (Miami)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,100 – 5,500</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates (direct DXB–MIA) · American via JFK/DFW · United via EWR</td>
+      <td>~15–16h direct / ~18h 1-stop</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Miami-MIA" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>22,000 – 44,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business (direct, flat bed A380)</td>
+      <td>~15–16h direct</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Miami-MIA" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Emirates flies <b>direct DXB→MIA</b> — only ~15h, best in-flight product</li>
+  <li>🇬🇧 UK passport = <b>ESTA required</b> — apply at <a href="https://esta.cbp.dhs.gov" class="ext" target="_blank">esta.cbp.dhs.gov</a> · $21 (~77 AED) · valid 2 years</li>
+  <li>Book 8–10 weeks out · June is shoulder season for Miami — better rates than Jan–Mar</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>4 nights 1 Hotel South Beach + 2 nights Faena Hotel Miami Beach</b>. Focus: Miami Beach luxury. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>1 Hotel South Beach</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,900 – 6,200</td>
+      <td>11,600 – 24,800 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ 4 pools · oceanfront</td>
+      <td>4.5 ★ (4,200+)</td>
+      <td><a href="https://www.1hotels.com/south-beach" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/us/1-south-beach.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Four Seasons Surf Club, Surfside</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>4,400 – 10,200</td>
+      <td>8,800 – 20,400 <span style="font-size:0.7rem;color:#888">(2 nts)</span></td>
+      <td>✅ Legendary pool scene</td>
+      <td>5.0 ★ (1,800+)</td>
+      <td><a href="https://www.fourseasons.com/surfside/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Faena Hotel Miami Beach</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>3,700 – 8,100</td>
+      <td>7,400 – 16,200 <span style="font-size:0.7rem;color:#888">(2 nts)</span></td>
+      <td>✅ Gold-accented rooftop pool</td>
+      <td>4.5 ★ (2,600+)</td>
+      <td><a href="https://www.faena.com/miami-beach" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>The Setai Miami Beach</td>
+      <td>Luxury</td>
+      <td>2,200 – 5,100</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ 3 ocean pools</td>
+      <td>4.5 ★ (3,000+)</td>
+      <td><a href="https://www.thesetaihotel.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Loews Miami Beach</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">735 – 1,470</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Basic pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">1 Hotel South Beach</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Oceanfront pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Ocean suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Faena Hotel Miami Beach</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Gold pool deck</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Luxury suite</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 7 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · South Beach</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Miami Beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into MIA · 30min Uber to South Beach</li><li>Check-in 1 Hotel South Beach</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool + beach first look</li><li>Recover from flight</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Carbone Miami (veg pasta)</li><li>Walk Ocean Drive at night</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">South Beach · Art Deco District</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Art Deco Miami" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Art Deco walking tour</li><li>Collins Ave architecture</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>1 Hotel pools (4 pools!)</li><li>Rooftop bar Watr</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Plant Food + Wine (100% veg)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Wynwood Arts District · Design District</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=900&q=80" alt="Wynwood" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>1 Hotel spa morning</li><li>Hotel breakfast</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Wynwood Walls (street art)</li><li>Design District luxury shopping</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Alter (creative Florida cuisine)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Biscayne Bay · Key Biscayne</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Key Biscayne" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Boat charter across Biscayne Bay</li><li>Bill Baggs State Park snorkel</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Return · Faena check-in (Day 4)</li><li>Faena pool + gold beach chairs</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Pao by Paul Qui at Faena</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Faena Beach · Spa · Arts</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80" alt="Faena" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Faena private beach morning</li><li>Faena Arts show (check schedule)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Tierra Santa spa full day</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Los Fuegos (wood-fire veg options)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Little Havana · Coral Gables</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80" alt="Miami" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Little Havana stroll (Calle Ocho)</li><li>Versailles Bakery breakfast</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Coral Gables · Venetian Pool (National Historic Landmark)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: KYU Miami (Asian-inspired, veg-forward)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final beach morning · late checkout</li><li>Uber to MIA airport (~30min)</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Miami has outstanding vegetarian dining — from 100% plant-based fine dining to incredible Indian, Pan Asian and Latin options.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Plant Food + Wine</b></td><td>100% Plant-based</td><td>Fine dining</td><td><span class="veg">✅ Entirely vegetarian/vegan</span></td><td><a href="https://www.matthewkenneycuisine.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Carbone Miami</b></td><td>Italian American</td><td>Fine dining (iconic)</td><td><span class="veg">✅ Excellent pasta veg options</span></td><td><a href="https://carbonemiami.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Pao by Paul Qui</b>, Faena</td><td>Asian-American fusion</td><td>Hotel fine dining</td><td><span class="veg">✅ Strong veg menu</span></td><td><a href="https://www.faena.com/miami-beach/restaurants" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>KYU Miami</b>, Wynwood</td><td>Asian-inspired wood-fire</td><td>Upscale casual</td><td><span class="veg">✅ Veg-forward</span></td><td><a href="https://www.kyurestaurants.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Ghee Indian Kitchen</b></td><td>Modern Indian</td><td>Fine dining</td><td><span class="veg">✅ Extensive veg Indian menu</span></td><td><a href="https://www.gheemiami.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td>Jaguar Sun, Miami</td><td>Wine bar / modern</td><td>Upscale casual</td><td><span class="veg">✅ Veg small plates</span></td><td>—</td></tr>
+    <tr><td>Planta South Beach</td><td>100% Plant-based</td><td>Upscale casual</td><td><span class="veg">✅ All vegetarian/vegan</span></td><td><a href="https://www.plantarestaurants.com" class="ext" target="_blank">Web</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="South Beach" onerror="this.parentElement.style.display='none'"><p><b>South Beach sunrise</b> — empty sands at 7am · #MiamiBeach</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Art Deco" onerror="this.parentElement.style.display='none'"><p><b>Art Deco, Ocean Drive</b> — pastel facades at golden hour</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=400&q=80" alt="Wynwood" onerror="this.parentElement.style.display='none'"><p><b>Wynwood Walls</b> — world-class street art · #WynwoodWalls</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Faena" onerror="this.parentElement.style.display='none'"><p><b>Faena Hotel pool deck</b> — gold &amp; turquoise · #FaenaHotel</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Key Biscayne" onerror="this.parentElement.style.display='none'"><p><b>Key Biscayne lighthouse</b> — tropical sunset</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Design District" onerror="this.parentElement.style.display='none'"><p><b>Miami Design District</b> — luxury shopping architecture</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Art Basel Miami</td><td>December</td><td>Art fair</td><td>Outside window — biggest event of year</td></tr>
+    <tr><td>Miami Swim Week</td><td>Late July</td><td>Fashion</td><td>Outside window</td></tr>
+    <tr><td>Faena Festival (various)</td><td>Year-round</td><td>Arts &amp; culture</td><td>Check Faena arts schedule for June</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Shoulder season — hotel rates lower, pools less crowded than Dec/Jan</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>ESTA required · $21 (~77 AED) · apply at esta.cbp.dhs.gov · valid 2 years</dd>
+  <dt>💵 Currency</dt><dd>US Dollar (USD) · 1 USD ≈ 3.67 AED</dd>
+  <dt>💸 Tipping</dt><dd>18–20% in restaurants · $2–5 pool attendant daily</dd>
+  <dt>🚗 Getting around</dt><dd>Uber/Lyft · South Beach walkable · rent car for day trips</dd>
+  <dt>🌡️ June weather</dt><dd>30–33°C · Humid · afternoon thunderstorms (30min usually) · mornings perfect</dd>
+  <dt>🏠 Best base</dt><dd>South Beach (1 Hotel) + mid-Beach (Faena) — both ocean-front</dd>
+  <dt>🗣️ Language</dt><dd>English · Spanish widely spoken in Miami</dd>
+  <dt>📱 SIM</dt><dd>T-Mobile or AT&amp;T prepaid at airport · or roam on UAE SIM</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Miami 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>1 Hotel South Beach</li>
+    <li>Faena Hotel Miami Beach</li>
+    <li>Four Seasons Surf Club, Surfside</li>
+    <li>Ocean Drive Art Deco District</li>
+    <li>Wynwood Walls</li>
+    <li>Miami Design District</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Key Biscayne (Bill Baggs State Park)</li>
+    <li>Little Havana (Calle Ocho)</li>
+    <li>Plant Food + Wine restaurant</li>
+    <li>Ghee Indian Kitchen</li>
+    <li>Carbone Miami</li>
+    <li>Miami International Airport (MIA)</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>6,200</td><td>11,000</td><td>Emirates direct DXB–MIA</td></tr>
+    <tr><td>🏨 1 Hotel South Beach (4 nts)</td><td>11,600</td><td>24,800</td><td>2,900–6,200/nt</td></tr>
+    <tr><td>🏨 Faena Hotel (2 nts)</td><td>7,400</td><td>16,200</td><td>3,700–8,100/nt</td></tr>
+    <tr><td>🚗 Uber + activities + boat charter</td><td>1,500</td><td>3,700</td><td>Wynwood, Key Biscayne, tours</td></tr>
+    <tr><td>🛂 ESTA (×2)</td><td>155</td><td>155</td><td>$21/person</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>26,855</b></td><td><b>55,855</b></td><td><b>38–80% of monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food &amp; dining excluded. Prices marked 📊 Est. are search-sourced Apr 2026; check live booking links for current rates. Consider Four Seasons Surfside as single-hotel alternative for more value.</p>
+
+<div class="footnote">🌴 Florida / Miami Travel Plan · Generated Apr 2026 · Dubai → Miami · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

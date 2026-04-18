@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trinidad &amp; Tobago 🇹🇹</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇹🇹 Trinidad &amp; Tobago</h1>
+    <div class="meta">Dubai → Port of Spain POS (via London/New York) &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Luxury Eco-Boutique</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 Visa-Free 90 days</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>27–29°C</td><td>High (Carnival)</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Peak — Carnival in Feb</span></td></tr>
+    <tr><td>Apr–May</td><td>29–31°C</td><td>Low</td><td>↓</td><td><span class="badge b-green">Great value · dry ending</span></td></tr>
+    <tr><td><b>June</b></td><td>28–30°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-gold">⭐ Good (Eid · start of wet season)</span></td></tr>
+    <tr><td>Jul–Oct</td><td>27–30°C</td><td>Very low</td><td>↓↓↓</td><td><span class="badge b-green">Cheapest — rainy season</span></td></tr>
+    <tr><td>Nov–Dec</td><td>27–29°C</td><td>Low–Med</td><td>↓↑</td><td><span class="badge b-green">Nice shoulder season</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7.</b> June is the start of the wet season — but T&T's rain is typically short afternoon showers, not all-day downpours. <b>Prices are at their lowest, beaches and jungle are lush green, birdwatching is superb.</b> Trinidad's Indian-influenced culture also makes this a uniquely vegetarian-friendly Caribbean island. <b>Excellent off-the-beaten-path choice.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → POS (Port of Spain)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,300 – 5,900</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Caribbean Airlines via LHR/MIA · British Airways via LHR · American via MIA</td>
+      <td>~18–22h (2 stops)</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Port-of-Spain-POS" class="ext" target="_blank">KAYAK</a> · <a href="https://www.caribbean-airlines.com" class="ext" target="_blank">Caribbean Airlines</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>22,000 – 44,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>British Airways (DXB–LHR Club World + LHR–POS) · Virgin Atlantic via LHR</td>
+      <td>~20–22h total</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Port-of-Spain-POS" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Best routing: Emirates DXB→LHR, then British Airways/Caribbean Airlines LHR→POS</li>
+  <li>🇬🇧 UK passport = <b>visa-free entry</b> to Trinidad &amp; Tobago for up to 90 days</li>
+  <li>⚠️ No direct flights from Dubai — factor in longer journey time (18–22h with layover)</li>
+  <li>Consider combining Trinidad (3 nts) with Tobago (3 nts) — short domestic flight ~20min</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>3 nights Acajou Hotel, Tobago (or Kariwak Village, Trinidad)</b> + <b>3 nights Magdalena Grand Beach Resort, Tobago</b>. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Acajou Hotel, Tobago</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury boutique</td>
+      <td>1,800 – 4,000</td>
+      <td>5,400 – 12,000 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Infinity pool · beachfront</td>
+      <td>5.0 ★ (400+)</td>
+      <td><a href="https://www.acajouhotel.com" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/tt/acajou.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Kariwak Village, Trinidad</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Boutique luxury eco</td>
+      <td>550 – 1,100</td>
+      <td>1,650 – 3,300 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Pool + tropical gardens</td>
+      <td>4.5 ★ (1,200+)</td>
+      <td><a href="https://www.kariwak.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Magdalena Grand Beach Resort, Tobago</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Luxury resort</td>
+      <td>880 – 1,800</td>
+      <td>2,640 – 5,400 <span style="font-size:0.7rem;color:#888">(3 nts alt.)</span></td>
+      <td>✅ Full resort pool complex</td>
+      <td>4.0 ★ (1,800+)</td>
+      <td><a href="https://www.magdalenagrand.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Blue Waters Inn, Tobago</td>
+      <td>Boutique luxury</td>
+      <td>660 – 1,100</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Bay pool</td>
+      <td>4.5 ★ (900+)</td>
+      <td><a href="https://www.bluewatersinn.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Hyatt Regency Trinidad</td>
+      <td style="color:#aaa">Business standard</td>
+      <td style="color:#aaa">550 – 880</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ City pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Acajou Hotel, Tobago</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Infinity pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Beachfront suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Kariwak Village, Trinidad</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Garden pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌿 Eco cottage</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 7 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Trinidad · Port of Spain</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Trinidad" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into POS · check-in Kariwak Village</li><li>Rest from long journey</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool at Kariwak · lush tropical gardens</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Kariwak Village restaurant</li><li>Famous for local herb garden cuisine</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Trinidad · Asa Wright Nature Centre · Maracas Beach</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80" alt="Trinidad rainforest" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Asa Wright Nature Centre</li><li>World-class birding — 100+ species</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Maracas Beach (scenic bay)</li><li>Swimming + bake &amp; shark (veg option: bake &amp; cheese)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Port of Spain street food · doubles</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Trinidad · Caroni Swamp · Pitch Lake</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Caroni" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Caroni Bird Sanctuary boat tour</li><li>Scarlet Ibis in flight at sunset</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pitch Lake, La Brea — natural wonder</li><li>Guided walk on world's largest asphalt lake</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Transfer to Piarco airport</li><li>Domestic flight → Tobago (~20min)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Tobago · Arrival · Buccoo Reef</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=900&q=80" alt="Tobago" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Check-in Acajou Hotel</li><li>Infinity pool first look</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Buccoo Reef glass-bottom boat tour</li><li>Nylon Pool swim (natural wonder)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Acajou restaurant · Caribbean fine dining</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Tobago · Rainforest · Argyle Falls</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Tobago rainforest" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Tobago Forest Reserve (oldest protected rainforest in western hemisphere)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Argyle Waterfall hike · 3-tier cascade</li><li>Pirate's Bay for a swim</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Acajou pool at dusk · cocktails</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Tobago · Full Beach &amp; Pool Day</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80" alt="Tobago beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Pigeon Point Heritage Beach</li><li>Iconic jetty &amp; turquoise shallows</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Acajou infinity pool all afternoon</li><li>Spa treatment</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sundowner at hotel bar</li><li>Farewell dinner: Seahorse Inn</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Departure from Tobago</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · transfer to ANR Robinson Airport (TAB)</li><li>Domestic to POS if needed, then international connection home</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Trinidad's large Indo-Trinidadian population (around 35% of the population) means <b>vegetarian food here is exceptional and authentic</b> — doubles, dhalpuri, channa, pumpkin curry are all vegetarian street staples.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Kariwak Village Restaurant</b>, Trinidad</td><td>Creole / Caribbean</td><td>Boutique hotel dining</td><td><span class="veg">✅ Veg-forward herb garden menu</span></td><td><a href="https://www.kariwak.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Acajou Restaurant</b>, Tobago</td><td>Caribbean fusion</td><td>Fine dining</td><td><span class="veg">✅ Veg options</span></td><td><a href="https://www.acajouhotel.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Seahorse Inn</b>, Tobago</td><td>International / Caribbean</td><td>Boutique dining</td><td><span class="veg">✅ On request</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Doubles stalls</b>, Port of Spain</td><td>Indian-Caribbean street food</td><td>Street food</td><td><span class="veg">✅ 100% vegetarian</span></td><td>—</td></tr>
+    <tr><td><b>Singh's Doubles</b>, Port of Spain</td><td>Indo-Trinidadian</td><td>Beloved local spot</td><td><span class="veg">✅ All dishes vegetarian</span></td><td>—</td></tr>
+    <tr><td>Breakfast Shed, Port of Spain</td><td>Local creole</td><td>Market dining</td><td><span class="veg">✅ Provision &amp; veg options</span></td><td>—</td></tr>
+    <tr><td>Bake &amp; Shark vendors, Maracas</td><td>Trinidad street classic</td><td>Beach food</td><td><span class="veg">✅ Bake &amp; cheese / veg fillings</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Pigeon Point" onerror="this.parentElement.style.display='none'"><p><b>Pigeon Point, Tobago</b> — iconic jetty over turquoise water · #Tobago</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Rainforest" onerror="this.parentElement.style.display='none'"><p><b>Tobago Forest Reserve</b> — ancient canopy · #TobagoBird</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Argyle Falls" onerror="this.parentElement.style.display='none'"><p><b>Argyle Waterfall</b> — 3-tier cascade · #TobagoCascade</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Scarlet Ibis" onerror="this.parentElement.style.display='none'"><p><b>Caroni Swamp sunset</b> — scarlet ibis in flight · #ScarletIbis</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Infinity pool" onerror="this.parentElement.style.display='none'"><p><b>Acajou infinity pool</b> — ocean horizon · #AcajouHotel</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=400&q=80" alt="Nylon Pool" onerror="this.parentElement.style.display='none'"><p><b>Nylon Pool</b> — transparent ocean sandbar · #NylonPool</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Trinidad Carnival</td><td>February (pre-Lent)</td><td>Carnival</td><td>World-famous — outside June window</td></tr>
+    <tr><td>Tobago Heritage Festival</td><td>Late July</td><td>Culture</td><td>Just after window — check exact dates</td></tr>
+    <tr><td>Trinidad &amp; Tobago Film Festival</td><td>September</td><td>Film</td><td>Outside window</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>T&amp;T has a Muslim community — Eid observed here too. Low season = great hotel availability.</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>Visa-free · UK passport · up to 90 days</dd>
+  <dt>💵 Currency</dt><dd>Trinidad &amp; Tobago Dollar (TTD) · 1 TTD ≈ 0.54 AED · or use USD widely accepted</dd>
+  <dt>💸 Tipping</dt><dd>10–15% in restaurants · appreciated</dd>
+  <dt>✈️ Getting there</dt><dd>Long journey (~18–22h) — worth combining TRI+TOB domestic (~20min, ~330 AED return)</dd>
+  <dt>🚗 Getting around</dt><dd>Hire car recommended in Tobago · taxis &amp; maxi-taxis in Trinidad</dd>
+  <dt>🌡️ June weather</dt><dd>28–30°C · Start of rainy season — afternoon showers, mornings sunny</dd>
+  <dt>🗣️ Language</dt><dd>English (official)</dd>
+  <dt>🏠 Best base</dt><dd>3 nts Trinidad (Kariwak) + 3 nts Tobago (Acajou) for the best of both islands</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Trinidad &amp; Tobago 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Kariwak Village, Trinidad</li>
+    <li>Asa Wright Nature Centre</li>
+    <li>Caroni Bird Sanctuary</li>
+    <li>Maracas Beach</li>
+    <li>Pitch Lake, La Brea</li>
+    <li>Piarco International Airport (POS)</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Acajou Hotel, Tobago</li>
+    <li>Pigeon Point Heritage Beach</li>
+    <li>Buccoo Reef</li>
+    <li>Argyle Waterfall, Tobago</li>
+    <li>Tobago Forest Reserve</li>
+    <li>ANR Robinson Airport (TAB), Tobago</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>6,600</td><td>11,800</td><td>Via LHR or MIA — 2 stops</td></tr>
+    <tr><td>✈️ Domestic TRI–TOB return (×2)</td><td>660</td><td>880</td><td>Caribbean Airlines ~20min</td></tr>
+    <tr><td>🏨 Kariwak Village Trinidad (3 nts)</td><td>1,650</td><td>3,300</td><td>550–1,100/nt</td></tr>
+    <tr><td>🏨 Acajou Hotel Tobago (3 nts)</td><td>5,400</td><td>12,000</td><td>1,800–4,000/nt</td></tr>
+    <tr><td>🚗 Car hire + tours + activities</td><td>1,100</td><td>2,200</td><td>Reef tour, waterfalls, birdwatching</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>15,410</b></td><td><b>30,180</b></td><td><b>22–43% of monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food &amp; dining excluded. Prices marked 📊 Est. are search-sourced Apr 2026; check live booking links for current rates. T&T is exceptional value vs other Caribbean luxury destinations.</p>
+
+<div class="footnote">🇹🇹 Trinidad &amp; Tobago Travel Plan · Generated Apr 2026 · Dubai → Port of Spain/Tobago · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

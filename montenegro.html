@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Montenegro 🇲🇪</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇲🇪 Montenegro</h1>
+    <div class="meta">Dubai → Tivat &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 No visa</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>May</td><td>24°C</td><td>Low</td><td>↓</td><td><span class="badge b-green">Great</span></td></tr>
+    <tr><td><b>June</b></td><td>27°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Best</span></td></tr>
+    <tr><td>Jul–Aug</td><td>32°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Avoid</span></td></tr>
+    <tr><td>Sep</td><td>26°C</td><td>Medium</td><td>↓</td><td><span class="badge b-red">Skip (budget period)</span></td></tr>
+    <tr><td>Oct</td><td>20°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-green">Good</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7. Perfect.</b> June = peak green season, sea swimmable, pre-crush. <b>Strongly recommend.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → TIV (Tivat)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>1,900 – 2,800</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>flydubai (direct, 2×/wk) · Air Serbia via BEG</td>
+      <td>~5h direct / ~7h via BEG</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Tivat-TIV" class="ext" target="_blank">KAYAK</a> · <a href="https://www.flydubai.com/en-ae/flights-from-dubai-to-tivat/" class="ext" target="_blank">flydubai</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>6,600 – 10,300 <span class="badge b-est">📊 Est.</span></td>
+      <td>Turkish Airlines via IST · Austrian via VIE</td>
+      <td>~8h</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Tivat-TIV" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ flydubai now flies <b>direct DXB→TIV</b> — fastest option, 2× weekly</li>
+  <li>Book 6–8 weeks out for June · Cheapest months: Nov–Mar (~1,400 AED)</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>4 nights One&Only Portonovi</b> (Bay of Kotor) + <b>2 nights Aman Sveti Stefan</b>. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>One&Only Portonovi</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>1,900 – 3,300</td>
+      <td>7,600 – 13,200 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Excellent</td>
+      <td>5.0 ★ (1,200+)</td>
+      <td><a href="https://www.oneandonlyresorts.com/portonovi" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/me/one-amp-only-portonovi.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Aman Sveti Stefan</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>3,700 – 9,200</td>
+      <td>7,400 – 18,400 <span style="font-size:0.7rem;color:#888">(2 nts)</span></td>
+      <td>✅ Excellent</td>
+      <td>5.0 ★ (900+)</td>
+      <td><a href="https://www.aman.com/resorts/aman-sveti-stefan" class="ext" target="_blank">Book</a> · <a href="https://www.kayak.com" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+    <tr>
+      <td>Regent Porto Montenegro</td>
+      <td>Luxury</td>
+      <td>1,470 – 3,300</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Good</td>
+      <td>4.5 ★ (2,100+)</td>
+      <td><a href="https://www.ihg.com/regent/hotels/gb/en/tivat/tivme/hoteldetail" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Hyatt Regency Kotor Bay</td>
+      <td>Luxury</td>
+      <td>1,100 – 2,200</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Good</td>
+      <td>4.5 ★ (800+)</td>
+      <td><a href="https://www.hyatt.com/en-US/hotel/montenegro/hyatt-regency-kotor-bay-resort/tivkb" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Hilton Podgorica</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">440 – 735</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Average</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">One&Only Portonovi</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Bathroom" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Bathroom</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Aman Sveti Stefan</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Bathroom" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Bathroom</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 7 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Bay of Kotor</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Bay of Kotor">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into Tivat · 15min transfer to One&Only</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · pool</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Catovica Mlini</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Kotor Old Town · Perast</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=900&q=80" alt="Kotor">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>City walls (sunrise) ~2h</li><li>St Tryphon Cathedral</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Boat to Perast</li><li>Our Lady of the Rocks island</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Konoba Portun, Kotor</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Lovcen National Park</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Lovcen">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Drive Lovcen viewpoint</li><li>Panoramic bay views</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Return · pool · spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Marina sundowner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Transfer → Aman Sveti Stefan</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80" alt="Sveti Stefan">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · 1h drive south</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Aman check-in · private beach pool</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Aman terrace restaurant</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Budva · Jaz Beach</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Jaz Beach">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Budva Old Town (15min)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Jaz Beach club (pool available)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Beach club sundowner · Aman dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Lake Skadar</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80" alt="Lake Skadar">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Drive Lake Skadar (~1.5h)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Boat tour · water lilies · monasteries</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return · final Aman dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · Transfer Tivat airport (~45min)</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">⚠️ No Indian / Mexican / Pan Asian at destination — closest in Podgorica only.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Catovica Mlini</b></td><td>Mediterranean</td><td>Fine dining</td><td><span class="veg">✅</span></td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g298459-d1171905-Reviews-Catovica_Mlini-Morinj_Kotor_Municipality.html" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Stari Mlini</b></td><td>Local / Mediterranean</td><td>Fine dining</td><td><span class="veg">✅</span></td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g298459-d1513766-Reviews-Stari_Mlini-Ljuta_Kotor_Municipality.html" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Konoba Portun</b></td><td>Adriatic / Local</td><td>Local recommended</td><td><span class="veg">✅</span></td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g295380-d2394888-Reviews-Konoba_Portun-Kotor_Kotor_Municipality.html" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Aman restaurant</b></td><td>Mediterranean</td><td>Hotel / fine dining</td><td><span class="veg">✅ Excellent</span></td><td><a href="https://www.aman.com/resorts/aman-sveti-stefan/dining" class="ext" target="_blank">aman.com</a></td></tr>
+    <tr><td>Kotor bakeries</td><td>Local</td><td>Street</td><td><span class="veg">✅ Burek (cheese/spinach)</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Sveti Stefan"><p><b>Sveti Stefan island</b> — coastal road viewpoint · #SvetiStefan</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=400&q=80" alt="Kotor walls"><p><b>Kotor walls sunrise</b> — golden bay light · 6am start</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Lovcen"><p><b>Lovcen viewpoint</b> — bay from above</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Jaz Beach"><p><b>Jaz Beach</b> — mountains meet Adriatic · best light: AM</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Lake Skadar"><p><b>Lake Skadar</b> — water lilies · monastery reflections</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Our Lady of the Rocks"><p><b>Our Lady of the Rocks</b> — island church · #KotorBay</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Kotor Art Festival</td><td>Typically July</td><td>Theatre / Music</td><td>Check 2026 dates</td></tr>
+    <tr><td>Sea Dance Festival</td><td>Late Jul–Aug</td><td>Music festival</td><td>Outside window</td></tr>
+    <tr><td>Sundown Festival</td><td>TBC 2026</td><td>Electronic music</td><td>Check dates</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid week (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>No clashing events · good availability</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>None · UK passport · 90 days</dd>
+  <dt>💶 Currency</dt><dd>Euro (€) · 1€ ≈ 4 AED</dd>
+  <dt>💸 Tipping</dt><dd>~10% · appreciated, not obligatory</dd>
+  <dt>🚗 Getting around</dt><dd>Rent a car — essential for Lovcen, Skadar</dd>
+  <dt>🗣️ Language</dt><dd>Montenegrin · English widely spoken</dd>
+  <dt>🏠 Best base</dt><dd>Bay of Kotor (Tivat/Portonovi) + 2 nts Sveti Stefan</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Montenegro 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>One&Only Portonovi</li>
+    <li>Aman Sveti Stefan</li>
+    <li>Regent Porto Montenegro</li>
+    <li>Kotor Old Town</li>
+    <li>Perast · Our Lady of the Rocks</li>
+    <li>Lovcen viewpoint</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Lake Skadar NP</li>
+    <li>Jaz Beach</li>
+    <li>Budva Old Town</li>
+    <li>Catovica Mlini</li>
+    <li>Stari Mlini · Konoba Portun</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>3,800</td><td>5,600</td><td>flydubai direct or via BEG</td></tr>
+    <tr><td>🏨 One&Only Portonovi (4 nts)</td><td>7,600</td><td>13,200</td><td>1,900–3,300/nt</td></tr>
+    <tr><td>🏨 Aman Sveti Stefan (2 nts)</td><td>7,400</td><td>18,400</td><td>3,700–9,200/nt</td></tr>
+    <tr><td>🚗 Car hire + activities</td><td>1,500</td><td>3,000</td><td>7 days rental + entrance fees</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>20,300</b></td><td><b>40,200</b></td><td><b>29–57% of monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food &amp; dining excluded — not an incremental travel cost. Prices marked 📊 Est. are search-sourced Apr 2026; check live booking links for current rates.</p>
+
+<div class="footnote">🇲🇪 Montenegro Travel Plan · Generated Apr 2026 · Dubai → Tivat · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

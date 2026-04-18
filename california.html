@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>California 🇺🇸</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇺🇸 California</h1>
+    <div class="meta">Dubai → San Francisco (SFO) &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">🍇 Sep–Oct: Harvest Season</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian Excellent</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 ESTA $21 / ~77 AED</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp (SF)</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>12–16°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-red">Cold / wet SF · quiet</span></td></tr>
+    <tr><td>Apr–May</td><td>16–20°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Good — spring wildflowers</span></td></tr>
+    <tr><td>Jun–Jul</td><td>17–21°C</td><td>High</td><td>↑↑</td><td><span class="badge b-red">SF foggy ("Karl the Fog")</span></td></tr>
+    <tr><td><b>Sep–Oct</b></td><td>20–26°C</td><td>Med–High</td><td>↑↑</td><td><span class="badge b-gold">⭐ Best — warm, dry, harvest</span></td></tr>
+    <tr><td>Nov–Dec</td><td>14–18°C</td><td>Low-Med</td><td>↓</td><td><span class="badge b-green">Good — quiet, mild</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Best time: September–October.</b> Warm and dry in SF (20–26°C), Napa Valley harvest season (Sep–Oct is crush season — the best time to visit wineries), Big Sur sunny &amp; clear. <b>June</b> works for the SF sightseeing and Big Sur coast, but Napa can be hot (35°C+). For Eid al-Adha (Jun 6–7), an alternative July or September trip is recommended for the best all-round experience. However June still delivers for the cultural and coastal highlights.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → SFO (San Francisco)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,300 – 5,500</b> <span class="badge b-est">📊 Est. Sep–Oct 2026</span></td>
+      <td>Emirates (direct 16h) · United via EWR · Lufthansa via FRA</td>
+      <td>~16h direct / ~18–22h 1-stop</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>14,700 – 27,500 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business (lie-flat) · United Polaris via EWR</td>
+      <td>~16h direct (Emirates)</td>
+      <td><a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a> · <a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Emirates flies DXB → SFO <b>direct (16h)</b> — highly recommended, excellent A380 service</li>
+  <li>⚠️ ESTA required before travel — apply at <a href="https://esta.cbp.dhs.gov" target="_blank">esta.cbp.dhs.gov</a> · $21 pp · valid 2 years</li>
+  <li>Internal: SFO → Napa Valley by car rental (~1h) · Napa → Big Sur via Highway 1 (~2.5h)</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>3 nights San Francisco</b> (The St. Regis or Proper Hotel) + <b>3 nights Napa Valley</b> (Meadowood or Auberge du Soleil) + <b>3 nights Big Sur</b> (Post Ranch Inn or Ventana). All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>The St. Regis San Francisco</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 4,400</td>
+      <td>6,600 – 13,200 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Indoor pool + spa</td>
+      <td>4.8 ★ (2,400+)</td>
+      <td><a href="https://www.marriott.com/en-us/hotels/sfoxr-the-st-regis-san-francisco" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Proper Hotel San Francisco</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury boutique</td>
+      <td>1,650 – 3,300</td>
+      <td>4,950 – 9,900 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Rooftop pool · SF views</td>
+      <td>4.7 ★ (1,100+)</td>
+      <td><a href="https://www.properhotel.com/hotels/san-francisco/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Meadowood Napa Valley</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>3,300 – 6,600</td>
+      <td>9,900 – 19,800 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Croquet lawn pool · vineyard setting</td>
+      <td>4.9 ★ (900+)</td>
+      <td><a href="https://www.meadowood.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Auberge du Soleil, Napa</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 5,500</td>
+      <td>6,600 – 16,500 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Hillside pool · valley views</td>
+      <td>4.9 ★ (1,200+)</td>
+      <td><a href="https://www.aubergedusoleil.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Post Ranch Inn, Big Sur</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>4,400 – 8,800</td>
+      <td>13,200 – 26,400 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Clifftop heated pool · Pacific views</td>
+      <td>5.0 ★ (1,800+)</td>
+      <td><a href="https://www.postranchinn.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Ventana Big Sur (Alila)</td>
+      <td>Ultra-luxury</td>
+      <td>2,750 – 5,500</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Stunning pools · redwood forest</td>
+      <td>4.9 ★ (1,400+)</td>
+      <td><a href="https://www.ventanabigur.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Marriott Union Square, SF</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">660 – 1,100</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Small pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Post Ranch Inn — Big Sur</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Big Sur cliff" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌊 Pacific cliffs</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Pool sunset" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Clifftop pool</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Auberge du Soleil — Napa Valley</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=400&q=80" alt="Napa vineyard" onerror="this.parentElement.style.display='none'">
+        <figcaption>🍇 Napa vineyard</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Napa pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Valley views</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · San Francisco · St. Regis / Proper Hotel</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=900&q=80" alt="San Francisco" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>DXB → SFO Emirates direct (~16h)</li><li>St. Regis or Proper Hotel check-in</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Recover · hotel pool or spa</li><li>SoMa neighbourhood walk</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Californios or Benu</li><li>Early night (jet lag ~12h ahead)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">San Francisco · Golden Gate · Ferry Building</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=900&q=80" alt="Golden Gate Bridge" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Golden Gate Bridge viewpoint (Marin Headlands)</li><li>Crissy Field walk</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Ferry Building Marketplace</li><li>Bi-Rite Creamery · Mission District murals</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Nopa (California cuisine)</li><li>Proper Hotel rooftop pool bar</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Alcatraz · Chinatown · Bay Area Dining</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=900&q=80" alt="Alcatraz" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Alcatraz island ferry tour (book ahead!)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Chinatown lunch (excellent vegetarian dim sum)</li><li>North Beach · City Lights bookshop</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Greens Restaurant (vegetarian icon)</li><li>Bay views · Fort Mason</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Drive to Napa Valley · Auberge du Soleil</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=900&q=80" alt="Napa Valley" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>SFO checkout · scenic drive over Bay Bridge (~1h)</li><li>Auberge du Soleil check-in · Rutherford</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Rutherford Hill tasting (first winery)</li><li>Auberge hillside pool · valley view</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Auberge du Soleil Restaurant (Michelin)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 5–6</span><div class="loc">Napa Valley · Wineries · Harvest Season</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Winery" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Hot air balloon over Napa (early morning)</li><li>Opus One / Stag's Leap tasting</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Oxbow Public Market (veg-friendly)</li><li>Spa at Auberge or Meadowood</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: The French Laundry (Keller, pre-book months ahead)</li><li>Or Bouchon Bistro as alternative</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Drive Napa → Big Sur · Highway 1</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Highway 1 Big Sur" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Napa checkout · south on Hwy 101</li><li>Bixby Bridge first stop (~2.5h drive)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Post Ranch Inn check-in · treehouse suite</li><li>Clifftop infinity pool · Pacific views</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Sierra Mar at Post Ranch Inn</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 8–9</span><div class="loc">Big Sur · Coastal Hikes · Jade Cove</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=900&q=80" alt="Big Sur coast" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Pfeiffer Beach sunrise (purple sand)</li><li>McWay Falls trail · coastal walk</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Jade Cove cliffs · whale watching (binoculars)</li><li>Post Ranch pool · yoga deck</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Stargazing from cliff deck</li><li>Sierra Mar 4-course dinner · Sommelier</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Departure — SFO</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final cliffs walk · checkout</li><li>Drive north Big Sur → Monterey → SFO (~3h) → DXB overnight</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">🌿 <b>California is outstanding for vegetarians.</b> San Francisco has one of the world's best plant-based dining scenes. Indian, Mexican, Pan-Asian, and Californian cuisine all have exceptional vegetarian offerings. Bay Area is the birthplace of California cuisine — farm-to-table with abundant produce. Napa Valley farm-fresh vegetable menus are world-class.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>City</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Greens Restaurant</b></td><td>Vegetarian fine dining (iconic)</td><td>San Francisco</td><td><span class="veg">✅ 100% vegetarian</span></td><td><a href="https://www.greensrestaurant.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Nopa</b></td><td>California organic</td><td>San Francisco</td><td><span class="veg">✅ Excellent veg options</span></td><td><a href="https://nopasf.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Californios</b></td><td>California-Mexican fine dining</td><td>San Francisco</td><td><span class="veg">✅ Vegetarian tasting menu available</span></td><td><a href="https://www.californiossf.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>The French Laundry</b></td><td>French/California (Thomas Keller)</td><td>Yountville, Napa</td><td><span class="veg">✅ Full vegetarian tasting menu — notify in advance</span></td><td><a href="https://www.thomaskeller.com/tfl" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Auberge du Soleil Restaurant</b></td><td>California French (Michelin)</td><td>Rutherford, Napa</td><td><span class="veg">✅ Farm-to-table · full veg menu</span></td><td><a href="https://www.aubergedusoleil.com/restaurant" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Sierra Mar, Post Ranch Inn</b></td><td>California cuisine</td><td>Big Sur</td><td><span class="veg">✅ Seasonal veg tasting menu</span></td><td><a href="https://www.postranchinn.com/sierra-mar" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td>Vik's Chaat (Indian street food)</td><td>South Indian vegetarian</td><td>Berkeley/Oakland</td><td><span class="veg">✅ Exceptional — all vegetarian</span></td><td><a href="https://vikschaat.com" class="ext" target="_blank">vikschaat.com</a></td></tr>
+    <tr><td>Gracias Madre</td><td>Plant-based Mexican</td><td>San Francisco</td><td><span class="veg">✅ 100% plant-based Mexican</span></td><td><a href="https://www.graciasmadresf.com" class="ext" target="_blank">Book</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400&q=80" alt="Golden Gate" onerror="this.parentElement.style.display='none'"><p><b>Golden Gate Bridge</b> — Marin Headlands viewpoint · sunrise fog · #GoldenGate</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Bixby Bridge" onerror="this.parentElement.style.display='none'"><p><b>Bixby Bridge Big Sur</b> — Hwy 1 lookout point · #BigSur #Highway1</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=400&q=80" alt="Napa vineyard" onerror="this.parentElement.style.display='none'"><p><b>Napa Valley harvest</b> — golden rows of vines · Sep–Oct · #NapaValley</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=400&q=80" alt="McWay Falls" onerror="this.parentElement.style.display='none'"><p><b>McWay Falls</b> — waterfall onto beach · Big Sur · impossible view</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=400&q=80" alt="SF Bay" onerror="this.parentElement.style.display='none'"><p><b>Alcatraz from the bay</b> — evening ferry · San Francisco skyline behind</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Post Ranch pool" onerror="this.parentElement.style.display='none'"><p><b>Post Ranch Inn pool</b> — cliff edge pool · Pacific below · #PostRanchInn</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — September–October 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>Napa Valley Harvest Season</b></td><td>Sep–Oct</td><td>Wine / Agriculture</td><td><b>Crush season — wineries at their most vibrant</b></td></tr>
+    <tr><td>Bottlerock Napa</td><td>Typically May</td><td>Music festival</td><td>Outside Sep window</td></tr>
+    <tr><td>Fleet Week San Francisco</td><td>Early Oct</td><td>Blue Angels airshow</td><td>Spectacular from waterfront · free</td></tr>
+    <tr><td>Hardly Strictly Bluegrass</td><td>Early Oct</td><td>Music festival</td><td>Free festival in Golden Gate Park</td></tr>
+    <tr><td>San Francisco Outside Lands</td><td>Aug</td><td>Music festival</td><td>Check 2026 dates</td></tr>
+    <tr><td>Napa Valley Film Festival</td><td>Nov</td><td>Film</td><td>Close to window — check dates</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>ESTA required · UK passport · $21 (≈77 AED) · apply at <a href="https://esta.cbp.dhs.gov" class="ext" target="_blank">esta.cbp.dhs.gov</a> · valid 2 years</dd>
+  <dt>💵 Currency</dt><dd>US Dollar (USD) · 1 USD ≈ 3.67 AED · credit cards universal</dd>
+  <dt>💸 Tipping</dt><dd>18–22% at restaurants (standard, not optional) · $5–10 hotel porterage · $3–5 valets</dd>
+  <dt>🚗 Getting around</dt><dd>Rental car essential outside SF. SF itself: Lyft/Uber, cable cars, walking. Pre-book car for Napa + Big Sur.</dd>
+  <dt>🌡️ Sep–Oct weather</dt><dd>SF: 18–24°C · Napa: 22–32°C · Big Sur: 18–22°C · minimal rain</td>
+  <dt>🗣️ Language</dt><dd>English · California is internationally welcoming · no issues</dd>
+  <dt>🍷 Wine tip</dt><dd>The French Laundry and Auberge du Soleil book out months ahead — reserve immediately</dd>
+  <dt>⏰ Time zone</dt><dd>PST (UTC-8 Sep–Oct) · 12h behind UAE · jet lag significant — plan first day lightly</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"California 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>The St. Regis San Francisco</li>
+    <li>Proper Hotel San Francisco</li>
+    <li>Golden Gate Bridge · Marin Headlands viewpoint</li>
+    <li>Ferry Building Marketplace</li>
+    <li>Greens Restaurant · Fort Mason</li>
+    <li>Alcatraz Island ferry terminal</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Auberge du Soleil · Rutherford, Napa</li>
+    <li>The French Laundry · Yountville</li>
+    <li>Post Ranch Inn · Big Sur</li>
+    <li>Bixby Bridge viewpoint · Hwy 1</li>
+    <li>McWay Falls trailhead · Julia Pfeiffer Burns SP</li>
+    <li>Pfeiffer Beach · Big Sur</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>6,600</td><td>11,000</td><td>Emirates direct DXB→SFO</td></tr>
+    <tr><td>🛂 ESTA ×2</td><td>154</td><td>154</td><td>$21 pp fixed</td></tr>
+    <tr><td>🏨 Proper Hotel / St. Regis SF (3 nts)</td><td>4,950</td><td>13,200</td><td>1,650–4,400/nt</td></tr>
+    <tr><td>🏨 Auberge du Soleil, Napa (3 nts)</td><td>6,600</td><td>16,500</td><td>2,200–5,500/nt</td></tr>
+    <tr><td>🏨 Post Ranch Inn, Big Sur (3 nts)</td><td>13,200</td><td>26,400</td><td>4,400–8,800/nt</td></tr>
+    <tr><td>🚗 Car rental (7 days Napa + Big Sur)</td><td>1,470</td><td>2,200</td><td>Mid-size · ~210–315 AED/day</td></tr>
+    <tr><td>🍽️ Dining (SF + Napa 10 days — restaurants costly)</td><td>4,400</td><td>8,800</td><td>~440–880 AED/day/couple incl. fine dining</td></tr>
+    <tr><td>🎉 Activities (Alcatraz, balloon, wineries)</td><td>1,100</td><td>2,200</td><td>Tours and experiences</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>38,474</b></td><td><b>80,454</b></td><td><b>55–115% of monthly income — excellent value for US luxury</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">California dining is expensive — budget $100–250 per person for fine dining dinners (367–918 AED). Napa Valley restaurants especially ($250–400 pp for tasting menus). Post Ranch Inn is pricey but uniquely special. Prices marked 📊 Est. sourced Apr 2026. Restaurants require advance reservations — book before travel.</p>
+
+<div class="footnote">🇺🇸 California Travel Plan · Generated Apr 2026 · Dubai → San Francisco · SF + Napa Valley + Big Sur · Best time Sep–Oct (harvest season)</div>
+
+</div>
+</body>
+</html>

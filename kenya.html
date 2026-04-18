@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenya 🇰🇪</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇰🇪 Kenya — Luxury Safari</h1>
+    <div class="meta">Dubai → Nairobi (NBO) &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Ultra-Luxury Safari</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 e-Visa required</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Feb</td><td>28°C</td><td>Low–Medium</td><td>↑</td><td><span class="badge b-green">Good — dry, animals concentrated</span></td></tr>
+    <tr><td>Mar–May</td><td>24°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-red">Long rains — avoid safari</span></td></tr>
+    <tr><td><b>Jul–Oct</b></td><td>22–26°C</td><td>High</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Best — Great Migration</span></td></tr>
+    <tr><td>Nov</td><td>27°C</td><td>Medium</td><td>↓</td><td><span class="badge b-green">Good — short rains begin</span></td></tr>
+    <tr><td>Dec</td><td>28°C</td><td>High</td><td>↑↑</td><td><span class="badge b-green">Good — festive crowds</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Best window: July–October</b> for the Great Wildebeest Migration across the Mara River — one of the greatest wildlife spectacles on Earth. <b>July is prime.</b> Eid al-Adha (Jun 6–7) falls just before peak season — consider travelling Jun 4–13 to catch early migration arrivals while prices are slightly lower. Eid al-Fitr (Mar 30–31) falls in the rainy season — not recommended for Kenya safari.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → NBO (Nairobi)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>2,200 – 3,400</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates (via connection) · Kenya Airways · flydubai + KQ</td>
+      <td>~5–7h (1 stop)</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-NBO" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>9,500 – 16,500 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business · Kenya Airways B787</td>
+      <td>~5–7h</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-NBO" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Emirates flies DXB→NBO with connections — comfortable and reliable</li>
+  <li>Kenya Airways operates direct NBO routes — check seasonal schedules</li>
+  <li>Internal flights NBO→Maasai Mara (Wilson Airport): ~45 min, ~550–900 AED p/p one way via SafariLink / Air Kenya</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels &amp; Safari Camps</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>2 nights Nairobi</b> (Giraffe Manor or The Emakoko) + <b>4 nights Angama Mara</b> + <b>3 nights Singita Mara River</b>. All AED.</p>
+<table>
+  <thead><tr><th>Property</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Angama Mara</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>11,000 – 18,000 <span style="font-size:0.7rem;color:#888">(all-incl p/p)</span></td>
+      <td>88,000 – 144,000 <span style="font-size:0.7rem;color:#888">(4 nts couple)</span></td>
+      <td>✅ Infinity pool · Mara views</td>
+      <td>5.0 ★ (800+)</td>
+      <td><a href="https://angama.com/mara/" class="ext" target="_blank">Book</a> · <a href="https://www.tripadvisor.com/Hotel_Review-g2327386-d6774580-Reviews-Angama_Mara.html" class="ext" target="_blank">TA</a></td>
+    </tr>
+    <tr>
+      <td><b>Singita Mara River Tented Camp</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>13,000 – 22,000 <span style="font-size:0.7rem;color:#888">(all-incl p/p)</span></td>
+      <td>78,000 – 132,000 <span style="font-size:0.7rem;color:#888">(3 nts couple)</span></td>
+      <td>✅ Plunge pool per suite</td>
+      <td>5.0 ★ (400+)</td>
+      <td><a href="https://singita.com/lodge/singita-mara-river-tented-camp/" class="ext" target="_blank">Book</a> · <a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td>
+    </tr>
+    <tr>
+      <td><b>Giraffe Manor</b> (Nairobi) <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury / Iconic</td>
+      <td>7,400 – 14,700 <span style="font-size:0.7rem;color:#888">(p/p all-incl)</span></td>
+      <td>29,600 – 58,800 <span style="font-size:0.7rem;color:#888">(2 nts couple)</span></td>
+      <td>⚠️ No pool — unique giraffe experience</td>
+      <td>4.5 ★ (1,200+)</td>
+      <td><a href="https://www.thesafaricollection.com/properties/giraffe-manor/" class="ext" target="_blank">Book</a> · <a href="https://www.tripadvisor.com/Hotel_Review-g294207-d301614-Reviews-Giraffe_Manor.html" class="ext" target="_blank">TA</a></td>
+    </tr>
+    <tr>
+      <td><b>The Emakoko</b> (Nairobi NP edge)</td>
+      <td>Luxury</td>
+      <td>5,500 – 8,000 <span style="font-size:0.7rem;color:#888">(all-incl p/p)</span></td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt. Nairobi)</span></td>
+      <td>✅ Infinity pool · park views</td>
+      <td>5.0 ★ (600+)</td>
+      <td><a href="https://www.theemakoko.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Fairmont Norfolk Hotel (Nairobi)</td>
+      <td>Luxury</td>
+      <td>1,800 – 3,700</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Pool</td>
+      <td>4.5 ★ (3,000+)</td>
+      <td><a href="https://www.fairmont.com/norfolk-nairobi/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Hemingways Nairobi</td>
+      <td style="color:#aaa">Standard ref.</td>
+      <td style="color:#aaa">1,100 – 2,200</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">✅ Pool</td>
+      <td style="color:#aaa">4.5 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Angama Mara</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Safari landscape" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌅 Mara views</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&q=80" alt="Luxury tent" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Infinity pool</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Giraffe Manor · Nairobi</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1535083783855-ded51a20b531?w=400&q=80" alt="Giraffe" onerror="this.parentElement.style.display='none'">
+        <figcaption>🦒 Morning giraffes</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=400&q=80" alt="Safari room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛏️ Suite</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Nairobi</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=900&q=80" alt="Nairobi" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly DXB → NBO · ~6h</li><li>Transfer to Giraffe Manor</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · giraffe feeding</li><li>Afternoon tea on the lawn</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Private dinner at the Manor</li><li>Included in rate</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Nairobi · Karen Blixen · Sheldrick</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1535083783855-ded51a20b531?w=900&q=80" alt="Giraffe" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Giraffe breakfast — feed from your plate</li><li>Sheldrick Wildlife Trust (elephant orphans)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Karen Blixen Museum</li><li>Kazuri Beads workshop</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Talisman Restaurant (veg-friendly)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Fly to Maasai Mara · Angama Mara</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80" alt="Maasai Mara" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Transfer Wilson Airport</li><li>SafariLink flight (~45 min)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Angama Mara check-in</li><li>First game drive (3–6pm)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sundowner in the bush</li><li>Bush dinner under the stars</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Angama · Full Day Safari</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=900&q=80" alt="Safari" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Dawn game drive 6am</li><li>Big Five spotting</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Infinity pool · relax</li><li>Optional Maasai village visit</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Evening game drive</li><li>Private bush dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Angama · Hot Air Balloon Safari</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=900&q=80" alt="Hot air balloon" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Dawn</div><ul><li>Hot air balloon sunrise ~5:30am</li><li>Float over the Mara</li></ul></div>
+      <div class="session"><div class="slab">☀️ Morning</div><ul><li>Bush champagne breakfast</li><li>Back to camp · pool &amp; spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Evening drive · leopard territory</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Angama · Migration Crossing</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80" alt="Migration" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Mara River game drive</li><li>Wildebeest crossing (July peak)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Photography session with guide</li><li>Return: pool · sundowner</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Final Angama dinner · stargazing</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Transfer → Singita Mara River Camp</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=900&q=80" alt="Singita" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Short transfer within Mara (~1h)</li><li>Singita Mara River check-in</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Plunge pool · in-suite relaxation</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Private river-side dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 8–9</span><div class="loc">Singita · Deep Mara Experience</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1484406566174-9da000fda645?w=900&q=80" alt="Africa wildlife" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Mornings</div><ul><li>Dawn drives · lion prides</li><li>Mara River crossings</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoons</div><ul><li>Spa · wine cellar tour</li><li>Walk with Maasai warriors</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evenings</div><ul><li>Sundowners in the bush</li><li>Private dining experiences</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Departure — Mara → NBO → DXB</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final sunrise walk · checkout</li><li>Fly Mara → Nairobi Wilson → DXB</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">All-inclusive safari camps provide all meals — vegetarian menus available on request. Nairobi has excellent Indian options.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Angama Mara Dining</b></td><td>Contemporary African / Int'l</td><td>All-inclusive camp dining</td><td><span class="veg">✅ Full veg menu on request</span></td><td><a href="https://angama.com/mara/" class="ext" target="_blank">angama.com</a></td></tr>
+    <tr><td><b>Singita Mara River Dining</b></td><td>Gourmet African fusion</td><td>All-inclusive camp dining</td><td><span class="veg">✅ Custom menus available</span></td><td><a href="https://singita.com" class="ext" target="_blank">singita.com</a></td></tr>
+    <tr><td><b>Talisman Restaurant</b> (Nairobi)</td><td>International / African fusion</td><td>Fine dining</td><td><span class="veg">✅ Excellent veg menu</span></td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g294207-d783977-Reviews-Talisman_Restaurant-Nairobi.html" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Haandi Restaurant</b> (Nairobi)</td><td>Indian — North Indian</td><td>Fine dining</td><td><span class="veg">✅ Outstanding Indian veg</span></td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g294207-d799025-Reviews-Haandi_Restaurant-Nairobi.html" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Carnivore</b> (Nairobi) — skip for veg</td><td>African grill</td><td>Landmark / touristy</td><td>⚠️ Very limited veg options</td><td>—</td></tr>
+    <tr><td>Giraffe Manor Restaurant</td><td>Continental</td><td>Hotel dining</td><td><span class="veg">✅ Good veg options</span></td><td><a href="https://www.thesafaricollection.com" class="ext" target="_blank">Book</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1535083783855-ded51a20b531?w=400&q=80" alt="Giraffe Manor" onerror="this.parentElement.style.display='none'"><p><b>Giraffe Manor breakfast</b> — giraffe head at your window · #GiraffeManor</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Maasai Mara" onerror="this.parentElement.style.display='none'"><p><b>Mara plains at golden hour</b> — acacia silhouettes · #MaasaiMara</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=400&q=80" alt="Balloon safari" onerror="this.parentElement.style.display='none'"><p><b>Hot air balloon over Mara</b> — dawn light · #BalloonSafari</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&q=80" alt="Angama infinity pool" onerror="this.parentElement.style.display='none'"><p><b>Angama infinity pool</b> — Mara escarpment view · #Angama</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?w=400&q=80" alt="Wildlife" onerror="this.parentElement.style.display='none'"><p><b>Migration crossing</b> — Mara River wildebeest · #GreatMigration</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80" alt="Savanna sunset" onerror="this.parentElement.style.display='none'"><p><b>Sundowner in the bush</b> — canvas chair, G&amp;T, sunset · #BushSundowner</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — July 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>Great Wildebeest Migration</b></td><td>Jul–Oct 2026</td><td>Wildlife event</td><td><b>Peak Mara River crossings — world's greatest wildlife spectacle</b></td></tr>
+    <tr><td>Nairobi Fashion Week</td><td>Typically October</td><td>Fashion / culture</td><td>Outside July window</td></tr>
+    <tr><td>Magical Kenya Open (Golf)</td><td>Typically March</td><td>Sports</td><td>Outside window</td></tr>
+    <tr><td>Lewa Wildlife Conservancy Marathon</td><td>Typically June</td><td>Sports</td><td>Check 2026 dates</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>e-Visa required · ~$50 (≈183 AED) · Apply at <a href="https://evisa.go.ke" class="ext" target="_blank">evisa.go.ke</a> · 3–5 days processing</dd>
+  <dt>💶 Currency</dt><dd>Kenyan Shilling (KES) · USD widely accepted at camps · 1 USD ≈ 3.67 AED</dd>
+  <dt>💸 Tipping</dt><dd>Safari guide: ~$20–30/day per couple (73–110 AED) · camp staff: $5–10/day each</dd>
+  <dt>🚗 Getting around</dt><dd>All transfers arranged by camps · internal charter flights essential (Mara)</dd>
+  <dt>💉 Health</dt><dd>Yellow fever cert required · Malaria prophylaxis recommended · consult GP</dd>
+  <dt>🗣️ Language</dt><dd>English (official) · Swahili · English universally spoken at luxury camps</dd>
+  <dt>📸 Photography</dt><dd>Bring telephoto lens (200–400mm) · dust protector for camera gear</dd>
+  <dt>👗 Dress code</dt><dd>Neutral colours (khaki/olive) for safari · no white or bright colours in bush</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Kenya Safari 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Giraffe Manor, Karen, Nairobi</li>
+    <li>Angama Mara, Maasai Mara</li>
+    <li>Singita Mara River Tented Camp</li>
+    <li>Wilson Airport, Nairobi</li>
+    <li>Sheldrick Wildlife Trust</li>
+    <li>Karen Blixen Museum</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Maasai Mara National Reserve</li>
+    <li>Mara River Crossing Points</li>
+    <li>Talisman Restaurant, Karen</li>
+    <li>Haandi Restaurant, Nairobi</li>
+    <li>Nairobi National Park</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB↔NBO (economy ×2 return)</td><td>4,400</td><td>6,800</td><td>Economy return</td></tr>
+    <tr><td>✈️ Internal flights (NBO↔Mara ×2 return)</td><td>4,000</td><td>6,600</td><td>SafariLink / Air Kenya</td></tr>
+    <tr><td>🏨 Giraffe Manor (2 nts all-incl couple)</td><td>29,600</td><td>58,800</td><td>Iconic Nairobi experience</td></tr>
+    <tr><td>🏕️ Angama Mara (4 nts all-incl couple)</td><td>88,000</td><td>144,000</td><td>All-inclusive, infinity pool</td></tr>
+    <tr><td>🏕️ Singita Mara River (3 nts all-incl couple)</td><td>78,000</td><td>132,000</td><td>All-inclusive, plunge pools</td></tr>
+    <tr><td>🎈 Hot air balloon safari (×2)</td><td>2,200</td><td>3,000</td><td>~$300 p/p</td></tr>
+    <tr><td>🛂 Kenya e-Visa (×2)</td><td>366</td><td>366</td><td>~$50 p/p</td></tr>
+    <tr><td>💡 Tips &amp; incidentals</td><td>2,000</td><td>4,000</td><td>Guides, staff, extras</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>208,566</b></td><td><b>355,566</b></td><td><b>Top-tier safari · 298–508% monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">All-inclusive safari rates cover all meals, drinks, game drives, and lodge activities. Prices marked 📊 Est. are Apr 2026 estimates — check direct with lodges for current rates. Kenya safari is a once-in-a-lifetime premium experience best done at the highest tier.</p>
+
+<div class="footnote">🇰🇪 Kenya Luxury Safari Travel Plan · Generated Apr 2026 · Dubai → Nairobi → Maasai Mara · Great Migration Season</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Las Vegas 🎰</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🎰 Las Vegas</h1>
+    <div class="meta">Dubai → Las Vegas LAS &nbsp;·&nbsp; 5 days &nbsp;·&nbsp; 4 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 ESTA ($21 / ~77 AED)</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Mar–Apr</td><td>20–26°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Best — mild</span></td></tr>
+    <tr><td>May</td><td>30°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Good</span></td></tr>
+    <tr><td><b>June</b></td><td>38–42°C</td><td>High</td><td>↑↑</td><td><span class="badge b-gold">⭐ Great (Eid — but hot!)</span></td></tr>
+    <tr><td>Jul–Aug</td><td>40–45°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Extreme heat</span></td></tr>
+    <tr><td>Sep–Oct</td><td>28–33°C</td><td>Medium</td><td>↓</td><td><span class="badge b-green">Good value</span></td></tr>
+    <tr><td>Nov–Feb</td><td>8–15°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-green">Cheap &amp; cool</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7.</b> Las Vegas in June = very hot (38–42°C) but the Strip is entirely air-conditioned. <b>Pool culture is at its peak</b> — every hotel has epic pool parties. Perfect for pool lovers willing to embrace the heat. Book well in advance — June is busy. <b>Recommended if you're pool-focused; consider Oct for milder weather.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → LAS (Las Vegas)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,300 – 5,500</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates via DXB–JFK then domestic · United via EWR · Delta via ATL</td>
+      <td>~17–20h (1 stop)</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Las-Vegas-LAS" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>18,000 – 36,700 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business (flat bed to JFK/LAX) + domestic first</td>
+      <td>~18–20h total</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Las-Vegas-LAS" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Best routing: Emirates DXB→JFK/LAX, then Southwest/United domestic to LAS (~1h)</li>
+  <li>🇬🇧 UK passport = <b>ESTA required</b> — apply at <a href="https://esta.cbp.dhs.gov" class="ext" target="_blank">esta.cbp.dhs.gov</a> · $21 (~77 AED) · valid 2 years</li>
+  <li>Book 8–10 weeks out for June · Add TSA PreCheck or Global Entry if frequent US traveller</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>4 nights on The Strip</b> — ultra-luxury pool scene is a defining Vegas experience. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Wynn Las Vegas</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 5,500</td>
+      <td>8,800 – 22,000 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Legendary pool complex</td>
+      <td>4.5 ★ (12,000+)</td>
+      <td><a href="https://www.wynnlasvegas.com" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/us/wynn-las-vegas.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Four Seasons Las Vegas</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,900 – 6,600</td>
+      <td>11,600 – 26,400 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Exclusive non-casino pool</td>
+      <td>5.0 ★ (2,400+)</td>
+      <td><a href="https://www.fourseasons.com/lasvegas/" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/us/four-seasons-las-vegas.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Encore at Wynn</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>1,800 – 4,400</td>
+      <td>7,200 – 17,600 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Encore Beach Club</td>
+      <td>4.5 ★ (8,000+)</td>
+      <td><a href="https://www.wynnlasvegas.com/encore" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Bellagio</td>
+      <td>Luxury</td>
+      <td>1,470 – 3,670</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Pool garden</td>
+      <td>4.5 ★ (20,000+)</td>
+      <td><a href="https://bellagio.mgmresorts.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Paris Las Vegas</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">370 – 735</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Basic pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Wynn Las Vegas</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Wynn pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Four Seasons Las Vegas</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Private pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Luxury suite</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 5 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Check-in · The Strip at Night</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Las Vegas Strip" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into LAS · 30min to Strip hotels</li><li>Check-in Wynn or Four Seasons</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool time · first impressions</li><li>Spa if tired from flight</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Strip walk at night (Bellagio fountains)</li><li>Dinner: Tableau at Wynn</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Pool Day · Shows · Fine Dining</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Las Vegas pool" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Leisurely breakfast at hotel</li><li>Wynn spa morning ritual</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool all afternoon · Encore Beach Club</li><li>Poolside cocktails</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Cirque du Soleil "O" at Bellagio</li><li>Late dinner: Joël Robuchon (veg tasting)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Grand Canyon Day Trip</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80" alt="Grand Canyon" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Early departure: Grand Canyon West (~2.5h)</li><li>Skywalk glass bridge</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Canyon rim views · helicopter option</li><li>Return to Vegas (~2.5h)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Spago at Bellagio (veg menu)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Shopping · Spa · Rooftop</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80" alt="Las Vegas luxury" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Fashion Show Mall · The Shops at Wynn</li><li>Crystals at CityCenter</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Four Seasons pool · full spa day</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: é by José Andrés (pre-book essential)</li><li>Bellagio fountain show (night)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Departure Day</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final pool session · late checkout if possible</li><li>Transfer to LAS airport (~20min)</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Las Vegas has exceptional vegetarian fine dining — nearly every Michelin-starred restaurant offers a full vegetarian or veg tasting menu. Indian &amp; Pan Asian options also outstanding.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Joël Robuchon</b>, MGM Grand</td><td>French</td><td>Fine dining (3 Michelin)</td><td><span class="veg">✅ Full veg tasting menu</span></td><td><a href="https://www.joel-robuchon.com/en/las-vegas" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>é by José Andrés</b>, The Cosmopolitan</td><td>Avant-garde Spanish</td><td>Chef's table (Michelin)</td><td><span class="veg">✅ Veg menu on request</span></td><td><a href="https://www.cosmopolitanlasvegas.com/restaurants/e-by-jose-andres" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Tableau</b>, Wynn</td><td>American / Contemporary</td><td>Fine dining</td><td><span class="veg">✅ Excellent veg options</span></td><td><a href="https://www.wynnlasvegas.com/dining" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Spago</b>, Bellagio</td><td>California cuisine</td><td>Fine dining</td><td><span class="veg">✅ Strong veg menu</span></td><td><a href="https://www.wolfgangpuck.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Origin India</b></td><td>Indian</td><td>Upscale Indian</td><td><span class="veg">✅ Extensive veg menu</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Lotus of Siam</b></td><td>Thai</td><td>Acclaimed local</td><td><span class="veg">✅ Many veg Thai dishes</span></td><td><a href="https://www.saipinchutima.com" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td>Wicked Spoon buffet, Cosmopolitan</td><td>American / International</td><td>Upscale buffet</td><td><span class="veg">✅ Wide veg selection</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Bellagio fountains" onerror="this.parentElement.style.display='none'"><p><b>Bellagio Fountains</b> — best at night · #Bellagio #LasVegas</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Vegas Strip" onerror="this.parentElement.style.display='none'"><p><b>The Strip at night</b> — neon skyline from BLVD Bar · #VegasStrip</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Vegas pool" onerror="this.parentElement.style.display='none'"><p><b>Wynn Pool</b> — cabana life · #WynnLasVegas #PoolLife</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Grand Canyon" onerror="this.parentElement.style.display='none'"><p><b>Grand Canyon West</b> — Skywalk · #GrandCanyon</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Vegas luxury" onerror="this.parentElement.style.display='none'"><p><b>Crystals CityCenter</b> — architecture shots · #Vegas</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Vegas night" onerror="this.parentElement.style.display='none'"><p><b>Welcome to Las Vegas sign</b> — classic shot · #WelcomeToVegas</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Vegas F1 Grand Prix</td><td>November</td><td>Motorsport</td><td>Outside window — huge price spike in Nov</td></tr>
+    <tr><td>Residency shows (various)</td><td>Year-round</td><td>Music</td><td>Check Sphere, Dolby Live schedules for June</td></tr>
+    <tr><td>Cirque du Soleil "O"</td><td>Year-round</td><td>Performance</td><td>✅ Available June — pre-book</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Peak pool season — book hotel pool cabanas in advance</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>ESTA required · $21 (~77 AED) · apply at esta.cbp.dhs.gov · valid 2 years</dd>
+  <dt>💵 Currency</dt><dd>US Dollar (USD) · 1 USD ≈ 3.67 AED</dd>
+  <dt>💸 Tipping</dt><dd>15–20% standard in restaurants · $1–2 per drink at bars</dd>
+  <dt>🚗 Getting around</dt><dd>Uber/Lyft from airport ~$15 · Strip walkable · monorail for Strip hotels</dd>
+  <dt>🌡️ June weather</dt><dd>38–42°C · Dry desert heat — pool &amp; AC life. Sunscreen essential.</dd>
+  <dt>🏠 Best base</dt><dd>Stay on The Strip — Wynn end (north) is luxury-focused</dd>
+  <dt>🗣️ Language</dt><dd>English</dd>
+  <dt>📱 SIM</dt><dd>T-Mobile or AT&amp;T prepaid · or international roaming on UAE SIM</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Las Vegas 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Wynn Las Vegas</li>
+    <li>Four Seasons Las Vegas</li>
+    <li>Encore Beach Club</li>
+    <li>Bellagio Fountains</li>
+    <li>Crystals at CityCenter</li>
+    <li>Welcome to Las Vegas Sign</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Grand Canyon West (day trip)</li>
+    <li>The Sphere (MSG)</li>
+    <li>Fashion Show Mall</li>
+    <li>Joël Robuchon, MGM Grand</li>
+    <li>Lotus of Siam</li>
+    <li>Harry Reid International Airport (LAS)</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>6,600</td><td>11,000</td><td>Emirates via JFK + domestic</td></tr>
+    <tr><td>🏨 Wynn Las Vegas (4 nts)</td><td>8,800</td><td>22,000</td><td>2,200–5,500/nt</td></tr>
+    <tr><td>🎟️ Activities (Canyon, shows, spa)</td><td>2,200</td><td>5,500</td><td>Grand Canyon + Cirque + spa</td></tr>
+    <tr><td>🛂 ESTA (×2)</td><td>155</td><td>155</td><td>$21/person</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>17,755</b></td><td><b>38,655</b></td><td><b>25–55% of monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food &amp; dining excluded. Prices marked 📊 Est. are search-sourced Apr 2026; check live booking links for current rates.</p>
+
+<div class="footnote">🎰 Las Vegas Travel Plan · Generated Apr 2026 · Dubai → Las Vegas · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

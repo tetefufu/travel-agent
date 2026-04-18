@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turkey 🇹🇷</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇹🇷 Turkey</h1>
+    <div class="meta">Dubai → Istanbul + Cappadocia &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian Paradise</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 e-Visa ~$50 / ~184 AED</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp (Istanbul)</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>8–12°C</td><td>Very low</td><td>↓↓</td><td><span class="badge b-red">Cold / wet</span></td></tr>
+    <tr><td>Apr–May</td><td>16–22°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Best — flowers, mild</span></td></tr>
+    <tr><td><b>Jun</b></td><td>26°C</td><td>High</td><td>↑↑</td><td><span class="badge b-gold">⭐ Excellent</span></td></tr>
+    <tr><td>Jul–Aug</td><td>30–34°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Hot / peak season</span></td></tr>
+    <tr><td>Sep–Oct</td><td>22–26°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Great — warm &amp; quieter</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7. Strong pick.</b> June = warm Istanbul days (26°C), Bosphorus swimmable, Cappadocia balloons flying daily. Note: <b>Eid Kurban Bayramı is a major Turkish public holiday</b> — some local restaurants closed Jun 6–7, but tourist attractions stay open. Hotels and tour operators unaffected.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → IST (Istanbul)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>1,100 – 1,800</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Turkish Airlines (direct) · flydubai · Air Arabia</td>
+      <td>~4h direct</td>
+      <td><a href="https://www.kayak.ae/flight-routes/Dubai-Intl-DXB/Istanbul-IST" class="ext" target="_blank">KAYAK</a> · <a href="https://www.turkishairlines.com" class="ext" target="_blank">Turkish Airlines</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>5,500 – 9,200 <span class="badge b-est">📊 Est.</span></td>
+      <td>Turkish Airlines Business Class (flat bed on widebody)</td>
+      <td>~4h direct</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.turkishairlines.com" class="ext" target="_blank">TK.com</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Turkish Airlines flies DXB→IST <b>multiple times daily</b> — excellent frequency, flag carrier quality</li>
+  <li>Internal Turkey: IST → Cappadocia (ASR/NAV) ~1.5h flight, ~1,100–1,650 AED return pp via Turkish Airlines or Pegasus</li>
+  <li>Book 4–6 weeks out for June; prices can rise sharply over Eid week</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>4 nights Istanbul</b> (Four Seasons Bosphorus) + <b>5 nights Cappadocia</b> (Museum Hotel or Argos in Cappadocia). All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Four Seasons Bosphorus</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>3,300 – 6,600</td>
+      <td>13,200 – 26,400 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Bosphorus infinity pool</td>
+      <td>5.0 ★ (3,800+)</td>
+      <td><a href="https://www.fourseasons.com/bosphorus/" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Çırağan Palace Kempinski</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 5,500</td>
+      <td>8,800 – 22,000 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Largest hotel pool on Bosphorus</td>
+      <td>4.9 ★ (3,100+)</td>
+      <td><a href="https://www.kempinski.com/en/ciragan-palace" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Museum Hotel Cappadocia</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 5,100</td>
+      <td>11,000 – 25,500 <span style="font-size:0.7rem;color:#888">(5 nts)</span></td>
+      <td>✅ Terrace pool · cave views</td>
+      <td>5.0 ★ (1,400+)</td>
+      <td><a href="https://www.museumhotel.com.tr" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Argos in Cappadocia</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>1,650 – 3,700</td>
+      <td>8,250 – 18,500 <span style="font-size:0.7rem;color:#888">(5 nts)</span></td>
+      <td>✅ Infinity pool · valley views</td>
+      <td>4.9 ★ (1,200+)</td>
+      <td><a href="https://www.argosincappadocia.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Soho House Istanbul</td>
+      <td>Luxury boutique</td>
+      <td>1,100 – 2,200</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Rooftop pool</td>
+      <td>4.7 ★ (600+)</td>
+      <td><a href="https://www.sohohouse.com/houses/soho-house-istanbul" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Hampton by Hilton Istanbul</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">330 – 660</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ None</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Four Seasons Bosphorus — Istanbul</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=80" alt="Istanbul Bosphorus" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Bosphorus views</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=80" alt="Istanbul" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌉 Istanbul skyline</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Museum Hotel — Cappadocia</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&q=80" alt="Cappadocia balloons" onerror="this.parentElement.style.display='none'">
+        <figcaption>🎈 Hot air balloons</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=400&q=80" alt="Cave room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏔️ Cave suite</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Istanbul · Four Seasons Bosphorus</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=900&q=80" alt="Istanbul" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>DXB → IST (~4h direct)</li><li>Transfer to Four Seasons Bosphorus</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · infinity pool</li><li>Bosphorus views from terrace</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Sunset restaurant · Bosphorus</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Old City · Hagia Sophia · Grand Bazaar</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=900&q=80" alt="Hagia Sophia" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Hagia Sophia (open early)</li><li>Blue Mosque across the square</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Grand Bazaar · spice shopping</li><li>Topkapi Palace gardens</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Mikla (panoramic rooftop)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Bosphorus · Princes' Islands · Beyoglu</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1522083165195-3424ed129620?w=900&q=80" alt="Bosphorus cruise" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Private Bosphorus yacht cruise</li><li>Two continents — Europe &amp; Asia</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Beyoglu · Istiklal Street</li><li>Istanbul Modern Art Museum</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Neolokal (Anatolian cuisine)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Asian Side · Bazaar Karaköy · Pool Day</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1562979314-bee7453e911c?w=900&q=80" alt="Istanbul food" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Ferry to Asian side · Kadiköy market</li><li>Vegetarian street food trail</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Four Seasons pool · spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Farewell Istanbul dinner · hotel terrace</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Fly Istanbul → Cappadocia · Museum Hotel</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=900&q=80" alt="Cappadocia" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Transfer</div><ul><li>IST → Kayseri/Nevşehir (~1.5h)</li><li>Transfer to Uçhisar (~1h)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Museum Hotel check-in · cave suite</li><li>Terrace pool · fairy chimney views</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Lil'a Restaurant at Museum Hotel</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Hot Air Balloon · Göreme Valley</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=900&q=80" alt="Balloon Cappadocia" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Sunrise</div><ul><li>4:30am wakeup · hot air balloon (2h)</li><li>Sunrise over valleys — once-in-a-lifetime</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Göreme Open Air Museum</li><li>Rose Valley hike · Red Valley</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Cave wine tasting · local Cappadocian wines</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Underground Cities · Ihlara Valley</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=900&q=80" alt="Underground city" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Derinkuyu Underground City</li><li>8 levels underground · Byzantine history</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Ihlara Valley gorge hike · waterfalls</li><li>Pool &amp; spa on return</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Pottery dinner experience (Avanos)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 8–9</span><div class="loc">Cappadocia · Valleys · ATV / Horse Ride</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Cappadocia valleys" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>ATV tour through valleys</li><li>Or sunrise horse riding</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Zelve Open Air Museum</li><li>Pasabag mushroom rocks</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Turkish whirling dervish show</li><li>Cave restaurant dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Late checkout · final balloon-watching from terrace</li><li>Transfer to airport → Kayseri/Nevşehir → IST → DXB</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">🌿 <b>Turkey is one of the world's top vegetarian destinations.</b> Meze culture means dozens of plant-based small plates are standard. Mezes (hummus, ezme, sigara böreği with cheese, stuffed grape leaves, baba ganoush) are meat-free by default. Highly recommended for vegetarians.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>City</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Mikla</b></td><td>Modern Anatolian</td><td>Istanbul</td><td><span class="veg">✅ Excellent veg tasting menu</span></td><td><a href="https://www.miklarestaurant.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Neolokal</b></td><td>Anatolian heritage</td><td>Istanbul</td><td><span class="veg">✅ Many veg dishes</span></td><td><a href="https://www.neolokal.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Çiya Sofrası</b></td><td>Anatolian / Meze</td><td>Istanbul (Kadiköy)</td><td><span class="veg">✅ Legendary veg-forward</span></td><td><a href="https://www.ciya.com.tr" class="ext" target="_blank">ciya.com</a></td></tr>
+    <tr><td><b>Lil'a Restaurant</b></td><td>Turkish fine dining</td><td>Cappadocia (Museum Hotel)</td><td><span class="veg">✅ Full vegetarian menu</span></td><td><a href="https://www.museumhotel.com.tr/restaurants" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Seki Restaurant</b></td><td>Turkish / Mediterranean</td><td>Cappadocia</td><td><span class="veg">✅ Excellent meze selection</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td>Karaköy Güllüoğlu</td><td>Baklava / Turkish sweets</td><td>Istanbul</td><td><span class="veg">✅ All vegetarian pastries</span></td><td>—</td></tr>
+    <tr><td>Any meyhane (taverna)</td><td>Meze culture</td><td>Both cities</td><td><span class="veg">✅ Meze = vegetarian paradise</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&q=80" alt="Balloons Cappadocia" onerror="this.parentElement.style.display='none'"><p><b>Hot air balloons at sunrise</b> — Cappadocia · best at 5:30am · #Cappadocia</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=80" alt="Hagia Sophia" onerror="this.parentElement.style.display='none'"><p><b>Hagia Sophia</b> — blue hour shot · arrive at sunset · #Istanbul</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=80" alt="Bosphorus" onerror="this.parentElement.style.display='none'"><p><b>Bosphorus Bridge at night</b> — from Four Seasons terrace · golden reflections</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=400&q=80" alt="Fairy chimneys" onerror="this.parentElement.style.display='none'"><p><b>Fairy chimneys</b> — Göreme · morning mist · #FairyChimneys</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1522083165195-3424ed129620?w=400&q=80" alt="Galata Tower" onerror="this.parentElement.style.display='none'"><p><b>Galata Tower view</b> — look back to old city · sunset from top</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1562979314-bee7453e911c?w=400&q=80" alt="Turkish meze" onerror="this.parentElement.style.display='none'"><p><b>Turkish meze spread</b> — colourful plates · flat lay · #TurkishFood</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>Eid Kurban Bayramı 🇹🇷</b></td><td>Jun 6–7</td><td>Turkish national holiday</td><td><b>Some local restaurants closed; tourist sites open</b></td></tr>
+    <tr><td>Istanbul Music Festival</td><td>Jun 2026</td><td>Classical / World music</td><td>Check iksv.org for programme</td></tr>
+    <tr><td>Istanbul Biennial</td><td>Odd years</td><td>Contemporary art</td><td>Next: 2025/2027</td></tr>
+    <tr><td>Cappadocia Ultra Trail</td><td>Typically May</td><td>Running / outdoor</td><td>Check 2026 dates</td></tr>
+    <tr><td>Bosphorus Cross-Continental Swim</td><td>Typically Jul</td><td>Swimming event</td><td>Outside window</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>e-Visa required · UK passport · ~$50 (≈184 AED) · apply at <a href="https://www.evisa.gov.tr" class="ext" target="_blank">evisa.gov.tr</a></dd>
+  <dt>💵 Currency</dt><dd>Turkish Lira (TRY) · 1 USD ≈ 32–35 TRY · 1 AED ≈ 8–9 TRY</dd>
+  <dt>💸 Tipping</dt><dd>10% in restaurants · porters 20–50 TRY · taxis: round up</dd>
+  <dt>🚗 Getting around</dt><dd>Istanbul: taxi or metro · Cappadocia: private driver or tour (~550–730 AED/day)</dd>
+  <dt>✈️ Internal flight</dt><dd>IST → Kayseri (ASR) or Nevşehir (NAV) ~1.5h · ~1,100–1,650 AED return pp</dd>
+  <dt>🗣️ Language</dt><dd>Turkish · English widely spoken at tourist sites and luxury hotels</dd>
+  <dt>🌡️ June weather</dt><dd>Istanbul 24–28°C · Cappadocia 22–28°C (cooler at night ~12°C)</dd>
+  <dt>🕌 Culture</dt><dd>Dress modestly at mosques (cover head/shoulders). Turkey is secular and very welcoming.</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Turkey 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Four Seasons Bosphorus · Çırağan Palace Kempinski</li>
+    <li>Hagia Sophia · Blue Mosque</li>
+    <li>Grand Bazaar · Spice Bazaar</li>
+    <li>Topkapi Palace · Dolmabahçe</li>
+    <li>Galata Tower · Karaköy</li>
+    <li>Çiya Sofrası (Kadiköy)</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Museum Hotel Cappadocia (Uçhisar)</li>
+    <li>Göreme Open Air Museum</li>
+    <li>Rose Valley · Red Valley viewpoints</li>
+    <li>Derinkuyu Underground City</li>
+    <li>Pasabag (Monks Valley)</li>
+    <li>Avanos pottery village</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>2,200</td><td>3,600</td><td>Turkish Airlines direct</td></tr>
+    <tr><td>✈️ Internal flights IST→Cappadocia (×2 return)</td><td>2,200</td><td>3,300</td><td>Turkish Airlines or Pegasus</td></tr>
+    <tr><td>🛂 e-Visa ×2</td><td>368</td><td>368</td><td>~$50 pp fixed</td></tr>
+    <tr><td>🏨 Four Seasons Bosphorus (4 nts)</td><td>13,200</td><td>26,400</td><td>3,300–6,600/nt</td></tr>
+    <tr><td>🏨 Museum Hotel Cappadocia (5 nts)</td><td>11,000</td><td>25,500</td><td>2,200–5,100/nt</td></tr>
+    <tr><td>🎈 Hot air balloon (×2 pp)</td><td>1,100</td><td>1,650</td><td>Seasonal · premium operator</td></tr>
+    <tr><td>🚗 Tours &amp; transfers (10 days)</td><td>2,200</td><td>4,400</td><td>Private guides, ATV, boat cruise</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>32,268</b></td><td><b>65,218</b></td><td><b>46–93% of monthly income — excellent value luxury</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food costs minimal as Turkish restaurants are excellent value even at high end. Turkey offers the best value luxury-per-AED in the Mediterranean. Prices marked 📊 Est. are search-sourced Apr 2026.</p>
+
+<div class="footnote">🇹🇷 Turkey Travel Plan · Generated Apr 2026 · Dubai → Istanbul + Cappadocia · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Africa 🇿🇦</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇿🇦 South Africa</h1>
+    <div class="meta">Dubai → Cape Town (CPT) + Safari (JNB) &nbsp;·&nbsp; 12 days &nbsp;·&nbsp; 11 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">🦁 Safari + Cape Town</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 Visa-free 30 days</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp (CPT)</th><th>Safari (Kruger / KZN)</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Feb</td><td>26–30°C (peak summer)</td><td>Hot, lush — harder game viewing</td><td>↑</td><td><span class="badge b-gold">✅ Cape Town beach season</span></td></tr>
+    <tr><td><b>May–Jun</b></td><td>18–22°C (mild autumn)</td><td>Excellent — dry season starts</td><td>↑</td><td><span class="badge b-gold">⭐ Best combo (Cape + Safari)</span></td></tr>
+    <tr><td><b>Jul–Sep</b></td><td>14–18°C (mild winter)</td><td>Peak safari — dry, sparse bush</td><td>↑↑</td><td><span class="badge b-gold">⭐ Best safari</span></td></tr>
+    <tr><td>Oct–Nov</td><td>22–26°C (spring)</td><td>Good — newborn animals</td><td>↑</td><td><span class="badge b-green">Great</span></td></tr>
+    <tr><td>Dec</td><td>26–28°C</td><td>Rainy season begins inland</td><td>↑↑↑</td><td><span class="badge b-red">Expensive + crowded</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha 2026: Jun 6–7.</b> Excellent timing — early June is perfect for both Cape Town (mild 18–22°C, no crowds) AND the start of dry safari season. Game viewing improves rapidly through June as bush thins. <b>Strongly recommended</b> for this window. Note: Cape Town is in the Southern Hemisphere — June is winter there, but very mild and pleasant.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → CPT (Cape Town) + domestic CPT → JNB or MQP (Kruger)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy DXB→CPT</b> <span class="badge b-green">Primary</span></td>
+      <td><b>2,900 – 4,400</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates (DXB→JNB→CPT) · South African Airways · Kenya Airways via NBO</td>
+      <td>~12–15h (1 stop)</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business DXB→CPT <span class="badge b-navy">Upgrade</span></td>
+      <td>11,000 – 18,300 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business (lie-flat)</td>
+      <td>~12–15h</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+    <tr>
+      <td>Domestic CPT→MQP (Hoedspruit/Kruger)</td>
+      <td>440 – 880 <span class="badge b-est">📊 Est.</span></td>
+      <td>FlySafair · Airlink</td>
+      <td>~2h</td>
+      <td><a href="https://www.airlink.co.za" class="ext" target="_blank">Airlink</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>Best routing: <b>DXB → JNB (Emirates)</b> + connecting Cape Town or fly JNB→MQP direct to safari first</li>
+  <li>Consider doing <b>Safari first → Cape Town last</b> — ends trip on a high note with great weather</li>
+  <li>All luxury safari lodges arrange private charter transfers from Hoedspruit (MQP) — included in package</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>5 nights Cape Town (Ellerman House)</b> + <b>4 nights Safari (Singita Lebombo or Royal Malewane)</b>. All AED. Note: safari lodge rates are <em>all-inclusive</em> (meals, game drives, drinks).</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Location</th><th>Tier</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Ellerman House</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Cape Town, Bantry Bay</td>
+      <td>Ultra-luxury</td>
+      <td>11,000 – 22,000 <span style="font-size:0.7rem;color:#888">(all-incl.)</span></td>
+      <td>✅ Clifftop infinity pool · ocean views</td>
+      <td>5.0 ★ (900+)</td>
+      <td><a href="https://www.ellerman.co.za" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Twelve Apostles Hotel</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Cape Town, Camps Bay</td>
+      <td>Ultra-luxury</td>
+      <td>5,500 – 11,000</td>
+      <td>✅ Excellent mountain-backdrop pool</td>
+      <td>4.9 ★ (2,100+)</td>
+      <td><a href="https://www.12apostleshotel.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Singita Lebombo Lodge</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Greater Kruger NP</td>
+      <td>Ultra-luxury Safari</td>
+      <td>22,000 – 44,000 <span style="font-size:0.7rem;color:#888">(per couple, all-incl.)</span></td>
+      <td>✅ Private plunge pool per suite</td>
+      <td>5.0 ★ (600+)</td>
+      <td><a href="https://www.singita.com/lodge/singita-lebombo-lodge/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Royal Malewane</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Greater Kruger NP</td>
+      <td>Ultra-luxury Safari</td>
+      <td>18,300 – 36,700 <span style="font-size:0.7rem;color:#888">(per couple, all-incl.)</span></td>
+      <td>✅ Excellent pool · Africamps inspired</td>
+      <td>5.0 ★ (800+)</td>
+      <td><a href="https://www.royalmalewane.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>&amp;Beyond Phinda Private Reserve</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>KwaZulu-Natal</td>
+      <td>Ultra-luxury Safari</td>
+      <td>14,700 – 29,300 <span style="font-size:0.7rem;color:#888">(per couple, all-incl.)</span></td>
+      <td>✅ Pool · 7 ecosystems</td>
+      <td>4.9 ★ (700+)</td>
+      <td><a href="https://www.andbeyond.com/our-lodges/africa/south-africa/kwazulu-natal/andbeyond-phinda-private-game-reserve/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Cape Grace Hotel</td>
+      <td style="color:#aaa">Cape Town V&amp;A Waterfront</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">2,200 – 4,400</td>
+      <td style="color:#aaa">⚠️ Small pool</td>
+      <td style="color:#aaa">4.5 ★</td>
+      <td style="color:#aaa">— (ref.)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Ellerman House — Cape Town</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=400&q=80" alt="Cape Town pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Infinity pool · ocean view</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Cape mountain" onerror="this.parentElement.style.display='none'">
+        <figcaption>⛰️ Table Mountain backdrop</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Singita Lebombo — Safari Lodge</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Safari" onerror="this.parentElement.style.display='none'">
+        <figcaption>🦁 Game drive at dusk</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Lodge pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Private plunge pool</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 12 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Cape Town</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=900&q=80" alt="Cape Town" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into CPT · hotel transfer</li><li>Check in Ellerman House or Twelve Apostles</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Infinity pool · ocean views</li><li>Spa treatment</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset at Bantry Bay</li><li>Dinner: The Test Kitchen (book ahead)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Table Mountain · Bo-Kaap · Waterfront</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1576485375217-d6a95e34d043?w=900&q=80" alt="Table Mountain" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Table Mountain cable car (book ahead)</li><li>2h hike or cable car summit</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Bo-Kaap colourful houses</li><li>V&amp;A Waterfront walk</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: La Mouette (vegetarian tasting menu)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Cape Peninsula · Cape of Good Hope</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=900&q=80" alt="Cape of Good Hope" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Full-day peninsula drive</li><li>Chapman's Peak coastal road</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Cape of Good Hope — penguins at Boulders Beach</li><li>Simon's Town</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return to Cape Town · hotel dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Wine Country — Stellenbosch &amp; Franschhoek</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Winelands" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Drive to Franschhoek (~1h)</li><li>Tokara Wine Estate tasting</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Franschhoek village lunch</li><li>Boschendal estate tour</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Foliage (Franschhoek, veg-forward)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Camps Bay · Clifton Beaches · Pool day</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=900&q=80" alt="Camps Bay" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Hotel pool morning</li><li>Spa treatment</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Camps Bay beach &amp; promenade</li><li>Clifton 4th Beach</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset cocktails at Azure Restaurant · Twelve Apostles</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Fly to Kruger · Safari Check-In</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80" alt="Safari" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout Cape Town · CPT→JNB flight</li><li>JNB→MQP (Hoedspruit) connecting flight</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Lodge transfer · check-in · orientation</li><li>Afternoon game drive (4pm start)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Bush dinner under the stars</li><li>Sundowner cocktails at waterhole</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 7–9</span><div class="loc">Safari — Game Drives · Big Five</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80" alt="Big Five" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 AM Drives</div><ul><li>5:30am wake-up · sunrise drive</li><li>Lion, elephant, leopard tracking</li><li>Mid-morning breakfast at bush</li></ul></div>
+      <div class="session"><div class="slab">☀️ Midday</div><ul><li>Return lodge · pool time</li><li>Spa / photography editing</li><li>Afternoon nap before PM drive</li></ul></div>
+      <div class="session"><div class="slab">🌙 PM Drives</div><ul><li>4pm game drive · sundowners</li><li>Night drive (leopard/lion)</li><li>3-course lodge dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 10–11</span><div class="loc">Phinda / Conservation Activities</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=900&q=80" alt="Africa nature" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Activities</div><ul><li>Bush walk with armed ranger</li><li>Rhino conservation visit (if at Phinda)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>River boat cruise</li><li>Bird watching (500+ species)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Private bush dinner · chef's table</li><li>Stargazing session (no light pollution)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 12</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final AM game drive (optional)</li><li>Checkout · charter to MQP or JNB</li><li>JNB→DXB Emirates (overnight flight home)</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants &amp; Vegetarian Guide</h2>
+<div class="rbox"><b>Vegetarian note:</b> Cape Town is <b>excellent for vegetarians</b> — one of Africa's most progressive food cities with dedicated vegan restaurants. Winelands are also strong. All luxury safari lodges will prepare <b>bespoke vegetarian menus</b> — inform at booking. South African braai (BBQ) culture is meat-heavy but lodges are very accommodating.</div>
+<table>
+  <thead><tr><th>Restaurant</th><th>Location</th><th>Cuisine</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>The Test Kitchen</b></td><td>Cape Town, Woodstock</td><td>Modern fine dining</td><td><span class="veg">✅ Vegetarian menu available</span></td><td><a href="https://thetestkitchen.co.za" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>La Mouette</b></td><td>Cape Town, Sea Point</td><td>French-Mediterranean</td><td><span class="veg">✅ Excellent veg tasting menu</span></td><td><a href="https://www.lamouette.co.za" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Foliage</b></td><td>Franschhoek</td><td>Farm-to-table / veg-forward</td><td><span class="veg">✅ 100% vegetarian focus</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Chefs Warehouse</b></td><td>Cape Town, Bree St</td><td>Tapas / sharing plates</td><td><span class="veg">✅ Good veg selections</span></td><td><a href="https://www.chefswarehouse.co.za" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Azure Restaurant</b></td><td>Twelve Apostles Hotel</td><td>Fine dining</td><td><span class="veg">✅ Veg options · sunset views</span></td><td><a href="https://www.12apostleshotel.com/azure" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td>Ellerman House dining</td><td>Bantry Bay</td><td>Modern South African</td><td><span class="veg">✅ Veg menu on request</span></td><td><a href="https://www.ellerman.co.za" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td>Singita lodge dining</td><td>Kruger NP</td><td>Gourmet safari</td><td><span class="veg">✅ Fully customised veg menu</span></td><td><a href="https://www.singita.com" class="ext" target="_blank">Web</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1576485375217-d6a95e34d043?w=400&q=80" alt="Table Mountain" onerror="this.parentElement.style.display='none'"><p><b>Table Mountain summit</b> — 360° views of Cape Town · #TableMountain</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=400&q=80" alt="Clifton Beach" onerror="this.parentElement.style.display='none'"><p><b>Clifton 4th Beach</b> — boulders, white sand, azure water · #CliftonBeach</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Safari sunset" onerror="this.parentElement.style.display='none'"><p><b>Sundowner on safari</b> — elephant silhouette · #SafariSunset</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=400&q=80" alt="Cape of Good Hope" onerror="this.parentElement.style.display='none'"><p><b>Cape of Good Hope</b> — cliffs where two oceans meet · #CapeOfGoodHope</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80" alt="Big Five" onerror="this.parentElement.style.display='none'"><p><b>Big Five sighting</b> — leopard in tree at Singita · #BigFive</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=400&q=80" alt="Boulders penguin" onerror="this.parentElement.style.display='none'"><p><b>Boulders Beach penguins</b> — African penguins in Cape Town · #BouldersPenguins</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Location</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Cape Town Jazz Festival</td><td>Late Mar (check 2026)</td><td>Cape Town CTICC</td><td>Africa's largest jazz festival</td></tr>
+    <tr><td>Franschhoek Uncorked</td><td>Jun weekends</td><td>Franschhoek</td><td>Cycling wine tastings</td></tr>
+    <tr><td>Cape Town Restaurant Week</td><td>Variable</td><td>Cape Town</td><td>Check 2026 dates</td></tr>
+    <tr><td>Whale season begins</td><td>Jun–Nov</td><td>Hermanus / Cape Town</td><td>Southern Right Whales visible</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Quiet period in Cape Town — ideal, no crowds</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>None — UK passport · 30 days visa-free · passport must be valid 30 days beyond stay</dd>
+  <dt>💵 Currency</dt><dd>South African Rand (ZAR) · 1 ZAR ≈ 0.2 AED · 100 ZAR ≈ 20 AED · Cards widely accepted</dd>
+  <dt>💸 Tipping</dt><dd>10–15% at restaurants · R20–50 for safari staff (very important)</dd>
+  <dt>🚗 Getting around</dt><dd>Cape Town: Uber recommended · rent a car for Winelands &amp; Peninsula. Safari: all transfers included in lodge package</dd>
+  <dt>🌡️ June weather</dt><dd>Cape Town: 14–18°C (mild, occasional rain) · Kruger: 15–26°C (dry, perfect)</dd>
+  <dt>🦟 Health</dt><dd>No malaria prophylaxis needed for Cape Town · Consult doctor for Greater Kruger area</dd>
+  <dt>📷 Photography</dt><dd>June light in Kruger is stunning — carry 300mm+ lens for wildlife</dd>
+  <dt>🏠 Best base</dt><dd>Cape Town: Bantry Bay / Camps Bay area. Safari: private reserves near Kruger or KZN</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"South Africa 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Ellerman House, Bantry Bay</li>
+    <li>Twelve Apostles Hotel, Camps Bay</li>
+    <li>Table Mountain Cable Car</li>
+    <li>Bo-Kaap, Cape Town</li>
+    <li>Chapman's Peak Drive</li>
+    <li>Boulders Beach Penguins</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Cape of Good Hope</li>
+    <li>Franschhoek Wine Valley</li>
+    <li>Singita Lebombo Lodge (Kruger)</li>
+    <li>Royal Malewane (Thornybush)</li>
+    <li>The Test Kitchen, Woodstock</li>
+    <li>La Mouette, Sea Point</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights — economy ×2 return DXB→CPT</td><td>5,800</td><td>8,800</td><td>Emirates via JNB</td></tr>
+    <tr><td>✈️ Domestic CPT→MQP/JNB (×2 p/p)</td><td>1,760</td><td>3,520</td><td>FlySafair / Airlink</td></tr>
+    <tr><td>🏨 Ellerman House Cape Town (5 nts)</td><td>55,000</td><td>110,000</td><td>11,000–22,000/nt per couple (all-incl.)</td></tr>
+    <tr><td>🦁 Singita Lebombo (4 nts)</td><td>88,000</td><td>176,000</td><td>22,000–44,000/nt per couple (all-incl.)</td></tr>
+    <tr><td>🚗 Cape Town activities + car hire</td><td>2,200</td><td>4,400</td><td>Peninsula, Winelands day trips</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>152,760</b></td><td><b>302,720</b></td><td><b>218–432% of monthly income — ultra-luxury tier</b></td></tr>
+  </tbody>
+</table>
+<div class="rbox" style="margin-top:10px"><b>💡 Budget tip:</b> Royal Malewane or &amp;Beyond Phinda are <b>more affordable</b> alternatives to Singita (~14,700–29,300 AED/couple/night all-inclusive). Twelve Apostles is a strong Cape Town alternative to Ellerman at lower price. Even at the mid-range, this is a significant trip — plan 3–6 months ahead.</div>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Safari lodge rates are all-inclusive (all meals, game drives, drinks). Prices marked 📊 Est. are Apr 2026 estimates.</p>
+
+<div class="footnote">🇿🇦 South Africa Travel Plan · Generated Apr 2026 · Dubai → Cape Town + Kruger Safari · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

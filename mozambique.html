@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mozambique 🇲🇿</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Warning box */
+  .wbox{background:#fff3cd;border-left:3px solid #856404;border-radius:0 6px 6px 0;padding:10px 16px;margin:10px 0;font-size:0.88rem;line-height:1.5;color:#333}
+  .wbox b{color:#856404}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇲🇿 Mozambique</h1>
+    <div class="meta">Dubai → Vilanculos / Pemba &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">🏝️ May–Nov Best Season</span>
+    <span class="tag">🏨 Ultra-Luxury Islands</span>
+    <span class="tag">⚠️ Limited Vegetarian</span>
+    <span class="tag">🏊 Infinity pools · Beach</span>
+    <span class="tag">🇬🇧 Visa on arrival ~$50–100</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>32–35°C</td><td>Very low</td><td>↓↓</td><td><span class="badge b-red">Cyclone season / heavy rains</span></td></tr>
+    <tr><td>Apr</td><td>30°C</td><td>Low</td><td>↓</td><td><span class="badge b-red">Transition — unpredictable</span></td></tr>
+    <tr><td><b>May–Nov</b></td><td>25–28°C</td><td>Med–High</td><td>↑↑</td><td><span class="badge b-gold">⭐ Dry season — pristine</span></td></tr>
+    <tr><td>Jun–Aug</td><td>24–26°C</td><td>Medium</td><td>↑↑</td><td><span class="badge b-gold">⭐ Best — humpback whales Jun–Oct</span></td></tr>
+    <tr><td>Dec</td><td>30–33°C</td><td>High</td><td>↑↑↑</td><td><span class="badge b-green">Good (Christmas peak)</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7. Perfect alignment.</b> June = dry season beginning, 25–27°C, calm turquoise seas, humpback whale season starting. <b>Strongly recommend June for Bazaruto.</b> Book fly-in island lodges 6+ months ahead — extremely limited rooms.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → VNX (Vilanculos) / POL (Pemba)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,300 – 5,500</b> <span class="badge b-est">📊 Est. Jun 2026</span></td>
+      <td>Ethiopian via ADD · Kenya Airways via NBO · Qatar via DOH+JNB</td>
+      <td>~12–16h (1–2 stops)</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.ethiopianairlines.com" class="ext" target="_blank">Ethiopian</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>13,200 – 22,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Ethiopian Business via ADD · South African via JNB</td>
+      <td>~13–17h</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Route: DXB → Johannesburg (JNB) → Vilanculos (VNX) is most common. Or DXB → Maputo (MPM) → Vilanculos.</li>
+  <li>⚠️ Island lodges operate own charter flights from Vilanculos airstrip (~20min flight to Bazaruto). Transfers arranged at booking.</li>
+  <li>Pemba route: DXB → ADD/NBO → Pemba (POL). More complex — most visitors focus on Bazaruto Archipelago.</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels &amp; Island Lodges</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>5 nights Anantara Bazaruto</b> (Bazaruto Island) + <b>4 nights Azura Benguerra</b> (Benguerra Island). All AED. Both islands are in Bazaruto Archipelago National Park.</p>
+<table>
+  <thead><tr><th>Lodge</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Anantara Bazaruto Island Resort</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>4,400 – 7,700</td>
+      <td>22,000 – 38,500 <span style="font-size:0.7rem;color:#888">(5 nts)</span></td>
+      <td>✅ Beachfront infinity pool</td>
+      <td>4.9 ★ (1,400+)</td>
+      <td><a href="https://www.anantara.com/en/bazaruto-island" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Azura Benguerra Island</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury boutique</td>
+      <td>5,500 – 9,900</td>
+      <td>22,000 – 39,600 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Private villa pools + beach</td>
+      <td>5.0 ★ (700+)</td>
+      <td><a href="https://www.azura-retreats.com/azura-benguerra-island" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Medjumbe Private Island</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>6,600 – 11,000</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Plunge pools · entire island private feel</td>
+      <td>5.0 ★ (400+)</td>
+      <td><a href="https://www.anantara.com/en/medjumbe-island" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Bazaruto Lodge</td>
+      <td>Luxury</td>
+      <td>2,200 – 4,400</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Pool · beachfront</td>
+      <td>4.6 ★ (600+)</td>
+      <td><a href="https://www.bazarutolodge.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Pemba Beach Hotel (north)</td>
+      <td>Luxury</td>
+      <td>1,100 – 2,200</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Pool · Pemba Bay</td>
+      <td>4.3 ★</td>
+      <td><a href="https://www.pembabeachhotel.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Vilanculos Beach Lodge</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">550 – 1,100</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Small</td>
+      <td style="color:#aaa">3.9 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Anantara Bazaruto Island Resort</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Bazaruto beach" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏖️ Pristine beach</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=400&q=80" alt="Infinity pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Infinity pool</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Azura Benguerra Island</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" alt="Indian Ocean" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌊 Indian Ocean villa</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=400&q=80" alt="Dhow sunset" onerror="this.parentElement.style.display='none'">
+        <figcaption>⛵ Dhow sailing</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Vilanculos · Transfer to Bazaruto</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Bazaruto" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>DXB → JNB → Vilanculos (VNX)</li><li>Lodge charter flight to island (~20min)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Anantara Bazaruto check-in</li><li>Beachside infinity pool · welcome</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset dhow cruise from beach</li><li>Dinner: Anantara Spice restaurant</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 2–3</span><div class="loc">Bazaruto Island · Diving · Dunes</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=900&q=80" alt="Snorkelling" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Two-tank scuba dive · Two-Mile Reef</li><li>Dugong snorkelling expedition</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Island sand dune walk</li><li>Pool · watersports · kayaking</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Beachfront dinner · stargazing</li><li>Traditional dhow music performance</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 4–5</span><div class="loc">Bazaruto · Humpback Whale Watching</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=80" alt="Whale watching" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Humpback whale watching (Jun–Oct peak)</li><li>Dolphins · manta ray snorkel</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Spa treatments · beach hammock</li><li>Freshwater lake walk (island interior)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Private beach dinner set-up</li><li>Anantara signature experience</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Boat Transfer → Azura Benguerra Island</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=900&q=80" alt="Benguerra" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · speedboat to Benguerra (~30min)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Azura villa check-in · private plunge pool</li><li>Barefoot beach walk</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Azura open-air beach restaurant</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 7–8</span><div class="loc">Benguerra Island · Pristine Reef</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Clear water" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Dawn bird watching (flamingos, pelicans)</li><li>Azura guided snorkel</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Glass-bottom boat · seahorse spotting</li><li>Villa pool · Swahili-inspired spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset dhow cocktail sail</li><li>Candlelit beach dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 9–10</span><div class="loc">Final Beach Days · Departure</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=80" alt="Departure" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final snorkel · kayaking</li><li>Morning spa · checkout</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Charter flight → Vilanculos → JNB → DXB</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Overnight flight home</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants &amp; Dining</h2>
+<div class="wbox"><b>⚠️ Important Vegetarian Warning:</b> Mozambique cuisine is <b>heavily seafood and meat dominant</b>. Prawns, crayfish (langostino), peri-peri chicken are the national dishes. Fine dining at island resorts is primarily seafood-focused. <b>However:</b> luxury lodges can prepare vegetarian meals with advance notice — always contact the lodge directly when booking. Expect pasta, grilled vegetables, rice dishes and local greens (matapa — cassava leaves with coconut). The Indian/Arabic influence in northern Mozambique means some vegetarian options exist in Pemba, but Bazaruto lodges will be the main dining.</div>
+<table>
+  <thead><tr><th>Venue</th><th>Type</th><th>Location</th><th>🌿 Veg</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>Anantara Spice Restaurant</b></td><td>Fine dining (resort)</td><td>Bazaruto Island</td><td><span style="color:#856404">⚠️ Request in advance</span></td><td>Primarily seafood; veg options with prior notice to chef</td></tr>
+    <tr><td><b>Azura Benguerra Dining</b></td><td>Open-air fine dining</td><td>Benguerra Island</td><td><span style="color:#856404">⚠️ Request in advance</span></td><td>Menu adapts with 24hr notice; veg pasta/grills available</td></tr>
+    <tr><td>Matapa (local dish)</td><td>Traditional Mozambican</td><td>Anywhere</td><td><span class="veg">✅ Vegetarian by default</span></td><td>Cassava leaves + coconut milk + peanuts — delicious</td></tr>
+    <tr><td>Xima with vegetables</td><td>Local staple</td><td>Mainland only</td><td><span class="veg">✅</span></td><td>Maize porridge with vegetable relish</td></tr>
+    <tr><td>Pemba restaurants</td><td>Casual</td><td>Pemba town</td><td><span style="color:#856404">⚠️ Very limited</span></td><td>Focus on seafood. Indian-influence cafes may have vegetarian.</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=400&q=80" alt="Dhow sailing" onerror="this.parentElement.style.display='none'"><p><b>Traditional dhow at sunset</b> — Indian Ocean golds · #Mozambique</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Bazaruto" onerror="this.parentElement.style.display='none'"><p><b>Bazaruto sand dunes</b> — turquoise sea meets sand · #BazarutoArchipelago</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=400&q=80" alt="Snorkel" onerror="this.parentElement.style.display='none'"><p><b>Underwater coral &amp; dugongs</b> — Two-Mile Reef · rare marine life</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" alt="Benguerra" onerror="this.parentElement.style.display='none'"><p><b>Benguerra Island aerial</b> — pristine white beach · #IslandLife</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Stars" onerror="this.parentElement.style.display='none'"><p><b>Milky Way over Indian Ocean</b> — zero light pollution · boat deck</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Flamingos" onerror="this.parentElement.style.display='none'"><p><b>Flamingos at sunrise</b> — Benguerra lagoon · #AfricaWildlife</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>UAE public holiday</td><td><b>Perfect departure window; island lodges unaffected</b></td></tr>
+    <tr><td>Humpback Whale Season</td><td>Jun–Oct</td><td>Wildlife</td><td>Best whale watching off Bazaruto — June is the start</td></tr>
+    <tr><td>Maputo Music Festival</td><td>TBC 2026</td><td>Cultural</td><td>Mainland Maputo — not relevant for island trip</td></tr>
+    <tr><td>Dry Season Opens</td><td>May</td><td>Natural season</td><td>Seas calm, ideal diving &amp; snorkelling visibility</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>Visa on arrival · UK passport · ~$50–100 (≈184–367 AED) · 30 days · bring USD cash</dd>
+  <dt>💵 Currency</dt><dd>Mozambican Metical (MZN) · 1 USD ≈ 63 MZN · USD widely accepted at lodges</dd>
+  <dt>💸 Tipping</dt><dd>Lodge staff: $10–15/couple/day · guides: $10–20/activity · USD preferred</dd>
+  <dt>🚁 Getting around</dt><dd>Charter flights to islands organised by lodges. No DIY — all transfers pre-arranged.</dd>
+  <dt>💉 Health</dt><dd><b>Malaria prophylaxis required</b> — consult GP. Yellow fever cert if coming from endemic country. Avoid tap water.</dd>
+  <dt>🗣️ Language</dt><dd>Portuguese (official) · Swahili in north · English at all lodges</dd>
+  <dt>🌡️ June weather</dt><dd>25–27°C · very low humidity · calm Indian Ocean · excellent visibility for diving</dd>
+  <dt>⚡ Electricity</dt><dd>South African plugs (Type M) · 220V · bring adapter</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Mozambique 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Vilanculos Airport (VNX)</li>
+    <li>Anantara Bazaruto Island Resort</li>
+    <li>Azura Benguerra Island</li>
+    <li>Medjumbe Private Island (Quirimbas)</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Bazaruto Archipelago National Park</li>
+    <li>Two-Mile Reef (dive site)</li>
+    <li>Benguerra Island</li>
+    <li>Pemba — Quirimbas Archipelago</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>6,600</td><td>11,000</td><td>Via JNB + connection to VNX</td></tr>
+    <tr><td>🚁 Island charter flights (×4 sectors ×2)</td><td>2,200</td><td>4,400</td><td>~275–550 AED/sector/person</td></tr>
+    <tr><td>🛂 Visa on arrival ×2</td><td>368</td><td>734</td><td>$50–100 pp</td></tr>
+    <tr><td>🏝️ Anantara Bazaruto (5 nts couple)</td><td>44,000</td><td>77,000</td><td>4,400–7,700/nt</td></tr>
+    <tr><td>🏝️ Azura Benguerra (4 nts couple)</td><td>44,000</td><td>79,200</td><td>5,500–9,900/nt</td></tr>
+    <tr><td>🤿 Activities (diving, whale watch, dhow)</td><td>2,200</td><td>4,400</td><td>Per couple, 10 days of extras</td></tr>
+    <tr><td>💰 Tips (lodge staff + guides)</td><td>1,100</td><td>2,200</td><td>USD; essential in remote lodges</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>100,468</b></td><td><b>178,934</b></td><td><b>144–256% of monthly income — ultra-premium</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Mozambique is priced at a premium for the exclusivity and remoteness. Very few tourists reach these islands. Rates include most meals and activities. Vegetarians should confirm menus at booking. Prices marked 📊 Est. sourced Apr 2026.</p>
+
+<div class="footnote">🇲🇿 Mozambique Travel Plan · Generated Apr 2026 · Dubai → Vilanculos · Bazaruto Archipelago + Pemba · Best time May–Nov</div>
+
+</div>
+</body>
+</html>

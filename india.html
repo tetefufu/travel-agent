@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India 🇮🇳</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  .veg{color:#2e7d32;font-weight:700}
+
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  .dish-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+  .dish-card{background:#fff;border:1px solid #e0e4ea;border-radius:8px;padding:12px}
+  .dish-card h4{font-size:0.82rem;font-weight:700;color:#1a2e4a;margin-bottom:4px}
+  .dish-card p{font-size:0.78rem;color:#555}
+  @media(max-width:500px){.dish-grid{grid-template-columns:1fr}}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇮🇳 India</h1>
+    <div class="meta">Dubai → Delhi · Rajasthan · Goa &nbsp;·&nbsp; 14 days &nbsp;·&nbsp; 13 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">⭐ Best: Oct–Mar</span>
+    <span class="tag">🏨 Ultra-Luxury (Aman/Taj/RAAS)</span>
+    <span class="tag">🌿 Vegetarian heaven</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 e-Visa required</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp (Delhi / Goa)</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Oct–Nov</td><td>20–30°C / 27–32°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Post-monsoon · beautiful</span></td></tr>
+    <tr><td><b>Nov–Feb</b></td><td>10–22°C / 25–32°C</td><td>High</td><td>↑↑</td><td><span class="badge b-gold">⭐ Peak season · ideal</span></td></tr>
+    <tr><td>Mar–Apr</td><td>25–38°C / 30–35°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Good — warming up</span></td></tr>
+    <tr><td>May–Jun</td><td>36–45°C / 32–36°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-red">Extreme heat — avoid Rajasthan</span></td></tr>
+    <tr><td>Jul–Sep</td><td>28–35°C / 27–30°C</td><td>Low</td><td>↓↓↓</td><td><span class="badge b-red">Monsoon — avoid</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha Jun 6–7 2026 — NOT suitable for India.</b> June = peak heat (40–45°C in Rajasthan) + start of monsoon in Goa. <b>This trip must be planned for October–March.</b> Eid al-Fitr Mar 30–31 2026 is the perfect window — comfortable 22–28°C in Rajasthan, sea perfect in Goa. <b>Book Aman New Delhi and Taj Lake Palace 6+ months ahead.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → DEL (Delhi)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>900 – 1,800</b> <span class="badge b-est">📊 Est. 2026</span></td>
+      <td>Air India (direct) · Emirates · flydubai · IndiGo</td>
+      <td>~3.5h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-DEL" class="ext" target="_blank">KAYAK</a> · <a href="https://www.airindia.com" class="ext" target="_blank">Air India</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>5,500 – 11,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Air India Business · Emirates Business</td>
+      <td>~3.5h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-DEL" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ DXB→DEL is one of the world's busiest routes — multiple daily flights, very competitive prices</li>
+  <li>Internal: DEL → JDH (Jodhpur) ~1.5h via Air India/IndiGo (~AED 180–400 pp)</li>
+  <li>Internal: Udaipur → GOI (Goa) ~2h via Air India/IndiGo (~AED 200–550 pp)</li>
+  <li>Return: GOI → DXB ~3h, direct (Air India, IndiGo)</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>2 nts Aman New Delhi</b> → <b>3 nts RAAS Jodhpur</b> → <b>2 nts Raas Devigarh (Udaipur region)</b> → <b>3 nts Taj Lake Palace Udaipur</b> → <b>3 nts W Goa or Taj Exotica Goa</b>. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Location</th><th>Tier</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Aman New Delhi</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>New Delhi (Lodhi)</td>
+      <td>Ultra-luxury</td>
+      <td>4,400 – 9,900</td>
+      <td>✅ Stunning pool · garden</td>
+      <td>5.0 ★ (800+)</td>
+      <td><a href="https://www.aman.com/resorts/aman-new-delhi" class="ext" target="_blank">aman.com</a></td>
+    </tr>
+    <tr>
+      <td><b>RAAS Jodhpur</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Jodhpur, Blue City</td>
+      <td>Ultra-luxury boutique</td>
+      <td>2,200 – 4,800</td>
+      <td>✅ Pool with Mehrangarh Fort views</td>
+      <td>5.0 ★ (1,500+)</td>
+      <td><a href="https://www.raasjodhpur.com" class="ext" target="_blank">raasjodhpur.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Raas Devigarh</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Delwara (Udaipur region)</td>
+      <td>Ultra-luxury palace</td>
+      <td>2,900 – 5,900</td>
+      <td>✅ Pool in 18th-century palace</td>
+      <td>5.0 ★ (1,100+)</td>
+      <td><a href="https://www.raasdevigarh.com" class="ext" target="_blank">raasdevigarh.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Taj Lake Palace Udaipur</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Lake Pichola, Udaipur</td>
+      <td>Ultra-luxury (iconic)</td>
+      <td>3,300 – 8,800</td>
+      <td>✅ Pool on floating palace · lake views</td>
+      <td>5.0 ★ (3,200+)</td>
+      <td><a href="https://www.tajhotels.com/en-in/taj/taj-lake-palace-udaipur" class="ext" target="_blank">Taj Hotels</a></td>
+    </tr>
+    <tr>
+      <td><b>W Goa</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Vagator Beach, Goa</td>
+      <td>Ultra-luxury</td>
+      <td>1,800 – 4,400</td>
+      <td>✅ WET infinity pool, spectacular</td>
+      <td>4.5 ★ (2,100+)</td>
+      <td><a href="https://www.marriott.com/en-us/hotels/goixw-w-goa/overview" class="ext" target="_blank">W Hotels</a></td>
+    </tr>
+    <tr>
+      <td><b>Taj Exotica Goa</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Benaulim Beach, South Goa</td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 5,500</td>
+      <td>✅ Excellent pools · quieter beach</td>
+      <td>4.5 ★ (2,800+)</td>
+      <td><a href="https://www.tajhotels.com/en-in/taj/taj-exotica-resort-and-spa-goa" class="ext" target="_blank">Taj Hotels</a></td>
+    </tr>
+    <tr>
+      <td>Leela Palace New Delhi</td>
+      <td>New Delhi</td>
+      <td>Luxury</td>
+      <td>1,800 – 3,700</td>
+      <td>✅ Good pool</td>
+      <td>4.5 ★ (2,400+)</td>
+      <td><a href="https://www.theleela.com/en_us/hotels-in-new-delhi/the-leela-palace-new-delhi" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Ibis Delhi Airport</td>
+      <td style="color:#aaa">New Delhi</td>
+      <td style="color:#aaa">Standard (ref.)</td>
+      <td style="color:#aaa">330 – 550</td>
+      <td style="color:#aaa">⚠️ Small</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Taj Lake Palace · RAAS Jodhpur</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400&q=80" alt="Taj Lake Palace" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏯 Taj Lake Palace, Udaipur</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&q=80" alt="Jodhpur" onerror="this.parentElement.style.display='none'">
+        <figcaption>💙 Blue City, Jodhpur</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Aman New Delhi · Goa Beach</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Aman pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Aman pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Goa beach" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌊 Goa beach</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 14 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · New Delhi · Aman New Delhi</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=900&q=80" alt="India Gate Delhi" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly DXB → DEL (~3.5h)</li><li>Aman New Delhi · Lodhi Estate</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · pool · Aman Spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: The Restaurant, Aman (veg menu outstanding)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">New Delhi — Monuments + Lodhi Art District</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=900&q=80" alt="India Gate" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Humayun's Tomb (pre-Taj Mahal)</li><li>Lodhi Garden morning walk</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Qutub Minar UNESCO site</li><li>Hauz Khas Village (art galleries)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>India Gate + Rajpath at night</li><li>Dinner: Indian Accent (No.1 in India)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Old Delhi · Agra (Taj Mahal) Day Trip</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1548013146-72479768bada?w=900&q=80" alt="Taj Mahal" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Early</div><ul><li>Sunrise drive to Agra (~3h)</li><li>Taj Mahal at 6am — golden light</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Agra Fort · Mehtab Bagh (Taj from north)</li><li>Drive back · Old Delhi Chandni Chowk</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Jama Masjid area · Paranthe Wali Gali</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Transfer → Jodhpur · RAAS Jodhpur</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=900&q=80" alt="Jodhpur Blue City" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>DEL → JDH flight (~1.5h)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in RAAS · fort-view pool</li><li>Mehrangarh Fort (walk from RAAS)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner at RAAS rooftop · fort floodlit</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Jodhpur — Blue City</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=900&q=80" alt="Jodhpur Blue Houses" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Sunrise from Mehrangarh ramparts</li><li>Blue city maze of lanes</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Jaswant Thada marble cenotaph</li><li>Sardar Market · clock tower bazaar</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Cooking class at local family home</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Jodhpur to Udaipur — Raas Devigarh Palace</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=900&q=80" alt="Udaipur palace" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Drive JDH → Delwara (~4.5h scenic) OR fly</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Raas Devigarh check-in</li><li>Pool in 18th century palace courtyard</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Candlelit dinner in palace</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Devigarh · Eklingji · Nathdwara</div></div>
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Eklingji temple complex (45min)</li><li>Nathdwara — Shrinathji temple</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Palace pool day · spa treatment</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Stargazing from palace rooftop</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 8</span><div class="loc">Transfer → Udaipur · Taj Lake Palace</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=900&q=80" alt="Lake Pichola Udaipur" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Drive to Udaipur (~45min)</li><li>Boat transfer to Taj Lake Palace (island hotel)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool on floating palace · Lake Pichola</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Jharokha restaurant · City Palace lit view</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 9</span><div class="loc">Udaipur — City of Lakes</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=900&q=80" alt="Udaipur city palace" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>City Palace Museum (7 palaces in one)</li><li>Crystal Gallery</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Jagdish Temple</li><li>Boat ride: Lake Pichola → Jag Mandir island</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset from Ambrai Ghat</li><li>Dinner: Ambrai Restaurant (lakeside)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Udaipur · Local Markets · Saheliyon Ki Bari</div></div>
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Saheliyon ki Bari garden</li><li>Sajjangarh (Monsoon Palace) sunset hike</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Mochi Bazaar textile shopping</li><li>Spa at Taj Lake Palace</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Classical Rajasthani dance performance</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 11</span><div class="loc">Transfer → Goa · W Goa / Taj Exotica</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=900&q=80" alt="Goa beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>UDR → GOI flight (~2h)</li><li>Transfer to W Goa (Vagator) or Taj Exotica (South Goa)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · WET pool · beach</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Pousada by the Beach (Goan veg)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 12</span><div class="loc">Goa — Old Goa Heritage + North Beach Clubs</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=900&q=80" alt="Goa" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Old Goa: Se Cathedral · Basilica of Bom Jesus (UNESCO)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Anjuna Beach · Vagator Beach</li><li>Curlies beach club (pool access)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset at Chapora Fort</li><li>Dinner: Antares (vagator cliff restaurant)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 13</span><div class="loc">Goa — Spice Plantation + South Beaches</div></div>
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Savoi Plantation spice farm tour</li><li>Guided tour + vegetarian Goan lunch</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Palolem Beach (South Goa) · kayaking</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Final dinner · hotel restaurant · pool sundowner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 14</span><div class="loc">Departure · GOI → DXB</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">✈️ Departure</div><ul><li>GOI → DXB direct (~3h) · Air India or IndiGo</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD — DETAILED VEGETARIAN INDIA -->
+<h2>🍽️ Vegetarian Indian Food — Detailed Guide</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">India is the world capital of vegetarian cuisine. Over 30% of the population is vegetarian — an extraordinary range awaits. Every region has distinct traditions. As Indian food lovers, this is your ultimate culinary destination.</p>
+
+<div class="rbox"><b>In India, vegetarianism is the norm</b> — most fine dining hotels offer complete vegetarian menus. Rajasthan is particularly renowned for its meat-free Marwari cuisine. Goa has exceptional Goan vegetarian (influenced by Portuguese, Hindu and Catholic traditions). Delhi's North Indian and Mughlai vegetarian dishes are world-class.</div>
+
+<h2>🥘 Must-Try Vegetarian Dishes by Region</h2>
+<div class="dish-grid">
+  <div class="dish-card">
+    <h4>🏙️ Delhi — North Indian & Mughlai Veg</h4>
+    <p><b>Dal Makhani</b> — slow-cooked black lentils, cream, butter · 24h cook<br>
+    <b>Paneer Butter Masala</b> — cottage cheese in rich tomato-cream sauce<br>
+    <b>Chole Bhature</b> — spiced chickpeas with deep-fried bread · breakfast classic<br>
+    <b>Aloo Paratha</b> — stuffed potato flatbread with white butter<br>
+    <b>Shahi Paneer</b> — royal Mughlai paneer in saffron-cashew gravy<br>
+    <b>Malai Kofta</b> — paneer/potato dumplings in cream sauce<br>
+    <b>Halwa Puri</b> — semolina pudding with fried bread · Sunday brunch staple</p>
+  </div>
+  <div class="dish-card">
+    <h4>🏜️ Rajasthan — Marwari Veg Cuisine</h4>
+    <p><b>Dal Baati Churma</b> — baked wheat dumplings + five-lentil dal + sweet churma · Rajasthan's national dish<br>
+    <b>Gatte ki Sabzi</b> — gram flour dumplings in tangy yoghurt curry<br>
+    <b>Ker Sangri</b> — desert berries and beans · unique to Rajasthan<br>
+    <b>Laal Maas vegetarian version</b> — rich chilli-based gravy with vegetables<br>
+    <b>Bajra Roti</b> — millet flatbread with ghee<br>
+    <b>Pyaaz Kachori</b> — flaky pastry stuffed with spiced onion · Jodhpur famous<br>
+    <b>Malpua</b> — sweet pancake with rabri (condensed milk)</p>
+  </div>
+  <div class="dish-card">
+    <h4>🌊 Goa — Goan Veg Cuisine</h4>
+    <p><b>Khatkhate</b> — five-vegetable coconut curry · Goa's signature veg stew<br>
+    <b>Vegetable Xacuti</b> — complex coconut-poppy seed curry<br>
+    <b>Bebinca</b> — layered coconut-egg dessert pudding · Goa's signature sweet<br>
+    <b>Mushroom Caldine</b> — mild coconut curry with mushrooms<br>
+    <b>Solkadhi</b> — pink kokum and coconut milk drink · digestive<br>
+    <b>Ros Omelette (veg)</b> — request vegetable version · street classic<br>
+    <b>Poie</b> — Goan bread baked in palm husks · unique texture</p>
+  </div>
+  <div class="dish-card">
+    <h4>🍬 Indian Sweets + Drinks</h4>
+    <p><b>Rabri Faluda</b> — vermicelli, rose syrup, basil seeds, ice cream<br>
+    <b>Kulfi</b> — dense Indian ice cream · pistachio or saffron<br>
+    <b>Gulab Jamun</b> — milk-solid balls in rose sugar syrup<br>
+    <b>Jalebi</b> — crispy orange spirals in sugar syrup · best fresh + hot<br>
+    <b>Masala Chai</b> — ginger, cardamom, cinnamon tea<br>
+    <b>Lassi (sweet or salted)</b> — yoghurt drink · Jodhpur famous for blue lassi<br>
+    <b>Thandai</b> — cold spiced milk with saffron, nuts, rose</p>
+  </div>
+</div>
+
+<h2>🍽️ Restaurants — India</h2>
+<table>
+  <thead><tr><th>Restaurant</th><th>Location</th><th>Cuisine</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Indian Accent</b></td><td>New Delhi (The Lodhi)</td><td>Modern Indian</td><td><span class="veg">✅ Outstanding veg tasting menu · No.1 in India</span></td><td><a href="https://www.indianaccent.com" class="ext" target="_blank">indianaccent.com</a></td></tr>
+    <tr><td><b>Bukhara</b></td><td>ITC Maurya, Delhi</td><td>North Indian tandoor</td><td><span class="veg">✅ Dal Bukhara (24h cooked) — legendary</span></td><td><a href="https://www.itchotels.com/in/en/itcmaurya-newdelhi/restaurants" class="ext" target="_blank">itchotels.com</a></td></tr>
+    <tr><td><b>The Spice Route</b></td><td>Imperial Hotel, Delhi</td><td>Kerala/SE Asian</td><td><span class="veg">✅ Excellent South Indian vegetarian</span></td><td><a href="https://www.theimperialindia.com/dining/the-spice-route" class="ext" target="_blank">theimperialindia.com</a></td></tr>
+    <tr><td><b>RAAS Jodhpur dining</b></td><td>RAAS, Jodhpur</td><td>Rajasthani cuisine</td><td><span class="veg">✅ Full vegetarian Marwari menu · rooftop fort views</span></td><td><a href="https://www.raasjodhpur.com/dining" class="ext" target="_blank">raasjodhpur.com</a></td></tr>
+    <tr><td><b>Neel Kamal</b></td><td>Taj Lake Palace, Udaipur</td><td>Royal Rajasthani</td><td><span class="veg">✅ Exceptional — Rajput royal vegetarian recipes</span></td><td><a href="https://www.tajhotels.com/en-in/taj/taj-lake-palace-udaipur/restaurants-and-bars" class="ext" target="_blank">tajhotels.com</a></td></tr>
+    <tr><td><b>Ambrai</b></td><td>Amet Haveli, Udaipur</td><td>Rajasthani lakeside</td><td><span class="veg">✅ Spectacular lake views + great veg food</span></td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g297676-d1490891" class="ext" target="_blank">TripAdvisor</a></td></tr>
+    <tr><td><b>Pousada by the Beach</b></td><td>Calangute, Goa</td><td>Goan Portuguese</td><td><span class="veg">✅ Authentic Goan vegetarian · Bebinca dessert</span></td><td>—</td></tr>
+    <tr><td><b>Antares</b></td><td>Vagator cliff, Goa</td><td>Mediterranean-Indian</td><td><span class="veg">✅ Strong veg menu · cliff sunset views</span></td><td><a href="https://www.antaresgoa.com" class="ext" target="_blank">antaresgoa.com</a></td></tr>
+    <tr><td><b>Jodhpur Blue Lassi shop</b></td><td>Old City, Jodhpur</td><td>Street · lassi</td><td><span class="veg">✅ 100% vegetarian · try: saffron, rose, mango</span></td><td>—</td></tr>
+    <tr><td><b>Paranthe Wali Gali</b></td><td>Old Delhi, Chandni Chowk</td><td>Street food</td><td><span class="veg">✅ Legendary stuffed paratha stalls since 1875</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=400&q=80" alt="Taj Mahal" onerror="this.parentElement.style.display='none'"><p><b>Taj Mahal at sunrise</b> — arrive 6am · misty light · no crowds</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&q=80" alt="Jodhpur" onerror="this.parentElement.style.display='none'"><p><b>Jodhpur Blue City</b> — rooftop view · blue painted houses · #BlueCity</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400&q=80" alt="Taj Lake Palace" onerror="this.parentElement.style.display='none'"><p><b>Taj Lake Palace, Udaipur</b> — white marble floating on Lake Pichola</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=400&q=80" alt="Udaipur" onerror="this.parentElement.style.display='none'"><p><b>Udaipur City Palace</b> — at golden hour from lake boat</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400&q=80" alt="India Gate" onerror="this.parentElement.style.display='none'"><p><b>India Gate · Lodhi Garden</b> — morning walk with hot chai</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&q=80" alt="Goa church" onerror="this.parentElement.style.display='none'"><p><b>Old Goa churches</b> — Se Cathedral at dawn · UNESCO · #GoaHeritage</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events 2025–2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Location</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>Pushkar Camel Fair</b></td><td>Nov (full moon)</td><td>Pushkar, Rajasthan</td><td>⭐ World's largest camel fair · 1h from Jaipur</td></tr>
+    <tr><td><b>Diwali Festival of Lights</b></td><td>Oct–Nov (full moon)</td><td>All India</td><td>⭐ Most spectacular in Varanasi/Jaipur/Udaipur</td></tr>
+    <tr><td><b>Jaipur Literature Festival</b></td><td>Jan (Diggi Palace)</td><td>Jaipur</td><td>World's largest free literary festival</td></tr>
+    <tr><td><b>Jodhpur RIFF (folk music)</b></td><td>Oct (Mehrangarh Fort)</td><td>Jodhpur</td><td>⭐ Extraordinary — inside the fort at night</td></tr>
+    <tr><td><b>Goa Carnival</b></td><td>Feb–Mar</td><td>Goa</td><td>Portuguese-influenced colourful street processions</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Fitr Mar 30–31 2026</b></td><td>Mar 30–31</td><td>—</td><td><b>⭐ Perfect India travel window · warm dry days · peak Goa beach season</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>e-Visa required for UK passports · Apply at <a href="https://indianvisaonline.gov.in/evisa/tvoa.html" class="ext" target="_blank">indianvisaonline.gov.in</a> · ~$25 (≈ AED 92) · Tourist e-Visa (1 year, multiple entry) · Apply 4+ days before travel</dd>
+  <dt>💰 Currency</dt><dd>Indian Rupee (INR) · 1 INR ≈ 0.044 AED · ATMs in cities · Cards at luxury hotels · Carry cash for bazaars/auto-rickshaws</dd>
+  <dt>💸 Tipping</dt><dd>10% at restaurants · 100–200 INR (4–9 AED) for drivers/guides · Tip spa staff directly</dd>
+  <dt>🚗 Getting around</dt><dd>Delhi: Metro (fastest) + Uber · Rajasthan: hire private car + driver for entire Rajasthan leg (~AED 550/day) · Goa: scooter hire or hired driver</dd>
+  <dt>🗣️ Language</dt><dd>Hindi + English · English widely spoken at all luxury properties · No issues at Aman/Taj/RAAS level</dd>
+  <dt>⏰ Time zone</dt><dd>IST: UTC+5:30 · 1.5h ahead of UAE</dd>
+  <dt>🌡️ Weather (Oct–Mar)</dt><dd>Delhi: 10–26°C (cold nights Nov–Jan — pack layers) · Rajasthan: 14–28°C days, cold nights · Goa: 26–32°C perfect</dd>
+  <dt>🏥 Health</dt><dd>Drink only bottled water · Avoid raw salads from street vendors · Hepatitis A/Typhoid vaccines advisable · Excellent private hospitals (Fortis/Max) · Travel insurance essential</dd>
+  <dt>📱 SIM card</dt><dd>Airtel tourist SIM at airport · requires passport · ~AED 20 for 30 days unlimited data</dd>
+  <dt>⚠️ Note from Dubai</dt><dd>Many Indians in Dubai — familiar faces! Hindi/Urdu will get you far. As Indian food lovers, you're already ahead on knowing what to order.</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"India 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Aman New Delhi, Lodhi Estate</li>
+    <li>Humayun's Tomb, Delhi</li>
+    <li>Taj Mahal, Agra</li>
+    <li>Indian Accent Restaurant</li>
+    <li>RAAS Jodhpur</li>
+    <li>Mehrangarh Fort, Jodhpur</li>
+    <li>Jodhpur Blue Lassi Shop</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Raas Devigarh, Delwara</li>
+    <li>Taj Lake Palace, Udaipur</li>
+    <li>City Palace, Udaipur</li>
+    <li>Ambrai Restaurant, Udaipur</li>
+    <li>W Goa, Vagator Beach</li>
+    <li>Old Goa — Se Cathedral</li>
+    <li>Palolem Beach, South Goa</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB→DEL (economy ×2 return)</td><td>1,800</td><td>3,600</td><td>Air India or Emirates direct</td></tr>
+    <tr><td>✈️ Internal flights (DEL→JDH + UDR→GOI) ×2</td><td>1,520</td><td>3,800</td><td>Air India / IndiGo</td></tr>
+    <tr><td>🏨 Aman New Delhi (2 nts)</td><td>8,800</td><td>19,800</td><td>4,400–9,900/nt</td></tr>
+    <tr><td>🏨 RAAS Jodhpur (3 nts)</td><td>6,600</td><td>14,400</td><td>2,200–4,800/nt</td></tr>
+    <tr><td>🏨 Raas Devigarh (2 nts)</td><td>5,800</td><td>11,800</td><td>2,900–5,900/nt</td></tr>
+    <tr><td>🏨 Taj Lake Palace Udaipur (3 nts)</td><td>9,900</td><td>26,400</td><td>3,300–8,800/nt</td></tr>
+    <tr><td>🏨 W Goa / Taj Exotica (3 nts)</td><td>5,400</td><td>13,200</td><td>1,800–4,400/nt</td></tr>
+    <tr><td>🚗 Private driver (Rajasthan leg, ~7 days)</td><td>2,700</td><td>5,500</td><td>~385–785 AED/day inc. fuel + driver accommodation</td></tr>
+    <tr><td>🏛️ Monuments, entry, experiences</td><td>1,100</td><td>2,200</td><td>Taj Mahal, fort entries, plantation tour, cooking class</td></tr>
+    <tr><td>🍽️ Fine dining (12 dinners est.)</td><td>1,800</td><td>4,400</td><td>India is extraordinary value — even Indian Accent is ~330–550 AED/couple</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>45,420</b></td><td><b>105,100</b></td><td><b>65–150% of monthly income · Plan for mid-range ~65,000 AED</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">India is exceptional value vs. equivalent luxury elsewhere. Business class upgrade DXB→DEL adds only ~9,000–20,000 AED for two return — well worth it. Aman New Delhi is the most significant hotel cost. Prices 📊 Est. Apr 2026. Note: India is by far the best food destination on this list for vegetarians who love Indian cuisine.</p>
+
+<div class="footnote">🇮🇳 India Travel Plan · Generated Apr 2026 · Dubai → Delhi · Rajasthan · Goa · 14 days</div>
+
+</div>
+</body>
+</html>

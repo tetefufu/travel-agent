@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botswana 🇧🇼</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇧🇼 Botswana</h1>
+    <div class="meta">Dubai → Maun/Kasane &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Ultra-Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 Visa-free 90 days</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>34°C</td><td>Low</td><td>↓</td><td><span class="badge b-red">Green season / floods</span></td></tr>
+    <tr><td>Apr–May</td><td>28°C</td><td>Low-Med</td><td>↑</td><td><span class="badge b-green">Good — shoulder</span></td></tr>
+    <tr><td><b>Jun–Aug</b></td><td>24°C</td><td>High</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Peak Wildlife</span></td></tr>
+    <tr><td>Sep–Oct</td><td>31°C</td><td>High</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Best Wildlife</span></td></tr>
+    <tr><td>Nov–Dec</td><td>36°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-red">Hot / rains starting</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7. Perfect timing.</b> June = dry season begins, wildlife concentrating at waterholes, cool nights (10–15°C). Book fly-in camps <b>6+ months in advance</b> — they fill very fast. <b>Strongly recommend June.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → Maun (MUB) / Kasane (BBK)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,200 – 4,800</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Ethiopian via ADD · Kenya Airways via NBO · Qatar via DOH</td>
+      <td>~11–14h (1 stop)</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.ethiopianairlines.com" class="ext" target="_blank">Ethiopian</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>12,000 – 22,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Ethiopian Business via ADD · South African via JNB</td>
+      <td>~11–15h</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Fly DXB → Johannesburg (JNB) then connect to Maun (MUB) — most common route. Fly into Maun for Okavango, Kasane for Chobe.</li>
+  <li>⚠️ Camp transfers use small charter planes (Cessna/Beechcraft) — all included in camp packages. Spectacular flying over the Delta.</li>
+  <li>Book 6–8 months ahead; camps book up a year in advance for June.</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels &amp; Camps</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>3 nights &Beyond Xaranna</b> (Okavango) + <b>3 nights Mombo Camp</b> (Moremi, Chief's Island) + <b>3 nights Belmond Eagle Island Lodge</b> (water camp). All AED. Fly-in camps only.</p>
+<table>
+  <thead><tr><th>Camp / Hotel</th><th>Tier</th><th>/ night per person (AED)</th><th>Total couple (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>&amp;Beyond Xaranna Okavango</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>6,600 – 9,200 pp/nt (all-incl.)</td>
+      <td>39,600 – 55,200 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Private plunge pools</td>
+      <td>5.0 ★</td>
+      <td><a href="https://www.andbeyond.com/our-lodges/africa/botswana/okavango-delta/andbeyond-xaranna-okavango-delta-camp/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Mombo Camp (Wilderness)</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>7,300 – 11,000 pp/nt (all-incl.)</td>
+      <td>43,800 – 66,000 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Pool deck</td>
+      <td>5.0 ★</td>
+      <td><a href="https://www.wildernesssafaris.com/camps/mombo/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Belmond Eagle Island Lodge</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>5,500 – 8,800 pp/nt (all-incl.)</td>
+      <td>33,000 – 52,800 <span style="font-size:0.7rem;color:#888">(3 nts)</span></td>
+      <td>✅ Infinity pool · Delta views</td>
+      <td>5.0 ★</td>
+      <td><a href="https://www.belmond.com/hotels/africa/botswana/okavango-delta/belmond-eagle-island-lodge/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>&amp;Beyond Chobe Under Canvas</td>
+      <td>Luxury mobile camp</td>
+      <td>3,300 – 5,500 pp/nt</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>⚠️ No pool (mobile)</td>
+      <td>4.8 ★</td>
+      <td><a href="https://www.andbeyond.com/our-lodges/africa/botswana/chobe-national-park/andbeyond-chobe-under-canvas/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Sanctuary Chobe Chilwero</td>
+      <td>Luxury</td>
+      <td>3,700 – 5,500 pp/nt</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Pool with Chobe views</td>
+      <td>4.9 ★</td>
+      <td><a href="https://www.sanctuaryretreats.com/botswana-chobe-chilwero-lodge" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Cresta Riley's Hotel Maun</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">550 – 880 pp/nt</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Basic pool</td>
+      <td style="color:#aaa">3.5 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Important:</b> All ultra-luxury camps are <b>fully all-inclusive</b> — game drives, mokoro excursions, meals, local drinks, laundry all included. Rates above are per person. Couple pays 2× listed rate. Charter flights between camps are <b>extra</b> (~550–1,100 AED per flight sector per person).</div>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">&amp;Beyond Xaranna — Okavango Delta</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Safari camp pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Private plunge pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1549366021-9f761d040a94?w=400&q=80" alt="Safari tent" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Luxury tent suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Mombo Camp — Moremi Reserve</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=400&q=80" alt="Delta view" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌊 Okavango Delta</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=400&q=80" alt="Safari wildlife" onerror="this.parentElement.style.display='none'">
+        <figcaption>🦁 Game drive</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Maun · &amp;Beyond Xaranna</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80" alt="Okavango Delta" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>DXB → Johannesburg → Maun</li><li>Charter flight into camp (~30min)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Camp welcome · orientation</li><li>Mokoro excursion at sunset</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Bush dinner under stars</li><li>Sundowners on deck</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 2–3</span><div class="loc">&amp;Beyond Xaranna · Okavango Delta</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1549366021-9f761d040a94?w=900&q=80" alt="Okavango" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Dawn game drive (5:30am)</li><li>Elephant, lion, wild dog</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Mokoro through papyrus channels</li><li>Private plunge pool · spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sundowner bush walk</li><li>All-inclusive dinner · camp fire</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Charter Flight → Mombo Camp · Chief's Island</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=900&q=80" alt="Mombo" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Charter flight Xaranna → Mombo (~30min)</li><li>Iconic Chief's Island check-in</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>First Mombo game drive</li><li>Big 5 territory — best predator sightings</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner · star gazing deck</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 5–6</span><div class="loc">Mombo Camp · Moremi Game Reserve</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=900&q=80" alt="Wildlife" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Two game drives daily</li><li>African wild dog — Mombo speciality</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool · bush spa treatments</li><li>Guided nature walk (afternoon)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Night drives · leopard spotting</li><li>Fine dining all-inclusive</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Charter → Belmond Eagle Island Lodge</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Water camp" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · charter to Eagle Island (~20min)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Helicopter safari (add-on option)</li><li>Infinity pool overlooking Delta</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Delta sunset dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 8–9</span><div class="loc">Eagle Island · Water Activities</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=900&q=80" alt="Waterways" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Motorboat game drive</li><li>Hippo pools · jacana birds</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Fishing (optional)</li><li>Spa · pool · Delta floating</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Floodplain sundowner boat trip</li><li>Belmond fine dining</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final dawn mokoro · checkout</li><li>Charter → Maun → Johannesburg → DXB</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants &amp; Dining</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">⚠️ <b>Vegetarian note:</b> All-inclusive bush camps cater very well to vegetarian guests when pre-notified. Inform camps at booking — chefs prepare dedicated menus. Local Botswana cuisine is meat-heavy; camp kitchens will adapt. No standalone vegetarian restaurants in the bush.</p>
+<table>
+  <thead><tr><th>Venue</th><th>Type</th><th>Location</th><th>🌿 Veg</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>&amp;Beyond Xaranna Dining</b></td><td>All-inclusive fine dining</td><td>Okavango Delta</td><td><span class="veg">✅ Pre-notify camp</span></td><td>Full vegetarian menu available with advance notice</td></tr>
+    <tr><td><b>Mombo Camp Restaurant</b></td><td>All-inclusive fine dining</td><td>Chief's Island</td><td><span class="veg">✅ Pre-notify camp</span></td><td>World-class kitchen; dedicated veg menu</td></tr>
+    <tr><td><b>Belmond Eagle Island</b></td><td>All-inclusive fine dining</td><td>Okavango</td><td><span class="veg">✅ Pre-notify camp</span></td><td>Excellent wine list · veg tasting menu</td></tr>
+    <tr><td>Sports Bar &amp; Grill, Maun</td><td>Casual</td><td>Maun</td><td><span style="color:#856404">⚠️ Limited</span></td><td>Transition meals only</td></tr>
+    <tr><td>Thamalakane River Lodge</td><td>Restaurant</td><td>Maun</td><td><span class="veg">✅ Some options</span></td><td>Transit night in Maun if needed</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Delta aerial" onerror="this.parentElement.style.display='none'"><p><b>Okavango Delta aerial</b> — helicopter or charter window · #Okavango</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1549366021-9f761d040a94?w=400&q=80" alt="Mokoro" onerror="this.parentElement.style.display='none'"><p><b>Mokoro at sunset</b> — papyrus channels · golden hour</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=400&q=80" alt="Elephant herd" onerror="this.parentElement.style.display='none'"><p><b>Elephant herds</b> — Chobe has largest concentration · #Botswana</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=400&q=80" alt="African sunset" onerror="this.parentElement.style.display='none'"><p><b>Delta sunset</b> — infinite sky · reds &amp; purples</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=400&q=80" alt="Baobab" onerror="this.parentElement.style.display='none'"><p><b>Baobab trees</b> — ancient landscapes · #AfricanSunset</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Milky Way" onerror="this.parentElement.style.display='none'"><p><b>Milky Way night sky</b> — zero light pollution · camp deck</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>UAE public holiday</td><td><b>Great departure window from Dubai</b></td></tr>
+    <tr><td>Dry Season Peak</td><td>Jun–Oct</td><td>Wildlife season</td><td>Best game viewing; wildlife at waterholes</td></tr>
+    <tr><td>Okavango Water Season</td><td>May–Aug</td><td>Natural event</td><td>Flood waters peak — mokoro at its best</td></tr>
+    <tr><td>Maun International Airport Airshow</td><td>TBC 2026</td><td>Aviation</td><td>Annual small aircraft display</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>None · UK passport · visa-free up to 90 days</dd>
+  <dt>💵 Currency</dt><dd>Botswana Pula (BWP) · 1 BWP ≈ 0.27 AED · 1 USD ≈ 13.5 BWP</dd>
+  <dt>💸 Tipping</dt><dd>Camp staff: $10–20/day/couple · guides: $20–30/day · all in USD or BWP</dd>
+  <dt>🚁 Getting around</dt><dd>Charter flights between camps — all arranged by camps. No road between Okavango camps.</dd>
+  <dt>💉 Health</dt><dd>Malaria prophylaxis required — consult GP before travel. Yellow fever cert may be needed if transiting endemic areas.</dd>
+  <dt>🗣️ Language</dt><dd>English (official) · Setswana · universally English at camps</dd>
+  <dt>🌡️ June weather</dt><dd>Days 22–26°C · nights 5–12°C · bring warm layer for dawn game drives</dd>
+  <dt>🏠 Packing</dt><dd>Neutral colours (khaki/green/brown) · no white/black · binoculars · camera with zoom</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Botswana Safari 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>&amp;Beyond Xaranna — Okavango Delta</li>
+    <li>Mombo Camp — Chief's Island, Moremi</li>
+    <li>Belmond Eagle Island Lodge</li>
+    <li>Maun International Airport</li>
+    <li>Kasane Airport (Chobe)</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Chobe National Park</li>
+    <li>Moremi Game Reserve</li>
+    <li>Okavango Delta UNESCO World Heritage Site</li>
+    <li>Nxai Pan National Park</li>
+    <li>Makgadikgadi Pans</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>6,400</td><td>9,600</td><td>Via ADD or NBO · DXB→JNB→MUB</td></tr>
+    <tr><td>🚁 Charter flights between camps (×4 sectors ×2)</td><td>4,400</td><td>8,800</td><td>~550–1,100 AED/sector/person</td></tr>
+    <tr><td>🏕️ &amp;Beyond Xaranna (3 nts ×2 pp)</td><td>39,600</td><td>55,200</td><td>All-inclusive</td></tr>
+    <tr><td>🏕️ Mombo Camp (3 nts ×2 pp)</td><td>43,800</td><td>66,000</td><td>All-inclusive</td></tr>
+    <tr><td>🏕️ Eagle Island Lodge (3 nts ×2 pp)</td><td>33,000</td><td>52,800</td><td>All-inclusive</td></tr>
+    <tr><td>💰 Tips (guides + camp staff)</td><td>1,800</td><td>3,700</td><td>10 days · recommended in USD</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>129,000</b></td><td><b>196,100</b></td><td><b>184–280% of monthly income — ultra-premium trip</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Botswana deliberately positions as a high-cost, low-volume destination. This is one of the world's most exclusive safari experiences. Rates are all-inclusive — no additional food costs. Prices marked 📊 Est. are search-sourced Apr 2026.</p>
+
+<div class="footnote">🇧🇼 Botswana Safari Plan · Generated Apr 2026 · Dubai → Maun · Eid al-Adha Jun 2026 · Okavango Delta + Chobe</div>
+
+</div>
+</body>
+</html>

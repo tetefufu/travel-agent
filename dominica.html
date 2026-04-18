@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dominica 🌿</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🌿 Dominica — Nature Isle</h1>
+    <div class="meta">Dubai → Dominica DOM/DCF (via Antigua or Barbados) &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Ultra-Luxury Eco</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Plunge pools + hot springs</span>
+    <span class="tag">🇬🇧 Visa-Free</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Mar</td><td>26–28°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Best — dry season</span></td></tr>
+    <tr><td>Apr–May</td><td>27–29°C</td><td>Low</td><td>↓</td><td><span class="badge b-green">Great value · dry–transition</span></td></tr>
+    <tr><td><b>June</b></td><td>27–30°C</td><td>Very low</td><td>↓↓</td><td><span class="badge b-gold">⭐ Excellent (Eid · lush green · quiet)</span></td></tr>
+    <tr><td>Jul–Sep</td><td>28–30°C</td><td>Very low</td><td>↓↓↓</td><td><span class="badge b-green">Cheapest · hurricane risk Sep</span></td></tr>
+    <tr><td>Oct–Nov</td><td>27–29°C</td><td>Low</td><td>↓</td><td><span class="badge b-green">Good shoulder</span></td></tr>
+    <tr><td>Dec</td><td>26–28°C</td><td>Rising</td><td>↑</td><td><span class="badge b-green">Nice holiday season</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7. Exceptional timing for Dominica.</b> June = <b>lush emerald rainforest, waterfalls at full flow, very few tourists, lowest hotel rates</b>. Secret Bay's private villas will have full availability. Hot springs, boiling lake hikes and diving are all superb. <b>The most exclusive, off-the-beaten-path option in this collection — for the adventurous luxury traveller.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → DOM/DCF (Dominica)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,700 – 6,600</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>British Airways DXB–LHR–ANU (Antigua), then LIAT/Caribbean Airlines to DOM</td>
+      <td>~20–24h total</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.ba.com" class="ext" target="_blank">British Airways</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>22,000 – 47,700 <span class="badge b-est">📊 Est.</span></td>
+      <td>BA Club World DXB–LHR, then BA/LIAT LHR/ANU–DOM</td>
+      <td>~22–24h total</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Best routing: Emirates DXB→LHR/MIA, then connect to Antigua (ANU) or Barbados (BGI), short hop to Dominica (DOM/DCF ~30–45min)</li>
+  <li>🇬🇧 UK passport = <b>visa-free entry</b> to Dominica — no visa required</li>
+  <li>⚠️ Dominica has two small airports — Douglas-Charles (DOM, northeast) near Secret Bay; Canefield (DCF, southwest). Check which airport your hotel recommends.</li>
+  <li>Secret Bay can arrange <b>helicopter transfer</b> from Antigua (~45min) — spectacular arrival (~2,200 AED/couple)</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>4 nights Secret Bay + 2 nights Rosalie Bay Resort</b>. Note: Dominica's "pool" experience includes extraordinary natural hot springs and river pools — unique in the world. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Secret Bay</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury eco villa</td>
+      <td>4,400 – 11,000</td>
+      <td>17,600 – 44,000 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Private plunge pool per villa + sea views</td>
+      <td>5.0 ★ (600+)</td>
+      <td><a href="https://www.secretbay.dm" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/dm/secret-bay.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Rosalie Bay Resort</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Luxury eco resort</td>
+      <td>880 – 2,200</td>
+      <td>1,760 – 4,400 <span style="font-size:0.7rem;color:#888">(2 nts)</span></td>
+      <td>✅ Infinity pool · river · beach</td>
+      <td>4.5 ★ (800+)</td>
+      <td><a href="https://www.rosaliebay.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Jungle Bay, Dominica</td>
+      <td>Boutique luxury eco</td>
+      <td>660 – 1,470</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Clifftop pool · rainforest</td>
+      <td>4.5 ★ (600+)</td>
+      <td><a href="https://www.junglebay.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Beau Rive, Dominica</td>
+      <td>Boutique luxury</td>
+      <td>735 – 1,650</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Clifftop pool + sea views</td>
+      <td>5.0 ★ (300+)</td>
+      <td><a href="https://www.beaurive.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Fort Young Hotel, Roseau</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">400 – 660</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Basic pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Secret Bay</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Plunge pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Private plunge pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Villa" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌿 Clifftop villa</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Rosalie Bay Resort</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Infinity pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌊 Beach suite</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 7 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Secret Bay Villa</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Dominica cliffs" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into DOM (Douglas-Charles)</li><li>Transfer to Secret Bay (~25min)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Private villa check-in</li><li>Plunge pool overlooking the Atlantic</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>In-villa dining · jungle views at dusk</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Champagne Reef · Snorkelling</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Champagne Reef" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Secret Bay spa ritual</li><li>Private beach access</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Champagne Reef snorkel</li><li>Volcanic bubbles underwater — unique in Caribbean</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset cocktails · Secret Bay bar</li><li>Caribbean vegetarian dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Boiling Lake Hike (Morne Trois Pitons)</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80" alt="Boiling Lake" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Early start: Boiling Lake hike (UNESCO World Heritage)</li><li>~6–8h round trip with guide</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Valley of Desolation en route</li><li>Return to villa · exhausted but exhilarated</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Recovery soak in villa plunge pool</li><li>Light dinner · early night</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Spa Day · Titou Gorge</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Titou Gorge" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Secret Bay full spa day</li><li>Volcanic stone massage · rainforest treatment</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Titou Gorge swimming (natural rock corridor)</li><li>Featured in Pirates of the Caribbean</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Plunge pool · stars visible with no light pollution</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Transfer to Rosalie Bay · East Coast</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=900&q=80" alt="Rosalie Bay" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Secret Bay checkout · scenic drive east</li><li>Emerald Pool stop en route</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check-in Rosalie Bay Resort</li><li>Infinity pool · Atlantic ocean backdrop</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Rosalie Bay restaurant · farm-to-table dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Whales · Indian River</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80" alt="Indian River" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Whale watching tour (sperm whales year-round)</li><li>Dominica has largest resident sperm whale population in Caribbean</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Indian River boat tour (site used in Pirates of Caribbean)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Rosalie Bay pool sundowner</li><li>Farewell Caribbean dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · transfer to DOM/DCF airport</li><li>Connect via Antigua or Barbados → long-haul home</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Dominica's cuisine is incredibly vegetarian-friendly — root vegetables, dasheen (taro), plantain, callaloo, breadfruit and tropical fruits feature heavily in all local cooking. Farm-to-table is the norm here, not a trend.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Secret Bay Restaurant</b></td><td>Caribbean fine dining</td><td>Ultra-luxury hotel</td><td><span class="veg">✅ Full veg menu · organic garden</span></td><td><a href="https://www.secretbay.dm/dining" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Rosalie Bay Restaurant</b></td><td>Farm-to-table Caribbean</td><td>Luxury eco hotel</td><td><span class="veg">✅ Entirely farm-sourced</span></td><td><a href="https://www.rosaliebay.com/dining" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Cocorico Café &amp; Restaurant</b>, Roseau</td><td>Creole / Caribbean</td><td>Local fine dining</td><td><span class="veg">✅ Many veg options</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>La Robe Créole</b>, Roseau</td><td>Creole</td><td>Acclaimed local</td><td><span class="veg">✅ Dasheen, breadfruit, callaloo</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td>Jungle Bay Restaurant</td><td>Caribbean / organic</td><td>Eco resort dining</td><td><span class="veg">✅ Organic jungle-grown produce</span></td><td>—</td></tr>
+    <tr><td>Local market, Roseau</td><td>Street food</td><td>Saturday market</td><td><span class="veg">✅ Fruits, provisions, fresh coconuts</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Secret Bay" onerror="this.parentElement.style.display='none'"><p><b>Secret Bay plunge pool</b> — cliffside ocean view · #SecretBay</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Boiling Lake" onerror="this.parentElement.style.display='none'"><p><b>Boiling Lake</b> — surreal volcanic crater lake · #BoilingLake</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Rainforest" onerror="this.parentElement.style.display='none'"><p><b>Morne Trois Pitons</b> — UNESCO rainforest · #DominicaNature</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Titou Gorge" onerror="this.parentElement.style.display='none'"><p><b>Titou Gorge</b> — green canyon swim · #TitouGorge</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Champagne Reef" onerror="this.parentElement.style.display='none'"><p><b>Champagne Reef</b> — volcanic bubbles from below · #ChampagneReef</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Indian River" onerror="this.parentElement.style.display='none'"><p><b>Indian River</b> — mangrove canoe · #IndianRiver</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>World Creole Music Festival</td><td>Late October</td><td>Music</td><td>Dominica's biggest event — outside window</td></tr>
+    <tr><td>Dominica Dive Fest</td><td>June (TBC 2026)</td><td>Diving / adventure</td><td>✅ Often in June — excellent for divers</td></tr>
+    <tr><td>Creole in the Park</td><td>April / May (TBC)</td><td>Cultural / food</td><td>Check 2026 dates</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Low season = Secret Bay fully available, rainforest at its most lush</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>Visa-free · UK passport · no prior visa needed</dd>
+  <dt>💵 Currency</dt><dd>Eastern Caribbean Dollar (XCD) · 1 XCD ≈ 1.36 AED · USD widely accepted</dd>
+  <dt>💸 Tipping</dt><dd>10–15% appreciated · Secret Bay included in some packages</dd>
+  <dt>✈️ Getting there</dt><dd>Via Antigua (ANU) or Barbados (BGI) — short hop to DOM (~30–45min)</dd>
+  <dt>🚗 Getting around</dt><dd>Hire car essential — island roads are winding mountain tracks. Driver hire recommended.</dd>
+  <dt>🌡️ June weather</dt><dd>27–30°C · Wetter than dry season but short showers. Rainforest is spectacularly green.</dd>
+  <dt>🗣️ Language</dt><dd>English (official) · Dominican Creole also spoken</dd>
+  <dt>🏠 Best base</dt><dd>Secret Bay (NW Dominica, 4 nts) + Rosalie Bay (East coast, 2 nts) — best of island contrast</dd>
+  <dt>⚠️ Important note</dt><dd>This is NOT Dominica Republic — it is the <b>Commonwealth of Dominica</b>, a separate Eastern Caribbean island</dd>
+  <dt>🐋 Unique wildlife</dt><dd>Resident sperm whales year-round · endemic purple-throated carib hummingbird</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Dominica 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Secret Bay Hotel, Dominica</li>
+    <li>Champagne Reef (snorkelling)</li>
+    <li>Titou Gorge</li>
+    <li>Boiling Lake trailhead</li>
+    <li>Morne Trois Pitons National Park</li>
+    <li>Douglas-Charles Airport (DOM)</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Rosalie Bay Resort</li>
+    <li>Emerald Pool, Dominica</li>
+    <li>Indian River boat launch</li>
+    <li>Whale watching dock, Roseau</li>
+    <li>La Robe Créole, Roseau</li>
+    <li>Canefield Airport (DCF)</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>7,400</td><td>13,200</td><td>DXB–LHR/MIA + Antigua–DOM</td></tr>
+    <tr><td>🏨 Secret Bay (4 nts)</td><td>17,600</td><td>44,000</td><td>4,400–11,000/nt — private villas</td></tr>
+    <tr><td>🏨 Rosalie Bay (2 nts)</td><td>1,760</td><td>4,400</td><td>880–2,200/nt</td></tr>
+    <tr><td>🚁 Helicopter transfer (optional)</td><td>0</td><td>2,200</td><td>From Antigua — spectacular arrival</td></tr>
+    <tr><td>🥾 Tours &amp; activities</td><td>1,100</td><td>2,600</td><td>Boiling Lake guide, whale watch, reef snorkel</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>27,860</b></td><td><b>66,400</b></td><td><b>40–95% of monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food &amp; dining largely included in Secret Bay packages. Secret Bay is the most premium option — Jungle Bay or Beau Rive give the same experience at ~30–40% lower cost. Prices marked 📊 Est. are search-sourced Apr 2026.</p>
+<div class="rbox" style="margin-top:10px"><b>Budget note:</b> Secret Bay is one of the most exclusive resorts in the Caribbean. For a more budget-conscious ultra-luxury experience, replace with <b>Jungle Bay (~660–1,470 AED/nt)</b> and total drops to ~14,000–25,000 AED per couple — <b>20–36% of monthly income</b>.</div>
+
+<div class="footnote">🌿 Dominica Travel Plan · Generated Apr 2026 · Dubai → Dominica, Eastern Caribbean · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

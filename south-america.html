@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South America TBC 🌎</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-blue{background:#e3f2fd;color:#0d47a1;border:1px solid #90caf9}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+  .b-tbc{background:#f3e5f5;color:#6a1b9a;border:1px solid #ce93d8}
+
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  .dest-card{border:2px solid #dde2ea;border-radius:10px;padding:16px;margin-bottom:16px;background:#fff}
+  .dest-card.winner{border-color:#c9a84c}
+  .dest-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .dest-header h3{font-size:1.1rem;font-weight:800;color:#1a2e4a;margin:0}
+  .dest-header .rank{background:#c9a84c;color:#fff;font-weight:800;font-size:0.8rem;padding:3px 9px;border-radius:20px}
+  .dest-header .rank.r2{background:#1a2e4a}
+  .dest-header .rank.r3{background:#666}
+
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  .veg{color:#2e7d32;font-weight:700}
+
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  .score-bar{height:8px;background:#e0e4ea;border-radius:4px;overflow:hidden;margin-top:4px}
+  .score-fill{height:100%;background:#c9a84c;border-radius:4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🌎 South America TBC</h1>
+    <div class="meta">Dubai → Top 3 options: Peru · Colombia · Brazil &nbsp;·&nbsp; ~12 days suggested &nbsp;·&nbsp; Couple &nbsp;·&nbsp; <span style="color:#c9a84c;font-weight:700">PLANNING STAGE</span></div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">🗺️ Planning Stage — Choose One</span>
+    <span class="tag">🏨 Ultra-Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 Generally visa-free</span>
+  </div>
+</div>
+
+<div class="rbox"><b>How to use this guide:</b> Three destinations are compared below with full scoring, hotels, itineraries and budgets. Review all three, then <b>choose your favourite</b> — we recommend <b>Peru</b> for the most unique once-in-a-lifetime experience, or <b>Colombia</b> for the best combination of luxury, beach and culture at lower cost. Brazil is the most ambitious.</div>
+
+<!-- DESTINATION COMPARISON -->
+<h2>🏆 Destination Comparison</h2>
+<table>
+  <thead><tr><th>Criteria</th><th>🇵🇪 Peru (Cusco + Machu Picchu)</th><th>🇨🇴 Colombia (Cartagena)</th><th>🇧🇷 Brazil (Rio de Janeiro)</th></tr></thead>
+  <tbody>
+    <tr><td><b>Uniqueness / WOW factor</b></td><td><span class="badge b-gold">⭐⭐⭐ Once in a lifetime</span></td><td><span class="badge b-green">⭐⭐ Gorgeous</span></td><td><span class="badge b-green">⭐⭐ Iconic</span></td></tr>
+    <tr><td><b>Luxury hotels</b></td><td><span class="badge b-gold">Belmond, Inkaterra — world-class</span></td><td><span class="badge b-green">Boutique gems — Casa San Agustin</span></td><td><span class="badge b-gold">Belmond Copacabana Palace</span></td></tr>
+    <tr><td><b>Pool quality</b></td><td><span class="badge b-green">Good (altitude limited)</span></td><td><span class="badge b-gold">⭐ Excellent — pool + Caribbean</span></td><td><span class="badge b-gold">⭐ Excellent — Copacabana</span></td></tr>
+    <tr><td><b>Vegetarian food</b></td><td><span class="badge b-gold">Excellent — quinoa, veg menus</span></td><td><span class="badge b-green">Good — arepas, fresh fruit</span></td><td><span class="badge b-green">Good — feijoada has veg version</span></td></tr>
+    <tr><td><b>Safety for tourists</b></td><td><span class="badge b-green">Good (tourist areas)</span></td><td><span class="badge b-green">Improved — Cartagena safe</span></td><td><span class="badge b-gold">⚠️ Rio requires awareness</span></td></tr>
+    <tr><td><b>Flight from DXB</b></td><td>~17–20h with connections</td><td>~15–17h with connections</td><td>~14–16h with connections</td></tr>
+    <tr><td><b>Best time (Dubai based)</b></td><td>May–Oct (dry season)</td><td>Dec–Apr (dry)</td><td>May–Sep (dry, cooler)</td></tr>
+    <tr><td><b>Budget (per couple, 12 days)</b></td><td>65,000 – 130,000 AED</td><td>42,000 – 82,000 AED</td><td>58,000 – 110,000 AED</td></tr>
+    <tr><td><b>Eid Jun 6–7 suitability</b></td><td><span class="badge b-gold">⭐ Great — peak dry season</span></td><td><span class="badge b-green">Good — early dry season</span></td><td><span class="badge b-green">Good — cooler autumn</span></td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== DESTINATION 1: PERU ===================== -->
+<h2>🇵🇪 Option 1 — Peru: Cusco + Machu Picchu</h2>
+<div class="dest-card winner">
+  <div class="dest-header">
+    <span class="rank">⭐ Our Top Pick</span>
+    <h3>🇵🇪 Peru — Cusco · Sacred Valley · Machu Picchu</h3>
+    <span class="badge b-tbc">Planning Stage</span>
+  </div>
+
+  <p style="font-size:0.85rem;margin-bottom:10px">Machu Picchu is one of the world's Seven Wonders — a once-in-a-lifetime Inca citadel at 2,430m. Paired with Cusco's colonial luxury and the Sacred Valley, this is transformative travel. Belmond runs the finest hotels in the region and the legendary Hiram Bingham train.</p>
+
+  <h2>📅 Best Time to Go — Peru</h2>
+  <table>
+    <thead><tr><th>Month</th><th>🌡️ Temp (Cusco)</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td>May–Jun</td><td>14–22°C (day)</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Excellent — dry season</span></td></tr>
+      <tr><td>Jul–Aug</td><td>14–20°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-green">Good · peak crowds</span></td></tr>
+      <tr><td>Sep–Oct</td><td>16–22°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Best — fewer crowds</span></td></tr>
+      <tr><td>Nov–Apr</td><td>12–20°C</td><td>Low</td><td>↓</td><td><span class="badge b-red">Wet season — some trails closed</span></td></tr>
+    </tbody>
+  </table>
+  <div class="rbox"><b>Eid al-Adha Jun 6–7 2026 — PERFECT.</b> June is dry season in Peru, clear skies, comfortable temperatures at altitude. Book Machu Picchu entry permits <b>well in advance</b> — they sell out months ahead.</div>
+
+  <h2>✈️ Flights — DXB → LIM (Lima, Peru)</h2>
+  <table>
+    <thead><tr><th>Class</th><th>Price p/p return (AED)</th><th>Airlines</th><th>Duration</th></tr></thead>
+    <tbody>
+      <tr><td><b>Economy</b> <span class="badge b-green">Primary</span></td><td><b>5,500 – 8,800</b> <span class="badge b-est">📊 Est.</span></td><td>Iberia via MAD · KLM via AMS · Turkish via IST</td><td>~17–20h total</td></tr>
+      <tr><td>Business <span class="badge b-navy">Upgrade</span></td><td>22,000 – 38,000 <span class="badge b-est">📊 Est.</span></td><td>Iberia Business · LATAM Business</td><td>~17–20h</td></tr>
+    </tbody>
+  </table>
+  <ul style="font-size:0.82rem;padding-left:16px;margin:6px 0 10px">
+    <li>Lima → Cusco internal: ~AED 400–900 pp (LATAM, VivaAir · ~1.5h)</li>
+    <li>Consider Lima stopover 1–2 nights: Belmond Miraflores Park (world-class restaurant Central nearby)</li>
+  </ul>
+
+  <h2>🏨 Hotels — Peru</h2>
+  <table>
+    <thead><tr><th>Hotel</th><th>Location</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐</th><th>🔗</th></tr></thead>
+    <tbody>
+      <tr><td><b>Belmond Hotel Monasterio</b> <span class="badge b-est">📊</span></td><td>Cusco</td><td>2,200 – 4,400</td><td>✅ Heated pool, colonial courtyard</td><td>5.0 ★</td><td><a href="https://www.belmond.com/hotels/south-america/peru/cusco/belmond-hotel-monasterio" class="ext" target="_blank">Belmond</a></td></tr>
+      <tr><td><b>Inkaterra Machu Picchu Pueblo</b> <span class="badge b-est">📊</span></td><td>Aguas Calientes</td><td>3,700 – 7,300</td><td>✅ Cloud forest pool</td><td>5.0 ★</td><td><a href="https://www.inkaterra.com/inkaterra/inkaterra-machu-picchu-pueblo-hotel" class="ext" target="_blank">Inkaterra</a></td></tr>
+      <tr><td><b>Belmond Rio Sagrado</b> <span class="badge b-est">📊</span></td><td>Sacred Valley</td><td>2,900 – 5,500</td><td>✅ River views · heated outdoor pool</td><td>5.0 ★</td><td><a href="https://www.belmond.com/hotels/south-america/peru/sacred-valley/belmond-rio-sagrado" class="ext" target="_blank">Belmond</a></td></tr>
+      <tr><td><b>Belmond Miraflores Park</b> <span class="badge b-est">📊</span></td><td>Lima</td><td>1,800 – 3,300</td><td>✅ Ocean view pool</td><td>5.0 ★</td><td><a href="https://www.belmond.com/hotels/south-america/peru/lima/belmond-miraflores-park" class="ext" target="_blank">Belmond</a></td></tr>
+    </tbody>
+  </table>
+
+  <div class="hphotos">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=400&q=80" alt="Machu Picchu" onerror="this.parentElement.style.display='none'">
+      <figcaption>🏛️ Machu Picchu</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=400&q=80" alt="Cusco" onerror="this.parentElement.style.display='none'">
+      <figcaption>🌇 Cusco</figcaption>
+    </figure>
+  </div>
+
+  <h2>🗓️ Peru — 12-Day Suggested Itinerary</h2>
+  <div class="days">
+    <div class="day">
+      <div class="day-hd"><span>Days 1–2</span><div class="loc">Lima — Arrival + Miraflores</div></div>
+      <div class="day-body">
+        <div class="session"><div class="slab">Day 1</div><ul><li>Arrive Lima · Belmond Miraflores</li><li>Rest · acclimatise</li></ul></div>
+        <div class="session"><div class="slab">Day 2</div><ul><li>Miraflores clifftop walk</li><li>Huaca Pucllana ruins</li></ul></div>
+        <div class="session"><div class="slab">🌙 Dinner</div><ul><li>Maido (veg tasting menu)</li><li>Or Central (world's best restaurant)</li></ul></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-hd"><span>Days 3–5</span><div class="loc">Cusco — Altitude acclimatisation</div></div>
+      <div class="day-body">
+        <div class="session"><div class="slab">Day 3</div><ul><li>LIM→CUZ flight (~1.5h)</li><li>Belmond Monasterio check in · REST</li></ul></div>
+        <div class="session"><div class="slab">Day 4</div><ul><li>Cusco Plaza de Armas</li><li>Sacsayhuamán fortress</li></ul></div>
+        <div class="session"><div class="slab">Day 5</div><ul><li>San Blas artisan quarter</li><li>Koricancha (Sun Temple)</li></ul></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-hd"><span>Days 6–7</span><div class="loc">Sacred Valley</div></div>
+      <div class="day-body">
+        <div class="session"><div class="slab">Day 6</div><ul><li>Pisac market + ruins</li><li>Transfer: Belmond Rio Sagrado</li></ul></div>
+        <div class="session"><div class="slab">Day 7</div><ul><li>Ollantaytambo fortress</li><li>Moray circular terraces</li></ul></div>
+        <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset from Belmond terrace</li></ul></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-hd"><span>Days 8–9</span><div class="loc">Machu Picchu — Hiram Bingham Train</div></div>
+      <div class="day-body">
+        <div class="session"><div class="slab">Day 8</div><ul><li>Hiram Bingham train (Belmond) to Aguas Calientes</li><li>Inkaterra hotel check in</li></ul></div>
+        <div class="session"><div class="slab">Day 9</div><ul><li>Machu Picchu sunrise entry (5:30am!)</li><li>Sun Gate (Inti Punku) hike</li></ul></div>
+        <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return Hiram Bingham · dinner on train</li></ul></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-hd"><span>Days 10–12</span><div class="loc">Return + Optional Rainbow Mountain</div></div>
+      <div class="day-body">
+        <div class="session"><div class="slab">Day 10</div><ul><li>Rainbow Mountain day hike (Vinicunca) — optional</li></ul></div>
+        <div class="session"><div class="slab">Day 11</div><ul><li>Cusco leisure · shopping</li></ul></div>
+        <div class="session"><div class="slab">Day 12</div><ul><li>CUZ → LIM → DXB departure</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== DESTINATION 2: COLOMBIA ===================== -->
+<h2>🇨🇴 Option 2 — Colombia: Cartagena + Medellín</h2>
+<div class="dest-card">
+  <div class="dest-header">
+    <span class="rank r2">Option 2</span>
+    <h3>🇨🇴 Colombia — Cartagena · Medellín</h3>
+    <span class="badge b-tbc">Planning Stage</span>
+  </div>
+
+  <p style="font-size:0.85rem;margin-bottom:10px">Cartagena is one of the Caribbean's most beautiful colonial cities — candy-coloured walls, rooftop pools, crystal-clear sea. Lower cost than Peru or Brazil. Medellín ("City of Eternal Spring") has transformed dramatically and has a thriving luxury scene. Together they make an ideal 12-day pairing.</p>
+
+  <h2>📅 Best Time to Go — Colombia</h2>
+  <table>
+    <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td>Dec–Mar</td><td>28–34°C</td><td>High</td><td>↑↑</td><td><span class="badge b-gold">⭐ Peak / Best weather</span></td></tr>
+      <tr><td>Apr–May</td><td>28–32°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Good shoulder season</span></td></tr>
+      <tr><td><b>Jun–Aug</b></td><td>28–33°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Good — dry in Cartagena</span></td></tr>
+      <tr><td>Sep–Nov</td><td>26–32°C</td><td>Low</td><td>↓</td><td><span class="badge b-red">Rainier in some areas</span></td></tr>
+    </tbody>
+  </table>
+  <div class="rbox"><b>Eid al-Adha Jun 6–7 2026 — WORKS WELL.</b> Cartagena has relatively dry weather in June compared to its "green season." Comfortable temperatures. Crowds are manageable — ideal Eid window.</div>
+
+  <h2>✈️ Flights — DXB → CTG (Cartagena)</h2>
+  <table>
+    <thead><tr><th>Class</th><th>Price p/p return (AED)</th><th>Airlines</th><th>Duration</th></tr></thead>
+    <tbody>
+      <tr><td><b>Economy</b> <span class="badge b-green">Primary</span></td><td><b>4,400 – 7,300</b> <span class="badge b-est">📊 Est.</span></td><td>Iberia via MAD · KLM via AMS · Avianca via BOG</td><td>~15–17h total</td></tr>
+      <tr><td>Business <span class="badge b-navy">Upgrade</span></td><td>18,000 – 32,000 <span class="badge b-est">📊 Est.</span></td><td>Iberia Business · KLM World Business</td><td>~15–17h</td></tr>
+    </tbody>
+  </table>
+  <ul style="font-size:0.82rem;padding-left:16px;margin:6px 0 10px">
+    <li>DXB → BOG (Bogotá) often easier to route · then internal CTG or MDE (~1h, ~AED 200–450)</li>
+  </ul>
+
+  <h2>🏨 Hotels — Colombia</h2>
+  <table>
+    <thead><tr><th>Hotel</th><th>Location</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐</th><th>🔗</th></tr></thead>
+    <tbody>
+      <tr><td><b>Casa San Agustín</b> <span class="badge b-est">📊</span></td><td>Cartagena Old City</td><td>2,200 – 4,800</td><td>✅ Colonial courtyard pool</td><td>5.0 ★</td><td><a href="https://www.hotelcasasanagustin.com" class="ext" target="_blank">Book</a></td></tr>
+      <tr><td><b>Sofitel Legend Santa Clara</b> <span class="badge b-est">📊</span></td><td>Cartagena Old City</td><td>1,800 – 3,700</td><td>✅ Excellent pool</td><td>4.5 ★</td><td><a href="https://www.sofitel.com/gb/hotel-9484-sofitel-legend-santa-clara-cartagena/index.shtml" class="ext" target="_blank">Book</a></td></tr>
+      <tr><td><b>Casa Entonces</b> <span class="badge b-est">📊</span></td><td>Medellín, El Poblado</td><td>1,500 – 2,900</td><td>✅ Boutique pool</td><td>4.5 ★</td><td><a href="https://www.tripadvisor.com/Hotel_Review-g297478-d6826792" class="ext" target="_blank">TripAdvisor</a></td></tr>
+    </tbody>
+  </table>
+
+  <div class="hphotos">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=400&q=80" alt="Cartagena" onerror="this.parentElement.style.display='none'">
+      <figcaption>🏛️ Cartagena Old Town</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&q=80" alt="Colombia coast" onerror="this.parentElement.style.display='none'">
+      <figcaption>🌊 Caribbean Coast</figcaption>
+    </figure>
+  </div>
+
+  <h2>🗓️ Colombia — 12-Day Suggested Itinerary</h2>
+  <div class="days">
+    <div class="day">
+      <div class="day-hd"><span>Days 1–6</span><div class="loc">Cartagena — Walled City + Islands</div></div>
+      <div class="day-body">
+        <div class="session"><div class="slab">Days 1–2</div><ul><li>Arrive · Casa San Agustín</li><li>Old Town colonial walk · pool</li></ul></div>
+        <div class="session"><div class="slab">Days 3–4</div><ul><li>Rosario Islands day boat trip</li><li>Islas del Rosario snorkelling</li></ul></div>
+        <div class="session"><div class="slab">Days 5–6</div><ul><li>Sunset from city walls</li><li>Gold Museum · artisan markets</li></ul></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-hd"><span>Days 7–12</span><div class="loc">Medellín — City of Eternal Spring</div></div>
+      <div class="day-body">
+        <div class="session"><div class="slab">Days 7–8</div><ul><li>CTG→MDE flight (~1h)</li><li>El Poblado neighbourhood</li></ul></div>
+        <div class="session"><div class="slab">Days 9–10</div><ul><li>Guatapé lake + El Peñol rock</li><li>Arví Park cable car</li></ul></div>
+        <div class="session"><div class="slab">Days 11–12</div><ul><li>Pablo Escobar tours (optional)</li><li>Departure MDE → DXB</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== DESTINATION 3: BRAZIL ===================== -->
+<h2>🇧🇷 Option 3 — Brazil: Rio de Janeiro</h2>
+<div class="dest-card">
+  <div class="dest-header">
+    <span class="rank r3">Option 3</span>
+    <h3>🇧🇷 Brazil — Rio de Janeiro + Optional Iguazú Falls</h3>
+    <span class="badge b-tbc">Planning Stage</span>
+  </div>
+
+  <p style="font-size:0.85rem;margin-bottom:10px">Rio is one of the world's most jaw-dropping cities — Christ the Redeemer, Copacabana, Sugarloaf Mountain, and the legendary Belmond Copacabana Palace. More complex logistically and requires more safety awareness, but the payoff is immense. Add Iguazú Falls (Argentina/Brazil border) for a world wonder detour.</p>
+
+  <h2>📅 Best Time to Go — Brazil (Rio)</h2>
+  <table>
+    <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td>Dec–Mar (Carnival)</td><td>28–35°C</td><td>Extremely high</td><td>↑↑↑</td><td><span class="badge b-red">Carnival is Feb — extreme crowds</span></td></tr>
+      <tr><td>Apr–May</td><td>24–30°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Good shoulder</span></td></tr>
+      <tr><td><b>May–Sep</b></td><td>20–26°C</td><td>Low–Med</td><td>↓</td><td><span class="badge b-gold">⭐ Best — dry, cooler, fewer crowds</span></td></tr>
+      <tr><td>Oct–Nov</td><td>24–30°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Good</span></td></tr>
+    </tbody>
+  </table>
+  <div class="rbox"><b>Eid al-Adha Jun 6–7 2026 — GOOD.</b> June is dry season in Rio — cooler (20–24°C), lower humidity, no Carnival madness. Good availability at Belmond Copacabana Palace. <b>Note:</b> Brazil visa for UK passports is <span style="color:#c9a84c">currently visa-free</span> (check latest rules — this changed in 2023). Confirm before booking.</div>
+
+  <h2>✈️ Flights — DXB → GIG/GRU (Rio de Janeiro)</h2>
+  <table>
+    <thead><tr><th>Class</th><th>Price p/p return (AED)</th><th>Airlines</th><th>Duration</th></tr></thead>
+    <tbody>
+      <tr><td><b>Economy</b> <span class="badge b-green">Primary</span></td><td><b>4,800 – 8,100</b> <span class="badge b-est">📊 Est.</span></td><td>Iberia via MAD · TAP via LIS · Turkish via IST</td><td>~14–16h total</td></tr>
+      <tr><td>Business <span class="badge b-navy">Upgrade</span></td><td>20,000 – 40,000 <span class="badge b-est">📊 Est.</span></td><td>Iberia Business · TAP Business</td><td>~14–16h</td></tr>
+    </tbody>
+  </table>
+
+  <h2>🏨 Hotels — Brazil</h2>
+  <table>
+    <thead><tr><th>Hotel</th><th>Location</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐</th><th>🔗</th></tr></thead>
+    <tbody>
+      <tr><td><b>Belmond Copacabana Palace</b> <span class="badge b-est">📊</span></td><td>Copacabana Beach, Rio</td><td>3,300 – 7,700</td><td>✅ Iconic white pool · ocean view</td><td>5.0 ★</td><td><a href="https://www.belmond.com/hotels/south-america/brazil/rio-de-janeiro/belmond-copacabana-palace" class="ext" target="_blank">Belmond</a></td></tr>
+      <tr><td><b>Fasano Rio</b> <span class="badge b-est">📊</span></td><td>Ipanema Beach, Rio</td><td>2,600 – 5,500</td><td>✅ Rooftop pool · Ipanema views</td><td>5.0 ★</td><td><a href="https://www.fasano.com.br/hoteis/fasano-rio-de-janeiro" class="ext" target="_blank">Fasano</a></td></tr>
+      <tr><td><b>Hotel das Cataratas (Iguazú)</b> <span class="badge b-est">📊</span></td><td>Inside Iguazú NP, Brazil</td><td>2,200 – 4,400</td><td>✅ Pool in national park</td><td>5.0 ★</td><td><a href="https://www.belmond.com/hotels/south-america/brazil/foz-do-iguacu/belmond-hotel-das-cataratas" class="ext" target="_blank">Belmond</a></td></tr>
+    </tbody>
+  </table>
+
+  <div class="hphotos">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400&q=80" alt="Rio de Janeiro" onerror="this.parentElement.style.display='none'">
+      <figcaption>🌇 Cristo Redentor, Rio</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=400&q=80" alt="Iguazu Falls" onerror="this.parentElement.style.display='none'">
+      <figcaption>💧 Iguazú Falls</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!-- VEGETARIAN FOOD ACROSS S. AMERICA -->
+<h2>🌿 Vegetarian Food — South America</h2>
+<table>
+  <thead><tr><th>Country</th><th>Must-try Veg Dishes</th><th>Ease of being vegetarian</th></tr></thead>
+  <tbody>
+    <tr><td>🇵🇪 Peru</td><td>Quinoa soup · Papa a la huancaína · Causa rellena (veg) · Solterito salad · Rocoto relleno (stuffed pepper)</td><td><span class="veg">✅ Excellent — quinoa is native, menus adapt well</span></td></tr>
+    <tr><td>🇨🇴 Colombia</td><td>Arepas de choclo · Changua (milk soup) · Bandeja paisa (veg version) · Fresh tropical fruit platters · Buñuelos</td><td><span class="veg">✅ Good — cities have growing veg scene</span></td></tr>
+    <tr><td>🇧🇷 Brazil</td><td>Pão de queijo (cheese bread) · Açaí bowl · Feijoada vegetariana · Coxinha de palmito · Brigadeiro</td><td><span class="veg">✅ Good — Brazil has strong veg restaurant culture in cities</span></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=400&q=80" alt="Machu Picchu" onerror="this.parentElement.style.display='none'"><p><b>Machu Picchu sunrise</b> — arrive 5:30am for mist over ruins</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=400&q=80" alt="Cusco" onerror="this.parentElement.style.display='none'"><p><b>Cusco Plaza de Armas</b> — cathedral at golden hour</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=400&q=80" alt="Cartagena" onerror="this.parentElement.style.display='none'"><p><b>Cartagena walls</b> — bougainvillea + colonial colour</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400&q=80" alt="Rio" onerror="this.parentElement.style.display='none'"><p><b>Cristo Redentor</b> — at sunrise, clouds below · #Rio</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=400&q=80" alt="Iguazu" onerror="this.parentElement.style.display='none'"><p><b>Iguazú Falls</b> — Devil's Throat walkway · rainbow spray</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&q=80" alt="Caribbean" onerror="this.parentElement.style.display='none'"><p><b>Rosario Islands</b> — Caribbean turquoise near Cartagena</p></div>
+</div>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info — All Three Destinations</h2>
+<dl class="prac-grid">
+  <dt>🛂 Peru visa (UK passport)</dt><dd>Visa-free · 183 days · No action required</dd>
+  <dt>🛂 Colombia visa (UK passport)</dt><dd>Visa-free · 90 days · No action required</dd>
+  <dt>🛂 Brazil visa (UK passport)</dt><dd>Visa-free since 2023 · Confirm current status before booking · eTA via <a href="https://www.gov.uk/foreign-travel-advice/brazil/entry-requirements" class="ext" target="_blank">gov.uk</a></dd>
+  <dt>💰 Currencies</dt><dd>Peru: Nuevo Sol (PEN) · Colombia: Colombian Peso (COP) · Brazil: Real (BRL) · USD widely accepted in tourist areas</dd>
+  <dt>⚠️ Safety</dt><dd>Cartagena old city: safe for tourists · Rio: stay in Ipanema/Copacabana, use Uber, avoid favelas · Cusco/Machu Picchu: very safe</dd>
+  <dt>🌡️ Altitude (Peru)</dt><dd>Cusco at 3,399m — acclimatise for 2 days before Machu Picchu · Drink coca tea · Avoid alcohol first 48h</dd>
+  <dt>🚗 Getting around</dt><dd>All: Uber available in cities · Peru: hire driver for Sacred Valley · Colombia: taxis via InDriver app</dd>
+  <dt>🏥 Vaccinations</dt><dd>Yellow fever recommended for Brazil/Colombia jungle areas · Hepatitis A/B advisable · Check NHS Travel Health</dd>
+</dl>
+
+<!-- BUDGET COMPARISON -->
+<h2>💰 Budget Comparison (per couple, 12 days)</h2>
+<table>
+  <thead><tr><th>Item</th><th>🇵🇪 Peru (AED)</th><th>🇨🇴 Colombia (AED)</th><th>🇧🇷 Brazil (AED)</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights return (economy ×2)</td><td>11,000–17,600</td><td>8,800–14,600</td><td>9,600–16,200</td></tr>
+    <tr><td>🏨 Hotels (12 nights)</td><td>30,000–60,000</td><td>21,600–45,600</td><td>31,200–64,800</td></tr>
+    <tr><td>🚂 Hiram Bingham train (Peru)</td><td>5,500–7,300</td><td>—</td><td>—</td></tr>
+    <tr><td>🏛️ Machu Picchu permits + guide</td><td>2,200–3,700</td><td>—</td><td>—</td></tr>
+    <tr><td>🌊 Island / falls excursions</td><td>1,800</td><td>1,800</td><td>2,200</td></tr>
+    <tr><td>🍽️ Dining (12 days, est.)</td><td>3,600–7,300</td><td>2,200–4,400</td><td>3,600–7,300</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>54,100 – 95,900</b></td><td><b>34,400 – 66,400</b></td><td><b>46,600 – 90,500</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">All prices AED, 📊 Est. sourced Apr 2026. 1 USD ≈ 3.67 AED. Colombia is most cost-effective. Peru most unique. Business class upgrades add ~AED 30,000–75,000 per couple across all options.</p>
+
+<div class="footnote">🌎 South America Travel Plan (TBC) · Generated Apr 2026 · Dubai → Peru / Colombia / Brazil · Planning Stage · Choose destination before booking</div>
+
+</div>
+</body>
+</html>

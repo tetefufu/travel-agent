@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Austria 🇦🇹</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇦🇹 Austria — Vienna + Hallstatt</h1>
+    <div class="meta">Dubai → Vienna VIE &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">🎶 Classical Music &amp; Alpine Beauty</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 No visa (Schengen)</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp (Vienna)</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Feb</td><td>-2–4°C</td><td>Low (ski season inland)</td><td>↓</td><td><span class="badge b-green">Good (Christmas markets gone)</span></td></tr>
+    <tr><td><b>Apr–Jun</b></td><td>14–24°C</td><td>Medium–High</td><td>↑</td><td><span class="badge b-gold">⭐ Best (spring bloom)</span></td></tr>
+    <tr><td>Jul–Aug</td><td>26–30°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Crowded &amp; expensive</span></td></tr>
+    <tr><td><b>Sep–Oct</b></td><td>14–20°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Best (autumn)</span></td></tr>
+    <tr><td>Nov–Dec</td><td>2–8°C</td><td>High (Christmas markets)</td><td>↑↑</td><td><span class="badge b-green">Magical Christmas</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha 2026: Jun 6–7.</b> Early June in Vienna is excellent — warm (20–24°C), spring flowers, opera season wrapping up. Hallstatt in June is stunning (before peak July crowds). <b>Strongly recommended.</b> Note: Vienna has a large <b>Turkish and Middle Eastern community</b> with excellent halal and vegetarian restaurant options beyond traditional Austrian food.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → VIE (Vienna)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>1,800 – 2,900</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Austrian Airlines (direct) · Emirates · flydubai</td>
+      <td>~5h 45min direct</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.austrian.com" class="ext" target="_blank">Austrian</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>7,300 – 11,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Austrian Airlines Business · Emirates Business</td>
+      <td>~5h 45min direct</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>Austrian Airlines flies <b>direct DXB→VIE daily</b> — excellent value, ~5h45m</li>
+  <li>Vienna to Hallstatt: ~3.5h by train + bus (via Attnang-Puchheim) or hire a driver (~110 AED)</li>
+  <li>Vienna is 16km from city centre — City Airport Train (CAT) takes 16 minutes to Wien Mitte (~100 AED return)</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>5 nights Vienna (Hotel Sacher or Park Hyatt Vienna)</b> + <b>1 night Hallstatt (Heritage Hotel)</b>. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Location</th><th>Tier</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Hotel Sacher Wien</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Vienna, 1st district (Opera)</td>
+      <td>Ultra-luxury / Historic</td>
+      <td>3,300 – 7,300</td>
+      <td>✅ Spa pool</td>
+      <td>4.8 ★ (4,200+)</td>
+      <td><a href="https://www.sacher.com/hotel-sacher-wien" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Park Hyatt Vienna</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Vienna, 1st district (Am Hof)</td>
+      <td>Ultra-luxury</td>
+      <td>3,700 – 7,700</td>
+      <td>✅ Stunning indoor marble pool</td>
+      <td>4.9 ★ (2,800+)</td>
+      <td><a href="https://www.hyatt.com/en-US/hotel/austria/park-hyatt-vienna/vieph" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Das Triest</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Vienna, 4th district</td>
+      <td>Luxury / Design Hotels</td>
+      <td>2,200 – 4,400</td>
+      <td>✅ Indoor pool</td>
+      <td>4.7 ★ (1,600+)</td>
+      <td><a href="https://www.dastriest.at" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Heritage Hotel Hallstatt</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Hallstatt, lakeside</td>
+      <td>Luxury boutique</td>
+      <td>2,200 – 4,000</td>
+      <td>⚠️ No pool (lake swimming)</td>
+      <td>4.8 ★ (900+)</td>
+      <td><a href="https://www.heritagehotelhallstatt.at" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Hilton Vienna Park</td>
+      <td style="color:#aaa">Vienna</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">730 – 1,470</td>
+      <td style="color:#aaa">⚠️ Basic pool</td>
+      <td style="color:#aaa">4.2 ★</td>
+      <td style="color:#aaa">— (ref.)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Hotel Sacher Wien</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=400&q=80" alt="Vienna hotel" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏰 Historic grand interior</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Bathroom" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Luxury bathroom</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Hallstatt — Heritage Hotel</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Hallstatt lake" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏔️ Alpine lake views</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Mountain village" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌲 Village at dawn</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 7 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Vienna 1st District</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=900&q=80" alt="Vienna" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into VIE · CAT train to city (16min)</li><li>Check in Hotel Sacher or Park Hyatt</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Stroll the Ringstrasse</li><li>Hotel spa / indoor pool</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Café Schwarzenberg (vegetarian options)</li><li>Sachertorte at Café Sacher</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Schönbrunn · Belvedere · Opera</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1519112232436-9c68dad83d19?w=900&q=80" alt="Schönbrunn" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Schönbrunn Palace gardens (opens 6:30am)</li><li>Grand Gloriette viewpoint</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Upper Belvedere · Klimt's The Kiss</li><li>Belvedere gardens</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Vienna State Opera performance (book ahead)</li><li>Dinner: Meixner's Gastwirtschaft</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Kunsthistorisches Museum · Naschmarkt · Graben</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&q=80" alt="Vienna museum" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Kunsthistorisches Museum (art)</li><li>MuseumsQuartier</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Naschmarkt — Vienna's famous food market</li><li>Graben &amp; Kohlmarkt luxury shopping</li><li>Stephansdom Cathedral</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Tian (Michelin-starred vegetarian)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Prater · Heuriger Wine Taverns · Spa Day</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1517309230475-6736d926b979?w=900&q=80" alt="Vienna cafe" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Hotel spa &amp; pool morning</li><li>Coffee house: Café Central (historic)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Prater park · Giant Ferris Wheel</li><li>Grinzing neighbourhood wine taverns</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Heuriger (wine tavern) dinner — Mayer am Pfarrplatz</li><li>Vineyard views at sunset</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Day Trip → Hallstatt (UNESCO village)</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1574168683165-6a15cfb51c3a?w=900&q=80" alt="Hallstatt" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Train Vienna → Attnang-Puchheim (~2h30m)</li><li>Ferry across Hallstätter See (stunning)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Hallstatt village walk · market square</li><li>Salt mine tour (oldest in world)</li><li>Skywalk viewpoint hike</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Check in Heritage Hotel Hallstatt</li><li>Dinner: Seehotel Grüner Baum (lakeside)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Hallstatt Morning · Return to Vienna</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=900&q=80" alt="Alpine lake" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Sunrise at the lake (world's most photographed village)</li><li>Bone House (Beinhaus) — unique cultural site</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Return journey to Vienna</li><li>Hotel check-in · pool &amp; spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Farewell dinner: Steirereck im Stadtpark (legendary)</li><li>Evening Ringstrasse walk</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · Wiener Melange coffee at Café Landtmann</li><li>Last pastry at Demel (imperial confectioners)</li><li>CAT train to VIE airport (16min) · DXB flight</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants &amp; Vegetarian Guide</h2>
+<div class="rbox"><b>Austria is excellent for vegetarians.</b> Vienna has one of Europe's best vegetarian fine-dining scenes, led by Michelin-starred <b>Tian</b>. Traditional Viennese cuisine has many naturally vegetarian dishes: Käsespätzle (cheese noodles), Eierschwammerl (chanterelles), and Topfenstrudel. Vienna's large Turkish/Middle Eastern community ensures halal &amp; vegetarian options citywide. The famous Viennese Kaffeehäuser (coffee houses) all serve vegetarian pastries.</div>
+<table>
+  <thead><tr><th>Restaurant</th><th>Location</th><th>Cuisine</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Tian</b></td><td>Vienna, 1st district</td><td>Michelin-starred vegetarian</td><td><span class="veg">✅ 100% vegetarian / vegan</span></td><td><a href="https://www.tian-restaurant.com/vienna" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Steirereck im Stadtpark</b></td><td>Vienna, Stadtpark</td><td>Contemporary Austrian fine dining</td><td><span class="veg">✅ Excellent veg tasting menu</span></td><td><a href="https://www.steirereck.at/en/restaurant" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Café Sacher</b></td><td>Hotel Sacher, 1st district</td><td>Viennese café / confectionary</td><td><span class="veg">✅ Sachertorte, pastries</span></td><td><a href="https://www.sacher.com/specials/cafe-sacher-wien" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Café Central</b></td><td>Vienna, Herrengasse</td><td>Historic Viennese coffeehouse</td><td><span class="veg">✅ Eggs, pastries, soups</span></td><td><a href="https://www.cafecentral.wien" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Mayer am Pfarrplatz</b></td><td>Vienna, Heiligenstadt</td><td>Heuriger wine tavern</td><td><span class="veg">✅ Cheese boards, veg dishes</span></td><td><a href="https://www.mayer.at" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td>Naschmarkt stalls</td><td>Vienna, 6th district</td><td>International market</td><td><span class="veg">✅ Middle Eastern, Turkish, veg options</span></td><td>—</td></tr>
+    <tr><td>Park Hyatt The Bank</td><td>Park Hyatt Vienna</td><td>Modern European</td><td><span class="veg">✅ Veg menu on request</span></td><td><a href="https://www.hyatt.com" class="ext" target="_blank">Web</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1574168683165-6a15cfb51c3a?w=400&q=80" alt="Hallstatt" onerror="this.parentElement.style.display='none'"><p><b>Hallstatt sunrise</b> — lakeside reflection · arrive before 8am · #Hallstatt</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=400&q=80" alt="Vienna Opera" onerror="this.parentElement.style.display='none'"><p><b>Vienna State Opera</b> — night illuminated · #WienerStaatsoper</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1519112232436-9c68dad83d19?w=900&q=80" alt="Schönbrunn" onerror="this.parentElement.style.display='none'"><p><b>Schönbrunn from Gloriette</b> — city panorama · sunrise shot · #Schönbrunn</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=400&q=80" alt="Kunsthistorisches Museum" onerror="this.parentElement.style.display='none'"><p><b>Kunsthistorisches Museum staircase</b> — ornate dome interior · #KHM</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1517309230475-6736d926b979?w=400&q=80" alt="Café Central" onerror="this.parentElement.style.display='none'"><p><b>Café Central arches</b> — historic coffeehouse · #CaféCentral</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&q=80" alt="Alpine lake" onerror="this.parentElement.style.display='none'"><p><b>Hallstatt Skywalk</b> — birds-eye village &amp; lake · #HallstattSkywalk</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>Vienna Philharmonic Open Air</b></td><td>Jun (check 2026)</td><td>Classical music outdoors</td><td>Free concert in Schönbrunn gardens</td></tr>
+    <tr><td>Vienna State Opera season end</td><td>Through Jun</td><td>Opera / Ballet</td><td>Book months ahead — best performances</td></tr>
+    <tr><td>Vienna Jazz Fest</td><td>Late Jun – early Jul</td><td>Jazz</td><td>Staatsoper, Porgy &amp; Bess</td></tr>
+    <tr><td>Donauinselfest</td><td>Late Jun</td><td>Free open-air music festival</td><td>3 million visitors — book hotel early</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Opera season active · Philharmonic open air · perfect timing</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>None — UK passport · Schengen visa-free · 90 days in any 180-day period</dd>
+  <dt>💶 Currency</dt><dd>Euro (€) · 1 EUR ≈ 4 AED · Cards widely accepted everywhere</dd>
+  <dt>💸 Tipping</dt><dd>Round up or add 10% · Kaffeehäuser: round to nearest euro</dd>
+  <dt>🚇 Getting around</dt><dd>Vienna U-Bahn (metro) is superb — 72h pass ~80 AED. Hallstatt needs train + ferry or driver</dd>
+  <dt>🗣️ Language</dt><dd>German (Austrian) · English widely spoken in Vienna</dd>
+  <dt>☕ Coffee culture</dt><dd>Viennese coffeehouse culture is UNESCO Intangible Heritage — budget 90min per visit</dd>
+  <dt>🎭 Opera tips</dt><dd>Standing tickets from ~25 AED (Stehparterre). Book online for seated 6+ weeks ahead</dd>
+  <dt>🏠 Best base</dt><dd>Vienna 1st district (Innere Stadt) — walking distance to all major sights</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Austria 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Hotel Sacher Wien</li>
+    <li>Park Hyatt Vienna (Am Hof)</li>
+    <li>Schönbrunn Palace &amp; Gardens</li>
+    <li>Upper Belvedere Museum</li>
+    <li>Kunsthistorisches Museum</li>
+    <li>Café Central, Herrengasse</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Hallstatt village (Marktplatz)</li>
+    <li>Heritage Hotel Hallstatt</li>
+    <li>Hallstatt Skywalk viewpoint</li>
+    <li>Tian Restaurant, Vienna</li>
+    <li>Naschmarkt, Vienna</li>
+    <li>Vienna State Opera (Staatsoper)</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights — economy ×2 return</td><td>3,600</td><td>5,800</td><td>Austrian Airlines / Emirates DXB→VIE direct</td></tr>
+    <tr><td>🏨 Hotel Sacher / Park Hyatt Vienna (5 nts)</td><td>16,500</td><td>36,500</td><td>3,300–7,300/nt</td></tr>
+    <tr><td>🏨 Heritage Hotel Hallstatt (1 nt)</td><td>2,200</td><td>4,000</td><td>Lakeside rooms premium</td></tr>
+    <tr><td>🚄 Vienna → Hallstatt train + ferry</td><td>440</td><td>880</td><td>Or private transfer (~440 AED each way)</td></tr>
+    <tr><td>🎭 Opera + events</td><td>440</td><td>2,200</td><td>State Opera seated tickets ~400–1,100 AED/couple</td></tr>
+    <tr><td>🎟️ Activities (Schönbrunn, Belvedere, salt mine)</td><td>550</td><td>1,100</td><td>Most entry fees ~50–150 AED/person</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>23,730</b></td><td><b>50,480</b></td><td><b>34–72% of monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food excluded — Tian tasting menu ~600 AED/person, Steirereck ~900 AED/person. Prices marked 📊 Est. are Apr 2026 estimates; check live booking links for current rates.</p>
+
+<div class="footnote">🇦🇹 Austria Travel Plan · Generated Apr 2026 · Dubai → Vienna + Hallstatt · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

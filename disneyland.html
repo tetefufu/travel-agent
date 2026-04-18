@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walt Disney World Orlando 🏰</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🏰 Walt Disney World — Orlando</h1>
+    <div class="meta">Dubai → Orlando (MCO) &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Disney Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Resort Pool</span>
+    <span class="tag">🇬🇧 ESTA $21 required</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Feb</td><td>18–22°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-green">Excellent — low crowds, mild weather</span></td></tr>
+    <tr><td><b>Mar–Apr</b></td><td>22–28°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Great — spring break shoulder season</span></td></tr>
+    <tr><td>May</td><td>28–30°C</td><td>Low–Medium</td><td>↓</td><td><span class="badge b-green">Very good — school in session</span></td></tr>
+    <tr><td>Jun</td><td>32–34°C</td><td>High</td><td>↑↑</td><td><span class="badge b-gold">Good — hot but early park entry helps</span></td></tr>
+    <tr><td>Jul–Aug</td><td>33–35°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Avoid — extreme heat + summer crowds</span></td></tr>
+    <tr><td>Sep–Nov</td><td>24–28°C</td><td>Low</td><td>↓</td><td><span class="badge b-green">Excellent — EPCOT Food Festival in Oct/Nov</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7 — Workable but plan carefully.</b> June at Disney World is hot (32–34°C) with rising summer crowds. <b>Use Early Entry (resort guests get in 30 min early), ride major attractions by 10am, then pool at Grand Floridian from 1–4pm, return for evening fireworks.</b> Alternatively, <b>consider November</b> — EPCOT International Food &amp; Wine Festival, lower crowds, perfect weather, significantly cheaper. Eid al-Fitr (Mar 30–31) window falls in a very good period.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → MCO (Orlando International)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>4,400 – 8,100</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates via JFK/EWR + Delta · United via IAD/ORD · British Airways via LHR</td>
+      <td>~16–18h (1–2 stops)</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-MCO" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>22,000 – 44,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business via JFK · BA Club World via LHR</td>
+      <td>~16–18h</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-MCO" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Emirates via New York (JFK) or Newark then domestic hop to MCO is the smoothest routing</li>
+  <li>ESTA required for UK passport holders — apply at <a href="https://esta.cbp.dhs.gov" class="ext" target="_blank">esta.cbp.dhs.gov</a> — $21 (~77 AED) per person, instant approval</li>
+  <li>MCO airport has Disney's Magical Express equivalent — check resort transportation options</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Stay on Disney property — resort guests get Early Entry (30 min before park opening), free Disney transport, and best pool access.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Disney's Grand Floridian Resort &amp; Spa</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Disney Signature / Ultra-luxury</td>
+      <td>2,200 – 5,500</td>
+      <td>13,200 – 33,000 <span style="font-size:0.7rem;color:#888">(6 nts)</span></td>
+      <td>✅ Beach Pool + quiet pool · monorail to MK</td>
+      <td>4.5 ★ (6,000+)</td>
+      <td><a href="https://disneyworld.disney.go.com/resorts/grand-floridian-resort-and-spa/" class="ext" target="_blank">Disney</a> · <a href="https://www.booking.com" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Four Seasons Orlando at Walt Disney World</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury (non-Disney)</td>
+      <td>3,700 – 9,200</td>
+      <td>22,200 – 55,200 <span style="font-size:0.7rem;color:#888">(6 nts)</span></td>
+      <td>✅ Explorer Pool — best pool in area · waterslide</td>
+      <td>5.0 ★ (3,000+)</td>
+      <td><a href="https://www.fourseasons.com/orlando/" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/us/four-seasons-resort-orlando-at-walt-disney-world-resort.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td>Disney's Contemporary Resort</td>
+      <td>Disney Deluxe</td>
+      <td>1,800 – 4,400</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Feature pool · monorail direct into MK</td>
+      <td>4.5 ★ (4,000+)</td>
+      <td><a href="https://disneyworld.disney.go.com/resorts/contemporary-resort/" class="ext" target="_blank">Disney</a></td>
+    </tr>
+    <tr>
+      <td>Disney's Animal Kingdom Lodge</td>
+      <td>Disney Deluxe</td>
+      <td>1,500 – 3,700</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Savanna pool · giraffes outside window</td>
+      <td>4.5 ★ (5,000+)</td>
+      <td><a href="https://disneyworld.disney.go.com/resorts/animal-kingdom-lodge/" class="ext" target="_blank">Disney</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Disney's Port Orleans</td>
+      <td style="color:#aaa">Moderate ref.</td>
+      <td style="color:#aaa">550 – 1,100</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">✅ Pool</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Top recommendation: Split stay.</b> <b>3 nights Grand Floridian</b> (Magic Kingdom walking distance, monorail, Victorian elegance) + <b>3 nights Four Seasons Orlando</b> (best pool in the resort area, non-Disney luxury, Explorer Pool with lazy river). Both offer Disney Early Entry perks. Book 6+ months ahead for June.</div>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Disney's Grand Floridian</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=400&q=80" alt="Disney resort pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Beach Pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80" alt="Victorian resort" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏰 Victorian lobby</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Four Seasons Orlando</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Four Seasons pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Explorer Pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Luxury room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛏️ Suite</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 7 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Grand Floridian Check-in</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900&q=80" alt="Grand Floridian" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>DXB → MCO (~16h via connection)</li><li>Resort transfer · Grand Floridian check-in</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool · recover from jet lag</li><li>Grand Floridian spa</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Narcoossee's (waterfront)</li><li>Electrical Water Pageant from dock</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Magic Kingdom — Full Day</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1568393691622-c7ba131d1b16?w=900&q=80" alt="Magic Kingdom" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Early Entry 8am</div><ul><li>Cinderella Castle · Haunted Mansion</li><li>Seven Dwarfs Mine Train (book Lightning Lane)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool break at Grand Floridian (1–4pm)</li><li>Beat the heat — re-enter at 4pm</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Festival of Fantasy parade · TRON Lightcycle</li><li>Happily Ever After fireworks 9pm</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">EPCOT — World Showcase</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=900&q=80" alt="EPCOT" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Guardians of the Galaxy: Cosmic Rewind</li><li>Remy's Ratatouille Adventure</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>World Showcase — India, Morocco, Japan</li><li>Lunch: India Pavilion (veg-friendly)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>EPCOT Harmonious illuminations show</li><li>France pavilion dessert crepes</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Transfer → Four Seasons · Hollywood Studios</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1618329340733-05dd93de0d80?w=900&q=80" alt="Hollywood Studios" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Check out Grand Floridian</li><li>Check into Four Seasons · pool morning</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Hollywood Studios: Star Wars: Galaxy's Edge</li><li>Rise of the Resistance (book Lightning Lane)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Fantasmic! night show</li><li>Four Seasons dinner on return</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Animal Kingdom · Four Seasons Pool Day</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80" alt="Animal Kingdom" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Animal Kingdom: Avatar Flight of Passage</li><li>Kilimanjaro Safaris (9am — animals active)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Four Seasons Explorer Pool · lazy river</li><li>Watersplash area · pure relaxation</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Rivers of Light evening show</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Disney Springs · Pool · Spa</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900&q=80" alt="Disney Springs" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Four Seasons Spa (couples treatment)</li><li>Lazy morning poolside</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Disney Springs shopping</li><li>World of Disney store · LEGO · character meet</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Morimoto Asia (Disney Springs)</li><li>Cirque du Soleil Drawn to Life show</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Departure — MCO → DXB</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final pool dip · checkout Four Seasons</li><li>Disney souvenir run · airport transfer MCO</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Disney World has outstanding vegetarian options — especially at EPCOT World Showcase (India, Morocco, Japan, Italy pavilions). Book Disney restaurants 60 days ahead via Disney dining reservations.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Cítricos</b> (Grand Floridian)</td><td>Contemporary American</td><td>Fine dining resort</td><td><span class="veg">✅ Good veg menu</span></td><td><a href="https://disneyworld.disney.go.com/dining/grand-floridian-resort-and-spa/citricos/" class="ext" target="_blank">Disney</a></td></tr>
+    <tr><td><b>Narcoossee's</b> (Grand Floridian)</td><td>Seafood / American</td><td>Fine dining waterfront</td><td><span class="veg">✅ Veg options available</span></td><td><a href="https://disneyworld.disney.go.com/dining/grand-floridian-resort-and-spa/narcoossees/" class="ext" target="_blank">Disney</a></td></tr>
+    <tr><td><b>Spice Road Table</b> (EPCOT Morocco)</td><td>Moroccan / Mediterranean</td><td>Table service</td><td><span class="veg">✅ Excellent veg tapas</span></td><td><a href="https://disneyworld.disney.go.com/dining/epcot/spice-road-table/" class="ext" target="_blank">Disney</a></td></tr>
+    <tr><td><b>Morimoto Asia</b> (Disney Springs)</td><td>Pan-Asian</td><td>Fine dining</td><td><span class="veg">✅ Excellent veg dim sum + mains</span></td><td><a href="https://www.patinagroup.com/morimoto-asia" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Tutto Italia</b> (EPCOT Italy)</td><td>Italian</td><td>Fine dining</td><td><span class="veg">✅ Pasta-heavy menu — very veg friendly</span></td><td><a href="https://disneyworld.disney.go.com/dining/epcot/tutto-italia-ristorante/" class="ext" target="_blank">Disney</a></td></tr>
+    <tr><td><b>Tiffins</b> (Animal Kingdom)</td><td>Global / African / Asian</td><td>Signature fine dining</td><td><span class="veg">✅ Good veg options · best AK restaurant</span></td><td><a href="https://disneyworld.disney.go.com/dining/animal-kingdom/tiffins/" class="ext" target="_blank">Disney</a></td></tr>
+    <tr><td>Paddlefish (Disney Springs)</td><td>Seafood / American</td><td>Casual fine</td><td><span class="veg">✅ Multiple veg options</span></td><td><a href="https://www.paddlefishorlando.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Four Seasons PB&G Restaurant</b></td><td>American / Contemporary</td><td>Resort fine dining</td><td><span class="veg">✅ Flexible veg menu on request</span></td><td><a href="https://www.fourseasons.com/orlando/dining/" class="ext" target="_blank">FS</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1568393691622-c7ba131d1b16?w=400&q=80" alt="Cinderella Castle" onerror="this.parentElement.style.display='none'"><p><b>Cinderella Castle at night</b> — fireworks backdrop · #WaltDisneyWorld</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=400&q=80" alt="EPCOT" onerror="this.parentElement.style.display='none'"><p><b>EPCOT Spaceship Earth</b> — world globe at sunset · #EPCOT</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1618329340733-05dd93de0d80?w=400&q=80" alt="Star Wars" onerror="this.parentElement.style.display='none'"><p><b>Star Wars Galaxy's Edge</b> — Millennium Falcon · #GalaxysEdge</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80" alt="Grand Floridian" onerror="this.parentElement.style.display='none'"><p><b>Grand Floridian Victorian lobby</b> — Christmas / summer decor · #GrandFloridian</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=400&q=80" alt="Pool" onerror="this.parentElement.style.display='none'"><p><b>Four Seasons Explorer Pool</b> — waterslide · #FourSeasonsOrlando</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Animal Kingdom" onerror="this.parentElement.style.display='none'"><p><b>Animal Kingdom Tree of Life</b> — carved wildlife art · #AnimalKingdom</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>EPCOT International Flower &amp; Garden Festival</b></td><td>Mar–May 2026</td><td>Disney event</td><td><b>Outdoor kitchens · floral topiary · check 2026 end date</b></td></tr>
+    <tr><td>EPCOT International Food &amp; Wine Festival</td><td>Jul–Nov 2026</td><td>Disney event</td><td>Best food event in WDW — global booths</td></tr>
+    <tr><td>Mickey's Not-So-Scary Halloween</td><td>Aug–Oct 2026</td><td>After-hours event</td><td>Separate ticket required</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Use for trip timing — school holidays just started, manageable crowds early June</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa / ESTA</dt><dd>ESTA required (not a visa) · $21 (≈77 AED) per person · apply at <a href="https://esta.cbp.dhs.gov" class="ext" target="_blank">esta.cbp.dhs.gov</a> · instant approval for UK passports</dd>
+  <dt>💵 Currency</dt><dd>US Dollar (USD) · 1 USD ≈ 3.67 AED · Cards accepted everywhere · tip in cash</dd>
+  <dt>💸 Tipping</dt><dd>18–20% at restaurants · $2–3 per bag for bellhop · $5–10/night housekeeping</dd>
+  <dt>🚗 Getting around</dt><dd>Disney free resort transportation (bus/monorail/boat) from Disney hotels · Uber from Four Seasons</dd>
+  <dt>🎢 Lightning Lane</dt><dd>Disney Genie+ (~$30–50/day p/p) · Individual Lightning Lane for top rides — worth every dollar in June</dd>
+  <dt>📱 App</dt><dd>Download My Disney Experience app before travel — manage Lightning Lane, dining, mobile order</dd>
+  <dt>👗 Dress code</dt><dd>Casual + comfortable shoes — you walk 10–15km/day in parks · light fabrics for heat</dd>
+  <dt>⏰ Strategy</dt><dd>Early Entry 8am → ride top 3 attractions → pool 1–4pm → return evening for shows &amp; fireworks</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Disney World 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Disney's Grand Floridian Resort</li>
+    <li>Four Seasons Orlando at WDW</li>
+    <li>Magic Kingdom Park</li>
+    <li>EPCOT</li>
+    <li>Hollywood Studios</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Animal Kingdom</li>
+    <li>Disney Springs</li>
+    <li>Morimoto Asia, Disney Springs</li>
+    <li>Orlando International Airport (MCO)</li>
+    <li>International Drive (off-resort dining)</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB↔MCO (economy ×2 return)</td><td>8,800</td><td>16,200</td><td>Via NYC / London connection</td></tr>
+    <tr><td>🏨 Grand Floridian (3 nts)</td><td>13,200</td><td>33,000</td><td>Disney Signature</td></tr>
+    <tr><td>🏨 Four Seasons Orlando (3 nts)</td><td>22,200</td><td>55,200</td><td>Best pool in resort area</td></tr>
+    <tr><td>🎢 Park tickets 4 days (×2 hopper pass)</td><td>4,400</td><td>6,600</td><td>~$600–900 couple for 4-day hopper</td></tr>
+    <tr><td>⚡ Disney Genie+ / Lightning Lane (4 days)</td><td>880</td><td>1,470</td><td>~$30–50/day p/p — essential in summer</td></tr>
+    <tr><td>🛂 ESTA (×2)</td><td>154</td><td>154</td><td>$21 p/p</td></tr>
+    <tr><td>🍽️ Dining (approx. 5 meals out)</td><td>2,200</td><td>4,400</td><td>$150–300 per meal couple</td></tr>
+    <tr><td>🛍️ Shopping &amp; souvenirs</td><td>1,500</td><td>5,500</td><td>Disney Springs — limitless</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>53,334</b></td><td><b>122,524</b></td><td><b>76–175% monthly income · magical bucket list</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Prices marked 📊 Est. are Apr 2026 estimates. Disney hotel prices fluctuate significantly — book direct with Disney for best rates and package deals. USD/AED: 1 USD ≈ 3.67 AED.</p>
+
+<div class="footnote">🏰 Walt Disney World Orlando Travel Plan · Generated Apr 2026 · Dubai → Orlando · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

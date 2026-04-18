@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan 🇯🇵</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇯🇵 Japan</h1>
+    <div class="meta">Dubai → Tokyo (NRT/HND) &nbsp;·&nbsp; 12 days &nbsp;·&nbsp; 11 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">🌸 Cherry Blossom Mar–Apr</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 Visa-free 90 days</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp (Tokyo)</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td><b>Mar–Apr</b></td><td>10–18°C</td><td>Very high (cherry blossom)</td><td>↑↑</td><td><span class="badge b-gold">⭐ Best (blossom)</span></td></tr>
+    <tr><td>May</td><td>20–24°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Great</span></td></tr>
+    <tr><td>Jun–Aug</td><td>28–35°C + humid</td><td>Medium–High</td><td>↓↑</td><td><span class="badge b-red">Hot &amp; rainy – avoid</span></td></tr>
+    <tr><td><b>Oct–Nov</b></td><td>14–22°C</td><td>High (autumn leaves)</td><td>↑↑</td><td><span class="badge b-gold">⭐ Best (foliage)</span></td></tr>
+    <tr><td>Dec–Feb</td><td>3–12°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-green">Good (off-peak)</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Fitr 2026: Mar 30–31.</b> Perfectly timed for cherry blossom peak in Tokyo (late Mar – mid Apr). Book cherry blossom season hotels 3–4 months ahead — Aman Tokyo and Park Hyatt sell out fast. <b>Eid al-Adha Jun 6–7</b> = rainy season in Japan; not recommended. Go for Eid al-Fitr instead.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → TYO (Tokyo NRT / HND)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>3,200 – 4,800</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates (DXB→NRT) · Japan Airlines · ANA via connections</td>
+      <td>~9–10h direct (Emirates)</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>14,000 – 22,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates (lie-flat) · Japan Airlines JAL Business</td>
+      <td>~9h direct</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.jal.com" class="ext" target="_blank">JAL</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>Emirates flies <b>direct DXB→NRT daily</b> — best option, ~9h</li>
+  <li>For Kyoto base: fly into Osaka KIX or take Shinkansen (Tokyo→Kyoto ~2h 15min, ~730 AED/person)</li>
+  <li>Consider Japan Rail Pass (7-day ~2,700 AED) covering Shinkansen + local trains</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>4 nights Aman Tokyo</b> · <b>4 nights Kyoto ryokan (Beniya Mukayu)</b> · <b>2 nights Gora Kadan (Hakone)</b>. All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Location</th><th>Tier</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Aman Tokyo</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Tokyo</td>
+      <td>Ultra-luxury</td>
+      <td>5,500 – 11,000</td>
+      <td>✅ Excellent indoor</td>
+      <td>5.0 ★ (900+)</td>
+      <td><a href="https://www.aman.com/resorts/aman-tokyo" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>The Ritz-Carlton Tokyo</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Tokyo (Midtown)</td>
+      <td>Ultra-luxury</td>
+      <td>4,400 – 8,800</td>
+      <td>✅ Pool + spa</td>
+      <td>4.9 ★ (1,800+)</td>
+      <td><a href="https://www.ritzcarlton.com/en/hotels/tyo-the-ritz-carlton-tokyo" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Park Hyatt Tokyo</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Tokyo (Shinjuku)</td>
+      <td>Ultra-luxury</td>
+      <td>3,300 – 7,700</td>
+      <td>✅ 47th-floor pool</td>
+      <td>4.8 ★ (2,200+)</td>
+      <td><a href="https://www.hyatt.com/en-US/hotel/japan/park-hyatt-tokyo/tyoph" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Beniya Mukayu</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Kanazawa (near Kyoto)</td>
+      <td>Ultra-luxury Ryokan</td>
+      <td>7,300 – 14,700 <span style="font-size:0.7rem;color:#888">(half-board)</span></td>
+      <td>✅ Onsen baths</td>
+      <td>5.0 ★ (400+)</td>
+      <td><a href="https://www.mukayu.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Gora Kadan</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Hakone</td>
+      <td>Ultra-luxury Ryokan</td>
+      <td>6,600 – 13,200 <span style="font-size:0.7rem;color:#888">(half-board)</span></td>
+      <td>✅ Outdoor onsen</td>
+      <td>4.9 ★ (600+)</td>
+      <td><a href="https://www.gorakadan.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Four Seasons Tokyo Marunouchi</td>
+      <td>Tokyo</td>
+      <td>Luxury</td>
+      <td>3,700 – 6,600</td>
+      <td>✅ Good</td>
+      <td>4.8 ★ (900+)</td>
+      <td><a href="https://www.fourseasons.com/marunouchi/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Dormy Inn Tokyo</td>
+      <td style="color:#aaa">Tokyo</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">550 – 1,100</td>
+      <td style="color:#aaa">⚠️ Small public bath</td>
+      <td style="color:#aaa">4.2 ★</td>
+      <td style="color:#aaa">— (ref.)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Aman Tokyo &amp; Park Hyatt</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=80" alt="Tokyo skyline" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏙️ Tokyo skyline view</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Luxury bath" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Luxury bathroom</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Gora Kadan — Hakone Ryokan</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&q=80" alt="Onsen" onerror="this.parentElement.style.display='none'">
+        <figcaption>♨️ Outdoor onsen</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=80" alt="Japanese garden" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌿 Japanese garden</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 12 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Tokyo</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=900&q=80" alt="Tokyo" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly into NRT · Narita Express → Tokyo (~1h)</li><li>Check in Aman Tokyo or Park Hyatt</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool &amp; spa — recover from flight</li><li>Lobby bar cocktails</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Hotel restaurant dinner</li><li>Gentle Shinjuku stroll</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Tokyo — Shinjuku · Harajuku · Omotesando</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=900&q=80" alt="Shinjuku" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Meiji Jingu Shrine</li><li>Harajuku Takeshita Street</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Omotesando — luxury shopping</li><li>Nezu Museum &amp; garden</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Faro (Shiseido — veg-friendly fine dining)</li><li>Shinjuku Golden Gai drinks</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Tokyo — Asakusa · Ueno · Akihabara</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=900&q=80" alt="Asakusa" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Senso-ji Temple at dawn</li><li>Nakamise shopping street</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Ueno Park (cherry blossom season)</li><li>Teamlab Borderless / Planets (book ahead)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: T's TanTan (vegan ramen, Tokyo Station)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Tokyo — Shibuya · Ginza · Teamlab</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=900&q=80" alt="Shibuya crossing" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Shibuya Crossing observation deck</li><li>Shibuya Sky rooftop</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Ginza flagship stores (Chanel, Dior)</li><li>Itoya stationery</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Tableaux Lounge (Daikanyama)</li><li>Daikanyama T-Site bookstore</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5–6</span><div class="loc">Hakone — Mt Fuji views · Ryokan</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1578637387939-43c525550085?w=900&q=80" alt="Mt Fuji" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Day 5 AM</div><ul><li>Shinkansen Tokyo → Odawara (~35min)</li><li>Hakone Tozan train to Gora Kadan</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Ryokan check-in · yukata robes</li><li>Outdoor onsen with Fuji views</li></ul></div>
+      <div class="session"><div class="slab">🌙 Day 6</div><ul><li>Hakone Open-Air Museum</li><li>Owakudani volcano · Lake Ashi cruise</li><li>Kaiseki dinner (veg version arranged)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Transfer → Kyoto via Shinkansen</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1493997181344-712f2f19d87a?w=900&q=80" alt="Kyoto" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout Gora Kadan</li><li>Shinkansen Odawara → Kyoto (~2h)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Arashiyama Bamboo Grove</li><li>Tenryu-ji Zen garden</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Check in Kyoto luxury ryokan</li><li>Kaiseki dinner: Shoraian (tofu specialty)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 8–9</span><div class="loc">Kyoto — Temples · Geisha district</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80" alt="Kyoto temple" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Day 8</div><ul><li>Fushimi Inari gates at sunrise</li><li>Kinkaku-ji Golden Pavilion</li><li>Nishiki Market (vegetarian snacks)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Day 9 AM</div><ul><li>Philosopher's Path cherry blossom walk</li><li>Nanzen-ji Temple + aqueduct</li></ul></div>
+      <div class="session"><div class="slab">🌙 Day 9 PM</div><ul><li>Gion geisha district evening walk</li><li>Dinner: Shigetsu (shojin ryori temple cuisine)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10–11</span><div class="loc">Nara day trip · Osaka</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1578469645742-46cae010e5d4?w=900&q=80" alt="Nara deer" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Day 10</div><ul><li>Nara day trip (45min) — deer park</li><li>Todai-ji Great Buddha</li></ul></div>
+      <div class="session"><div class="slab">☀️ Day 11</div><ul><li>Osaka day trip (15min Shinkansen)</li><li>Dotonbori · Osaka Castle</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evenings</div><ul><li>Day 10: Pontocho alley dinner</li><li>Day 11: Izakaya Kyoto (tofu hot pot)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 12</span><div class="loc">Departure from KIX / NRT</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout · Haruka Express to Kansai Airport (KIX) or Shinkansen back to Tokyo NRT</li><li>Duty-free shopping: matcha, sake, ceramics</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants &amp; Vegetarian Guide</h2>
+<div class="rbox"><b>⚠️ Vegetarian note:</b> Japan can be challenging — dashi (fish stock) is used in most broths. Always say <b>"Watashi wa bejitarian desu"</b> (I am vegetarian). Highlight options below are <b>confirmed vegetarian/vegan friendly</b>. <b>Shojin ryori</b> (Buddhist temple cuisine) is fully vegan and exceptional.</div>
+<table>
+  <thead><tr><th>Restaurant</th><th>Location</th><th>Cuisine</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Shigetsu</b> (Tenryu-ji)</td><td>Kyoto, Arashiyama</td><td>Shojin ryori (Buddhist vegan)</td><td><span class="veg">✅ 100% vegan</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Faro by Shiseido</b></td><td>Tokyo, Ginza</td><td>Italian-Japanese fine dining</td><td><span class="veg">✅ Veg menu available</span></td><td><a href="https://faro.shiseido.co.jp" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>T's TanTan</b></td><td>Tokyo Station</td><td>Vegan ramen</td><td><span class="veg">✅ 100% vegan</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Ain Soph Journey</b></td><td>Tokyo, Kabukicho</td><td>Vegan fine dining</td><td><span class="veg">✅ 100% vegan</span></td><td><a href="https://www.ain-soph.jp" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Shoraian</b></td><td>Kyoto, Arashiyama</td><td>Tofu kaiseki</td><td><span class="veg">✅ Tofu-based</span></td><td><a href="https://www.shoraian.jp" class="ext" target="_blank">Web</a></td></tr>
+    <tr><td><b>Izuju</b></td><td>Kyoto, Gion</td><td>Sushi (veg options)</td><td><span class="veg">⚠️ Limited veg</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td>Aman Tokyo dining</td><td>Tokyo</td><td>Modern Japanese</td><td><span class="veg">✅ Veg menu on request</span></td><td><a href="https://www.aman.com/resorts/aman-tokyo/dining" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td>Gora Kadan kaiseki</td><td>Hakone</td><td>Kaiseki (traditional)</td><td><span class="veg">✅ Veg version on request</span></td><td><a href="https://www.gorakadan.com" class="ext" target="_blank">Book</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1493997181344-712f2f19d87a?w=400&q=80" alt="Fushimi Inari" onerror="this.parentElement.style.display='none'"><p><b>Fushimi Inari gates</b> — Kyoto · sunrise = no crowds · #FushimiInari</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=400&q=80" alt="Shibuya crossing" onerror="this.parentElement.style.display='none'"><p><b>Shibuya Crossing</b> — overhead shot from Mag's Park · #ShibuyaCrossing</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&q=80" alt="Bamboo grove" onerror="this.parentElement.style.display='none'"><p><b>Arashiyama Bamboo</b> — Kyoto · 6am for empty shots · #ArashiyamaBamboo</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1578637387939-43c525550085?w=400&q=80" alt="Mt Fuji" onerror="this.parentElement.style.display='none'"><p><b>Mt Fuji from Hakone</b> — Lake Ashi reflection · #MtFuji</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=80" alt="Kyoto temple" onerror="this.parentElement.style.display='none'"><p><b>Kinkaku-ji Golden Pavilion</b> — morning reflection shot · #GoldenTemple</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1578469645742-46cae010e5d4?w=400&q=80" alt="Nara deer" onerror="this.parentElement.style.display='none'"><p><b>Nara deer park</b> — deer with pagoda · #NaraDeer</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — Spring 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Location</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>Cherry Blossom (Sakura)</b></td><td>Late Mar – mid Apr</td><td>Tokyo, Kyoto, nationwide</td><td>Book hotels 3–4 months ahead</td></tr>
+    <tr><td>Ueno Hanami Festival</td><td>Late Mar – Apr</td><td>Tokyo, Ueno Park</td><td>Free entry; picnic-style</td></tr>
+    <tr><td>Maruyama Park Sakura</td><td>Late Mar – Apr</td><td>Kyoto</td><td>Famous illuminated weeping cherry</td></tr>
+    <tr><td>Himeji Castle Cherry Blossom</td><td>Early Apr</td><td>Himeji (day trip from Kyoto)</td><td>World Heritage Site</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Fitr (Mar 30–31)</b></td><td>Mar 30–31</td><td>—</td><td><b>Perfect timing — cherry blossom peak</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>None — UK passport · 90 days visa-free</dd>
+  <dt>💴 Currency</dt><dd>Japanese Yen (¥) · 100 JPY ≈ 2.4 AED · Carry cash — Japan is still cash-heavy</dd>
+  <dt>💸 Tipping</dt><dd>Never tip in Japan — it can be considered rude</dd>
+  <dt>🚄 Getting around</dt><dd>Japan Rail Pass (7-day ~2,700 AED/person) + IC card for city transport</dd>
+  <dt>🗣️ Language</dt><dd>Japanese · Minimal English outside hotels — Google Translate essential</dd>
+  <dt>📶 SIM / WiFi</dt><dd>Pocket WiFi rental at airport (~180 AED/week) or eSIM (Airalo)</dd>
+  <dt>🌿 Vegetarian tip</dt><dd>Carry a card in Japanese: "I am vegetarian, no meat, no fish, no dashi"</dd>
+  <dt>🏠 Best base</dt><dd>Tokyo (4 nts) → Hakone (2 nts) → Kyoto (4+ nts)</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Japan 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Aman Tokyo</li>
+    <li>Park Hyatt Tokyo (Shinjuku)</li>
+    <li>Gora Kadan, Hakone</li>
+    <li>Fushimi Inari Taisha, Kyoto</li>
+    <li>Arashiyama Bamboo Grove</li>
+    <li>Kinkaku-ji (Golden Pavilion)</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Shibuya Crossing</li>
+    <li>Senso-ji Temple, Asakusa</li>
+    <li>Meiji Jingu Shrine</li>
+    <li>Shigetsu Restaurant (Tenryu-ji)</li>
+    <li>Nara Deer Park</li>
+    <li>Hakone Open-Air Museum</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights — economy ×2 return</td><td>6,400</td><td>9,600</td><td>Emirates DXB→NRT direct</td></tr>
+    <tr><td>🏨 Aman Tokyo or Park Hyatt (4 nts)</td><td>13,200</td><td>44,000</td><td>3,300–11,000/nt</td></tr>
+    <tr><td>🏨 Gora Kadan Hakone (2 nts)</td><td>13,200</td><td>26,400</td><td>6,600–13,200/nt incl. breakfast &amp; dinner</td></tr>
+    <tr><td>🏨 Kyoto ryokan (4 nts)</td><td>14,700</td><td>29,300</td><td>~3,700–7,300/nt per couple</td></tr>
+    <tr><td>🚄 Japan Rail Pass ×2</td><td>5,400</td><td>5,400</td><td>7-day JR Pass ~2,700 AED/person</td></tr>
+    <tr><td>🎟️ Activities &amp; entry fees</td><td>1,500</td><td>3,000</td><td>Teamlab, temples, cable car</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>54,400</b></td><td><b>117,700</b></td><td><b>78–168% of monthly income</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Food excluded — shojin ryori temple meals ~250–400 AED/person. Prices marked 📊 Est. are Apr 2026 estimates; check live booking links for current rates. Cherry blossom season commands a significant premium.</p>
+
+<div class="footnote">🇯🇵 Japan Travel Plan · Generated Apr 2026 · Dubai → Tokyo · Cherry Blossom Season / Eid al-Fitr Mar 2026</div>
+
+</div>
+</body>
+</html>

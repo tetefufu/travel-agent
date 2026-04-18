@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Lanka 🇱🇰</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇱🇰 Sri Lanka</h1>
+    <div class="meta">Dubai → Colombo (CMB) &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">🏖️ Dec–Mar Best Season</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian Paradise</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 ETA ~$35 / ~129 AED</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds (Galle/West)</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td><b>Dec–Mar</b></td><td>28–32°C</td><td>High (peak season)</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Best — west coast dry</span></td></tr>
+    <tr><td>Apr–May</td><td>30–34°C</td><td>Low</td><td>↓</td><td><span class="badge b-red">Pre-monsoon / hot</span></td></tr>
+    <tr><td>Jun–Sep</td><td>28–30°C</td><td>Low (west)</td><td>↓↓</td><td><span class="badge b-red">West coast monsoon — avoid Galle/Colombo</span></td></tr>
+    <tr><td>Oct–Nov</td><td>27–30°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Good — shoulder</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Best time: December–March for Galle + Colombo (west coast).</b> June = monsoon on west coast — Galle &amp; Colombo get heavy rains. However, <b>Sigiriya (north-central) remains dry in June</b>. If travelling over Eid (Jun 6–7), consider a north-focused itinerary: Sigiriya + Cultural Triangle + possible east coast (Trincomalee is dry Jun–Sep). <b>Strongly recommend Dec–Mar for the full itinerary below.</b></div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → CMB (Colombo)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>1,200 – 2,200</b> <span class="badge b-est">📊 Est. Dec 2026</span></td>
+      <td>SriLankan Airlines (direct) · flydubai · IndiGo via BOM</td>
+      <td>~4h direct</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a> · <a href="https://www.srilankan.com" class="ext" target="_blank">SriLankan</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>5,500 – 9,900 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates via BOM · SriLankan Business</td>
+      <td>~5–7h (via BOM or direct)</td>
+      <td><a href="https://www.kayak.ae" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ SriLankan Airlines flies DXB→CMB direct, multiple daily frequencies</li>
+  <li>Colombo → Galle: 1.5h by road · Colombo → Sigiriya: 3.5–4h drive or domestic flight to Sigiriya Airstrip</li>
+  <li>Luxury hire car + driver recommended — ~550–735 AED/day all-in</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>1 night Colombo</b> (Galle Face Hotel, heritage) + <b>4 nights Galle</b> (Amangalla) + <b>2 nights Sigiriya</b> (Water Garden) + <b>2 nights back to Galle/beach</b> (Cape Weligama). All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Amangalla, Galle</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury (Aman)</td>
+      <td>4,400 – 7,700</td>
+      <td>17,600 – 30,800 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Heritage courtyard pool</td>
+      <td>5.0 ★ (1,100+)</td>
+      <td><a href="https://www.aman.com/resorts/amangalla" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Cape Weligama</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 4,400</td>
+      <td>4,400 – 8,800 <span style="font-size:0.7rem;color:#888">(2 nts)</span></td>
+      <td>✅ Clifftop infinity pool · ocean views</td>
+      <td>5.0 ★ (900+)</td>
+      <td><a href="https://www.capeweligama.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Water Garden Sigiriya</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>2,200 – 4,000</td>
+      <td>4,400 – 8,000 <span style="font-size:0.7rem;color:#888">(2 nts)</span></td>
+      <td>✅ Stunning water garden pools</td>
+      <td>4.9 ★ (700+)</td>
+      <td><a href="https://www.watergardensigiriya.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Galle Face Hotel, Colombo</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Luxury (heritage)</td>
+      <td>1,100 – 2,200</td>
+      <td>1,100 – 2,200 <span style="font-size:0.7rem;color:#888">(1 nt)</span></td>
+      <td>✅ Oceanfront pool · colonial charm</td>
+      <td>4.5 ★ (4,200+)</td>
+      <td><a href="https://www.gallefacehotel.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Cinnamon Bentota Beach</td>
+      <td>Luxury</td>
+      <td>880 – 1,650</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Beachfront pool</td>
+      <td>4.4 ★ (2,800+)</td>
+      <td><a href="https://www.cinnamonhotels.com" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Jetwing Lighthouse, Galle</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">550 – 1,100</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ Small pool</td>
+      <td style="color:#aaa">4.2 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Amangalla — Galle Fort</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1601576084861-5de423553c0f?w=400&q=80" alt="Sri Lanka pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Courtyard pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1566296314736-6ecd642f2f8b?w=400&q=80" alt="Galle Fort" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏰 Galle Fort walls</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Sigiriya Rock &amp; Water Garden</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&q=80" alt="Sigiriya Rock" onerror="this.parentElement.style.display='none'">
+        <figcaption>🪨 Sigiriya Rock</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1590523278191-995cbcda646b?w=400&q=80" alt="Sri Lanka landscape" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌿 Lush landscape</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Colombo · Galle Face Hotel</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1575994532885-5d2b68a50add?w=900&q=80" alt="Colombo" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>DXB → CMB (~4h direct)</li><li>Galle Face Hotel check-in</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Galle Face Green promenade</li><li>Colombo waterfront</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner at Ministry of Crab</li><li>(Veg options: hoppers, curry)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Drive to Galle · Amangalla Check-in</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1566296314736-6ecd642f2f8b?w=900&q=80" alt="Galle Fort" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Scenic coastal drive CMB → Galle (1.5h)</li><li>Amangalla check-in · colonial splendour</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Galle Fort UNESCO walk</li><li>Dutch Reformed Church · ramparts</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset from fort walls</li><li>Amangalla dining · Sri Lankan feast</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 3–4</span><div class="loc">Galle · Beaches · Whale Watching</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1601576084861-5de423553c0f?w=900&q=80" alt="Sri Lanka beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Blue whale watching (Mirissa, 1h drive)</li><li>Or surf lesson at Hikkaduwa</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Amangalla pool · treatments</li><li>Galle Fort boutique shopping</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Rooftop sunset dinner</li><li>Stilt fishermen at twilight</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Drive to Sigiriya · Water Garden Hotel</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80" alt="Sigiriya" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Galle → Sigiriya (4h drive · countryside)</li><li>Tea estate stop en route</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Water Garden Sigiriya check-in</li><li>Pool · gardens · elephant viewing</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Traditional rice &amp; curry dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Sigiriya Rock Fortress · Dambulla Cave Temple</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1590523278191-995cbcda646b?w=900&q=80" alt="Cultural Triangle" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Early Morning</div><ul><li>Sigiriya Rock sunrise climb (5:30am)</li><li>Lion's paw · frescoes · summit views</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Dambulla Cave Temple</li><li>150+ golden Buddha statues</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Village cooking class (vegetarian Sri Lankan)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Polonnaruwa · Safari · Transfer to Coast</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=900&q=80" alt="Sri Lanka wildlife" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Polonnaruwa ancient city (UNESCO)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Minneriya safari (elephant gathering)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Drive → Cape Weligama check-in</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Days 8–9</span><div class="loc">Cape Weligama · Beach · Infinity Pool</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Weligama beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Clifftop yoga at sunrise</li><li>Infinity pool overlooking Indian Ocean</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Snorkelling · catamaran sail</li><li>Turtle Bay Unawatuna visit</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Fine dining · ocean views</li><li>Sri Lankan Arrack cocktails</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Final pool session · late checkout</li><li>Transfer Weligama → CMB (~2h) → DXB</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">🌿 <b>Sri Lanka is outstanding for vegetarians.</b> Traditional Sri Lankan cuisine is naturally plant-forward: rice &amp; curry, dhal, jackfruit curry, mallum (greens), pol sambol (coconut), hoppers, string hoppers, kottu. Almost every local restaurant has 80%+ vegetarian dishes.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Location</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Ministry of Crab</b></td><td>Sri Lankan contemporary</td><td>Colombo</td><td><span class="veg">✅ Hoppers, curries, veg set</span></td><td><a href="https://www.ministryofcrab.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Amangalla Dining Room</b></td><td>Sri Lankan fine dining</td><td>Galle</td><td><span class="veg">✅ Full vegetarian menu</span></td><td><a href="https://www.aman.com/resorts/amangalla/dining" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Fort Printers</b></td><td>Galle fusion</td><td>Galle Fort</td><td><span class="veg">✅ Excellent veg options</span></td><td><a href="https://www.tripadvisor.com" class="ext" target="_blank">TA</a></td></tr>
+    <tr><td><b>Cape Weligama Restaurant</b></td><td>Sri Lankan / International</td><td>Weligama</td><td><span class="veg">✅ Full vegetarian tasting menu</span></td><td><a href="https://www.capeweligama.com/dining" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td>Wijaya Beach Restaurant</td><td>Local Sri Lankan</td><td>Hikkaduwa</td><td><span class="veg">✅ Local rice &amp; curry — all veg</span></td><td>—</td></tr>
+    <tr><td>Any kade (local eatery)</td><td>Traditional Sri Lankan</td><td>Anywhere</td><td><span class="veg">✅ Dhal curry, pol roti, hoppers</span></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&q=80" alt="Sigiriya Rock" onerror="this.parentElement.style.display='none'"><p><b>Sigiriya Rock at sunrise</b> — misty jungle · #Sigiriya #SriLanka</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1566296314736-6ecd642f2f8b?w=400&q=80" alt="Galle Fort" onerror="this.parentElement.style.display='none'"><p><b>Galle Fort lighthouse</b> — golden sunset · #GalleFort</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1601576084861-5de423553c0f?w=400&q=80" alt="Stilt fishermen" onerror="this.parentElement.style.display='none'"><p><b>Stilt fishermen at sunset</b> — Koggala · UNESCO iconic shot</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1590523278191-995cbcda646b?w=400&q=80" alt="Tea estate" onerror="this.parentElement.style.display='none'"><p><b>Tea estate hills</b> — Haputale or Ella region · #CeylonTea</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=80" alt="Elephants" onerror="this.parentElement.style.display='none'"><p><b>Elephant gathering</b> — Minneriya · up to 300 elephants · #WildElephants</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Beach" onerror="this.parentElement.style.display='none'"><p><b>Infinity pool · Cape Weligama</b> — turquoise sea · #LuxurySriLanka</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — December–March 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>Eid al-Fitr 2026</b></td><td>Mar 30–31</td><td>UAE public holiday</td><td><b>Late March window — perfect timing for Sri Lanka</b></td></tr>
+    <tr><td>Galle Literary Festival</td><td>Typically Jan</td><td>Literature / Arts</td><td>International authors · Galle Fort</td></tr>
+    <tr><td>Vesak Poya (Buddha's birthday)</td><td>May full moon</td><td>National holiday</td><td>Spectacular lantern lights across Sri Lanka</td></tr>
+    <tr><td>Kandy Esala Perahera</td><td>Jul–Aug</td><td>Religious festival</td><td>World's greatest pageant — plan ahead</td></tr>
+    <tr><td>Whale watching season</td><td>Nov–Apr</td><td>Wildlife</td><td>Blue whales off Mirissa — peak Dec–Mar</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>ETA required · UK passport · ~$35 (≈129 AED) · apply at <a href="https://www.eta.gov.lk" class="ext" target="_blank">eta.gov.lk</a> · 30 days extendable</dd>
+  <dt>💵 Currency</dt><dd>Sri Lankan Rupee (LKR) · 1 USD ≈ 300–320 LKR · 1 AED ≈ 82–88 LKR</dd>
+  <dt>💸 Tipping</dt><dd>10% in restaurants · drivers 500–1,000 LKR/day · guides 1,000–2,000 LKR/day</dd>
+  <dt>🚗 Getting around</dt><dd>Private driver + car essential — ~550–735 AED/day all-in. Tuk-tuks for short trips (~55–110 AED).</dd>
+  <dt>🌡️ Dec–Mar weather</dt><dd>28–32°C · low humidity · west coast clear · ideal beach conditions</dd>
+  <dt>🗣️ Language</dt><dd>Sinhala / Tamil · English widely spoken · no issues for tourists</dd>
+  <dt>💉 Health</dt><dd>Hepatitis A recommended. No malaria in south/west coastal areas. Water: bottled only.</dd>
+  <dt>🏠 Dress code</dt><dd>Modest at temples (cover shoulders/knees). Beaches: standard swimwear fine.</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Sri Lanka 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Galle Face Hotel · Colombo</li>
+    <li>Amangalla · Galle Fort</li>
+    <li>Cape Weligama · Weligama Bay</li>
+    <li>Galle Fort Lighthouse</li>
+    <li>Mirissa Harbour (whale watching)</li>
+    <li>Stilt Fishermen · Koggala</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Water Garden Sigiriya</li>
+    <li>Sigiriya Rock Fortress (UNESCO)</li>
+    <li>Dambulla Cave Temple</li>
+    <li>Polonnaruwa Ancient City</li>
+    <li>Minneriya National Park</li>
+    <li>Ministry of Crab · Colombo</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights (economy ×2 return)</td><td>2,400</td><td>4,400</td><td>SriLankan Airlines direct</td></tr>
+    <tr><td>🛂 ETA visa ×2</td><td>258</td><td>258</td><td>~$35 pp fixed</td></tr>
+    <tr><td>🏨 Galle Face Hotel, Colombo (1 nt)</td><td>1,100</td><td>2,200</td><td>1,100–2,200/nt</td></tr>
+    <tr><td>🏨 Amangalla, Galle (4 nts)</td><td>17,600</td><td>30,800</td><td>4,400–7,700/nt</td></tr>
+    <tr><td>🏨 Water Garden Sigiriya (2 nts)</td><td>4,400</td><td>8,000</td><td>2,200–4,000/nt</td></tr>
+    <tr><td>🏨 Cape Weligama (2 nts)</td><td>4,400</td><td>8,800</td><td>2,200–4,400/nt</td></tr>
+    <tr><td>🚗 Private driver 10 days</td><td>5,500</td><td>7,350</td><td>~550–735 AED/day all-in</td></tr>
+    <tr><td>🐘 Activities (whale watch, safari, balloon)</td><td>1,470</td><td>2,940</td><td>Tours, entrance fees</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>37,128</b></td><td><b>64,748</b></td><td><b>53–93% of monthly income — exceptional value</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Sri Lanka offers extraordinary value luxury — Aman rates are premium but competitive vs. Europe/Maldives for what you get. Food is very affordable (local meals 55–220 AED). Prices marked 📊 Est. sourced Apr 2026.</p>
+
+<div class="footnote">🇱🇰 Sri Lanka Travel Plan · Generated Apr 2026 · Dubai → Colombo · Colombo + Galle + Sigiriya · Best time Dec–Mar</div>
+
+</div>
+</body>
+</html>

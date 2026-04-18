@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mexico 🇲🇽</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  .veg{color:#2e7d32;font-weight:700}
+
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇲🇽 Mexico</h1>
+    <div class="meta">Dubai → Mexico City + Tulum or Los Cabos &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">⭐ Best: Nov–Apr (dry)</span>
+    <span class="tag">🏨 Ultra-Luxury</span>
+    <span class="tag">🌿 Vegetarian paradise</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 Visa-free</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp (CDMX / Tulum)</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Nov–Mar</td><td>16–22°C / 24–30°C</td><td>Medium–High</td><td>↑</td><td><span class="badge b-gold">⭐ Best — dry season</span></td></tr>
+    <tr><td>Apr–May</td><td>22–28°C / 28–32°C</td><td>Low–Med</td><td>↓</td><td><span class="badge b-green">Good shoulder season</span></td></tr>
+    <tr><td>Jun–Sep</td><td>18–24°C / 28–34°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-red">Hurricane season · avoid Tulum/Cabos</span></td></tr>
+    <tr><td>Oct</td><td>18–22°C / 26–30°C</td><td>Low</td><td>↓</td><td><span class="badge b-green">Good</span></td></tr>
+    <tr><td><b>Dec</b></td><td>16–22°C / 24–28°C</td><td>High</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Excellent · festive season</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha Jun 6–7 2026 — NOT recommended for Mexico's coasts.</b> June = start of hurricane season for Caribbean Mexico (Tulum) and Pacific (Los Cabos). High humidity, risk of storms. <b>Mexico City is fine year-round.</b> Recommend planning this trip for November–March. Eid al-Fitr Mar 30–31 2026 aligns perfectly with the end of dry season.</div>
+
+<!-- ROUTE OPTIONS -->
+<h2>🗺️ Route Options</h2>
+<div class="rbox">
+  <b>Option A — Tulum route:</b> Mexico City (3 nts Four Seasons) → Tulum (5 nts Azulik or Be Tulum) · Cultural + jungle eco-luxury<br><br>
+  <b>Option B — Los Cabos route:</b> Mexico City (3 nts Four Seasons) → Los Cabos (5 nts Las Ventanas or One&Only Palmilla) · Cultural + desert beach luxury<br><br>
+  <b>Our recommendation: Option A (Tulum)</b> — more unique, Mayan ruins access, cenote swimming, world-class eco-luxury.
+</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → MEX (Mexico City)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>4,400 – 7,700</b> <span class="badge b-est">📊 Est. 2026</span></td>
+      <td>Iberia via MAD · KLM via AMS · Lufthansa via FRA · Turkish via IST</td>
+      <td>~17–19h total</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-MEX" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>18,500 – 35,000 <span class="badge b-est">📊 Est.</span></td>
+      <td>Iberia Business · Lufthansa Business · KLM World Business</td>
+      <td>~17–19h</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-MEX" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>Internal MEX → CUN (Cancún for Tulum) ~2h via Volaris/Aeroméxico (~AED 350–800 pp)</li>
+  <li>Internal MEX → SJD (Los Cabos) ~2.5h via Volaris/Aeroméxico (~AED 400–900 pp)</li>
+  <li>Tulum is ~1.5h from Cancún airport by private transfer</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>3 nights Four Seasons Mexico City</b> + <b>5 nights Azulik or Be Tulum</b> (Option A) OR <b>5 nights Las Ventanas al Paraíso / One&Only Palmilla</b> (Option B). All AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Location</th><th>Tier</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Four Seasons Mexico City</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Reforma/Polanco, CDMX</td>
+      <td>Ultra-luxury</td>
+      <td>2,900 – 5,900</td>
+      <td>✅ Garden pool · Reforma views</td>
+      <td>5.0 ★ (1,400+)</td>
+      <td><a href="https://www.fourseasons.com/mexicocity" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/mx/four-seasons-mexico-d-f.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Azulik</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Tulum Beach</td>
+      <td>Ultra-luxury eco</td>
+      <td>3,700 – 9,200</td>
+      <td>✅ Infinity pools · jungle + sea</td>
+      <td>5.0 ★ (1,800+)</td>
+      <td><a href="https://www.azulik.com" class="ext" target="_blank">azulik.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Be Tulum</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Tulum Beach</td>
+      <td>Ultra-luxury boutique</td>
+      <td>2,900 – 6,600</td>
+      <td>✅ Stunning beach pool</td>
+      <td>5.0 ★ (900+)</td>
+      <td><a href="https://www.betulum.com" class="ext" target="_blank">betulum.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Las Ventanas al Paraíso</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>San José del Cabo</td>
+      <td>Ultra-luxury</td>
+      <td>4,400 – 9,900</td>
+      <td>✅ Exceptional pools · desert-sea views</td>
+      <td>5.0 ★ (2,200+)</td>
+      <td><a href="https://www.rosewoodhotels.com/en/las-ventanas-al-paraiso" class="ext" target="_blank">Rosewood</a></td>
+    </tr>
+    <tr>
+      <td><b>One&Only Palmilla</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>San José del Cabo</td>
+      <td>Ultra-luxury</td>
+      <td>3,700 – 8,800</td>
+      <td>✅ Multiple pools · Arch views</td>
+      <td>5.0 ★ (2,800+)</td>
+      <td><a href="https://www.oneandonlyresorts.com/palmilla" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Presidente InterContinental Cancún</td>
+      <td>Cancún</td>
+      <td>Luxury</td>
+      <td>1,100 – 2,200</td>
+      <td>✅ Good beach pool</td>
+      <td>4.5 ★ (3,100+)</td>
+      <td><a href="https://www.ihg.com/intercontinental/hotels/gb/en/cancun/cunct/hoteldetail" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Fiesta Americana Grand Coral Beach</td>
+      <td style="color:#aaa">Cancún (ref.)</td>
+      <td style="color:#aaa">Standard</td>
+      <td style="color:#aaa">730 – 1,470</td>
+      <td style="color:#aaa">⚠️ Average</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Azulik — Tulum Jungle Pool</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&q=80" alt="Tulum pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Infinity pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=400&q=80" alt="Tulum cenote" onerror="this.parentElement.style.display='none'">
+        <figcaption>💧 Cenote</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Four Seasons Mexico City</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Mexico City hotel" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏨 Hotel</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=400&q=80" alt="Mexico City" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌆 Mexico City</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days (Option A: Mexico City + Tulum)</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Mexico City</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=900&q=80" alt="Mexico City" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly DXB → MEX via Madrid/Amsterdam</li><li>Transfer to Four Seasons Reforma</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · garden pool · recover</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Pujol (World's 50 Best, No. 5)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Mexico City — Historic Centre</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1585503418537-88331351ad99?w=900&q=80" alt="Zocalo Mexico City" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Zócalo · Metropolitan Cathedral</li><li>Templo Mayor (Aztec ruins)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Palacio de Bellas Artes</li><li>Casa Azul (Frida Kahlo Museum)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Coyoacán neighbourhood</li><li>Dinner: El Tajín (vegetarian Mexican)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Teotihuacán Pyramids · Polanco</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=900&q=80" alt="Teotihuacan pyramids" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Teotihuacán pyramids (~1h from CDMX)</li><li>Climb Pyramid of the Sun at sunrise</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Return · Polanco luxury shopping district</li><li>Parque Lincoln walk</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Quintonil (veg tasting menu)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Transfer → Tulum</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=900&q=80" alt="Tulum ruins" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>MEX → CUN flight (~2h)</li><li>Private transfer to Tulum (~1.5h)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in Azulik · jungle suite</li><li>Pool + Caribbean Sea</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Gitano (beach club dining)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Tulum Ruins · Cenotes</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900&q=80" alt="Tulum beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Tulum Mayan ruins at sunrise (7am entry)</li><li>Ruins over Caribbean cliffs</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Cenote Dos Ojos (double cenote snorkelling)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Beach club sundowner · Azulik pool</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Sian Ka'an Biosphere · Bacalar</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=900&q=80" alt="Sian Kaan" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Private boat: Sian Ka'an UNESCO reserve</li><li>Manatee spotting · ancient Mayan canals</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Return to Azulik · pool day</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Hartwood (wood-fire, stunning)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Cenote Gran Cenote · Coba Ruins</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=900&q=80" alt="Cenote" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Gran Cenote (crystal clear, turtles)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Cobá pyramid — climb the 120-step Nohoch Mul (still permitted)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Tulum beach sunset · mezcal cocktails</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 8</span><div class="loc">Spa Day · Tulum</div></div>
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Sunrise yoga on beach</li><li>Azulik spa — Mayan temazcal (sweat lodge)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool · in-villa lunch</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Casa Jaguar (tulum beach)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 9</span><div class="loc">Final day · Tulum → Cancún</div></div>
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Tulum Art District · galleries</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Transfer CUN · hotel pool</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Farewell dinner · Cancún Hotel Zone</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">✈️ Departure</div><ul><li>CUN → MEX → DXB via Madrid or Amsterdam · ~18h total</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD — VEGETARIAN MEXICO -->
+<h2>🍽️ Restaurants — Vegetarian Mexican Highlights</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Mexico is one of the world's great vegetarian cuisines. Traditional Mexican food relies heavily on corn, beans, chillies, squash, avocado, and cheese — much is naturally vegetarian. Tell staff <b>"soy vegetariano/a"</b> and specify <b>"sin carne, sin pollo, sin mariscos"</b> (no meat, no chicken, no seafood).</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Location</th><th>Cuisine</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Pujol</b></td><td>Mexico City, Polanco</td><td>Contemporary Mexican</td><td><span class="veg">✅ Excellent veg tasting menu on request</span></td><td><a href="https://www.pujol.com.mx" class="ext" target="_blank">pujol.com.mx</a></td></tr>
+    <tr><td><b>Quintonil</b></td><td>Mexico City, Polanco</td><td>Modern Mexican · vegetables</td><td><span class="veg">✅ Vegetables-first philosophy · outstanding</span></td><td><a href="https://www.quintonil.com" class="ext" target="_blank">quintonil.com</a></td></tr>
+    <tr><td><b>El Tajín</b></td><td>Mexico City, Coyoacán</td><td>Traditional Oaxacan/vegetarian</td><td><span class="veg">✅ Mostly vegetarian menu</span></td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g150800-d795553" class="ext" target="_blank">TripAdvisor</a></td></tr>
+    <tr><td><b>Hartwood</b></td><td>Tulum</td><td>Wood-fire · local</td><td><span class="veg">✅ Strong veg dishes, wood-roasted veg</span></td><td><a href="https://www.hartwoodtulum.com" class="ext" target="_blank">hartwoodtulum.com</a></td></tr>
+    <tr><td><b>Gitano</b></td><td>Tulum Jungle</td><td>Mezcal cocktails + small plates</td><td><span class="veg">✅ Good veg sharing plates</span></td><td><a href="https://www.gitano.com" class="ext" target="_blank">gitano.com</a></td></tr>
+    <tr><td><b>Casa Jaguar</b></td><td>Tulum Beach</td><td>Mexican · beach dining</td><td><span class="veg">✅ Veg options including raw dishes</span></td><td>—</td></tr>
+    <tr><td><b>Azulik dining</b></td><td>Azulik Resort, Tulum</td><td>Organic · plant-forward</td><td><span class="veg">✅ Organic, plant-forward — outstanding</span></td><td><a href="https://www.azulik.com/dining" class="ext" target="_blank">azulik.com</a></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Must-try vegetarian Mexican dishes:</b><br>
+• <b>Tacos de rajas</b> — roasted poblano strips + cheese on corn tortillas<br>
+• <b>Enchiladas verdes / rojas</b> — corn tortillas in green/red chilli sauce + cheese<br>
+• <b>Chiles en nogada</b> (seasonal Sep–Oct) — stuffed poblano in walnut cream + pomegranate<br>
+• <b>Tlayuda Oaxaqueña</b> — large crispy corn tortilla, black beans, quesillo cheese<br>
+• <b>Elote callejero</b> — street corn with mayo, cheese, lime, chilli<br>
+• <b>Guacamole fresco</b> — made tableside at good restaurants<br>
+• <b>Huevos rancheros</b> — fried eggs on tortillas with tomato-chilli salsa<br>
+• <b>Sopa de lima</b> (request no chicken) — lime-broth soup<br>
+• <b>Churros con chocolate</b> · <b>Horchata</b> · <b>Agua fresca de Jamaica</b></div>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=400&q=80" alt="Teotihuacan" onerror="this.parentElement.style.display='none'"><p><b>Teotihuacán at sunrise</b> — Pyramid of the Sun · 6am entry</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=400&q=80" alt="Mexico City" onerror="this.parentElement.style.display='none'"><p><b>Palacio de Bellas Artes</b> — Art Deco at night · #CDMX</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=400&q=80" alt="Tulum ruins" onerror="this.parentElement.style.display='none'"><p><b>Tulum ruins over Caribbean</b> — sunrise 6:30am</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=400&q=80" alt="Cenote" onerror="this.parentElement.style.display='none'"><p><b>Gran Cenote</b> — turquoise cavern pool · underwater shots</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&q=80" alt="Tulum beach" onerror="this.parentElement.style.display='none'"><p><b>Tulum beach strip</b> — white sand + jungle backdrop · #Tulum</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1585503418537-88331351ad99?w=400&q=80" alt="Zocalo" onerror="this.parentElement.style.display='none'"><p><b>Zócalo with cathedral</b> — best at night with lights</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>Día de los Muertos</b></td><td>Nov 1–2</td><td>Cultural celebration</td><td>⭐ One of Mexico's most atmospheric events · Oaxaca or CDMX</td></tr>
+    <tr><td><b>Grito de Independencia</b></td><td>Sep 15–16</td><td>Independence Day</td><td>⭐ Zócalo at midnight — incredible atmosphere</td></tr>
+    <tr><td><b>Mexico City International Book Fair (FILIJ)</b></td><td>Oct–Nov</td><td>Cultural</td><td>Bosque de Chapultepec</td></tr>
+    <tr><td><b>Tulum NYE</b></td><td>Dec 31</td><td>Festival / beach party</td><td>Book 6+ months ahead — extremely popular</td></tr>
+    <tr><td style="color:#c62828">Eid al-Adha Jun 6–7</td><td>Jun 6–7</td><td>—</td><td>Hurricane risk on Mexican coasts — not recommended</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>Visa-free for UK passport holders · 180 days · No pre-approval needed</dd>
+  <dt>💰 Currency</dt><dd>Mexican Peso (MXN) · 1 MXN ≈ 0.2 AED · USD widely accepted in Tulum resort zone</dd>
+  <dt>💸 Tipping</dt><dd>10–15% at restaurants · expected at luxury resorts · 20% at Pujol/Quintonil level</dd>
+  <dt>🚗 Getting around</dt><dd>CDMX: Uber (safe and cheap) · Metro for budget days · Tulum: hire driver — roads unlit at night</dd>
+  <dt>🗣️ Language</dt><dd>Spanish · English spoken at luxury hotels, Tulum resort strip · Download Google Translate</dd>
+  <dt>⏰ Time zone</dt><dd>CDMX: CST UTC-6 · Cancún: EST UTC-5 · 9–10h behind UAE</dd>
+  <dt>🌡️ Weather (Nov–Mar)</dt><dd>CDMX: 16–22°C, cool evenings (bring jacket) · Tulum: 24–30°C, dry · Ideal combination</dd>
+  <dt>⚠️ Safety</dt><dd>CDMX: Polanco/Condesa/Roma safe for tourists · Tulum: safe resort strip — hire transport, avoid driving at night · Cab from hotel, not street</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Mexico 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Four Seasons Mexico City, Reforma</li>
+    <li>Zócalo · Templo Mayor</li>
+    <li>Teotihuacán Pyramids</li>
+    <li>Palacio de Bellas Artes</li>
+    <li>Museo Frida Kahlo, Coyoacán</li>
+    <li>Pujol Restaurant · Quintonil Restaurant</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Azulik Tulum</li>
+    <li>Tulum Mayan Ruins (Zona Arqueológica)</li>
+    <li>Cenote Dos Ojos</li>
+    <li>Gran Cenote</li>
+    <li>Sian Ka'an Biosphere Reserve</li>
+    <li>Cobá Archaeological Zone</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB→MEX (economy ×2 return)</td><td>8,800</td><td>15,400</td><td>Iberia via MAD or KLM via AMS</td></tr>
+    <tr><td>✈️ Internal MEX→CUN (×2)</td><td>700</td><td>1,600</td><td>Volaris or Aeroméxico</td></tr>
+    <tr><td>🏨 Four Seasons Mexico City (3 nts)</td><td>8,700</td><td>17,700</td><td>2,900–5,900/nt</td></tr>
+    <tr><td>🏨 Azulik / Be Tulum (5 nts)</td><td>14,500</td><td>46,000</td><td>2,900–9,200/nt depending on season/room</td></tr>
+    <tr><td>🌊 Tours (cenotes, Sian Ka'an, pyramids)</td><td>1,800</td><td>3,700</td><td>Private tours inc. guides</td></tr>
+    <tr><td>🍽️ Fine dining (9 dinners est.)</td><td>2,200</td><td>5,500</td><td>Pujol/Quintonil + Tulum beach dining</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>36,700</b></td><td><b>89,900</b></td><td><b>52–128% of monthly income · Plan ~58,000 AED mid-range</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Azulik prices vary significantly — eco-luxury suites at high end. Los Cabos option (One&Only Palmilla) would add ~10,000–20,000 AED vs Tulum. Business class upgrade adds ~30,000–60,000 AED for two return. Prices 📊 Est. Apr 2026.</p>
+
+<div class="footnote">🇲🇽 Mexico Travel Plan · Generated Apr 2026 · Dubai → Mexico City + Tulum · 10 days</div>
+
+</div>
+</body>
+</html>

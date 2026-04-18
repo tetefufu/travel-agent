@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>London 🇬🇧</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  /* Header */
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  /* Section */
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  /* Cards grid */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  /* Recommend box */
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  /* Hotel photos */
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  /* Itinerary */
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .session{}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  /* Insta grid */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  /* Food table compact */
+  .veg{color:#2e7d32;font-weight:700}
+
+  /* Budget */
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  /* Practical */
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇬🇧 London — Mayfair &amp; Knightsbridge</h1>
+    <div class="meta">Dubai → London Heathrow (LHR) &nbsp;·&nbsp; 5 days &nbsp;·&nbsp; 4 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
+    <span class="tag">🏨 Luxury</span>
+    <span class="tag">🌿 Vegetarian ⭐ Excellent</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 No visa</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Jan–Feb</td><td>5–8°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-red">Cold — museums &amp; theatre season</span></td></tr>
+    <tr><td>Mar–Apr</td><td>10–14°C</td><td>Low–Medium</td><td>↓</td><td><span class="badge b-green">Good — spring, less crowded</span></td></tr>
+    <tr><td><b>May–Jun</b></td><td>17–22°C</td><td>Medium</td><td>↑</td><td><span class="badge b-gold">⭐ Best — long days, Chelsea Flower Show</span></td></tr>
+    <tr><td>Jul–Aug</td><td>20–25°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-red">Peak tourist crowds</span></td></tr>
+    <tr><td>Sep–Oct</td><td>13–18°C</td><td>Medium</td><td>↓</td><td><span class="badge b-green">Good — autumn colour, fashion week</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha: Jun 6–7 — Perfect for London.</b> June is London's golden month — long days (sunset ~9:15pm), Chelsea Flower Show (mid-May), Trooping the Colour (June), warm enough for parks, cool enough for walking. No pool needed here — hotel pools suffice. <b>Eid al-Fitr (Mar 30–31)</b> also works well — spring is lovely with fewer crowds and better prices.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → LHR (London Heathrow)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>2,400 – 4,200</b> <span class="badge b-est">📊 Est. Apr 2026</span></td>
+      <td>Emirates (direct) · British Airways (direct) · flydubai + BA</td>
+      <td>~7h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-LHR" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>14,700 – 29,400 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates Business (flat bed) · BA Club World</td>
+      <td>~7h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-LHR" class="ext" target="_blank">KAYAK</a> · <a href="https://www.britishairways.com" class="ext" target="_blank">BA.com</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Emirates A380 DXB→LHR daily — most comfortable economy in class</li>
+  <li>Business upgrade strongly recommended for this route — flat bed, 7h, arrive fresh</li>
+  <li>London City (LCY) via BA also an option — closer to City but farther from Mayfair</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">All 3 ultra-luxury hotels are in Mayfair/Knightsbridge — walking distance of each other. All prices in AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Tier</th><th>/ night (AED)</th><th>Total (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>The Connaught</b> (Mayfair) <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>4,700 – 9,400</td>
+      <td>18,800 – 37,600 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Aman Spa pool</td>
+      <td>5.0 ★ (3,000+)</td>
+      <td><a href="https://www.the-connaught.co.uk" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/gb/the-connaught.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Claridge's</b> (Mayfair) <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>5,200 – 11,000</td>
+      <td>20,800 – 44,000 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>⚠️ Spa pool only · no main pool</td>
+      <td>5.0 ★ (3,500+)</td>
+      <td><a href="https://www.claridges.co.uk" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/gb/claridge-s.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>The Berkeley</b> (Knightsbridge) <span class="badge b-est">📊 Est.</span></td>
+      <td>Ultra-luxury</td>
+      <td>4,400 – 8,800</td>
+      <td>17,600 – 35,200 <span style="font-size:0.7rem;color:#888">(4 nts)</span></td>
+      <td>✅ Rooftop pool — best in London</td>
+      <td>5.0 ★ (2,800+)</td>
+      <td><a href="https://www.the-berkeley.co.uk" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/gb/the-berkeley.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td>The Dorchester (Park Lane)</td>
+      <td>Luxury</td>
+      <td>3,700 – 7,300</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>✅ Pool &amp; spa</td>
+      <td>4.5 ★ (3,200+)</td>
+      <td><a href="https://www.dorchestercollection.com/en/london/the-dorchester/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Brown's Hotel (Mayfair)</td>
+      <td>Luxury</td>
+      <td>3,300 – 6,600</td>
+      <td>— <span style="font-size:0.7rem;color:#888">(alt.)</span></td>
+      <td>⚠️ Spa only</td>
+      <td>4.5 ★ (2,000+)</td>
+      <td><a href="https://www.roccofortehotels.com/hotels-and-resorts/browns-hotel/" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Park Lane Hotel</td>
+      <td style="color:#aaa">Standard ref.</td>
+      <td style="color:#aaa">1,100 – 2,200</td>
+      <td style="color:#aaa">— (ref.)</td>
+      <td style="color:#aaa">⚠️ None</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Pool priority: Choose The Berkeley.</b> Its rooftop pool is the best hotel pool in central London — open-air, with retractable roof, overlooking Knightsbridge. Perfect for a London summer. The Connaught's Aman Spa pool is superb but indoor. Claridge's has no main pool.</div>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">The Berkeley — Rooftop Pool</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1582610116397-edb72e301a7e?w=400&q=80" alt="Rooftop pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Rooftop pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&q=80" alt="Luxury room" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛏️ Suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Claridge's — Mayfair Icon</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Claridges lobby" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏛️ Art Deco lobby</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Suite bathroom" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛁 Bathroom</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 5 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Mayfair Check-in</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80" alt="London" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Emirates DXB→LHR ~7h</li><li>Heathrow Express to Paddington (15 min)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · The Berkeley / Connaught</li><li>Rooftop pool (The Berkeley)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Gymkhana, Mayfair (Indian fine dining)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Mayfair · Bond Street · Hyde Park</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80" alt="London streets" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Hyde Park morning walk</li><li>The Serpentine Gallery</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Bond Street shopping</li><li>Cartier · Graff · Harrods</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Benares, Mayfair (Indian Michelin)</li><li>Drinks: The Connaught Bar</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">South Kensington · Chelsea · Tate</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1529655682523-852882bdb5c4?w=900&q=80" alt="Chelsea London" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>V&amp;A Museum (free)</li><li>South Kensington cafes</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Chelsea — King's Road</li><li>Chelsea Physic Garden</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Ikoyi, Fitzrovia (West African fine dining)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Westminster · Covent Garden · Theatre</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?w=900&q=80" alt="Westminster" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Westminster Abbey · Houses of Parliament</li><li>St James's Park</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Covent Garden · Neal's Yard</li><li>National Gallery</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>West End show (book in advance)</li><li>Dinner: Dishoom Covent Garden (Indian)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Departure — LHR → DXB</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Late checkout · Harrods food hall for last treats</li><li>Heathrow Express · fly home</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants — Outstanding Vegetarian Scene</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">London has the world's finest Indian vegetarian dining — a must for this trip. Multiple Michelin-starred options.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Cuisine</th><th>Type</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Gymkhana</b> (Mayfair) 🌟</td><td>Modern Indian</td><td>Michelin starred fine dining</td><td><span class="veg">✅ Outstanding — dedicated veg menu</span></td><td><a href="https://www.gymkhanalondon.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Benares</b> (Mayfair) 🌟</td><td>Contemporary Indian</td><td>Michelin starred</td><td><span class="veg">✅ Excellent — Atul Kochhar's masterpiece</span></td><td><a href="https://www.benaresrestaurant.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Dishoom</b> (Covent Garden / King's Cross)</td><td>Bombay Indian Cafe</td><td>Casual fine</td><td><span class="veg">✅ Legendary — half menu is veg</span></td><td><a href="https://www.dishoom.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Amaya</b> (Knightsbridge)</td><td>Indian — Grill</td><td>Fine dining</td><td><span class="veg">✅ Very good veg options</span></td><td><a href="https://www.amaya.biz" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Ikoyi</b> (Fitzrovia) 🌟🌟</td><td>West African / Contemporary</td><td>2 Michelin stars</td><td><span class="veg">✅ Innovative vegetarian tasting menu</span></td><td><a href="https://www.ikoyilondon.com" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td><b>Sketch</b> (Mayfair)</td><td>French / Contemporary</td><td>Fine dining + afternoon tea</td><td><span class="veg">✅ Good veg options</span></td><td><a href="https://www.sketch.london" class="ext" target="_blank">Book</a></td></tr>
+    <tr><td>Harrods Dining Hall</td><td>Various global</td><td>Food hall / casual</td><td><span class="veg">✅ Extensive veg options</span></td><td>—</td></tr>
+    <tr><td>The Ledbury (Notting Hill) 🌟🌟</td><td>Contemporary British</td><td>2 Michelin stars</td><td><span class="veg">✅ Can accommodate full veg tasting</span></td><td><a href="https://www.theledbury.com" class="ext" target="_blank">Book</a></td></tr>
+  </tbody>
+</table>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=80" alt="London Bridge" onerror="this.parentElement.style.display='none'"><p><b>Tower Bridge</b> — blue hour, south bank · #LondonBridge</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80" alt="Mayfair" onerror="this.parentElement.style.display='none'"><p><b>Mayfair mews</b> — flower-draped cobblestone alleys · #Mayfair</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1529655682523-852882bdb5c4?w=400&q=80" alt="Chelsea" onerror="this.parentElement.style.display='none'"><p><b>Chelsea blue door houses</b> — Notting Hill vibes · #Chelsea</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?w=400&q=80" alt="Westminster" onerror="this.parentElement.style.display='none'"><p><b>Big Ben + Parliament</b> — Westminster Bridge at sunrise</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1520986606214-8b456906c813?w=400&q=80" alt="Hyde Park" onerror="this.parentElement.style.display='none'"><p><b>Hyde Park Serpentine</b> — summer chairs · #HydePark</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1550082849-a8b0e2b7b1e2?w=400&q=80" alt="Harrods" onerror="this.parentElement.style.display='none'"><p><b>Harrods at night</b> — golden lights facade · #Harrods #Knightsbridge</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events — June 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td style="color:#2e7d32"><b>Trooping the Colour</b></td><td>Typically 2nd Sat June</td><td>Royal ceremony</td><td><b>King's Birthday Parade · The Mall · spectacular</b></td></tr>
+    <tr><td>Chelsea Flower Show</td><td>Late May</td><td>Garden / lifestyle</td><td>World's greatest flower show — book months ahead</td></tr>
+    <tr><td>Wimbledon</td><td>Late Jun–early Jul</td><td>Tennis Grand Slam</td><td>Strawberries &amp; cream — book ballot or hospitality</td></tr>
+    <tr><td>Pride in London</td><td>Late June</td><td>Festival / parade</td><td>Spectacular parade — Oxford St very busy</td></tr>
+    <tr><td style="color:#2e7d32"><b>Eid al-Adha (Jun 6–7)</b></td><td>Jun 6–7</td><td>—</td><td><b>Perfect timing — long daylight, warm, lively city</b></td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>None required · UK passport · right of abode</dd>
+  <dt>💷 Currency</dt><dd>British Pound (£) · 1 GBP ≈ 4.7 AED · Contactless universally accepted</dd>
+  <dt>💸 Tipping</dt><dd>10–15% in restaurants (often added as service charge) · not expected otherwise</dd>
+  <dt>🚇 Getting around</dt><dd>Oyster card / contactless for Tube &amp; bus · Black cab or Uber for hotel transfers</dd>
+  <dt>🗣️ Language</dt><dd>English</dd>
+  <dt>🏠 Best area</dt><dd>Mayfair or Knightsbridge — walking distance to all key restaurants &amp; shops</dd>
+  <dt>☀️ June weather</dt><dd>16–22°C · pack a light layer for evenings · some rain possible</dd>
+  <dt>🎭 Theatre</dt><dd>Book West End tickets 4–6 weeks ahead via officiallondontheatre.com</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"London 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>The Berkeley, Wilton Place, Knightsbridge</li>
+    <li>The Connaught, Carlos Place, Mayfair</li>
+    <li>Claridge's, Brook Street, Mayfair</li>
+    <li>Gymkhana, 42 Albemarle Street</li>
+    <li>Benares, 12a Berkeley Square</li>
+    <li>Dishoom Covent Garden</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>Harrods, Brompton Road</li>
+    <li>Hyde Park / Serpentine Gallery</li>
+    <li>Bond Street (shopping)</li>
+    <li>Westminster Abbey</li>
+    <li>Covent Garden Market</li>
+    <li>Sketch, 9 Conduit Street</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB↔LHR (economy ×2 return)</td><td>4,800</td><td>8,400</td><td>Emirates direct</td></tr>
+    <tr><td>✈️ Flights (business upgrade ×2 — optional)</td><td>29,400</td><td>58,800</td><td>Emirates Business flat bed</td></tr>
+    <tr><td>🏨 The Berkeley (4 nts)</td><td>17,600</td><td>35,200</td><td>Best pool in London</td></tr>
+    <tr><td>🍽️ Dining (est. 5 meals out)</td><td>2,800</td><td>5,500</td><td>~£150–300 per meal couple</td></tr>
+    <tr><td>🛍️ Shopping &amp; activities</td><td>3,000</td><td>20,000+</td><td>Bond Street optional</td></tr>
+    <tr><td>🚇 Transport (Tube + taxis)</td><td>400</td><td>900</td><td>Oyster + Uber</td></tr>
+    <tr class="budget-total"><td><b>Total (economy flights)</b></td><td><b>28,600</b></td><td><b>70,000+</b></td><td><b>41–100%+ monthly income (shopping variable)</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Shopping excluded from upper bound — London Bond Street purchases can be unlimited. Prices marked 📊 Est. are Apr 2026 estimates; check live booking links for current rates. GBP/AED rate: 1 GBP ≈ 4.7 AED.</p>
+
+<div class="footnote">🇬🇧 London Travel Plan · Generated Apr 2026 · Dubai → London Heathrow · Eid al-Adha Jun 2026</div>
+
+</div>
+</body>
+</html>

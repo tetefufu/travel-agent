@@ -1,0 +1,19 @@
+holiday planning
+- best time to go
+- flight dubai to destination cost economy and business
+- flight: distribution of cost throughout the year
+- distribution curve of hotel costs including cost of: most popular hotel. average of most recommended hotels. cost of four seasons. cost of standard ones (hilton, radison, etc). photos of best choices. ratings tripadvisor or populat ones
+- hotel: bathroom pics
+- tripadvisor must have x amount of reviews.
+- tripadvisor things to do
+- food options and restairants: vegeterian, posh, street, recommended, instagram
+- instagram places at destination
+- instagram posts in destination (most viral)
+- any concerts, special events, sporting events, festivals to go for
+- visa requirements for uk travelers
+- dont go during budget period (sep)
+- prefer eid holidays
+- create a google map of things to do 
+- look at websistes like https://www.experiencetravelgroup.com/itinerary/luxury-cambodia-adventure for inspiration
+- plan things to do per day 
+- research websites for popular items (must see). get pics. 

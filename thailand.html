@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thailand 🇹🇭</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13.5px;line-height:1.5}
+  .page{max-width:900px;margin:0 auto;padding:28px 18px}
+
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .hero h1{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  .hero .meta{font-size:0.82rem;opacity:0.7;margin-top:4px}
+  .hero .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.76rem;font-weight:600}
+  .tag.gold{background:#c9a84c;border-color:#c9a84c}
+
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:4px}
+  thead tr{background:#1a2e4a;color:#fff}
+  th{padding:7px 10px;text-align:left;font-weight:600;font-size:0.75rem;letter-spacing:0.03em}
+  td{padding:7px 10px;border-bottom:1px solid #e8ecf1;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#edf1f7}
+
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:0.7rem;font-weight:700;white-space:nowrap}
+  .b-green{background:#d4edda;color:#1b5e20}
+  .b-gold{background:#fff3cd;color:#856404}
+  .b-navy{background:#1a2e4a;color:#fff}
+  .b-red{background:#fde8e8;color:#c62828}
+  .b-live{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+  .b-est{background:#fff8e1;color:#f57f17;border:1px solid #ffe082}
+
+  .rbox{background:#1a2e4a;color:#fff;padding:10px 16px;border-left:3px solid #c9a84c;border-radius:0 6px 6px 0;margin:10px 0;font-size:0.88rem;line-height:1.5}
+  .rbox b{color:#c9a84c}
+
+  .hphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+  .hphotos figure{margin:0}
+  .hphotos img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+  .hphotos figcaption{font-size:0.7rem;color:#777;text-align:center;margin-top:3px}
+
+  .days{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .day{border:1px solid #dde2ea;border-radius:8px;overflow:hidden}
+  .day-hd{background:#1a2e4a;color:#fff;padding:7px 14px;font-weight:700;font-size:0.85rem;display:flex;align-items:center;gap:8px}
+  .day-hd span{color:#c9a84c}
+  .day-hd .loc{flex:1}
+  .day-img{width:100%;height:150px;object-fit:cover;display:block}
+  .day-body{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:500px){.day-body{grid-template-columns:1fr}}
+  .slab{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#c9a84c;margin-bottom:3px}
+  .session ul{padding-left:14px;font-size:0.82rem}
+  .session li{margin-bottom:2px}
+
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
+  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
+  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
+  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+
+  .veg{color:#2e7d32;font-weight:700}
+
+  .budget-total td{background:#1a2e4a!important;color:#fff;font-weight:700}
+  .budget-total td b{color:#c9a84c}
+
+  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:0.85rem;margin-bottom:4px}
+  @media(max-width:500px){.prac-grid{grid-template-columns:1fr}}
+  .prac-grid dt{font-weight:700;color:#1a2e4a}
+  .prac-grid dd{margin:0 0 4px}
+
+  a{color:#1a2e4a;text-decoration:none;border-bottom:1px dotted #aaa}
+  a:hover{color:#c9a84c}
+  .ext::after{content:'↗';font-size:0.7em;margin-left:2px}
+
+  .footnote{font-size:0.75rem;color:#999;margin-top:16px;padding-top:12px;border-top:1px solid #e0e4ea}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+  <div>
+    <h1>🇹🇭 Thailand</h1>
+    <div class="meta">Dubai → Bangkok + Phuket / Koh Samui &nbsp;·&nbsp; 10 days &nbsp;·&nbsp; 9 nights &nbsp;·&nbsp; Couple</div>
+  </div>
+  <div class="tags">
+    <span class="tag gold">⭐ Best: Nov–Apr</span>
+    <span class="tag">🏨 Ultra-Luxury</span>
+    <span class="tag">🌿 Vegetarian paradise</span>
+    <span class="tag">🏊 Pool priority</span>
+    <span class="tag">🇬🇧 Visa-free 30 days</span>
+  </div>
+</div>
+
+<!-- BEST TIME -->
+<h2>📅 Best Time to Go</h2>
+<table>
+  <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td><b>Nov–Feb</b></td><td>26–32°C</td><td>High</td><td>↑↑</td><td><span class="badge b-gold">⭐ Peak / Best weather</span></td></tr>
+    <tr><td><b>Mar–Apr</b></td><td>30–36°C</td><td>Medium</td><td>↑</td><td><span class="badge b-green">Good · hot but dry</span></td></tr>
+    <tr><td>May–Jun</td><td>30–34°C</td><td>Low</td><td>↓</td><td><span class="badge b-red">Rainy season begins</span></td></tr>
+    <tr><td>Jul–Oct</td><td>28–32°C</td><td>Very low</td><td>↓↓</td><td><span class="badge b-red">Monsoon — avoid islands</span></td></tr>
+    <tr><td><b>Dec</b></td><td>27–30°C</td><td>Very high</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Perfect · book ahead</span></td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Eid al-Adha Jun 6–7 2026 — NOT ideal for Thailand.</b> June = start of monsoon season on islands (especially Koh Samui). Bangkok is fine year-round but humid. <b>Strongly recommend November–February instead.</b> Eid al-Fitr Mar 30–31 2026 aligns well — dry season, manageable heat. Book 3+ months ahead for Capella Bangkok.</div>
+
+<!-- FLIGHTS -->
+<h2>✈️ Flights — DXB → BKK (Bangkok Suvarnabhumi)</h2>
+<table>
+  <thead><tr><th>Class</th><th>Price return p/p (AED)</th><th>✈️ Airline</th><th>⏱ Duration</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Economy</b> <span class="badge b-green">Primary</span></td>
+      <td><b>1,800 – 2,800</b> <span class="badge b-est">📊 Est. 2026</span></td>
+      <td>Emirates · Thai Airways · flydubai via BKK · Air Arabia</td>
+      <td>~6.5h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-BKK" class="ext" target="_blank">KAYAK</a> · <a href="https://www.emirates.com" class="ext" target="_blank">Emirates</a></td>
+    </tr>
+    <tr>
+      <td>Business <span class="badge b-navy">Upgrade</span></td>
+      <td>9,200 – 16,500 <span class="badge b-est">📊 Est.</span></td>
+      <td>Emirates (lie-flat) · Thai Airways Business · Singapore Airlines via SIN</td>
+      <td>~6.5h direct</td>
+      <td><a href="https://www.kayak.ae/flights/DXB-BKK" class="ext" target="_blank">KAYAK</a></td>
+    </tr>
+  </tbody>
+</table>
+<ul style="font-size:0.82rem;padding-left:16px;margin:6px 0">
+  <li>✅ Emirates and Thai Airways fly direct DXB→BKK · Multiple daily departures</li>
+  <li>Internal: BKK → HKT (Phuket) ~1.5h via Thai Airways/Bangkok Airways (~AED 180–400 pp) OR BKK → USM (Koh Samui) ~1h via Bangkok Airways (~AED 250–550 pp)</li>
+  <li>Bangkok Airways monopolises Koh Samui — book early, prices spike</li>
+</ul>
+
+<!-- HOTELS -->
+<h2>🏨 Hotels</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Plan: <b>3 nights Capella Bangkok</b> + <b>6 nights COMO Point Yamu, Phuket</b> OR swap Phuket for <b>Six Senses Samui</b>. All AED. 1 THB ≈ 0.11 AED.</p>
+<table>
+  <thead><tr><th>Hotel</th><th>Location</th><th>Tier</th><th>/ night (AED)</th><th>🏊 Pool</th><th>⭐ TripAdv.</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Capella Bangkok</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Bangkok, Chao Phraya</td>
+      <td>Ultra-luxury</td>
+      <td>3,300 – 7,300</td>
+      <td>✅ Stunning riverside pool</td>
+      <td>5.0 ★ (1,100+)</td>
+      <td><a href="https://www.capellahotels.com/en/capella-bangkok" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/th/capella-bangkok.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>Rosewood Bangkok</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Bangkok, Ploenchit</td>
+      <td>Ultra-luxury</td>
+      <td>2,600 – 5,500</td>
+      <td>✅ Infinity pool, 30th floor</td>
+      <td>5.0 ★ (900+)</td>
+      <td><a href="https://www.rosewoodhotels.com/en/bangkok" class="ext" target="_blank">Book</a> · <a href="https://www.booking.com/hotel/th/rosewood-bangkok.html" class="ext" target="_blank">Booking.com</a></td>
+    </tr>
+    <tr>
+      <td><b>COMO Point Yamu</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Cape Yamu, Phuket</td>
+      <td>Ultra-luxury</td>
+      <td>2,900 – 6,600</td>
+      <td>✅ Multiple pools · Andaman Sea views</td>
+      <td>5.0 ★ (800+)</td>
+      <td><a href="https://www.comohotels.com/en/pointyamu" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Six Senses Samui</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Koh Samui, North Bophut</td>
+      <td>Ultra-luxury</td>
+      <td>3,600 – 8,800</td>
+      <td>✅ Private villa pools · infinity edge</td>
+      <td>5.0 ★ (1,200+)</td>
+      <td><a href="https://www.sixsenses.com/en/resorts/samui" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td><b>Four Seasons Resort Koh Samui</b> <span class="badge b-est">📊 Est.</span></td>
+      <td>Koh Samui, Ang Thong</td>
+      <td>Ultra-luxury</td>
+      <td>3,200 – 7,700</td>
+      <td>✅ Private villa pools</td>
+      <td>5.0 ★ (700+)</td>
+      <td><a href="https://www.fourseasons.com/kohsamui" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td>Anantara Riverside Bangkok</td>
+      <td>Bangkok</td>
+      <td>Luxury</td>
+      <td>1,100 – 2,200</td>
+      <td>✅ Good riverside pools</td>
+      <td>4.5 ★ (4,200+)</td>
+      <td><a href="https://www.anantara.com/en/riverside-bangkok" class="ext" target="_blank">Book</a></td>
+    </tr>
+    <tr>
+      <td style="color:#aaa">Mercure Bangkok Sukhumvit</td>
+      <td style="color:#aaa">Bangkok</td>
+      <td style="color:#aaa">Standard (ref.)</td>
+      <td style="color:#aaa">550 – 920</td>
+      <td style="color:#aaa">⚠️ Small</td>
+      <td style="color:#aaa">4.0 ★</td>
+      <td style="color:#aaa">—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">Capella Bangkok — Riverside Pool</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1540202404-a2f29016b523?w=400&q=80" alt="Bangkok pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Chao Phraya pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&q=80" alt="Suite" onerror="this.parentElement.style.display='none'">
+        <figcaption>🛏️ Suite</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:0.78rem;font-weight:700;margin-bottom:6px">COMO Point Yamu — Phuket</p>
+    <div class="hphotos">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&q=80" alt="Phuket pool" onerror="this.parentElement.style.display='none'">
+        <figcaption>🏊 Andaman infinity pool</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1548094878-84ced0f4f69f?w=400&q=80" alt="Phuket villa" onerror="this.parentElement.style.display='none'">
+        <figcaption>🌴 Villa</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<h2>🗓️ Itinerary — 10 Days</h2>
+<div class="days">
+
+  <div class="day">
+    <div class="day-hd"><span>Day 1</span><div class="loc">Arrival · Bangkok</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=900&q=80" alt="Bangkok skyline" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">✈️ Arrival</div><ul><li>Fly DXB→BKK (~6.5h)</li><li>Arrive Suvarnabhumi · 30min to Capella</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in · riverside pool</li><li>Chao Phraya river views</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Côte by Mauro Colagreco (Capella)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 2</span><div class="loc">Bangkok Temples · Grand Palace</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=900&q=80" alt="Wat Arun Bangkok" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Wat Phra Kaew (Emerald Buddha)</li><li>Grand Palace complex</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Wat Pho · Giant Reclining Buddha</li><li>Traditional Thai massage at Wat Pho school</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Boat to Wat Arun at sunset</li><li>Dinner: Err (rustic Thai, vegetarian-friendly)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 3</span><div class="loc">Bangkok Markets · Rooftop · Chatuchak</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1555415988-7d7ea45a4f68?w=900&q=80" alt="Bangkok market" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Damnoen Saduak floating market</li><li>Or Or Tor Kor fresh market</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Chatuchak Weekend Market</li><li>Jim Thompson House (silk museum)</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Vertigo Rooftop Bar, Banyan Tree (skyline sunset)</li><li>Dinner: Sorn (S.Pellegrino Asia 50 Best)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 4</span><div class="loc">Transfer → Phuket / Koh Samui</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=900&q=80" alt="Phuket Andaman Sea" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Checkout Capella Bangkok</li><li>BKK → HKT flight (~1.5h)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Check in COMO Point Yamu</li><li>Infinity pool · Andaman Sea views</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>COMO restaurant dinner · sunset cocktails</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 5</span><div class="loc">Phang Nga Bay · James Bond Island</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=900&q=80" alt="Phang Nga Bay" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Private longtail boat — Phang Nga Bay</li><li>Sea caves · Khao Phing Kan (James Bond Island)</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Kayaking through mangroves</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return to resort · spa treatment</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 6</span><div class="loc">Phuket Old Town · Kata Beach</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Phuket beach" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Phuket Old Town · Sino-Portuguese architecture</li><li>Thalang Road heritage cafes</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Kata Noi Beach · snorkelling</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Dinner: Suay Restaurant, Phuket Old Town</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 7</span><div class="loc">Phi Phi Islands · Maya Bay</div></div>
+    <img class="day-img" src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=900&q=80" alt="Phi Phi Islands" onerror="this.parentElement.style.display='none'">
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Private speed boat tour: Koh Phi Phi</li><li>Maya Bay (The Beach) — early to beat crowds</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Snorkelling: Koh Bida Nok coral reefs</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Return · resort pool · dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 8</span><div class="loc">Spa Day · COMO Shambhala</div></div>
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>COMO Shambhala spa — couples treatment</li><li>Traditional Thai massage + scrub</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Pool day · COMO cuisine lunch</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Sunset yoga · beachfront dinner</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 9</span><div class="loc">Final day · Phuket</div></div>
+    <div class="day-body">
+      <div class="session"><div class="slab">🌅 Morning</div><ul><li>Big Buddha viewpoint (45m marble statue)</li><li>Wat Chalong temple</li></ul></div>
+      <div class="session"><div class="slab">☀️ Afternoon</div><ul><li>Nai Harn Beach · final swim</li></ul></div>
+      <div class="session"><div class="slab">🌙 Evening</div><ul><li>Farewell dinner · resort terrace</li></ul></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-hd"><span>Day 10</span><div class="loc">Departure</div></div>
+    <div class="day-body" style="grid-template-columns:1fr">
+      <div class="session"><div class="slab">✈️ Departure</div><ul><li>HKT → BKK → DXB · ~9h total · Emirates or Thai Airways</li></ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOD -->
+<h2>🍽️ Restaurants — Vegetarian Highlights</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Thailand is outstanding for vegetarians. Say <b>"jeh"</b> (เจ) for vegan/Buddhist vegetarian or <b>"mangsawirat"</b> (มังสวิรัติ) for vegetarian. Yellow flag with red Chinese characters = full vegetarian restaurants.</p>
+<table>
+  <thead><tr><th>Restaurant</th><th>Location</th><th>Cuisine</th><th>🌿 Veg</th><th>🔗</th></tr></thead>
+  <tbody>
+    <tr><td><b>Côte by Mauro Colagreco</b></td><td>Capella Bangkok</td><td>French Mediterranean</td><td><span class="veg">✅ Dedicated veg tasting menu</span></td><td><a href="https://www.capellahotels.com/en/capella-bangkok/dining" class="ext" target="_blank">capellahotels.com</a></td></tr>
+    <tr><td><b>Sorn</b></td><td>Bangkok, Sukhumvit</td><td>Southern Thai</td><td><span class="veg">✅ Advance notice for veg menu</span></td><td><a href="https://www.restaurantsorn.com" class="ext" target="_blank">restaurantsorn.com</a></td></tr>
+    <tr><td><b>Err</b></td><td>Bangkok, Tatien</td><td>Rustic Thai</td><td><span class="veg">✅ Strong vegetarian options</span></td><td><a href="https://www.errbkk.com" class="ext" target="_blank">errbkk.com</a></td></tr>
+    <tr><td><b>May Kaidee</b></td><td>Bangkok, Banglamphu</td><td>100% Thai vegetarian</td><td><span class="veg">✅ Fully vegetarian — legendary</span></td><td><a href="https://www.maykaidee.com" class="ext" target="_blank">maykaidee.com</a></td></tr>
+    <tr><td><b>Ethos</b></td><td>Bangkok, Khao San area</td><td>International vegetarian</td><td><span class="veg">✅ Fully vegetarian/vegan</span></td><td>—</td></tr>
+    <tr><td><b>COMO Cuisine</b></td><td>COMO Point Yamu, Phuket</td><td>Modern Asian / wellness</td><td><span class="veg">✅ Dedicated veg/vegan menu</span></td><td><a href="https://www.comohotels.com/en/pointyamu/dining" class="ext" target="_blank">comohotels.com</a></td></tr>
+    <tr><td><b>Suay Restaurant</b></td><td>Phuket Old Town</td><td>Modern Thai fusion</td><td><span class="veg">✅ Very veg friendly</span></td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g297934-d1792888" class="ext" target="_blank">TripAdvisor</a></td></tr>
+    <tr><td><b>Pad Thai / Som Tam stalls</b></td><td>Everywhere</td><td>Thai street food</td><td><span class="veg">✅ Request "no meat/fish sauce" — mostly complied</span></td><td>—</td></tr>
+  </tbody>
+</table>
+<div class="rbox"><b>Top vegetarian Thai dishes to try:</b> Pad Thai jeh (no egg/fish sauce) · Tom Yum het (mushroom) · Khao pad pak (veg fried rice) · Gang jued tofu · Spring rolls (por pia sod) · Mango sticky rice (khao neow mamuang) · Banana roti · Massaman curry with tofu · Fresh coconut water everywhere.</div>
+
+<!-- INSTAGRAM -->
+<h2>📸 Instagram Spots</h2>
+<div class="igrid">
+  <div class="icard"><img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=80" alt="Wat Arun" onerror="this.parentElement.style.display='none'"><p><b>Wat Arun at sunrise</b> — Chao Phraya riverbank · #WatArun</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&q=80" alt="Bangkok skyline" onerror="this.parentElement.style.display='none'"><p><b>Bangkok skyline</b> — from Vertigo rooftop bar · Banyan Tree</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400&q=80" alt="Phi Phi" onerror="this.parentElement.style.display='none'"><p><b>Maya Bay, Phi Phi</b> — turquoise lagoon · go at 6am</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=400&q=80" alt="Phang Nga" onerror="this.parentElement.style.display='none'"><p><b>Phang Nga Bay</b> — limestone karsts · #PhangNgaBay</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&q=80" alt="COMO pool" onerror="this.parentElement.style.display='none'"><p><b>COMO Point Yamu pool</b> — Andaman Sea infinity edge</p></div>
+  <div class="icard"><img src="https://images.unsplash.com/photo-1555415988-7d7ea45a4f68?w=400&q=80" alt="floating market" onerror="this.parentElement.style.display='none'"><p><b>Damnoen Saduak</b> — floating market · go pre-9am</p></div>
+</div>
+
+<!-- EVENTS -->
+<h2>🎉 Events 2026</h2>
+<table>
+  <thead><tr><th>Event</th><th>Dates</th><th>Type</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><b>Loy Krathong</b></td><td>Nov (full moon)</td><td>Lantern / water festival</td><td>⭐ One of Asia's most beautiful festivals</td></tr>
+    <tr><td><b>Thai New Year (Songkran)</b></td><td>Apr 13–15</td><td>Water festival</td><td>⭐ City-wide water fights — fun but chaotic</td></tr>
+    <tr><td><b>Phuket Vegetarian Festival</b></td><td>Oct (9 days)</td><td>Cultural / food</td><td>⭐ Perfect for vegetarians — incredible street food</td></tr>
+    <tr><td><b>Bangkok Art Biennale</b></td><td>Oct–Feb (biennial)</td><td>Contemporary art</td><td>Check 2026 dates</td></tr>
+    <tr><td style="color:#c62828">Eid al-Adha Jun 6–7</td><td>Jun 6–7</td><td>—</td><td>Monsoon season in Thailand — not recommended</td></tr>
+  </tbody>
+</table>
+
+<!-- PRACTICAL -->
+<h2>ℹ️ Practical Info</h2>
+<dl class="prac-grid">
+  <dt>🛂 Visa</dt><dd>Visa-free for UK passport holders · 30 days · Extendable at immigration office</dd>
+  <dt>💰 Currency</dt><dd>Thai Baht (THB) · 1 THB ≈ 0.11 AED · Exchange at Superrich or airports · ATMs ubiquitous</dd>
+  <dt>💸 Tipping</dt><dd>~50–100 THB (5–11 AED) in restaurants · 200+ THB at luxury hotels · Massage therapists: 50–100 THB</dd>
+  <dt>🚗 Getting around</dt><dd>Bangkok: BTS Skytrain + Grab (SE Asian Uber) · Phuket: hire driver or scooter (careful on roads)</dd>
+  <dt>🗣️ Language</dt><dd>Thai · English spoken in luxury hotels and tourist areas · Download Google Translate with Thai</dd>
+  <dt>⏰ Time zone</dt><dd>ICT: UTC+7 · 3h ahead of UAE</dd>
+  <dt>🌡️ Weather (Nov–Feb)</dt><dd>Bangkok: 26–32°C, low humidity · Phuket: 28–33°C, low rainfall · Perfect</dd>
+  <dt>🏥 Health</dt><dd>Drink bottled water only · Mosquito repellent (DEET) essential · Excellent private hospitals in Bangkok</dd>
+</dl>
+
+<!-- GOOGLE MAPS -->
+<h2>🗺️ Google Maps</h2>
+<p style="font-size:0.85rem;margin-bottom:6px">Save as list <b>"Thailand 2026"</b> → <a href="https://www.google.com/maps" class="ext" target="_blank">Open Google Maps</a></p>
+<div class="grid2" style="font-size:0.82rem">
+  <ul style="padding-left:16px">
+    <li>Capella Bangkok</li>
+    <li>Wat Phra Kaew (Grand Palace)</li>
+    <li>Wat Pho · Wat Arun</li>
+    <li>Damnoen Saduak Floating Market</li>
+    <li>Chatuchak Weekend Market</li>
+    <li>May Kaidee (vegetarian restaurant)</li>
+  </ul>
+  <ul style="padding-left:16px">
+    <li>COMO Point Yamu, Cape Yamu Phuket</li>
+    <li>Phuket Old Town</li>
+    <li>Kata Noi Beach</li>
+    <li>Big Buddha Phuket</li>
+    <li>Phang Nga Bay departure pier</li>
+    <li>Nai Harn Beach</li>
+  </ul>
+</div>
+
+<!-- BUDGET -->
+<h2>💰 Budget Summary (per couple)</h2>
+<table>
+  <thead><tr><th>Item</th><th>Low (AED)</th><th>High (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights DXB→BKK (economy ×2 return)</td><td>3,600</td><td>5,600</td><td>Emirates or Thai Airways direct</td></tr>
+    <tr><td>✈️ Internal BKK→HKT (×2)</td><td>720</td><td>1,600</td><td>Bangkok Airways / Thai Airways</td></tr>
+    <tr><td>🏨 Capella Bangkok (3 nts)</td><td>9,900</td><td>21,900</td><td>3,300–7,300/nt</td></tr>
+    <tr><td>🏨 COMO Point Yamu, Phuket (6 nts)</td><td>17,400</td><td>39,600</td><td>2,900–6,600/nt</td></tr>
+    <tr><td>🚢 Private boat tours + activities</td><td>1,800</td><td>3,700</td><td>Phang Nga, Phi Phi private tours</td></tr>
+    <tr><td>🍽️ Fine dining (8 dinners est.)</td><td>1,800</td><td>4,400</td><td>~225–550 AED per couple per dinner</td></tr>
+    <tr class="budget-total"><td><b>Total</b></td><td><b>35,220</b></td><td><b>76,800</b></td><td><b>50–110% of monthly income · Plan for mid-range ~55,000 AED</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">1 THB ≈ 0.11 AED used throughout. Six Senses Samui swap adds ~AED 4,000–14,000 for 6 nights vs COMO. Prices marked 📊 Est. sourced Apr 2026.</p>
+
+<div class="footnote">🇹🇭 Thailand Travel Plan · Generated Apr 2026 · Dubai → Bangkok + Phuket · 10 days</div>
+
+</div>
+</body>
+</html>
