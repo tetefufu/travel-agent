@@ -68,10 +68,11 @@
   .session li{margin-bottom:2px}
 
   /* Insta grid */
-  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
-  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
-  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
-  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+  .igrid{display:flex;flex-direction:column;gap:12px;margin-bottom:4px}
+  .icard{display:flex;gap:14px;align-items:flex-start}
+  .icard img{width:220px;height:145px;object-fit:cover;border-radius:6px;display:block;flex-shrink:0}
+  @media(max-width:600px){.icard{flex-direction:column}.icard img{width:100%;height:180px}}
+  .icard p{font-size:0.82rem;color:#444;line-height:1.45;padding-top:2px}
 
   /* Food table compact */
   .veg{color:#2e7d32;font-weight:700}
@@ -103,6 +104,7 @@
     <div class="meta">Dubai → Port of Spain POS (via London/New York) &nbsp;·&nbsp; 7 days &nbsp;·&nbsp; 6 nights &nbsp;·&nbsp; Couple</div>
   </div>
   <div class="tags">
+    <span class="tag gold">🎺 Carnival February</span>
     <span class="tag gold">✈️ Eid al-Adha Jun 6–7</span>
     <span class="tag">🏨 Luxury Eco-Boutique</span>
     <span class="tag">🌿 Vegetarian</span>
@@ -116,14 +118,15 @@
 <table>
   <thead><tr><th>Month</th><th>🌡️ Temp</th><th>👥 Crowds</th><th>💰 Price</th><th>Verdict</th></tr></thead>
   <tbody>
-    <tr><td>Jan–Mar</td><td>27–29°C</td><td>High (Carnival)</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Peak — Carnival in Feb</span></td></tr>
+    <tr><td><b>February</b></td><td>27–29°C</td><td>Very High (Carnival)</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Best — Carnival season</span></td></tr>
+    <tr><td>Jan / Mar</td><td>27–29°C</td><td>High</td><td>↑↑↑</td><td><span class="badge b-gold">⭐ Peak — shoulder of Carnival</span></td></tr>
     <tr><td>Apr–May</td><td>29–31°C</td><td>Low</td><td>↓</td><td><span class="badge b-green">Great value · dry ending</span></td></tr>
     <tr><td><b>June</b></td><td>28–30°C</td><td>Low</td><td>↓↓</td><td><span class="badge b-gold">⭐ Good (Eid · start of wet season)</span></td></tr>
     <tr><td>Jul–Oct</td><td>27–30°C</td><td>Very low</td><td>↓↓↓</td><td><span class="badge b-green">Cheapest — rainy season</span></td></tr>
     <tr><td>Nov–Dec</td><td>27–29°C</td><td>Low–Med</td><td>↓↑</td><td><span class="badge b-green">Nice shoulder season</span></td></tr>
   </tbody>
 </table>
-<div class="rbox"><b>Eid al-Adha: Jun 6–7.</b> June is the start of the wet season — but T&T's rain is typically short afternoon showers, not all-day downpours. <b>Prices are at their lowest, beaches and jungle are lush green, birdwatching is superb.</b> Trinidad's Indian-influenced culture also makes this a uniquely vegetarian-friendly Caribbean island. <b>Excellent off-the-beaten-path choice.</b></div>
+<div class="rbox"><b>Carnival recommendation:</b> If you want the full Trinidad experience, <b>go in February for Carnival</b> — this is one of the world's greatest street parties, rivalling Rio. Trinidad Carnival 2026 falls on <b>Feb 16–17 (Mon–Tue)</b> before Ash Wednesday. Book hotels 6+ months ahead — accommodation sells out fast and prices triple. <b>Strongly recommended: time your trip to include both Carnival days.</b> For Eid al-Adha (Jun 6–7), June is the start of the wet season with short afternoon showers — prices at their lowest, great birdwatching. <b>Two excellent but very different trip windows.</b></div>
 
 <!-- FLIGHTS -->
 <h2>✈️ Flights — DXB → POS (Port of Spain)</h2>

@@ -68,10 +68,11 @@
   .session ul{padding-left:14px;font-size:0.82rem}
   .session li{margin-bottom:2px}
 
-  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
-  @media(max-width:500px){.igrid{grid-template-columns:1fr 1fr}}
-  .icard img{width:100%;height:120px;object-fit:cover;border-radius:6px;display:block}
-  .icard p{font-size:0.72rem;color:#555;margin-top:4px;line-height:1.3}
+  .igrid{display:flex;flex-direction:column;gap:12px;margin-bottom:4px}
+  .icard{display:flex;gap:14px;align-items:flex-start}
+  .icard img{width:220px;height:145px;object-fit:cover;border-radius:6px;display:block;flex-shrink:0}
+  @media(max-width:600px){.icard{flex-direction:column}.icard img{width:100%;height:180px}}
+  .icard p{font-size:0.82rem;color:#444;line-height:1.45;padding-top:2px}
 
   .veg{color:#2e7d32;font-weight:700}
 

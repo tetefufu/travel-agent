@@ -16,14 +16,19 @@
   h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:24px 0 10px;display:flex;align-items:center;gap:6px}
   h2::after{content:'';flex:1;height:1px;background:#dde2ea}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:8px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:8px}
 
-  .card{background:#fff;border:1px solid #e2e7ef;border-radius:10px;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;align-items:center;gap:10px;transition:box-shadow 0.15s,transform 0.15s,border-color 0.15s}
+  .card{background:#fff;border:1px solid #e2e7ef;border-radius:10px;padding:13px 15px;text-decoration:none;color:#1a1a1a;display:flex;align-items:center;gap:10px;transition:box-shadow 0.15s,transform 0.15s,border-color 0.15s}
   .card:hover{box-shadow:0 4px 16px rgba(26,46,74,0.12);transform:translateY(-2px);border-color:#1a2e4a}
-  .card .flag{font-size:1.5rem;line-height:1;flex-shrink:0}
-  .card .info{}
-  .card .name{font-weight:700;font-size:0.88rem;color:#1a2e4a}
-  .card .sub{font-size:0.72rem;color:#888;margin-top:1px}
+  .card.family{border-left:3px solid #c9a84c}
+  .flag{font-size:1.5rem;line-height:1;flex-shrink:0}
+  .info .name{font-weight:700;font-size:0.87rem;color:#1a2e4a}
+  .info .meta{font-size:0.70rem;color:#888;margin-top:2px}
+  .pill{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:20px;font-size:0.68rem;font-weight:700;letter-spacing:0.02em}
+  .pill-green{background:#d4edda;color:#1b5e20}
+  .pill-gold{background:#fff3cd;color:#856404}
+  .pill-red{background:#fde8e8;color:#c62828}
+  .pill-family{background:#fff8e1;color:#c9a84c}
 
   .footnote{font-size:0.75rem;color:#aaa;margin-top:24px;padding-top:14px;border-top:1px solid #e0e4ea;text-align:center}
 </style>
@@ -33,60 +38,60 @@
 
 <div class="hero">
   <h1>✈️ Travel Plans</h1>
-  <p>Dubai · UK Passport · Luxury · Vegetarian &nbsp;·&nbsp; 26 destinations</p>
+  <p>Dubai · UK Passport · Luxury · Vegetarian &nbsp;·&nbsp; 26 destinations &nbsp;·&nbsp; <span style="color:#c9a84c">★</span> = family visit (flights only)</p>
 </div>
 
 <h2>🌍 Africa</h2>
 <div class="grid">
-  <a href="kenya.html" class="card"><span class="flag">🇰🇪</span><div class="info"><div class="name">Kenya</div><div class="sub">Safari · 10 days</div></div></a>
-  <a href="south-africa.html" class="card"><span class="flag">🇿🇦</span><div class="info"><div class="name">South Africa</div><div class="sub">Cape Town + Safari · 12 days</div></div></a>
-  <a href="namibia.html" class="card"><span class="flag">🇳🇦</span><div class="info"><div class="name">Namibia</div><div class="sub">Dunes + Etosha · 10 days</div></div></a>
-  <a href="botswana.html" class="card"><span class="flag">🇧🇼</span><div class="info"><div class="name">Botswana</div><div class="sub">Okavango Delta · 10 days</div></div></a>
-  <a href="mozambique.html" class="card"><span class="flag">🇲🇿</span><div class="info"><div class="name">Mozambique</div><div class="sub">Bazaruto · 10 days</div></div></a>
+  <a href="kenya.html" class="card family"><span class="flag">🇰🇪</span><div class="info"><div class="name">Kenya</div><div class="meta">Safari · 10d</div><span class="pill pill-family">★ Flights only</span></div></a>
+  <a href="south-africa.html" class="card"><span class="flag">🇿🇦</span><div class="info"><div class="name">South Africa</div><div class="meta">Cape Town + Safari · 12d</div><span class="pill pill-red">~228K AED</span></div></a>
+  <a href="namibia.html" class="card"><span class="flag">🇳🇦</span><div class="info"><div class="name">Namibia</div><div class="meta">Dunes + Etosha · 10d</div><span class="pill pill-red">~131K AED</span></div></a>
+  <a href="botswana.html" class="card"><span class="flag">🇧🇼</span><div class="info"><div class="name">Botswana</div><div class="meta">Okavango Delta · 10d</div><span class="pill pill-red">~163K AED</span></div></a>
+  <a href="mozambique.html" class="card"><span class="flag">🇲🇿</span><div class="info"><div class="name">Mozambique</div><div class="meta">Bazaruto · 10d</div><span class="pill pill-red">~140K AED</span></div></a>
 </div>
 
 <h2>🌏 Asia</h2>
 <div class="grid">
-  <a href="india.html" class="card"><span class="flag">🇮🇳</span><div class="info"><div class="name">India</div><div class="sub">Rajasthan + Goa · 14 days</div></div></a>
-  <a href="japan.html" class="card"><span class="flag">🇯🇵</span><div class="info"><div class="name">Japan</div><div class="sub">Tokyo + Kyoto · 12 days</div></div></a>
-  <a href="thailand.html" class="card"><span class="flag">🇹🇭</span><div class="info"><div class="name">Thailand</div><div class="sub">Bangkok + Phuket · 10 days</div></div></a>
-  <a href="sri-lanka.html" class="card"><span class="flag">🇱🇰</span><div class="info"><div class="name">Sri Lanka</div><div class="sub">Galle + Sigiriya · 10 days</div></div></a>
+  <a href="india.html" class="card"><span class="flag">🇮🇳</span><div class="info"><div class="name">India</div><div class="meta">Rajasthan + Goa · 14d</div><span class="pill pill-gold">~75K AED</span></div></a>
+  <a href="japan.html" class="card"><span class="flag">🇯🇵</span><div class="info"><div class="name">Japan</div><div class="meta">Tokyo + Kyoto · 12d</div><span class="pill pill-gold">~86K AED</span></div></a>
+  <a href="thailand.html" class="card"><span class="flag">🇹🇭</span><div class="info"><div class="name">Thailand</div><div class="meta">Bangkok + Phuket · 10d</div><span class="pill pill-gold">~56K AED</span></div></a>
+  <a href="sri-lanka.html" class="card"><span class="flag">🇱🇰</span><div class="info"><div class="name">Sri Lanka</div><div class="meta">Galle + Sigiriya · 10d</div><span class="pill pill-gold">~51K AED</span></div></a>
 </div>
 
-<h2>🌍 Middle East / Europe</h2>
+<h2>🌍 Europe &amp; Middle East</h2>
 <div class="grid">
-  <a href="turkey.html" class="card"><span class="flag">🇹🇷</span><div class="info"><div class="name">Turkey</div><div class="sub">Istanbul + Cappadocia · 10 days</div></div></a>
-  <a href="montenegro.html" class="card"><span class="flag">🇲🇪</span><div class="info"><div class="name">Montenegro</div><div class="sub">Bay of Kotor · 7 days</div></div></a>
-  <a href="austria.html" class="card"><span class="flag">🇦🇹</span><div class="info"><div class="name">Austria</div><div class="sub">Vienna + Hallstatt · 7 days</div></div></a>
-  <a href="belgium.html" class="card"><span class="flag">🇧🇪</span><div class="info"><div class="name">Belgium</div><div class="sub">Brussels + Bruges · 5 days</div></div></a>
-  <a href="london.html" class="card"><span class="flag">🇬🇧</span><div class="info"><div class="name">London</div><div class="sub">Mayfair + West End · 5 days</div></div></a>
+  <a href="turkey.html" class="card"><span class="flag">🇹🇷</span><div class="info"><div class="name">Turkey</div><div class="meta">Istanbul + Cappadocia · 10d</div><span class="pill pill-green">~49K AED</span></div></a>
+  <a href="montenegro.html" class="card"><span class="flag">🇲🇪</span><div class="info"><div class="name">Montenegro</div><div class="meta">Bay of Kotor · 7d</div><span class="pill pill-green">~30K AED</span></div></a>
+  <a href="austria.html" class="card"><span class="flag">🇦🇹</span><div class="info"><div class="name">Austria</div><div class="meta">Vienna + Hallstatt · 7d</div><span class="pill pill-green">~37K AED</span></div></a>
+  <a href="belgium.html" class="card"><span class="flag">🇧🇪</span><div class="info"><div class="name">Belgium</div><div class="meta">Brussels + Bruges · 5d</div><span class="pill pill-green">~19K AED</span></div></a>
+  <a href="london.html" class="card family"><span class="flag">🇬🇧</span><div class="info"><div class="name">London</div><div class="meta">Mayfair + West End · 5d</div><span class="pill pill-family">★ Flights only</span></div></a>
 </div>
 
 <h2>🌊 Pacific &amp; Indian Ocean</h2>
 <div class="grid">
-  <a href="bora-bora.html" class="card"><span class="flag">🇵🇫</span><div class="info"><div class="name">Bora Bora</div><div class="sub">Overwater villas · 7 days</div></div></a>
-  <a href="australia.html" class="card"><span class="flag">🇦🇺</span><div class="info"><div class="name">Australia</div><div class="sub">Sydney + Gold Coast · 12 days</div></div></a>
+  <a href="bora-bora.html" class="card"><span class="flag">🇵🇫</span><div class="info"><div class="name">Bora Bora</div><div class="meta">Overwater villas · 4d</div><span class="pill pill-red">~200K AED</span></div></a>
+  <a href="australia.html" class="card"><span class="flag">🇦🇺</span><div class="info"><div class="name">Australia</div><div class="meta">Sydney + Gold Coast · 12d</div><span class="pill pill-gold">~57K AED</span></div></a>
 </div>
 
 <h2>🌎 Americas</h2>
 <div class="grid">
-  <a href="las-vegas.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Las Vegas</div><div class="sub">The Strip · 5 days</div></div></a>
-  <a href="florida.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Florida</div><div class="sub">Miami Beach · 7 days</div></div></a>
-  <a href="disneyland.html" class="card"><span class="flag">🎡</span><div class="info"><div class="name">Disney World</div><div class="sub">Orlando · 7 days</div></div></a>
-  <a href="los-angeles.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Los Angeles</div><div class="sub">Beverly Hills + Malibu · 7 days</div></div></a>
-  <a href="california.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">California</div><div class="sub">SF + Napa + Big Sur · 10 days</div></div></a>
-  <a href="tennessee.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Tennessee</div><div class="sub">Nashville · 5 days</div></div></a>
-  <a href="mexico.html" class="card"><span class="flag">🇲🇽</span><div class="info"><div class="name">Mexico</div><div class="sub">CDMX + Tulum · 10 days</div></div></a>
-  <a href="south-america.html" class="card"><span class="flag">🌎</span><div class="info"><div class="name">South America</div><div class="sub">Peru / Colombia / Brazil · TBC</div></div></a>
+  <a href="las-vegas.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Las Vegas</div><div class="meta">The Strip · 5d</div><span class="pill pill-green">~28K AED</span></div></a>
+  <a href="florida.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Florida</div><div class="meta">Miami + Ultra Fest · 7d</div><span class="pill pill-green">~41K AED</span></div></a>
+  <a href="disneyland.html" class="card"><span class="flag">🎡</span><div class="info"><div class="name">Disney World</div><div class="meta">Orlando · 7d</div><span class="pill pill-gold">~88K AED</span></div></a>
+  <a href="los-angeles.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Los Angeles</div><div class="meta">Beverly Hills · 7d</div><span class="pill pill-red">~164K AED</span></div></a>
+  <a href="california.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">California</div><div class="meta">SF + Napa + Big Sur · 6d</div><span class="pill pill-gold">~60K AED</span></div></a>
+  <a href="tennessee.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Tennessee</div><div class="meta">Nashville · 5d</div><span class="pill pill-green">~29K AED</span></div></a>
+  <a href="mexico.html" class="card"><span class="flag">🇲🇽</span><div class="info"><div class="name">Mexico</div><div class="meta">CDMX + Tulum · 10d</div><span class="pill pill-gold">~63K AED</span></div></a>
+  <a href="south-america.html" class="card"><span class="flag">🌎</span><div class="info"><div class="name">South America</div><div class="meta">Peru / Colombia / Brazil · TBC</div><span class="pill pill-gold">~75K AED</span></div></a>
 </div>
 
 <h2>🌴 Caribbean</h2>
 <div class="grid">
-  <a href="trinidad.html" class="card"><span class="flag">🇹🇹</span><div class="info"><div class="name">Trinidad &amp; Tobago</div><div class="sub">7 days</div></div></a>
-  <a href="dominica.html" class="card"><span class="flag">🇩🇲</span><div class="info"><div class="name">Dominica</div><div class="sub">Nature Isle · 7 days</div></div></a>
+  <a href="trinidad.html" class="card"><span class="flag">🇹🇹</span><div class="info"><div class="name">Trinidad &amp; Tobago</div><div class="meta">Carnival Feb · 7d</div><span class="pill pill-green">~23K AED</span></div></a>
+  <a href="dominica.html" class="card family"><span class="flag">🇩🇲</span><div class="info"><div class="name">Dominica</div><div class="meta">Nature Isle · 7d</div><span class="pill pill-family">★ Flights only</span></div></a>
 </div>
 
-<div class="footnote">✈️ Dubai → World &nbsp;·&nbsp; Generated Apr 2026 &nbsp;·&nbsp; All prices in AED</div>
+<div class="footnote">✈️ Dubai → World &nbsp;·&nbsp; Generated Apr 2026 &nbsp;·&nbsp; All prices in AED &nbsp;·&nbsp; Mid-range estimates</div>
 
 </div>
 </body>

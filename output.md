@@ -41,6 +41,7 @@
 
 ### Instagram Spots
 - Bullet list of locations + 1 image each
+- image on left of text in roughly standard perspective aspect ratio
 
 ### Events
 - Bullet list: Event name — dates — type
@@ -67,3 +68,10 @@
 - Images: rounded corners, max-width contained, with captions
 - Mobile-friendly layout
 - Color accent: deep navy (#1a2e4a) for headers, gold (#c9a84c) for highlights
+
+
+---
+index page:
+- grouped by region
+- shows mid cost, duration in short form eg '10d'
+- show cost on pill as pill in 3 colours (for 3 ranges)

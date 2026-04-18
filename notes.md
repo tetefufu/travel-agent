@@ -17,3 +17,9 @@ holiday planning
 - look at websistes like https://www.experiencetravelgroup.com/itinerary/luxury-cambodia-adventure for inspiration
 - plan things to do per day 
 - research websites for popular items (must see). get pics. 
+
+special location items:
+- 0 cost during visit. visiting family. flights only: dominica, uk, kenya
+- trinidad: travel during carinval in february. consider concert/band costs.
+- bora bora 4 nights + california 6 nights
+- florida + ultra music festival (VIP) tickets (March)
