@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Plans ✈️</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:14px;line-height:1.5}
+  .page{max-width:960px;margin:0 auto;padding:32px 18px}
+
+  .hero{background:linear-gradient(135deg,#1a2e4a 0%,#2a4a72 100%);color:#fff;border-radius:12px;padding:28px 32px;margin-bottom:28px}
+  .hero h1{font-size:1.9rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:4px}
+  .hero p{opacity:0.65;font-size:0.88rem}
+
+  h2{font-size:0.72rem;font-weight:800;color:#1a2e4a;text-transform:uppercase;letter-spacing:0.1em;margin:24px 0 10px;display:flex;align-items:center;gap:6px}
+  h2::after{content:'';flex:1;height:1px;background:#dde2ea}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:8px}
+
+  .card{background:#fff;border:1px solid #e2e7ef;border-radius:10px;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;align-items:center;gap:10px;transition:box-shadow 0.15s,transform 0.15s,border-color 0.15s}
+  .card:hover{box-shadow:0 4px 16px rgba(26,46,74,0.12);transform:translateY(-2px);border-color:#1a2e4a}
+  .card .flag{font-size:1.5rem;line-height:1;flex-shrink:0}
+  .card .info{}
+  .card .name{font-weight:700;font-size:0.88rem;color:#1a2e4a}
+  .card .sub{font-size:0.72rem;color:#888;margin-top:1px}
+
+  .footnote{font-size:0.75rem;color:#aaa;margin-top:24px;padding-top:14px;border-top:1px solid #e0e4ea;text-align:center}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <h1>✈️ Travel Plans</h1>
+  <p>Dubai · UK Passport · Luxury · Vegetarian &nbsp;·&nbsp; 26 destinations</p>
+</div>
+
+<h2>🌍 Africa</h2>
+<div class="grid">
+  <a href="kenya.html" class="card"><span class="flag">🇰🇪</span><div class="info"><div class="name">Kenya</div><div class="sub">Safari · 10 days</div></div></a>
+  <a href="south-africa.html" class="card"><span class="flag">🇿🇦</span><div class="info"><div class="name">South Africa</div><div class="sub">Cape Town + Safari · 12 days</div></div></a>
+  <a href="namibia.html" class="card"><span class="flag">🇳🇦</span><div class="info"><div class="name">Namibia</div><div class="sub">Dunes + Etosha · 10 days</div></div></a>
+  <a href="botswana.html" class="card"><span class="flag">🇧🇼</span><div class="info"><div class="name">Botswana</div><div class="sub">Okavango Delta · 10 days</div></div></a>
+  <a href="mozambique.html" class="card"><span class="flag">🇲🇿</span><div class="info"><div class="name">Mozambique</div><div class="sub">Bazaruto · 10 days</div></div></a>
+</div>
+
+<h2>🌏 Asia</h2>
+<div class="grid">
+  <a href="india.html" class="card"><span class="flag">🇮🇳</span><div class="info"><div class="name">India</div><div class="sub">Rajasthan + Goa · 14 days</div></div></a>
+  <a href="japan.html" class="card"><span class="flag">🇯🇵</span><div class="info"><div class="name">Japan</div><div class="sub">Tokyo + Kyoto · 12 days</div></div></a>
+  <a href="thailand.html" class="card"><span class="flag">🇹🇭</span><div class="info"><div class="name">Thailand</div><div class="sub">Bangkok + Phuket · 10 days</div></div></a>
+  <a href="sri-lanka.html" class="card"><span class="flag">🇱🇰</span><div class="info"><div class="name">Sri Lanka</div><div class="sub">Galle + Sigiriya · 10 days</div></div></a>
+</div>
+
+<h2>🌍 Middle East / Europe</h2>
+<div class="grid">
+  <a href="turkey.html" class="card"><span class="flag">🇹🇷</span><div class="info"><div class="name">Turkey</div><div class="sub">Istanbul + Cappadocia · 10 days</div></div></a>
+  <a href="montenegro.html" class="card"><span class="flag">🇲🇪</span><div class="info"><div class="name">Montenegro</div><div class="sub">Bay of Kotor · 7 days</div></div></a>
+  <a href="austria.html" class="card"><span class="flag">🇦🇹</span><div class="info"><div class="name">Austria</div><div class="sub">Vienna + Hallstatt · 7 days</div></div></a>
+  <a href="belgium.html" class="card"><span class="flag">🇧🇪</span><div class="info"><div class="name">Belgium</div><div class="sub">Brussels + Bruges · 5 days</div></div></a>
+  <a href="london.html" class="card"><span class="flag">🇬🇧</span><div class="info"><div class="name">London</div><div class="sub">Mayfair + West End · 5 days</div></div></a>
+</div>
+
+<h2>🌊 Pacific &amp; Indian Ocean</h2>
+<div class="grid">
+  <a href="bora-bora.html" class="card"><span class="flag">🇵🇫</span><div class="info"><div class="name">Bora Bora</div><div class="sub">Overwater villas · 7 days</div></div></a>
+  <a href="australia.html" class="card"><span class="flag">🇦🇺</span><div class="info"><div class="name">Australia</div><div class="sub">Sydney + Gold Coast · 12 days</div></div></a>
+</div>
+
+<h2>🌎 Americas</h2>
+<div class="grid">
+  <a href="las-vegas.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Las Vegas</div><div class="sub">The Strip · 5 days</div></div></a>
+  <a href="florida.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Florida</div><div class="sub">Miami Beach · 7 days</div></div></a>
+  <a href="disneyland.html" class="card"><span class="flag">🎡</span><div class="info"><div class="name">Disney World</div><div class="sub">Orlando · 7 days</div></div></a>
+  <a href="los-angeles.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Los Angeles</div><div class="sub">Beverly Hills + Malibu · 7 days</div></div></a>
+  <a href="california.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">California</div><div class="sub">SF + Napa + Big Sur · 10 days</div></div></a>
+  <a href="tennessee.html" class="card"><span class="flag">🇺🇸</span><div class="info"><div class="name">Tennessee</div><div class="sub">Nashville · 5 days</div></div></a>
+  <a href="mexico.html" class="card"><span class="flag">🇲🇽</span><div class="info"><div class="name">Mexico</div><div class="sub">CDMX + Tulum · 10 days</div></div></a>
+  <a href="south-america.html" class="card"><span class="flag">🌎</span><div class="info"><div class="name">South America</div><div class="sub">Peru / Colombia / Brazil · TBC</div></div></a>
+</div>
+
+<h2>🌴 Caribbean</h2>
+<div class="grid">
+  <a href="trinidad.html" class="card"><span class="flag">🇹🇹</span><div class="info"><div class="name">Trinidad &amp; Tobago</div><div class="sub">7 days</div></div></a>
+  <a href="dominica.html" class="card"><span class="flag">🇩🇲</span><div class="info"><div class="name">Dominica</div><div class="sub">Nature Isle · 7 days</div></div></a>
+</div>
+
+<div class="footnote">✈️ Dubai → World &nbsp;·&nbsp; Generated Apr 2026 &nbsp;·&nbsp; All prices in AED</div>
+
+</div>
+</body>
+</html>
