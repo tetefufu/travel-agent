@@ -8,6 +8,13 @@
 - Short, punchy statements — strip filler words
 - Opinionated: make clear recommendations, don't hedge
 
+## Country Folder
+- eg sri lanka
+- extract all text from all images
+- consolidate and sort into tips, places
+- places: sort between places to eat, places to visit, hotels/spas
+- add these to sumary
+
 ---
 
 ## Structure & Sections

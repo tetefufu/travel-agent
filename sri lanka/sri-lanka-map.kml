@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Sri Lanka 2026 — Joel &amp; Partner</name>
+  <description>14-day luxury itinerary: Ahungalla → Sigiriya → Kandy → Ella → Galle → Weligama → Colombo</description>
+
+  <!-- STYLES -->
+  <Style id="hotel">
+    <IconStyle><color>ffee8800</color><scale>1.1</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/blue-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="food">
+    <IconStyle><color>ff0000ff</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="sight">
+    <IconStyle><color>ff00aa00</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/green-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="nature">
+    <IconStyle><color>ff00cccc</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="cafe">
+    <IconStyle><color>ff0055ff</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/orange-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+
+  <!-- ==================== HOTELS ==================== -->
+  <Folder>
+    <name>🏨 Hotels</name>
+
+    <Placemark>
+      <name>Ahangama Abode / Tri Lanka — Night 1</name>
+      <description>First night stop near airport. Beachfront boutique. Ahu Bay, Ahungalla.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.0253,6.2769,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Water Garden Sigiriya — Nights 2–3</name>
+      <description>Ultra-luxury. Stunning water garden pools. Jungle backdrop. Book early.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.7522,7.9471,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>The KandyHouse — Nights 4–5</name>
+      <description>Ultra-luxury boutique. Jungle infinity pool. Near Kundasale, Kandy.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.7342,7.3393,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>98 Acres Resort, Ella — Nights 6–7</name>
+      <description>Luxury. Infinity pool with Ella Gap views. Start Little Adam's Peak from here.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>81.0461,6.8621,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Amangalla, Galle Fort — Nights 8–10</name>
+      <description>Ultra-luxury (Aman). Heritage courtyard pool. Inside Galle Fort UNESCO walls.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.2165,6.0270,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Cape Weligama — Nights 11–13</name>
+      <description>Ultra-luxury. Best infinity pool in Sri Lanka. Peacocks, ocean views, world-class sunsets. @capeweligama</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.4461,5.9693,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== COLOMBO ==================== -->
+  <Folder>
+    <name>🏙️ Colombo</name>
+
+    <Placemark>
+      <name>Gangaramaya Temple</name>
+      <description>Most revered Buddhist temple in Colombo. Don't miss the museum and unique interiors.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8561,6.9166,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Seema Malaka Floating Temple</name>
+      <description>Floating Buddhist shrine on Beira Lake. Stunning for photos.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8553,6.9144,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Jami Ul-Alfar Mosque (Red Mosque)</name>
+      <description>Stunning red &amp; white colonial architecture. One of Colombo's most historical landmarks.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8493,6.9355,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Lotus Tower</name>
+      <description>South Asia's tallest tower. Panoramic Colombo views. Great skyline shots.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8612,6.9269,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Galle Face Green</name>
+      <description>Iconic Colombo promenade. Spend the evening — street food, sunset, ocean breeze.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8462,6.9147,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Independence Memorial Hall</name>
+      <description>Colonial landmark. Colombo's most photographed monument.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8679,6.9014,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Colombo National Museum</name>
+      <description>Sri Lanka's largest museum. Colonial building, great cultural context.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8612,6.9021,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Dutch Hospital Shopping Precinct</name>
+      <description>Upscale cafés + souvenirs in a restored 17th-century Dutch colonial hospital.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>79.8432,6.9328,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Pettah Market</name>
+      <description>Cheapest finds — clothes, spices, electronics. Pure Colombo chaos. Fun for an hour.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8518,6.9356,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Mount Lavinia Beach</name>
+      <description>Beautiful beach just outside Colombo. Good for an evening visit.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8661,6.8408,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== CULTURAL TRIANGLE ==================== -->
+  <Folder>
+    <name>🏛️ Cultural Triangle</name>
+
+    <Placemark>
+      <name>Sigiriya Rock Fortress (UNESCO)</name>
+      <description>Climb at 5:30am. Lion's Paw entrance → ancient frescoes → summit views. Book tickets in advance (~$30/person).</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.7603,7.9572,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Polonnaruwa Viewpoint — best Sigiriya view</name>
+      <description>THE best external viewpoint of Sigiriya Rock. 2–3 km away. Most people miss this.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.7833,7.9400,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Dambulla Cave Temple (UNESCO)</name>
+      <description>150+ gilded Buddha statues across 5 cave temples. ~45 min from Sigiriya.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.6492,7.8567,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Minneriya National Park</name>
+      <description>Elephant gathering — sometimes 100+ in one place. Best Jul–Oct. Great en route Sigiriya → Kandy.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.9000,8.0333,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Polonnaruwa Ancient City (UNESCO)</name>
+      <description>Well-preserved medieval capital. Rent a bicycle to explore the ruins.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.9950,7.9403,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== KANDY ==================== -->
+  <Folder>
+    <name>🌿 Kandy</name>
+
+    <Placemark>
+      <name>Temple of the Sacred Tooth Relic (UNESCO)</name>
+      <description>Most sacred Buddhist site in Sri Lanka. Inside the Royal Palace complex. Evening puja ceremony is spectacular.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.6413,7.2936,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Royal Botanical Gardens, Peradeniya</name>
+      <description>147 acres of the finest botanical gardens in Asia. Orchid house, giant bamboo, 5,000+ species.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.5945,7.2683,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kandy Lake</name>
+      <description>Scenic lake in the heart of Kandy. Evening walk. Cloud Wall path.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.6414,7.2921,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== ELLA ==================== -->
+  <Folder>
+    <name>🚂 Ella</name>
+
+    <Placemark>
+      <name>Nine Arch Bridge</name>
+      <description>Most Instagrammable spot in Ella. Walk 30 min or rent scooter. BEST TIME: 6:15–6:45am — train passes, zero crowds. Walk past bridge on the tracks for tea fields + silence.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.0564,6.8753,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Upper Diyaluma Falls</name>
+      <description>Skip Ravana Falls. Do this instead. ~45 min from Ella. Go before 9am. Free. Natural infinity pools at the top, unreal views, way fewer people.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.0414,6.7492,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Little Adam's Peak</name>
+      <description>Start from 98 Acres side (NOT Ella town side — crowded). 4:30–5am start. ~1hr hike. Sunrise ~6am. Free.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.0481,6.8643,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Demodara Railway Station + Loop</name>
+      <description>Ella → Dimodara train: passes tea estates, tunnels + famous railway loop. Doorway shots. Short but beautiful.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.0167,6.8806,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Halpewatte Tea Factory</name>
+      <description>Best tea factory to visit near Ella. 3,000 LKR (~€8–9) guided tour. Educational, well explained, reputable.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.9594,6.8906,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Café Green Door, Ella</name>
+      <description>Vegetarian-friendly breakfast and lunch. Local favourite on Ella's main road.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>81.0464,6.8741,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== GALLE ==================== -->
+  <Folder>
+    <name>🏰 Galle &amp; South West</name>
+
+    <Placemark>
+      <name>Galle Fort Lighthouse (UNESCO)</name>
+      <description>Most-photographed spot in Galle. Walk the ramparts at sunset. Dutch colonial buildings throughout the fort.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.2156,6.0219,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Fort Printers Restaurant</name>
+      <description>Galle fusion dining inside a restored printing house. Excellent vegetarian options. Smart casual.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>80.2172,6.0278,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Stilt Fishermen — Koggala</name>
+      <description>UNESCO-iconic shot. Between Galle and Ahangama. Best late afternoon for golden light. Pull off the coastal road.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.3086,6.0194,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Dalawella Beach — Rope Swing</name>
+      <description>Famous rope swing right on the beach. Turquoise water. Between Galle and Unawatuna. Turtle sightings nearby (private entry from Wijaya Beach restaurant).</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.2447,6.0028,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kosgoda Turtle Hatchery</name>
+      <description>Watch baby turtles and release them into the sea. ~1hr from Weligama. Worth the trip.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.1525,6.1886,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== AHANGAMA ==================== -->
+  <Folder>
+    <name>☕ Ahangama (Café Capital)</name>
+
+    <Placemark>
+      <name>@cactus_ahangama</name>
+      <description>ORDER: watermelon margarita. Sunset cocktails. One of the best spots on the south coast. #ahangama</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.3667,5.9775,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>@hoteldeuncles</name>
+      <description>ORDER: banana negroni. Beach bar vibes. Sunset cocktails in Ahangama.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.3639,5.9769,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>@kai_ahangama</name>
+      <description>Coffee + incredible sea views. Best café view in Ahangama. Worth it even just for the setting.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.3653,5.9780,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== SOUTH COAST ==================== -->
+  <Folder>
+    <name>🌊 South Coast — Mirissa / Weligama / Hiriketiya</name>
+
+    <Placemark>
+      <name>Mirissa Harbour — Whale Watching</name>
+      <description>Blue + sperm whales + dolphins. Nov–Apr season, peak Dec–Mar. Book via Raja &amp; The Whales or similar operator. 6am boat.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.4556,5.9444,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Secret Beach, Mirissa</name>
+      <description>Hard to get to — 100% worth it. Less known than main Mirissa beach. Ask locals for the path.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.4589,5.9353,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Parrot Rock + Coconut Hill, Mirissa</name>
+      <description>Scramble to the top for panoramic views over Mirissa bay. Instagram classic.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.4597,5.9439,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>"Lava" Lantern Beach Café, Mirissa</name>
+      <description>Viral Sri Lanka spot. Lantern-lit beach café. Evening only. Magical atmosphere.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.4527,5.9436,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Fruit Café, Mirissa</name>
+      <description>100% plant-based / vegan. Smoothies, açaí, light meals. Favourite for vegetarians on the south coast.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>80.4519,5.9441,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Hiriketiya Bay</name>
+      <description>Small horseshoe-shaped cove. Most-saved drone shot in Sri Lanka. Stylish cafés, boutique crowd, good surf. Better than Mirissa for calm + aesthetics.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.6056,5.9253,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Silent Beach, Dikwella</name>
+      <description>Voted most beautiful beach in Sri Lanka. Untouched paradise. Total peace and wellness. No crowds.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.7131,5.9781,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== BENTOTA ==================== -->
+  <Folder>
+    <name>🌿 Bentota</name>
+
+    <Placemark>
+      <name>Bentota River Safari</name>
+      <description>Mangrove river cruise. Spot monitor lizards, birds, river life. Visit cinnamon island. ~1.5hrs from Colombo.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>79.9944,6.4286,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Bentota Beach</name>
+      <description>Wide golden sand, calm waters. Water sports. Good day trip from Galle or en route Colombo.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>79.9953,6.4239,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== WILDLIFE ==================== -->
+  <Folder>
+    <name>🐘 Wildlife</name>
+
+    <Placemark>
+      <name>Yala National Park</name>
+      <description>Sri Lanka's most famous safari. Leopards, elephants, crocodiles. Book with the right operator. Consider staying inside the park.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.4917,6.3731,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+</Document>
+</kml>

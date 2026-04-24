@@ -1,0 +1,18 @@
+# Images
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.gif
+*.GIF
+*.webp
+*.WEBP
+*.heic
+*.HEIC
+*.avif
+*.bmp
+*.tiff
+*.tif
+.DS_Store
