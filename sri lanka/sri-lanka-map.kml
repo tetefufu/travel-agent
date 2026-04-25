@@ -422,12 +422,20 @@
   <!-- ==================== WILDLIFE ==================== -->
   <Folder>
     <name>🐘 Wildlife</name>
+    <open>1</open>
 
     <Placemark>
       <name>Yala National Park</name>
       <description>Sri Lanka's most famous safari. Leopards, elephants, crocodiles. Book with the right operator. Consider staying inside the park.</description>
       <styleUrl>#nature</styleUrl>
       <Point><coordinates>81.4917,6.3731,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Udawalawe National Park</name>
+      <description>Famous for elephant safaris. Large herds gather at waterholes. Great for photography and close encounters.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.8667,6.4333,0</coordinates></Point>
     </Placemark>
 
   </Folder>
