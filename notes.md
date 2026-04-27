@@ -16,7 +16,8 @@ holiday planning
 - create a google map of things to do 
 - look at websistes like https://www.experiencetravelgroup.com/itinerary/luxury-cambodia-adventure for inspiration
 - plan things to do per day 
-- research websites for popular items (must see). get pics. 
+- research websites for popular items (must see). get pics.
+- add price of https://www.holiday-factory.com/ to output (for reference)
 
 special location items:
 - 0 cost during visit. visiting family. flights only: dominica, uk, kenya
