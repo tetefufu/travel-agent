@@ -1,0 +1,326 @@
+[
+  {
+    "month": "May",
+    "month_num": 5,
+    "year": 2026,
+    "sample_date": "2026-05-12",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDUtMTJqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "May",
+    "month_num": 5,
+    "year": 2026,
+    "sample_date": "2026-05-12",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDUtMTJqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "May",
+    "month_num": 5,
+    "year": 2026,
+    "sample_date": "2026-05-12",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDUtMTJqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "June",
+    "month_num": 6,
+    "year": 2026,
+    "sample_date": "2026-06-09",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDYtMDlqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "June",
+    "month_num": 6,
+    "year": 2026,
+    "sample_date": "2026-06-09",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDYtMDlqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "June",
+    "month_num": 6,
+    "year": 2026,
+    "sample_date": "2026-06-09",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDYtMDlqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "July",
+    "month_num": 7,
+    "year": 2026,
+    "sample_date": "2026-07-14",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDctMTRqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "July",
+    "month_num": 7,
+    "year": 2026,
+    "sample_date": "2026-07-14",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDctMTRqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "July",
+    "month_num": 7,
+    "year": 2026,
+    "sample_date": "2026-07-14",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDctMTRqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "August",
+    "month_num": 8,
+    "year": 2026,
+    "sample_date": "2026-08-11",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMTFqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "August",
+    "month_num": 8,
+    "year": 2026,
+    "sample_date": "2026-08-11",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMTFqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "August",
+    "month_num": 8,
+    "year": 2026,
+    "sample_date": "2026-08-11",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMTFqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "September",
+    "month_num": 9,
+    "year": 2026,
+    "sample_date": "2026-09-08",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDhqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "September",
+    "month_num": 9,
+    "year": 2026,
+    "sample_date": "2026-09-08",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDhqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "September",
+    "month_num": 9,
+    "year": 2026,
+    "sample_date": "2026-09-08",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDhqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "October",
+    "month_num": 10,
+    "year": 2026,
+    "sample_date": "2026-10-13",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTAtMTNqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "October",
+    "month_num": 10,
+    "year": 2026,
+    "sample_date": "2026-10-13",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTAtMTNqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "October",
+    "month_num": 10,
+    "year": 2026,
+    "sample_date": "2026-10-13",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTAtMTNqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "November",
+    "month_num": 11,
+    "year": 2026,
+    "sample_date": "2026-11-10",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTEtMTBqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "November",
+    "month_num": 11,
+    "year": 2026,
+    "sample_date": "2026-11-10",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTEtMTBqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "November",
+    "month_num": 11,
+    "year": 2026,
+    "sample_date": "2026-11-10",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTEtMTBqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "December",
+    "month_num": 12,
+    "year": 2026,
+    "sample_date": "2026-12-08",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTItMDhqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "December",
+    "month_num": 12,
+    "year": 2026,
+    "sample_date": "2026-12-08",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTItMDhqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "December",
+    "month_num": 12,
+    "year": 2026,
+    "sample_date": "2026-12-08",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTItMDhqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "January",
+    "month_num": 1,
+    "year": 2027,
+    "sample_date": "2027-01-12",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDEtMTJqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "January",
+    "month_num": 1,
+    "year": 2027,
+    "sample_date": "2027-01-12",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDEtMTJqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "January",
+    "month_num": 1,
+    "year": 2027,
+    "sample_date": "2027-01-12",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDEtMTJqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "February",
+    "month_num": 2,
+    "year": 2027,
+    "sample_date": "2027-02-09",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDItMDlqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "February",
+    "month_num": 2,
+    "year": 2027,
+    "sample_date": "2027-02-09",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDItMDlqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "February",
+    "month_num": 2,
+    "year": 2027,
+    "sample_date": "2027-02-09",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDItMDlqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "March",
+    "month_num": 3,
+    "year": 2027,
+    "sample_date": "2027-03-09",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDMtMDlqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "March",
+    "month_num": 3,
+    "year": 2027,
+    "sample_date": "2027-03-09",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDMtMDlqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "March",
+    "month_num": 3,
+    "year": 2027,
+    "sample_date": "2027-03-09",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDMtMDlqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "April",
+    "month_num": 4,
+    "year": 2027,
+    "sample_date": "2027-04-13",
+    "cabin": "Economy",
+    "seat_key": "economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDQtMTNqBRIDRFhCcgUSA1BQVEIBAUgBmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "April",
+    "month_num": 4,
+    "year": 2027,
+    "sample_date": "2027-04-13",
+    "cabin": "Premium Economy",
+    "seat_key": "premium-economy",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDQtMTNqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&curr=AED"
+  },
+  {
+    "month": "April",
+    "month_num": 4,
+    "year": 2027,
+    "sample_date": "2027-04-13",
+    "cabin": "Business",
+    "seat_key": "business",
+    "url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDQtMTNqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&curr=AED"
+  }
+]

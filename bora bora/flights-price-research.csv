@@ -1,0 +1,459 @@
+Route_Type,Cabin,Month,Month_Num,Sample_Date,Airlines,Stops,Duration_Hours,Price_AED,Notes,Scraped_Date
+Most Direct,Economy,May,5,2026-05-12,N/A,N/A,N/A,N/A,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,May,5,2026-05-12,N/A,N/A,N/A,N/A,"Error: ('error sending request for url (https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDUtMTJqBRIDTEFYcgUSA1BQVEIBAUgBmAEC&hl=en&tfu=EgQIABABIgA&curr=)', 'https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDUtMTJqBRIDTEFYcgUSA1BQVEIBAUgBmAEC&hl=en&tfu=EgQIABABIgA&curr=')",2026-04-27
+Most Direct,Premium Economy,May,5,2026-05-12,N/A,N/A,N/A,N/A,"Error: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDUtMTJqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&tfu=EgQIABABIgA&curr="", waiting until ""load""
+",2026-04-27
+Via California,Premium Economy,May,5,2026-05-12,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Business,May,5,2026-05-12,N/A,N/A,N/A,N/A,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,May,5,2026-05-12,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Economy,June,6,2026-06-09,Air France,2,42.8,5535,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,June,6,2026-06-09,"Gulf Air, American + Alaska",2+2,53.2,5015,"DXB→LAX 2485 AED (Gulf Air, American) + LAX→PPT 2530 AED (Alaska). Two tickets. +PPT→BOB ~550 AED.",2026-04-27
+Most Direct,Premium Economy,June,6,2026-06-09,Air France,2,42.8,9825,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,June,6,2026-06-09,"Emirates, Air Canada + Air France",2+0,32.8,10960,"DXB→LAX 6705 AED (Emirates, Air Canada) + LAX→PPT 4255 AED (Air France). Two tickets. +PPT→BOB ~550 AED.",2026-04-27
+Most Direct,Business,June,6,2026-06-09,Air France,2,42.8,24655,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,June,6,2026-06-09,"Gulf Air, American + Alaska",2+1,49.2,23555,"DXB→LAX 13827 AED (Gulf Air, American) + LAX→PPT 9728 AED (Alaska). Two tickets. +PPT→BOB ~550 AED.",2026-04-27
+Most Direct,Economy,July,7,2026-07-14,Air France,2,42.8,10805,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,July,7,2026-07-14,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Premium Economy,July,7,2026-07-14,Air France,2,42.8,15035,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,July,7,2026-07-14,"Emirates, Air Canada + Air France",2+0,36.7,11531,"DXB→LAX 6715 AED (Emirates, Air Canada) + LAX→PPT 4816 AED (Air France). Two tickets. +PPT→BOB ~550 AED.",2026-04-27
+Most Direct,Business,July,7,2026-07-14,Air France,2,42.8,24655,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,July,7,2026-07-14,"Gulf Air, American + Alaska",2+1,48.5,19891,"DXB→LAX 11397 AED (Gulf Air, American) + LAX→PPT 8494 AED (Alaska). Two tickets. +PPT→BOB ~550 AED.",2026-04-27
+Most Direct,Economy,August,8,2026-08-11,Air France,2,42.8,6755,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,August,8,2026-08-11,Air France + Alaska,1+2,40.2,5711,DXB→LAX 2865 AED (Air France) + LAX→PPT 2846 AED (Alaska). Two tickets. +PPT→BOB ~550 AED.,2026-04-27
+Most Direct,Premium Economy,August,8,2026-08-11,Air France,2,42.8,11785,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,August,8,2026-08-11,Cathay Pacific + Air France,1+0,31.8,12188,DXB→LAX 6395 AED (Cathay Pacific) + LAX→PPT 5793 AED (Air France). Two tickets. +PPT→BOB ~550 AED.,2026-04-27
+Most Direct,Business,August,8,2026-08-11,N/A,N/A,N/A,N/A,"Error: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMTFqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&tfu=EgQIABABIgA&curr="", waiting until ""load""
+",2026-04-27
+Via California,Business,August,8,2026-08-11,N/A,N/A,N/A,N/A,"Error: ('error sending request for url (https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMTFqBRIDTEFYcgUSA1BQVEIBAUgDmAEC&hl=en&tfu=EgQIABABIgA&curr=)', 'https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMTFqBRIDTEFYcgUSA1BQVEIBAUgDmAEC&hl=en&tfu=EgQIABABIgA&curr=')",2026-04-27
+Most Direct,Economy,September,9,2026-09-08,Air France,2,42.8,5535,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,September,9,2026-09-08,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Premium Economy,September,9,2026-09-08,Air France,2,42.8,14305,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,September,9,2026-09-08,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Business,September,9,2026-09-08,Air France,2,42.8,26775,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,September,9,2026-09-08,N/A,N/A,N/A,N/A,"Error: ('error sending request for url (https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDhqBRIDTEFYcgUSA1BQVEIBAUgDmAEC&hl=en&tfu=EgQIABABIgA&curr=)', 'https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDhqBRIDTEFYcgUSA1BQVEIBAUgDmAEC&hl=en&tfu=EgQIABABIgA&curr=')",2026-04-27
+Most Direct,Economy,October,10,2026-10-13,Air France,2,42.8,6025,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,October,10,2026-10-13,"Gulf Air, American + United",2+1,63.5,4711,"DXB→LAX 2115 AED (Gulf Air, American) + LAX→PPT 2596 AED (United). Two tickets. +PPT→BOB ~550 AED.",2026-04-27
+Most Direct,Premium Economy,October,10,2026-10-13,Air France,2,42.8,15215,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,October,10,2026-10-13,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Business,October,10,2026-10-13,Air France,2,42.8,60855,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,October,10,2026-10-13,"Gulf Air, American + Alaska",2+1,43.2,25098,"DXB→LAX 13827 AED (Gulf Air, American) + LAX→PPT 11271 AED (Alaska). Two tickets. +PPT→BOB ~550 AED.",2026-04-27
+Most Direct,Economy,November,11,2026-11-10,N/A,N/A,N/A,N/A,"Error: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("".eQ35Ce"") to be visible
+",2026-04-27
+Via California,Economy,November,11,2026-11-10,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Premium Economy,November,11,2026-11-10,Air France,2,37.8,14295,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,November,11,2026-11-10,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Business,November,11,2026-11-10,Air France,2,37.8,60855,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,November,11,2026-11-10,Finnair + Alaska,1+1,41.7,19913,DXB→LAX 10185 AED (Finnair) + LAX→PPT 9728 AED (Alaska). Two tickets. +PPT→BOB ~550 AED.,2026-04-27
+Most Direct,Economy,December,12,2026-12-08,Air France,2,37.8,5525,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,December,12,2026-12-08,ITA + United,1+1,39.7,5230,DXB→LAX 2685 AED (ITA) + LAX→PPT 2545 AED (United). Two tickets. +PPT→BOB ~550 AED.,2026-04-27
+Most Direct,Premium Economy,December,12,2026-12-08,Air France,2,37.8,9085,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,December,12,2026-12-08,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Business,December,12,2026-12-08,N/A,N/A,N/A,N/A,"Error: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMTItMDhqBRIDRFhCcgUSA1BQVEIBAUgDmAEC&hl=en&tfu=EgQIABABIgA&curr="", waiting until ""load""
+",2026-04-27
+Via California,Business,December,12,2026-12-08,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Economy,January,1,2027-01-12,Air France,2,33.2,6015,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,January,1,2027-01-12,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Premium Economy,January,1,2027-01-12,N/A,N/A,N/A,N/A,"Error: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("".eQ35Ce"") to be visible
+",2026-04-27
+Via California,Premium Economy,January,1,2027-01-12,N/A,N/A,N/A,N/A,Error: Body collection error: error decoding response body,2026-04-27
+Most Direct,Business,January,1,2027-01-12,Air France,2,33.2,23205,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,January,1,2027-01-12,Finnair + Air France,1+0,36.9,21436,DXB→LAX 10185 AED (Finnair) + LAX→PPT 11251 AED (Air France). Two tickets. +PPT→BOB ~550 AED.,2026-04-27
+Most Direct,Economy,February,2,2027-02-09,Air France,2,37.8,5525,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Economy,February,2,2027-02-09,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Premium Economy,February,2,2027-02-09,Air France,2,37.8,9085,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,February,2,2027-02-09,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Business,February,2,2027-02-09,Air France,2,33.2,23205,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,February,2,2027-02-09,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Economy,March,3,2027-03-09,N/A,N/A,N/A,N/A,"Error: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("".eQ35Ce"") to be visible
+",2026-04-27
+Via California,Economy,March,3,2027-03-09,ITA + United,1+1,39.7,5096,DXB→LAX 2551 AED (ITA) + LAX→PPT 2545 AED (United). Two tickets. +PPT→BOB ~550 AED.,2026-04-27
+Most Direct,Premium Economy,March,3,2027-03-09,Air France,2,37.8,9825,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Premium Economy,March,3,2027-03-09,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Business,March,3,2027-03-09,Air France,2,37.8,60855,"+PPT→BOB domestic ~550 AED (Air Tahiti, not included)",2026-04-27
+Via California,Business,March,3,2027-03-09,N/A,N/A,N/A,N/A,No results on one or both legs,2026-04-27
+Most Direct,Economy,April,4,2027-04-13,N/A,N/A,N/A,N/A,"Error: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("".eQ35Ce"") to be visible
+",2026-04-27
+Via California,Economy,April,4,2027-04-13,N/A,N/A,N/A,N/A,"Error: No flights found:
+Skip to main contentAccessibility feedback
+Travel
+Explore
+Flights
+Hotels
+Vacation rentals
+Change appearance
+[Sign in][1]
+Travel
+Explore
+Flights
+Hotels
+Vacation rentals
+Flight Deals
+Tracked flight prices
+Tracked hotel prices
+Change language
+Change currency
+Change location
+Change currency
+Feedback
+Help
+Loading results
+Loading results
+
+# Flight search
+
+One way
+* Round trip
+* One way
+* Multi-city
+1
+* Adults
+  Remove adult
+  11
+  Add adult
+* Children Aged 2-11
+  Aged 2 to 11
+  Remove child aged 2 to 11
+  00
+  Add child aged 2 to 11
+* Infants In seat
+  Remove infant in seat
+  00
+  Add infant in seat
+* Infants On lap
+  Remove infant on lap
+  00
+  Add infant on lap
+DoneCancel
+Economy
+* Economy
+* Premium economy
+* Business
+* First
+Dubai DXB
+DXB · Dubai
+Remove
+Select multiple airports
+Done
+Press the plus key to switch to multi-select mode.
+Los Angeles LAX
+LAX · Los Angeles
+Remove
+Select multiple airports
+Done
+Press the plus key to switch to multi-select mode.
+Enter a date or use the arrow keys to change the current date.
+Enter a date or use the arrow keys to change the current date.
+One way
+* Round trip
+* One way
+Reset
+Done
+Add flight
+
+## Filters
+
+All filters
+Stops
+Airlines
+Bags
+Price
+Times
+Emissions
+Connecting airports
+Duration
+
+## Search results
+
+LanguageEnglish (United States)LocationUnited Arab EmiratesCurrencyAED
+[About][2][Privacy][3][Terms][4][Join user studies][5][Feedback][6][Help Center][7]
+
+Displayed currencies may differ from the currencies used to purchase flights. [Learn more][8]
+
+Prices are final prices and include all taxes and fees, including payment fees for the cheapest
+common payment method (which may differ depending on the provider). Additional charges may apply for
+other types of payment, luggage, meals, WLAN or other additional services. Prices, availability and
+travel details are provided based on the latest information received from our partners. This
+information is reflected in the results within a period of less than 24 hours. Additional conditions
+may also be applied by our partners. You should then check prices and conditions with the services
+providers before booking.
+
+Google apps
+Main menu
+
+[1]: https://accounts.google.com/ServiceLogin?service=searchandassistant&passive=1209600&continue=ht
+tps://www.google.com/travel/flights?tfs%3DGhoSCjIwMjctMDQtMTNqBRIDRFhCcgUSA0xBWEIBAUgBmAEC%26hl%3Den
+%26tfu%3DEgQIABABIgA%26curr&followup=https://www.google.com/travel/flights?tfs%3DGhoSCjIwMjctMDQtMTN
+qBRIDRFhCcgUSA0xBWEIBAUgBmAEC%26hl%3Den%26tfu%3DEgQIABABIgA%26curr&hl=en&ec=GAZAlQM
+[2]: https://about.google/?hl=en-US
+[3]: https://policies.google.com/privacy?hl=en-US
+[4]: https://policies.google.com/terms?hl=en-US
+[5]: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?reserved%3D1%26utm_source%3DFooter%252
+0link%26utm_medium%3Down_web%26%20utm_campaign%3DQ2%26productTag%3D0%26campaignDate%3DApril2020%26re
+ferral_code%3DUXbJ377133&Q_Language=en-US
+[6]: ./#0
+[7]: https://support.google.com/travel/?hl=en-US#topic=2475360
+[8]: https://www.google.com/googlefinance/disclaimer?hl=en-US&gl=AE
+",2026-04-27
+Most Direct,Premium Economy,April,4,2027-04-13,N/A,N/A,N/A,N/A,"Error: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.google.com/travel/flights?tfs=GhoSCjIwMjctMDQtMTNqBRIDRFhCcgUSA1BQVEIBAUgCmAEC&hl=en&tfu=EgQIABABIgA&curr="", waiting until ""load""
+",2026-04-27
+Via California,Premium Economy,April,4,2027-04-13,N/A,N/A,N/A,N/A,"Error: No flights found:
+Skip to main contentAccessibility feedback
+Change appearance
+[Sign in][1]
+Travel
+Explore
+Flights
+Hotels
+Vacation rentals
+Travel
+Explore
+Flights
+Hotels
+Vacation rentals
+Flight Deals
+Tracked flight prices
+Tracked hotel prices
+Change language
+Change currency
+Change location
+Feedback
+Help
+Loading results
+Loading results
+
+# Flight search
+
+One way
+* Round trip
+* One way
+* Multi-city
+1
+* Adults
+  Remove adult
+  11
+  Add adult
+* Children Aged 2-11
+  Aged 2 to 11
+  Remove child aged 2 to 11
+  00
+  Add child aged 2 to 11
+* Infants In seat
+  Remove infant in seat
+  00
+  Add infant in seat
+* Infants On lap
+  Remove infant on lap
+  00
+  Add infant on lap
+DoneCancel
+Premium economy
+* Economy
+* Premium economy
+* Business
+* First
+Dubai DXB
+DXB · Dubai
+Remove
+Select multiple airports
+Done
+Los Angeles LAX
+LAX · Los Angeles
+Remove
+Select multiple airports
+Done
+DepartureTue, Apr 13
+Return
+DepartureTue, Apr 13
+Return
+One way
+* Round trip
+* One way
+Reset
+Done
+Add flight
+
+## Filters
+
+Stops
+Airlines
+Bags
+Price
+Times
+Emissions
+Connecting airports
+Duration
+All filters
+
+## Search results
+
+LanguageEnglish (United States)LocationUnited Arab EmiratesCurrencyAED
+[About][2][Privacy][3][Terms][4][Join user studies][5][Feedback][6][Help Center][7]
+
+Displayed currencies may differ from the currencies used to purchase flights. [Learn more][8]
+
+Prices are final prices and include all taxes and fees, including payment fees for the cheapest
+common payment method (which may differ depending on the provider). Additional charges may apply for
+other types of payment, luggage, meals, WLAN or other additional services. Prices, availability and
+travel details are provided based on the latest information received from our partners. This
+information is reflected in the results within a period of less than 24 hours. Additional conditions
+may also be applied by our partners. You should then check prices and conditions with the services
+providers before booking.
+
+Google apps
+Main menu
+
+[1]: https://accounts.google.com/ServiceLogin?service=searchandassistant&passive=1209600&continue=ht
+tps://www.google.com/travel/flights?tfs%3DGhoSCjIwMjctMDQtMTNqBRIDRFhCcgUSA0xBWEIBAUgCmAEC%26hl%3Den
+%26tfu%3DEgQIABABIgA%26curr&followup=https://www.google.com/travel/flights?tfs%3DGhoSCjIwMjctMDQtMTN
+qBRIDRFhCcgUSA0xBWEIBAUgCmAEC%26hl%3Den%26tfu%3DEgQIABABIgA%26curr&hl=en&ec=GAZAlQM
+[2]: https://about.google/?hl=en-US
+[3]: https://policies.google.com/privacy?hl=en-US
+[4]: https://policies.google.com/terms?hl=en-US
+[5]: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?reserved%3D1%26utm_source%3DFooter%252
+0link%26utm_medium%3Down_web%26%20utm_campaign%3DQ2%26productTag%3D0%26campaignDate%3DApril2020%26re
+ferral_code%3DUXbJ377133&Q_Language=en-US
+[6]: ./#0
+[7]: https://support.google.com/travel/?hl=en-US#topic=2475360
+[8]: https://www.google.com/googlefinance/disclaimer?hl=en-US&gl=AE
+",2026-04-27
+Most Direct,Business,April,4,2027-04-13,N/A,N/A,N/A,N/A,"Error: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("".eQ35Ce"") to be visible
+",2026-04-27
+Via California,Business,April,4,2027-04-13,N/A,N/A,N/A,N/A,"Error: No flights found:
+Skip to main contentAccessibility feedback
+Travel
+Explore
+Flights
+Hotels
+Vacation rentals
+Change appearance
+[Sign in][1]
+Travel
+Explore
+Flights
+Hotels
+Vacation rentals
+Flight Deals
+Tracked flight prices
+Tracked hotel prices
+Change language
+Change currency
+Change location
+Change currency
+Feedback
+Help
+Loading results
+Loading results
+
+# Flight search
+
+One way
+* Round trip
+* One way
+* Multi-city
+1
+* Adults
+  Remove adult
+  11
+  Add adult
+* Children Aged 2-11
+  Aged 2 to 11
+  Remove child aged 2 to 11
+  00
+  Add child aged 2 to 11
+* Infants In seat
+  Remove infant in seat
+  00
+  Add infant in seat
+* Infants On lap
+  Remove infant on lap
+  00
+  Add infant on lap
+DoneCancel
+Business
+* Economy
+* Premium economy
+* Business
+* First
+Dubai DXB
+DXB · Dubai
+Remove
+Select multiple airports
+Done
+Press the plus key to switch to multi-select mode.
+Los Angeles LAX
+LAX · Los Angeles
+Remove
+Select multiple airports
+Done
+Press the plus key to switch to multi-select mode.
+Enter a date or use the arrow keys to change the current date.
+Enter a date or use the arrow keys to change the current date.
+One way
+* Round trip
+* One way
+Reset
+Done
+Add flight
+
+## Filters
+
+All filters
+Stops
+Airlines
+Bags
+Price
+Times
+Emissions
+Connecting airports
+Duration
+
+## Search results
+
+LanguageEnglish (United States)LocationUnited Arab EmiratesCurrencyAED
+[About][2][Privacy][3][Terms][4][Join user studies][5][Feedback][6][Help Center][7]
+
+Displayed currencies may differ from the currencies used to purchase flights. [Learn more][8]
+
+Prices are final prices and include all taxes and fees, including payment fees for the cheapest
+common payment method (which may differ depending on the provider). Additional charges may apply for
+other types of payment, luggage, meals, WLAN or other additional services. Prices, availability and
+travel details are provided based on the latest information received from our partners. This
+information is reflected in the results within a period of less than 24 hours. Additional conditions
+may also be applied by our partners. You should then check prices and conditions with the services
+providers before booking.
+
+Google apps
+Main menu
+
+[1]: https://accounts.google.com/ServiceLogin?service=searchandassistant&passive=1209600&continue=ht
+tps://www.google.com/travel/flights?tfs%3DGhoSCjIwMjctMDQtMTNqBRIDRFhCcgUSA0xBWEIBAUgDmAEC%26hl%3Den
+%26tfu%3DEgQIABABIgA%26curr&followup=https://www.google.com/travel/flights?tfs%3DGhoSCjIwMjctMDQtMTN
+qBRIDRFhCcgUSA0xBWEIBAUgDmAEC%26hl%3Den%26tfu%3DEgQIABABIgA%26curr&hl=en&ec=GAZAlQM
+[2]: https://about.google/?hl=en-US
+[3]: https://policies.google.com/privacy?hl=en-US
+[4]: https://policies.google.com/terms?hl=en-US
+[5]: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?reserved%3D1%26utm_source%3DFooter%252
+0link%26utm_medium%3Down_web%26%20utm_campaign%3DQ2%26productTag%3D0%26campaignDate%3DApril2020%26re
+ferral_code%3DUXbJ377133&Q_Language=en-US
+[6]: ./#0
+[7]: https://support.google.com/travel/?hl=en-US#topic=2475360
+[8]: https://www.google.com/googlefinance/disclaimer?hl=en-US&gl=AE
+",2026-04-27

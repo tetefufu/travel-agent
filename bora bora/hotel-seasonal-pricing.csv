@@ -1,0 +1,37 @@
+Hotel,Month,Month_Num,Avg_Nightly_USD,Avg_Nightly_AED,Season,Notes
+The St. Regis Bora Bora Resort,January,1,2200,8074,Holiday wind-down,Post-New Year demand still elevated
+The St. Regis Bora Bora Resort,February,2,1800,6606,Low,Wet season; cheapest window to book
+The St. Regis Bora Bora Resort,March,3,1700,6239,Low,Wet season; best value month
+The St. Regis Bora Bora Resort,April,4,1750,6423,Low,Wet season tailing off
+The St. Regis Bora Bora Resort,May,5,2100,7707,Shoulder,Dry season begins; demand picking up
+The St. Regis Bora Bora Resort,June,6,2400,8808,Shoulder-Peak,Heiva Festival (Jul); rates climbing
+The St. Regis Bora Bora Resort,July,7,3200,11744,Peak,Dry season peak; Bastille Day events
+The St. Regis Bora Bora Resort,August,8,3500,12845,Peak,Highest demand of year; book 6–9 months ahead
+The St. Regis Bora Bora Resort,September,9,2800,10276,Shoulder,Post-peak drop; still dry weather
+The St. Regis Bora Bora Resort,October,10,2200,8074,Shoulder,Good value; weather transitioning
+The St. Regis Bora Bora Resort,November,11,1900,6973,Low,Wet season starts; fewer crowds
+The St. Regis Bora Bora Resort,December,12,2600,9542,Holiday Premium,Christmas/New Year spike
+InterContinental Bora Bora Resort Thalasso Spa,January,1,1450,5322,Holiday wind-down,Post-New Year demand still elevated
+InterContinental Bora Bora Resort Thalasso Spa,February,2,1200,4404,Low,Wet season; cheapest window to book
+InterContinental Bora Bora Resort Thalasso Spa,March,3,1150,4221,Low,Wet season; best value month
+InterContinental Bora Bora Resort Thalasso Spa,April,4,1200,4404,Low,Wet season tailing off
+InterContinental Bora Bora Resort Thalasso Spa,May,5,1400,5138,Shoulder,Dry season begins; demand picking up
+InterContinental Bora Bora Resort Thalasso Spa,June,6,1600,5872,Shoulder-Peak,Heiva Festival (Jul); rates climbing
+InterContinental Bora Bora Resort Thalasso Spa,July,7,2100,7707,Peak,Dry season peak; Bastille Day events
+InterContinental Bora Bora Resort Thalasso Spa,August,8,2300,8441,Peak,Highest demand of year; book 6–9 months ahead
+InterContinental Bora Bora Resort Thalasso Spa,September,9,1850,6790,Shoulder,Post-peak drop; still dry weather
+InterContinental Bora Bora Resort Thalasso Spa,October,10,1500,5505,Shoulder,Good value; weather transitioning
+InterContinental Bora Bora Resort Thalasso Spa,November,11,1250,4588,Low,Wet season starts; fewer crowds
+InterContinental Bora Bora Resort Thalasso Spa,December,12,1700,6239,Holiday Premium,Christmas/New Year spike
+Maitai Polynesia Bora Bora,January,1,350,1285,Holiday wind-down,Post-New Year demand still elevated
+Maitai Polynesia Bora Bora,February,2,280,1028,Low,Wet season; cheapest window to book
+Maitai Polynesia Bora Bora,March,3,260,954,Low,Wet season; best value month
+Maitai Polynesia Bora Bora,April,4,270,991,Low,Wet season tailing off
+Maitai Polynesia Bora Bora,May,5,320,1174,Shoulder,Dry season begins; demand picking up
+Maitai Polynesia Bora Bora,June,6,380,1395,Shoulder-Peak,Heiva Festival (Jul); rates climbing
+Maitai Polynesia Bora Bora,July,7,520,1908,Peak,Dry season peak; Bastille Day events
+Maitai Polynesia Bora Bora,August,8,580,2129,Peak,Highest demand of year
+Maitai Polynesia Bora Bora,September,9,450,1652,Shoulder,Post-peak drop; still dry weather
+Maitai Polynesia Bora Bora,October,10,360,1321,Shoulder,Good value; weather transitioning
+Maitai Polynesia Bora Bora,November,11,290,1064,Low,Wet season starts; fewer crowds
+Maitai Polynesia Bora Bora,December,12,420,1541,Holiday Premium,Christmas/New Year spike
