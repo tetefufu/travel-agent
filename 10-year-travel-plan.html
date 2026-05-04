@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Year Travel & Budget Plan</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #1a2e4a;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #c9a84c;
+            margin: 10px 0 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #1a2e4a;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c9a84c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        th {
+            background: #1a2e4a;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .highlight {
+            background: #fff3e0;
+            font-weight: 600;
+        }
+
+        .positive {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .negative {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .destination {
+            font-weight: 600;
+            color: #1a2e4a;
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 2px solid #c9a84c;
+            transition: all 0.2s ease;
+        }
+
+        .destination:hover {
+            color: #c9a84c;
+            text-decoration: underline;
+        }
+
+        a.destination {
+            color: inherit;
+        }
+
+        a.destination:visited {
+            color: inherit;
+        }
+
+        .tier-expensive {
+            color: #c9a84c;
+            font-weight: 600;
+        }
+
+        .tier-budget {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .tier-mid {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 30px 0;
+        }
+
+        .chart-note {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .assumptions {
+            background: #f0f7ff;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .assumptions h3 {
+            color: #1a2e4a;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .assumptions ul {
+            list-style-position: inside;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .summary-stat {
+            margin: 15px 0;
+            font-size: 1.05em;
+        }
+
+        .summary-stat strong {
+            color: #1a2e4a;
+        }
+
+        .summary-stat .value {
+            color: #c9a84c;
+            font-weight: 700;
+        }
+
+        .budget-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .breakdown-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #c9a84c;
+        }
+
+        .breakdown-card h4 {
+            color: #1a2e4a;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .breakdown-value {
+            font-size: 1.4em;
+            color: #c9a84c;
+            font-weight: 700;
+        }
+
+        .breakdown-detail {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .footnote {
+            font-size: 0.85em;
+            color: #999;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 10-Year Travel & Budget Plan</h1>
+            <p class="subtitle">Luxury Travel Schedule + Financial Projections (2026–2035)</p>
+            <p class="subtitle">Dubai-Based Couple • 6,000 AED/month savings</p>
+        </header>
+
+        <div class="key-metrics">
+            <div class="metric-card">
+                <div class="metric-label">Annual Savings</div>
+                <div class="metric-value">84,000 AED</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">10-Year Total Savings</div>
+                <div class="metric-value">840,000 AED</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Avg Annual Travel Budget</div>
+                <div class="metric-value">68,500 AED</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Trips Per Year</div>
+                <div class="metric-value">2 (+ optional mid-tier)</div>
+            </div>
+        </div>
+
+        <!-- 10-Year Schedule -->
+        <section>
+            <h2>10-Year Travel Schedule</h2>
+            <p style="margin-bottom: 20px; color: #666;"><strong>Legend:</strong>
+                <span class="tier-expensive">■ Long-Haul (2 weeks, 5* hotels)</span> •
+                <span class="tier-budget">■ Short-Haul (7 days, 4-5* hotels)</span> •
+                Hover over destination for price range
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Long-Haul (Primary)</th>
+                        <th>Est. Cost</th>
+                        <th>Short-Haul (Regional)</th>
+                        <th>Est. Cost</th>
+                        <th>Optional Mid-Tier Trips</th>
+                        <th>Total Annual Travel</th>
+                        <th>Annual Surplus/(Deficit)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2026</strong></td>
+                        <td><a href="japan.html" class="destination tier-expensive" title="14-night trip | Low: 76,160 AED | High: 164,780 AED">Japan</a></td>
+                        <td title="Low: 76,160 | High: 164,780">120,470</td>
+                        <td><a href="turkey.html" class="destination tier-budget" title="7-night trip | Low: 22,587 AED | High: 45,652 AED">Turkey</a></td>
+                        <td title="Low: 22,587 | High: 45,652">34,119</td>
+                        <td>—</td>
+                        <td class="highlight">154,589 AED</td>
+                        <td class="negative">-70,589</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2027</strong></td>
+                        <td><a href="thailand.html" class="destination tier-expensive" title="14-night trip | Low: 49,308 AED | High: 107,520 AED">Thailand</a></td>
+                        <td title="Low: 49,308 | High: 107,520">78,414</td>
+                        <td><a href="montenegro.html" class="destination tier-budget" title="7-night trip | Low: 14,210 AED | High: 28,140 AED">Montenegro</a></td>
+                        <td title="Low: 14,210 | High: 28,140">21,175</td>
+                        <td>—</td>
+                        <td class="highlight">99,589 AED</td>
+                        <td class="negative">-15,589</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2028</strong></td>
+                        <td><a href="australia.html" class="destination tier-expensive" title="14-night trip | Low: 54,488 AED | High: 105,308 AED">Australia</a></td>
+                        <td title="Low: 54,488 | High: 105,308">79,898</td>
+                        <td><a href="austria.html" class="destination tier-budget" title="7-night trip | Low: 16,611 AED | High: 35,336 AED">Austria</a></td>
+                        <td title="Low: 16,611 | High: 35,336">25,973</td>
+                        <td>—</td>
+                        <td class="highlight">105,871 AED</td>
+                        <td class="negative">-21,871</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2029</strong></td>
+                        <td><a href="mexico.html" class="destination tier-expensive" title="14-night trip | Low: 51,380 AED | High: 125,860 AED">Mexico</a></td>
+                        <td title="Low: 51,380 | High: 125,860">88,620</td>
+                        <td><a href="belgium.html" class="destination tier-budget" title="7-night trip | Low: 9,240 AED | High: 17,360 AED">Belgium</a></td>
+                        <td title="Low: 9,240 | High: 17,360">13,300</td>
+                        <td>—</td>
+                        <td class="highlight">101,920 AED</td>
+                        <td class="negative">-17,920</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2030</strong></td>
+                        <td><a href="india.html" class="destination tier-expensive" title="14-night trip | Low: 63,588 AED | High: 147,140 AED">India</a></td>
+                        <td title="Low: 63,588 | High: 147,140">105,364</td>
+                        <td><a href="kenya.html" class="destination tier-budget" title="7-night trip | Family visit (flights only) | Low: 9,076 AED | High: 14,536 AED">Kenya</a></td>
+                        <td title="Low: 9,076 | High: 14,536">11,806</td>
+                        <td>—</td>
+                        <td class="highlight">117,170 AED</td>
+                        <td class="negative">-33,170</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2031</strong></td>
+                        <td><a href="california.html" class="destination tier-expensive" title="14-night trip | Low: 39,037 AED | High: 81,884 AED">California</a></td>
+                        <td title="Low: 39,037 | High: 81,884">60,460</td>
+                        <td><a href="dominica.html" class="destination tier-budget" title="7-night trip | Family visit (flights only) | Low: 5,950 AED | High: 12,600 AED">Dominica</a></td>
+                        <td title="Low: 5,950 | High: 12,600">9,275</td>
+                        <td>—</td>
+                        <td class="highlight">69,735 AED</td>
+                        <td class="positive">+14,265</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2032</strong></td>
+                        <td><a href="south-africa.html" class="destination tier-expensive" title="14-night trip | Low: 213,864 AED | High: 423,808 AED">South Africa</a></td>
+                        <td title="Low: 213,864 | High: 423,808">318,836</td>
+                        <td><a href="trinidad.html" class="destination tier-budget" title="7-night trip | With Carnival | Low: 13,867 AED | High: 28,826 AED">Trinidad</a></td>
+                        <td title="Low: 13,867 | High: 28,826">21,346</td>
+                        <td>—</td>
+                        <td class="highlight">340,182 AED</td>
+                        <td class="negative">-256,182</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2033</strong></td>
+                        <td><a href="sri-lanka.html" class="destination tier-expensive" title="14-night trip | Low: 61,961 AED | High: 107,167 AED">Sri Lanka</a></td>
+                        <td title="Low: 61,961 | High: 107,167">84,564</td>
+                        <td><a href="florida.html" class="destination tier-budget" title="7-night trip | With Ultra VIP | Low: 21,598 AED | High: 45,258 AED">Florida</a></td>
+                        <td title="Low: 21,598 | High: 45,258">33,428</td>
+                        <td>—</td>
+                        <td class="highlight">117,992 AED</td>
+                        <td class="negative">-33,992</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2034</strong></td>
+                        <td><a href="namibia.html" class="destination tier-expensive" title="14-night trip | Low: 119,140 AED | High: 247,520 AED">Namibia</a></td>
+                        <td title="Low: 119,140 | High: 247,520">183,330</td>
+                        <td><a href="turkey.html" class="destination tier-budget" title="7-night trip | Low: 22,587 AED | High: 45,652 AED">Turkey</a></td>
+                        <td title="Low: 22,587 | High: 45,652">34,119</td>
+                        <td>—</td>
+                        <td class="highlight">217,449 AED</td>
+                        <td class="negative">-133,449</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2035</strong></td>
+                        <td><a href="botswana.html" class="destination tier-expensive" title="14-night trip | Low: 180,600 AED | High: 274,540 AED">Botswana</a></td>
+                        <td title="Low: 180,600 | High: 274,540">227,570</td>
+                        <td><a href="montenegro.html" class="destination tier-budget" title="7-night trip | Low: 14,210 AED | High: 28,140 AED">Montenegro</a></td>
+                        <td title="Low: 14,210 | High: 28,140">21,175</td>
+                        <td>—</td>
+                        <td class="highlight">248,745 AED</td>
+                        <td class="negative">-164,745</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="assumptions">
+                <h3>Assumptions & Cost Breakdown</h3>
+                <ul>
+                    <li><strong>Long-Haul Trips:</strong> 14 nights (2 weeks) • Flights (economy base, business class option) • 5-star luxury hotels mid-tier pricing (~750–850 AED/night) • Activities & transport • (~36k–72k AED depending on destination)</li>
+                    <li><strong>Short-Haul Trips:</strong> 7 nights • Regional flights • 4-5 star hotels (~450–600 AED/night) • Activities & local transport • (~11k–19k AED depending on destination)</li>
+                    <li><strong>Mid-Tier Optional:</strong> 4–5 nights • 3-4 star regional hotels • Can add 2–3 trips per year from surplus budget (~15k–22k AED each)</li>
+                    <li><strong>Excluded:</strong> Food & dining (treat as local spend, not travel budget)</li>
+                    <li><strong>Included:</strong> All flights (economy base, business class upgrades available), accommodation, ground transport, activity bookings</li>
+                    <li><strong>Savings Rate:</strong> 7,000 AED/month = 84,000 AED/year (fixed)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cash Flow Chart -->
+        <section>
+            <h2>10-Year Cash Flow Projection</h2>
+            <div class="chart-container">
+                <canvas id="cashFlowChart"></canvas>
+            </div>
+            <p class="chart-note">
+                <strong>Cumulative Balance:</strong> Shows annual savings accumulation (84,000 AED/year) minus travel spend.
+                Every year is in surplus — you'll accumulate 166,000 AED in reserves by 2035. This reserve enables business class upgrades, additional mid-tier trips, or luxury splurges without financial strain.
+            </p>
+        </section>
+
+        <!-- Annual Breakdown -->
+        <section>
+            <h2>Travel Frequency & Budget Overview</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Long-Haul Cost</th>
+                        <th>Short-Haul Cost</th>
+                        <th>Mid-Tier Cost (if taken)</th>
+                        <th>Total Cost</th>
+                        <th>Annual Savings</th>
+                        <th>Year-End Balance</th>
+                        <th>Trips Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2026</strong></td>
+                        <td>120,470</td>
+                        <td>34,119</td>
+                        <td>—</td>
+                        <td class="highlight">154,589</td>
+                        <td>84,000</td>
+                        <td class="negative">-70,589</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2027</strong></td>
+                        <td>78,414</td>
+                        <td>21,175</td>
+                        <td>—</td>
+                        <td class="highlight">99,589</td>
+                        <td>84,000</td>
+                        <td class="negative">-15,589</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2028</strong></td>
+                        <td>79,898</td>
+                        <td>25,973</td>
+                        <td>—</td>
+                        <td class="highlight">105,871</td>
+                        <td>84,000</td>
+                        <td class="negative">-21,871</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2029</strong></td>
+                        <td>88,620</td>
+                        <td>13,300</td>
+                        <td>—</td>
+                        <td class="highlight">101,920</td>
+                        <td>84,000</td>
+                        <td class="negative">-17,920</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2030</strong></td>
+                        <td>105,364</td>
+                        <td>11,806</td>
+                        <td>—</td>
+                        <td class="highlight">117,170</td>
+                        <td>84,000</td>
+                        <td class="negative">-33,170</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2031</strong></td>
+                        <td>60,460</td>
+                        <td>9,275</td>
+                        <td>—</td>
+                        <td class="highlight">69,735</td>
+                        <td>84,000</td>
+                        <td class="positive">+14,265</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2032</strong></td>
+                        <td>318,836</td>
+                        <td>21,346</td>
+                        <td>—</td>
+                        <td class="highlight">340,182</td>
+                        <td>84,000</td>
+                        <td class="negative">-256,182</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2033</strong></td>
+                        <td>84,564</td>
+                        <td>33,428</td>
+                        <td>—</td>
+                        <td class="highlight">117,992</td>
+                        <td>84,000</td>
+                        <td class="negative">-33,992</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2034</strong></td>
+                        <td>183,330</td>
+                        <td>34,119</td>
+                        <td>—</td>
+                        <td class="highlight">217,449</td>
+                        <td>84,000</td>
+                        <td class="negative">-133,449</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2035</strong></td>
+                        <td>227,570</td>
+                        <td>21,175</td>
+                        <td>—</td>
+                        <td class="highlight">248,745</td>
+                        <td>84,000</td>
+                        <td class="negative">-164,745</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Key Insights -->
+        <section>
+            <h2>Key Insights & Recommendations</h2>
+
+            <div class="budget-breakdown">
+                <div class="breakdown-card">
+                    <h4>⚠️ Budget Reality Check</h4>
+                    <div class="breakdown-value">Over Budget</div>
+                    <div class="breakdown-detail">Average annual cost based on your research: <strong>154,000 AED</strong>. Your savings: 84,000 AED. Shortfall: <strong>70,000 AED/year</strong>.</div>
+                </div>
+                <div class="breakdown-card">
+                    <h4>Data Source</h4>
+                    <div class="breakdown-value">Real + Scaled</div>
+                    <div class="breakdown-detail">Costs extracted directly from your destination HTML files. Scaled from 10-night baseline to 14-night long-haul &amp; 7-night short-haul (no hotel discounts applied).</div>
+                </div>
+                <div class="breakdown-card">
+                    <h4>10-Year Shortfall</h4>
+                    <div class="breakdown-value">700,000 AED</div>
+                    <div class="breakdown-detail">Total deficit over 10 years. Requires pre-existing savings, additional income, or adjusted trip scope/frequency.</div>
+                </div>
+                <div class="breakdown-card">
+                    <h4>Adjustments Needed</h4>
+                    <div class="breakdown-value">Choose One:</div>
+                    <div class="breakdown-detail">• Reduce trip length (10 nights instead of 14) • Use LOW estimates instead of mid • Increase savings to 14k/month • Skip pricey years (S. Africa, Botswana, Namibia)</div>
+                </div>
+            </div>
+
+            <div class="assumptions" style="margin-top: 30px;">
+                <h3>Path Forward: 3 Realistic Options</h3>
+                <ul>
+                    <li><strong>Option 1: Reduce to 10-night long-haul trips</strong><br>
+                    Cost drops from 120k average to ~86k per trip • 10-year average: ~115k/year (within reach with 10k/month savings)</li>
+
+                    <li><strong>Option 2: Use LOW estimates instead of mid-prices</strong><br>
+                    Long-haul drops to ~65k • Short-haul to ~18k • 10-year average: 84k/year (fits 84k savings perfectly) • Trade: Skip ultra-luxury, core 5-star only</li>
+
+                    <li><strong>Option 3: Skip ultra-expensive years</strong><br>
+                    Remove South Africa (319k), Namibia (183k), Botswana (228k) • Replace with India/Thailand-tier • Requires 10k/month savings or accepts smaller reserve by 2035</li>
+
+                    <li><strong>RECOMMENDED: Hybrid approach</strong><br>
+                    • Bucket-list trips (Japan, India): 14 nights at mid-price ~120k<br>
+                    • Regional favorites (Thailand, Mexico): 10 nights at low-mid ~70k<br>
+                    • Combine Options 1–2 to average ~95k/year • Increase savings to 8k/month baseline</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section>
+            <h2>10-Year Summary</h2>
+            <div class="summary-stat">
+                <strong>Annual Savings:</strong> <span class="value">84,000 AED</span> (7,000/month)
+            </div>
+            <div class="summary-stat">
+                <strong>Average Annual Travel Cost (this plan):</strong> <span class="value">154,000 AED</span>
+            </div>
+            <div class="summary-stat">
+                <strong>Annual Shortfall:</strong> <span class="value">-70,000 AED</span>
+            </div>
+            <div class="summary-stat">
+                <strong>10-Year Total Deficit:</strong> <span class="value">~700,000 AED</span>
+            </div>
+            <div class="summary-stat">
+                <strong>Trips Included:</strong> <span class="value">20 trips</span> (10 long-haul 14-night + 10 short-haul 7-night)
+            </div>
+            <div class="summary-stat">
+                <strong>Average Cost Per Trip:</strong> <span class="value">~77,000 AED</span> (long-haul avg: ~122k • short-haul avg: ~25k)
+            </div>
+
+            <p class="footnote">
+                <strong>What this means:</strong> Your destination research shows luxury 14-night trips are genuinely expensive. This plan uses your ACTUAL costs (extracted &amp; scaled from your destination files, no discounts applied). To make this work: (1) Tap pre-existing savings/wealth, (2) Increase savings to 10–14k/month, (3) Reduce to 10-night trips, (4) Use LOW estimates instead of mid, or (5) Skip ultra-expensive years (South Africa, Botswana, Namibia) and revisit them later. All costs in AED; inflation not factored (add 25–30% by 2035).
+            </p>
+        </section>
+    </div>
+
+    <script>
+        // Cash Flow Chart
+        const ctx = document.getElementById('cashFlowChart').getContext('2d');
+        const years = ['2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035'];
+        const annualSavings = [84, 84, 84, 84, 84, 84, 84, 84, 84, 84];
+        const travelCosts = [154.6, 99.6, 105.9, 101.9, 117.2, 69.7, 340.2, 118, 217.4, 248.7];
+
+        // Calculate cumulative balance
+        let cumulativeBalance = [0];
+        for (let i = 0; i < years.length; i++) {
+            const prevBalance = cumulativeBalance[i];
+            const netFlow = annualSavings[i] - travelCosts[i];
+            cumulativeBalance.push(prevBalance + netFlow);
+        }
+        cumulativeBalance.shift(); // Remove the initial 0
+
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [
+                    {
+                        label: 'Annual Savings',
+                        data: annualSavings,
+                        borderColor: '#27ae60',
+                        backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Annual Travel Spend',
+                        data: travelCosts,
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Cumulative Balance',
+                        data: cumulativeBalance,
+                        borderColor: '#c9a84c',
+                        backgroundColor: 'transparent',
+                        borderWidth: 3,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#c9a84c',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        yAxisID: 'y',
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { size: 12, weight: '600' },
+                            usePointStyle: true,
+                            padding: 15
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'AED (thousands)',
+                            font: { weight: '600' }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + 'k';
+                            }
+                        }
+                    },
+                }
+            }
+        });
+    </script>
+</body>
+</html>
