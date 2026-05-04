@@ -64,7 +64,6 @@
 - Table: Flights | Hotels | Activities/transport | **Total**
 - **Exclude food & dining** — not an incremental travel cost
 - Show low and high range in AED
-- Add footnote: X% of combined monthly income (70,000 AED)
 
 ---
 

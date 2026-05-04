@@ -7,7 +7,6 @@
 - **Passport:** UK
 
 ## Budget & Currency
-- **Combined monthly income:** 70,000 AED (~$19,000 USD)
 - **Display currency:** AED (always show prices in AED)
 - **Hotel preference:** Luxury — never recommend budget or mid-range as primary option; cost-saving is not a priority
 - **Flights:** Default to economy, but always show business class option and price difference
