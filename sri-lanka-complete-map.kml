@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Sri Lanka 2026 — All Locations + Route Options</name>
+  <description>Comprehensive map: all places mentioned in all Sri Lanka data files + both route options (A: South Coast, B: East Coast + Hills)</description>
+
+  <!-- STYLES -->
+  <Style id="hotel">
+    <IconStyle><color>ffee8800</color><scale>1.1</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/blue-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="food">
+    <IconStyle><color>ff0000ff</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="sight">
+    <IconStyle><color>ff00aa00</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/green-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="nature">
+    <IconStyle><color>ff00cccc</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="cafe">
+    <IconStyle><color>ff0055ff</color><scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/ms/icons/orange-dot.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+  <Style id="route-a">
+    <LineStyle><color>ffcc9a4c</color><width>4</width></LineStyle>
+  </Style>
+  <Style id="route-b">
+    <LineStyle><color>ff4db8ff</color><width>4</width></LineStyle>
+  </Style>
+  <Style id="train">
+    <LineStyle><color>ff1a5e20</color><width>2</width></LineStyle>
+  </Style>
+
+  <!-- ==================== ROUTE LINES ==================== -->
+  <Folder>
+    <name>🛣️ Route Options</name>
+
+    <Placemark>
+      <name>OPTION A: South Coast Route (Gold)</name>
+      <description>Current planned route: Ahungalla → Sigiriya → Kandy → Ella → Galle → Weligama → Colombo. ⚠️ August monsoon risk. Best Dec–Mar.</description>
+      <styleUrl>#route-a</styleUrl>
+      <LineString>
+        <coordinates>
+          80.0253,6.2769,0
+          80.7522,7.9471,0
+          80.7342,7.3393,0
+          81.0461,6.8621,0
+          80.2165,6.0270,0
+          80.4461,5.9693,0
+          79.8493,6.9355,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+
+    <Placemark>
+      <name>OPTION B: East Coast + Hill Country Route (Blue)</name>
+      <description>PDF-recommended for August: Negombo → Sigiriya → Knuckles → Haputale → Ella → Yala → Arugam → Trincomalee → Colombo. ☀️ Perfect for August (dry season, no monsoon)</description>
+      <styleUrl>#route-b</styleUrl>
+      <LineString>
+        <coordinates>
+          80.1733,7.2087,0
+          80.7522,7.9471,0
+          80.8500,7.1667,0
+          80.8167,6.9333,0
+          81.0461,6.8621,0
+          81.4917,6.3731,0
+          81.8167,7.7667,0
+          81.2333,8.5500,0
+          79.8493,6.9355,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+
+    <Placemark>
+      <name>Train Route: Kandy ↔ Ella (Right side best views)</name>
+      <description>Scenic train through tea country. Kandy→Ella ~3h. Sit on RIGHT side. Book weeks ahead via 12Go Asia.</description>
+      <styleUrl>#train</styleUrl>
+      <LineString>
+        <coordinates>
+          80.6414,7.2921,0
+          81.0461,6.8621,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+
+    <Placemark>
+      <name>Train: Ella → Badulla (€0.50 alternative)</name>
+      <description>Same landscapes as Kandy→Ella. ~1h. Almost empty carriages. Budget alternative.</description>
+      <styleUrl>#train</styleUrl>
+      <LineString>
+        <coordinates>
+          81.0461,6.8621,0
+          81.1333,6.8167,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+
+    <Placemark>
+      <name>Train: Colombo Fort ↔ Galle (Coastal scenic)</name>
+      <description>Most scenic rail in Sri Lanka. Ocean views throughout. Alternative to driving.</description>
+      <styleUrl>#train</styleUrl>
+      <LineString>
+        <coordinates>
+          79.8432,6.9328,0
+          80.2165,6.0270,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== NEGOMBO (Option B Arrival) ==================== -->
+  <Folder>
+    <name>🌊 Negombo — Option B Arrival</name>
+
+    <Placemark>
+      <name>Negombo Beach / Lagoon</name>
+      <description>Soft landing by coast. Close to airport (~1h). Unhurried, warm air. Perfect first-night stop for Option B.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.1733,7.2087,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== CULTURAL TRIANGLE (Sigiriya/Dambulla) ==================== -->
+  <Folder>
+    <name>🏛️ Cultural Triangle — Sigiriya / Dambulla</name>
+
+    <Placemark>
+      <name>Pidurangala Rock (Option B preferred)</name>
+      <description>Iconic view of Sigiriya Rock from outside. Easy hike. ~$3 entry. Much cheaper + easier than Sigiriya climb itself. Best 5:30–6:30am sunrise.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.7603,7.9572,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Sigiriya Rock Fortress (UNESCO)</name>
+      <description>Climb at 5:30am. Lion's Paw entrance → ancient frescoes → summit views. ~$30/person. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.7603,7.9572,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Dambulla Cave Temple (UNESCO)</name>
+      <description>150+ gilded Buddha statues. 5 cave temples. ~45 min from Sigiriya. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.6492,7.8567,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Minneriya National Park</name>
+      <description>Elephant gathering (sometimes 100+). Best Jul–Oct. Great en route Sigiriya → Kandy. Option A.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.9000,8.0333,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Polonnaruwa Ancient City (UNESCO)</name>
+      <description>Medieval capital. Bicycle exploration. UNESCO site. Option B (day trip from Sigiriya area).</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.9950,7.9403,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== KNUCKLES (Option B Only) ==================== -->
+  <Folder>
+    <name>🏔️ Knuckles Mountain Range — Option B</name>
+
+    <Placemark>
+      <name>Knuckles Conservation Forest (UNESCO)</name>
+      <description>Protected from mass tourism. Guided hiking. UNESCO protected area. Pekoe Trail access (300+ km long-distance trail, 22 stages). Option B Days 3–4.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.8500,7.1667,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== HAPUTALE (Option B Only) ==================== -->
+  <Folder>
+    <name>🌿 Haputale — Tea Country, Option B</name>
+
+    <Placemark>
+      <name>Lipton's Seat</name>
+      <description>Panoramic tea-estate viewpoint. Sunrise visit ideal. Famous Sri Lanka landmark. Option B Days 5–6.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.8167,6.9333,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Haputale Tea Estate Walks</name>
+      <description>Guided short walks through working tea fields. Learn how Ceylon tea is made. Pekoe Trail sections available. Option B.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.8167,6.9333,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== KANDY ==================== -->
+  <Folder>
+    <name>🌿 Kandy (Option A)</name>
+
+    <Placemark>
+      <name>Temple of the Sacred Tooth Relic (UNESCO)</name>
+      <description>Most sacred Buddhist site in Sri Lanka. Inside Royal Palace. Evening puja ceremony spectacular. Option A Day 4.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.6413,7.2936,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Royal Botanical Gardens, Peradeniya</name>
+      <description>147 acres, finest botanical gardens in Asia. Orchid house, giant bamboo, 5,000+ species. Option A Day 4.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.5945,7.2683,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kandy Lake</name>
+      <description>Scenic lake. Evening walk. Cloud Wall path. Option A.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.6414,7.2921,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Ashok Vatika (On Kandy–Ella drive)</name>
+      <description>Hanuman's first footprint found here. Religious site. Route between Kandy and Ella. Option B alternative.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.85,7.05,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Skyloft Kandy (Hotel option)</name>
+      <description>Ultra-luxury boutique. Huge infinity pool. Kandy views. Alternative luxury base.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.6414,7.3000,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== ELLA ==================== -->
+  <Folder>
+    <name>🚂 Ella (Both options)</name>
+
+    <Placemark>
+      <name>Nine Arch Bridge</name>
+      <description>Most Instagrammable. Walk 30 min. BEST TIME: 6:15–6:45am (train passes, zero crowds). Both options Days 6–7.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.0564,6.8753,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Upper Diyaluma Falls</name>
+      <description>Skip Ravana Falls (overcrowded). Do this: natural infinity pools at top, unreal views, far fewer people. Before 9am. Free. Both options.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.0414,6.7492,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Little Adam's Peak</name>
+      <description>Start from 98 Acres side (NOT Ella town). 1hr hike. Free. Easy difficulty. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.0481,6.8643,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Ella Rock</name>
+      <description>Moderate difficulty. 4h return. Rewarding summit panorama. Alternative/addition to Little Adam's Peak. Option B.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.0500,6.8700,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Demodara Railway Station + Loop</name>
+      <description>Ella → Dimodara train: tea estates, tunnels, famous railway loop. Doorway shots. Short scenic ride. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.0167,6.8806,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Halpewatte Tea Factory</name>
+      <description>Best tea factory near Ella. 3,000 LKR (~€8) guided tour. Educational, well explained. Learn how Ceylon tea is made. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.9594,6.8906,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>98 Acres Resort, Ella</name>
+      <description>Luxury. Infinity pool with Ella Gap views. Both options Days 7–8/6–7.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>81.0461,6.8621,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Café Green Door, Ella</name>
+      <description>Vegetarian-friendly breakfast and lunch. Local favourite. Both options.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>81.0464,6.8741,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Ravana Pool Club, Ella</name>
+      <description>Bali-style vibe. Lunch ~₹3,000. Both options.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>81.0400,6.8700,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Pepper Hill Cottage, Ella (Alternative hotel)</name>
+      <description>Natural spring water pool. Breakfast included. ~₹2,700/night. Budget alternative to 98 Acres.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>81.0461,6.8621,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== YALA NATIONAL PARK (Option B) ==================== -->
+  <Folder>
+    <name>🐘 Yala National Park — Option B</name>
+
+    <Placemark>
+      <name>Yala National Park</name>
+      <description>Peak season Jun–Sep. Leopards, elephants, crocodiles. One safari (sunrise or sunset). Option B Day 9.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.4917,6.3731,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Udawalawe National Park</name>
+      <description>Famous for elephant safaris. Large herds at waterholes. Photography-friendly. Alternative to Yala.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.8667,6.4333,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Gal Oya National Park (Ampara)</name>
+      <description>Boat safaris with elephants on reservoir. Less visited. Option for additional wildlife days.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.5167,7.1667,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== ARUGAM BAY (Option B) ==================== -->
+  <Folder>
+    <name>🏄 Arugam Bay — East Coast, Option B</name>
+
+    <Placemark>
+      <name>Arugam Bay</name>
+      <description>Surf capital of east coast. In season Aug. Beginner-friendly lessons. Laid-back beach town. Option B Days 10–11.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.8167,7.7667,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Whiskey Point (Arugam Bay)</name>
+      <description>Main surf break. Beginner lessons available. Option B.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.8167,7.7667,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Peanut Farm (Arugam Bay)</name>
+      <description>Alternative surf break. Beginner-friendly. Option B.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.8000,7.7500,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kumana National Park</name>
+      <description>Day trip from Arugam Bay. Lagoon + wildlife. Optional extension for Option B.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.9167,7.6667,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== EAST COAST (Option B) ==================== -->
+  <Folder>
+    <name>☀️ East Coast — Option B</name>
+
+    <Placemark>
+      <name>Trincomalee / Nilaveli Beach</name>
+      <description>Clear waters, soft sand. Whale watching peak Aug–Sep. Pigeon Island snorkelling. Koneswaram Temple. Option B Days 12–13.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.2333,8.5500,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Whale Watching — Trincomalee</name>
+      <description>Blue whales + sperm whales. Peak season Aug–Sep (best time of year!). Trinco is ideal for August. Option B.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.2333,8.5500,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Pigeon Island National Park</name>
+      <description>Snorkelling. Near Trincomalee. Option B.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.3000,8.6333,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Koneswaram Temple, Trincomalee</name>
+      <description>Historic temple. Hilltop views. Cultural stop. Option B.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.2400,8.5600,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Passikudah Bay</name>
+      <description>Shallow turquoise bay. Calm, relaxed. Alternative to Trinco for swimming focus. Option B alternative.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>81.0333,8.1667,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Batticaloa (Heritage + Lagoons)</name>
+      <description>Heritage area. Tamil culture. Lagoons. Less visited. Option B exploration.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>81.6667,7.7167,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== GALLE & SOUTH COAST (Option A) ==================== -->
+  <Folder>
+    <name>🏰 Galle & South West — Option A</name>
+
+    <Placemark>
+      <name>Amangalla, Galle Fort</name>
+      <description>Ultra-luxury Aman. Heritage courtyard pool. UNESCO Galle Fort walls. Option A Nights 8–10.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.2165,6.0270,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Galle Fort Lighthouse (UNESCO)</name>
+      <description>Most-photographed. Walk ramparts at sunset. Dutch colonial. Option A.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.2156,6.0219,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Fort Printers Restaurant</name>
+      <description>Galle fusion in restored printing house. Excellent veg options. Smart casual. Option A.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>80.2172,6.0278,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Stilt Fishermen — Koggala</name>
+      <description>UNESCO-iconic. Between Galle and Ahangama. Best late afternoon golden light. Option A.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.3086,6.0194,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Dalawella Beach — Rope Swing</name>
+      <description>Famous rope swing. Turquoise water. Turtle sightings (private entry via Wijaya Beach Restaurant). Option A.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.2447,6.0028,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Wijaya Beach Restaurant, Hikkaduwa</name>
+      <description>Traditional Sri Lankan. Private turtle entry. Option A.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>80.1550,6.1450,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kosgoda Turtle Hatchery</name>
+      <description>Baby turtles. Release into sea. ~1hr from Weligama. Both options visit.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.1525,6.1886,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== AHANGAMA (Option A) ==================== -->
+  <Folder>
+    <name>☕ Ahangama — Café Capital, Option A</name>
+
+    <Placemark>
+      <name>@cactus_ahangama</name>
+      <description>ORDER: watermelon margarita. Sunset cocktails. One of best on south coast. Option A Day 8.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.3667,5.9775,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>@hoteldeuncles</name>
+      <description>ORDER: banana negroni. Beach bar vibes. Sunset cocktails. Option A Day 8.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.3639,5.9769,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>@kai_ahangama</name>
+      <description>Coffee + incredible sea views. Best café view in Ahangama. Option A Day 8.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.3653,5.9780,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== SOUTH COAST — MIRISSA, WELIGAMA, HIRIKETIYA (Option A) ==================== -->
+  <Folder>
+    <name>🌊 South Coast — Mirissa / Weligama / Hiriketiya (Option A)</name>
+
+    <Placemark>
+      <name>Mirissa Harbour — Whale Watching</name>
+      <description>Blue + sperm whales + dolphins. Peak season Dec–Mar (⚠️ Aug off-season). Book via Raja & The Whales. 6am boat. Option A Day 9.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.4556,5.9444,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Secret Beach, Mirissa</name>
+      <description>Hard to get to. Ask locals. 100% worth it. Less known. Option A Day 9.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.4589,5.9353,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Parrot Rock + Coconut Hill, Mirissa</name>
+      <description>Scramble for panoramic views. Instagram classic. Option A Day 9.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.4597,5.9439,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>"Lava" Lantern Beach Café, Mirissa</name>
+      <description>Viral Sri Lanka spot. Lantern-lit. Evening only. Magical. Option A Day 9.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.4527,5.9436,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Fruit Café, Mirissa</name>
+      <description>100% plant-based/vegan. Smoothies, açaí. Vegetarian favourite. Option A.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>80.4519,5.9441,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Salt Café, Mirissa</name>
+      <description>Vegan lunch. South coast café. Option A.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>80.4500,5.9450,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Bunch Café, Mirissa</name>
+      <description>Breakfast spot. Option A.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.4510,5.9460,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Plan B Cafe, Mirissa</name>
+      <description>Morning coffee. Option A.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.4520,5.9470,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Peti Peti Pool Club, Mirissa</name>
+      <description>Pool club vibe. Option A.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>80.4530,5.9480,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Hiriketiya Bay</name>
+      <description>Small horseshoe cove. Most-saved drone shot. Stylish cafés, boutique crowd, good surf. Better than Mirissa for calm + aesthetics. Option A Day 10.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.6056,5.9253,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Silent Beach, Dikwella</name>
+      <description>Voted most beautiful in Sri Lanka. Untouched, total peace, no crowds. Option A Day 10.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.7131,5.9781,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Cape Weligama</name>
+      <description>Ultra-luxury. Best infinity pool in Sri Lanka. Peacocks, ocean views, world-class sunsets. Option A Nights 11–13.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.4461,5.9693,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== BENTOTA ==================== -->
+  <Folder>
+    <name>🌿 Bentota</name>
+
+    <Placemark>
+      <name>Bentota River Safari</name>
+      <description>Mangrove cruise. Monitor lizards, birds, cinnamon island. ~1.5hrs from Colombo. Both options day trip option.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>79.9944,6.4286,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Bentota Beach</name>
+      <description>Golden sand, calm waters, water sports. Day trip from Galle/Colombo. Both options.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>79.9953,6.4239,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== COLOMBO (Both options) ==================== -->
+  <Folder>
+    <name>🏙️ Colombo</name>
+
+    <Placemark>
+      <name>Gangaramaya Temple</name>
+      <description>Most revered Buddhist temple. Museum. Unique interiors. Both options Day 13/14.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8561,6.9166,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Seema Malaka Floating Temple</name>
+      <description>Floating shrine on Beira Lake. Stunning photos. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8553,6.9144,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Jami Ul-Alfar Mosque (Red Mosque)</name>
+      <description>Red & white colonial architecture. Historical landmark. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8493,6.9355,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Lotus Tower</name>
+      <description>South Asia's tallest tower. Panoramic Colombo views. Skyline shots. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8612,6.9269,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Galle Face Green</name>
+      <description>Iconic promenade. Sunset + street food crawl. Both options Day 13.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8462,6.9147,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Independence Memorial Hall</name>
+      <description>Colonial landmark. Most photographed Colombo monument. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8679,6.9014,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Colombo National Museum</name>
+      <description>Sri Lanka's largest museum. Colonial building. Cultural context. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8612,6.9021,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Dutch Hospital Shopping Precinct</name>
+      <description>Upscale cafés + souvenirs. Restored 17th-century Dutch colonial hospital. Both options.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>79.8432,6.9328,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Pettah Market</name>
+      <description>Cheapest finds. Clothes, spices, electronics. Pure Colombo chaos. 1hr browse. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8518,6.9356,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Mount Lavinia Beach</name>
+      <description>Beautiful beach just outside Colombo. Evening visit. Both options.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>79.8661,6.8408,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Sri Kailasanathar Swami Devasthanam Temple</name>
+      <description>Hindu temple. Religious site. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8550,6.9300,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Good Market, Colombo</name>
+      <description>Organic fruits & vegetables. Local market. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>79.8400,6.9100,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kumbuk Café, Colombo</name>
+      <description>Vegetarian-friendly breakfast. Both options.</description>
+      <styleUrl>#food</styleUrl>
+      <Point><coordinates>79.8600,6.9200,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Hotel Mirage, Colombo</name>
+      <description>Pool + ocean view. Train track views. ~₹4,500/night. Alternative hotel. Both options.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>79.8500,6.9000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Noelines Wellness Spa, Colombo</name>
+      <description>Ayurvedic spa treatments. Wellness option. Both options.</description>
+      <styleUrl>#cafe</styleUrl>
+      <Point><coordinates>79.8550,6.8950,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== AHUNGALLA (Option A Arrival) ==================== -->
+  <Folder>
+    <name>🏨 Ahungalla — Option A Arrival</name>
+
+    <Placemark>
+      <name>Tri Lanka / Ahangama Abode, Ahungalla</name>
+      <description>Beachfront boutique. First night stop near airport. Perfect for jet lag recovery. Option A Night 1.</description>
+      <styleUrl>#hotel</styleUrl>
+      <Point><coordinates>80.0253,6.2769,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Ahu Bay, Ahungalla</name>
+      <description>Golden sand, calm water. First-night beach stop. Option A.</description>
+      <styleUrl>#nature</styleUrl>
+      <Point><coordinates>80.0253,6.2769,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ==================== HORTON PLAINS (Option for both) ==================== -->
+  <Folder>
+    <name>🥾 Horton Plains National Park</name>
+
+    <Placemark>
+      <name>Horton Plains — World's End</name>
+      <description>9km loop. Moderate difficulty. World's End sheer cliff. Baker's Falls. ~2h from Ella. Additional day option for both routes.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.8000,6.8500,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Nuwara Eliya (Hill Country base)</name>
+      <description>Pretty hill town. Base for Horton Plains. Optional rather than essential. Both options.</description>
+      <styleUrl>#sight</styleUrl>
+      <Point><coordinates>80.7833,6.9250,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+</Document>
+</kml>
