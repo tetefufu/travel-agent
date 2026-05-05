@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bora Bora Complete Travel Guide — May 2027</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #1a2e4a;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #1a2e4a;
+            font-size: 2.2em;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1em;
+        }
+
+        h2 {
+            color: #1a2e4a;
+            font-size: 1.5em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c9a84c;
+        }
+
+        h3 {
+            color: #1a2e4a;
+            font-size: 1.1em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th {
+            background: #1a2e4a;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            background: #fff3e0;
+            padding: 15px;
+            border-left: 4px solid #c9a84c;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .rating {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        .excellent {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .good {
+            background: #bbdefb;
+            color: #1565c0;
+        }
+
+        .limited {
+            background: #ffe0b2;
+            color: #e65100;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .summary {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .summary-card h3 {
+            color: #c9a84c;
+            font-size: 2em;
+            margin: 0 0 10px 0;
+        }
+
+        .summary-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .note {
+            background: #e3f2fd;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #1565c0;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .activity-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #1a2e4a;
+        }
+
+        .activity-card h4 {
+            color: #1a2e4a;
+            margin-bottom: 8px;
+        }
+
+        .activity-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bora Bora Complete Travel Guide</h1>
+            <p class="subtitle">May 2027 · 4–6 nights · Luxury Island Experience</p>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="trip-planner.html" style="display: inline-block; background: #c9a84c; color: #1a2e4a; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; margin: 0 10px;">📊 Interactive Planner</a>
+                <a href="#" onclick="window.history.back(); return false;" style="display: inline-block; background: #1a2e4a; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; margin: 0 10px;">← Back</a>
+            </div>
+        </header>
+
+        <!-- QUICK SUMMARY -->
+        <div class="summary">
+            <div class="summary-card">
+                <h3>🏝️</h3>
+                <p><strong>Duration</strong><br>4–6 nights</p>
+            </div>
+            <div class="summary-card">
+                <h3>🌡️</h3>
+                <p><strong>Season</strong><br>May: Best weather, luxury feel</p>
+            </div>
+            <div class="summary-card">
+                <h3>🍽️</h3>
+                <p><strong>Dining</strong><br>Excellent flexitarian options</p>
+            </div>
+        </div>
+
+        <!-- BEST TIME TO GO -->
+        <div class="section">
+            <h2>Best Time to Go</h2>
+            <table>
+                <tr>
+                    <th>Month</th>
+                    <th>Weather</th>
+                    <th>Crowds</th>
+                    <th>Price</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td><strong>May</strong></td>
+                    <td>Sunny, dry</td>
+                    <td>Peak season</td>
+                    <td>High</td>
+                    <td>✅ Recommended — ideal for water activities, snorkeling, boat tours</td>
+                </tr>
+                <tr>
+                    <td>October</td>
+                    <td>Sunny, warm</td>
+                    <td>High</td>
+                    <td>High</td>
+                    <td>Also excellent, end of high season</td>
+                </tr>
+                <tr>
+                    <td>April</td>
+                    <td>Rainy</td>
+                    <td>Lower</td>
+                    <td>Best deals</td>
+                    <td>Budget option, less ideal weather</td>
+                </tr>
+            </table>
+            <div class="highlight">
+                <strong>⭐ Summary:</strong> May is perfect — best weather, peak season for island vibrancy, excellent for all outdoor activities.
+            </div>
+        </div>
+
+        <!-- HOTELS -->
+        <div class="section">
+            <h2>Hotels</h2>
+            <table>
+                <tr>
+                    <th>Hotel</th>
+                    <th>Tier</th>
+                    <th>Pool</th>
+                    <th>Specialty</th>
+                </tr>
+                <tr>
+                    <td><strong>St. Regis Bora Bora</strong></td>
+                    <td>Ultra Luxury</td>
+                    <td>✅ Excellent</td>
+                    <td>Lagoon by Jean-Georges restaurant, iconic overwater experience</td>
+                </tr>
+                <tr>
+                    <td><strong>Four Seasons Bora Bora</strong></td>
+                    <td>Ultra Luxury</td>
+                    <td>✅ Excellent</td>
+                    <td>Vaimiti (Asian), Arii Moana (Mediterranean), multiple dining options</td>
+                </tr>
+                <tr>
+                    <td><strong>Westin Bora Bora Resort & Spa</strong></td>
+                    <td>Luxury</td>
+                    <td>✅ Good</td>
+                    <td>'O'A Bar, spa facilities, more intimate setting</td>
+                </tr>
+                <tr>
+                    <td><strong>InterContinental Bora Bora Resort & Thalasso Spa</strong></td>
+                    <td>Luxury</td>
+                    <td>✅ Excellent</td>
+                    <td>Le Corail (French fine dining), thalasso spa, 7-course tasting menu</td>
+                </tr>
+                <tr>
+                    <td><strong>Les Tipaniers</strong></td>
+                    <td>Upper-Mid to Luxury</td>
+                    <td>✅ Good</td>
+                    <td>Local favorite, overwater bungalows, charming authentic feel</td>
+                </tr>
+            </table>
+            <div class="note">
+                All hotels offer overwater bungalows. Choose based on dining preference: Jean-Georges (St. Regis), Asian cuisine (FS Vaimiti), French fine dining (InterContinental), or local charm (Les Tipaniers).
+            </div>
+        </div>
+
+        <!-- RESTAURANTS & DINING -->
+        <div class="section">
+            <h2>Restaurants & Dining</h2>
+            <div class="highlight">
+                <strong>📌 Flexitarian Note:</strong> Your travel companion eats sushi, cooked prawns, small amounts of chicken—NO beef. Most restaurants can accommodate. Starred options below highlight best fit.
+            </div>
+
+            <h3>Casual Local</h3>
+
+            <h4>Snack Matira (Matira Beach)</h4>
+            <p>Menu: Fish burger (pan-fried tuna), poisson cru, pizzas, steak, sandwiches, omelets, salads, ice cream</p>
+            <p><span class="rating excellent">✅ Excellent</span></p>
+            <ul>
+                <li><strong>Why:</strong> Fish burger is standout (fresh tuna), poisson cru, salads abundant. Flexitarian-friendly.</li>
+                <li><strong>Vibe:</strong> Open-air beachside, walk-in only (first come, first served), palm-shaded tables</li>
+                <li><strong>Hours:</strong> 10am–4pm daily</li>
+            </ul>
+
+            <h4>Aloe Cafe (Vaitape)</h4>
+            <p>Menu: Poisson cru, crepes, paninis, salads, kabobs, pizza, pastries, homemade ice cream</p>
+            <p><span class="rating excellent">✅ Excellent</span></p>
+            <ul>
+                <li><strong>Why:</strong> Fresh pastries, ice cream, flexible menu. Poisson cru and salads work perfectly.</li>
+                <li><strong>Hours:</strong> Mon–Sat 6:30am–6pm (breakfast 6:30–10:30am, lunch 11am–4pm)</li>
+                <li><strong>Known for:</strong> Homemade pastries, Belgian beers, tropical cocktails</li>
+            </ul>
+
+            <h3>Fine Dining</h3>
+
+            <h4>Bloody Mary's (Iconic waterfront)</h4>
+            <p>Menu: Fresh daily seafood, vegetarian options (grilled cheese with tofu), salads, beef, chicken</p>
+            <p><span class="rating excellent">✅ Excellent</span></p>
+            <ul>
+                <li><strong>Why:</strong> Famous for fresh daily seafood, explicitly offers vegetarian/flexitarian options</li>
+                <li><strong>Vibe:</strong> Iconic, Instagram-worthy, casual yet famous</li>
+            </ul>
+
+            <h4>La Villa Mahana (Most romantic spot on island)</h4>
+            <p>Menu: Seared ahi tuna with vanilla, seafood salad & caviar, foie gras, mahi mahi curry & banana, filet de bœuf, risotto de langouste, chocolate fondant, banane flambée</p>
+            <p><span class="rating limited">⚠️ Limited</span></p>
+            <ul>
+                <li><strong>Good for:</strong> Mahi mahi curry, risotto de langouste (lobster), tuna preparations</li>
+                <li><strong>Avoid:</strong> Filet de bœuf (beef)</li>
+                <li><strong>Tasting menu:</strong> 5-course Chef's Tasting available</li>
+                <li><strong>Pricing:</strong> ~120–180 AED per person with wine</li>
+            </ul>
+
+            <h4>Le Saint James (Lagoon-side, Vaitape)</h4>
+            <p>Menu: Polynesian Plate (various tuna preparations), foie gras, duck, lamb, pork belly, pan-fried scallops in coconut crust</p>
+            <p><span class="rating good">✅ Good</span></p>
+            <ul>
+                <li><strong>Best for:</strong> Tuna preparations (raw & seared), pan-fried scallops</li>
+                <li><strong>Hours:</strong> Breakfast 6:30–9:30am, lunch 11am–2pm, dinner 6–9pm (closed Sundays)</li>
+                <li><strong>Pricing:</strong> Starters ~30 AED; dinner ~120–180 AED with wine</li>
+            </ul>
+
+            <h3>Resort Fine Dining</h3>
+
+            <h4>St. Regis — Lagoon by Jean-Georges (Overwater, signature)</h4>
+            <p>Menu: Yellowfin tuna sashimi (soy-ginger), black pepper-crusted mahi-mahi, Tahitian vanilla features, fresh Pacific fish</p>
+            <p><span class="rating excellent">✅ Excellent</span></p>
+            <ul>
+                <li><strong>Why:</strong> Sashimi, fresh fish, Asian spice — perfect for flexitarian</li>
+                <li><strong>Signature:</strong> Jean-Georges Vongerichten's French-Asian fusion</li>
+                <li><strong>Local focus:</strong> Tahian vanilla, Pacific seafood</li>
+            </ul>
+
+            <h4>Four Seasons — Vaimiti Asian (Overwater)</h4>
+            <p>Menu: Sushi, sashimi, red tuna sashimi, pad thai, wagyu beef, sake collection. Separate vegan menu.</p>
+            <p><span class="rating excellent">✅ Excellent</span></p>
+            <ul>
+                <li><strong>Why:</strong> Sushi, sashimi, pad thai perfect. Dedicated vegan menu with tofu, vegetable stir-fry.</li>
+                <li><strong>Cuisines:</strong> Japanese, Chinese, Vietnamese, Indian</li>
+                <li><strong>Hours:</strong> Dinner 5–9:30pm (bar until 10:30pm)</li>
+            </ul>
+
+            <h4>Four Seasons — Arii Moana (Mediterranean)</h4>
+            <p>Menu: Red tuna crudo with watermelon & yuzu, lobster with roasted clementine, burrata, risotto with lobster medallions, grilled beef fillet</p>
+            <p><span class="rating good">✅ Good</span></p>
+            <ul>
+                <li><strong>Best for:</strong> Tuna crudo, lobster risotto, burrata + heirloom tomatoes</li>
+                <li><strong>Limited:</strong> Menu beef-heavy; recommend focusing on seafood options</li>
+            </ul>
+
+            <h4>Westin — 'O'A Bar (Cocktails & appetizers)</h4>
+            <p>Menu: Cocktails (Otemanu Sunset with pineapple, Coconut Mojito, Tahitian Negroni), bar bites, rum-tasting</p>
+            <p><span class="rating good">✅ Good</span></p>
+            <ul>
+                <li><strong>Vibe:</strong> Sunset drinks, tropical cocktails, casual</li>
+                <li><strong>Note:</strong> Better for aperitif than full meal</li>
+                <li><strong>Tip:</strong> Arrive early for sunset seating</li>
+            </ul>
+
+            <h4>InterContinental — Le Corail (Fine Dining, French)</h4>
+            <p>Menu: 5-course or 7-course French tasting menus. Local lagoon fish (Panaha), seasonal rotation. Largest wine cellar in French Polynesia.</p>
+            <p><span class="rating limited">⚠️ Limited</span></p>
+            <ul>
+                <li><strong>Good for:</strong> Local lagoon fish (Panaha), can request specific accommodations</li>
+                <li><strong>French cuisine:</strong> Meat-heavy; request fish-focused tasting with advance notice</li>
+                <li><strong>Hours:</strong> 6:30–9:30pm (closed Mon & Fri)</li>
+                <li><strong>Wine:</strong> Largest cellar in French Polynesia</li>
+            </ul>
+        </div>
+
+        <!-- ACTIVITIES -->
+        <div class="section">
+            <h2>Activities</h2>
+            <div class="highlight">
+                <strong>📌 Swimming Note:</strong> You don't swim in the sea, but we've curated a mix of land activities + a few signature shallow-water experiences (tours, lagoon views, manta rays in shallow water).
+            </div>
+
+            <h3>Must-Do Shallow-Water Experiences</h3>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <h4>🦑 Manta Ray Encounter (Shallow Lagoon)</h4>
+                    <p>Spot manta rays in clear shallow lagoon water — no swimming required, boat-based tour. Peak season (May) is best.</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🚤 Shared Lagoon Tour</h4>
+                    <p>Boat tour exploring multiple snorkeling spots. Watch others snorkel or enjoy lagoon views from boat. Often includes fish feeding.</p>
+                </div>
+            </div>
+
+            <h3>Land-Based Activities</h3>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <h4>🏨 Overwater Bungalow Experience</h4>
+                    <p>Stay in iconic overwater bungalow with lagoon views, direct access. Peak experience — wake to crystal-clear water, glass-bottom floor.</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🏔️ Mount Otemanu Hiking</h4>
+                    <p>Extinct volcano trek. Scenic, challenging. Best in dry season (May–October).</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🥾 Valley of the Kings Trek (Anua)</h4>
+                    <p>Scenic valley walk, lush scenery, cultural sites. Moderate difficulty.</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🛵 ATV Tour on Main Island</h4>
+                    <p>Guided off-road adventure exploring island interior, villages, scenic viewpoints.</p>
+                </div>
+                <div class="activity-card">
+                    <h4>👨‍🍳 Cultural Experience & Cooking Class</h4>
+                    <p>Learn Polynesian cooking techniques, local ingredients, traditional methods. Often includes meal.</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🛍️ Explore Vaitape & Local Markets</h4>
+                    <p>Main town: shopping, local crafts, pearl vendors, French Polynesian goods.</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🌅 Sunset Cruise</h4>
+                    <p>Evening boat tour with tropical cocktails, island views, relaxed vibe.</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🏖️ Matira Beach Exploration</h4>
+                    <p>Iconic white-sand beach. Walk, lounge, enjoy beach restaurants (Snack Matira nearby).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GETTING THERE -->
+        <div class="section">
+            <h2>Getting There</h2>
+            <h3>Flight Routes</h3>
+            <ul>
+                <li><strong>Paris Orly → Papeete (PPT) → Bora Bora:</strong> Air Tahiti short domestic flight (best option)</li>
+                <li><strong>Dubai → Papeete:</strong> Air Moana or Air Tahiti Nui</li>
+                <li><strong>Alternative routes:</strong> Paris → Papeete via LA or London → Papeete via San Francisco</li>
+            </ul>
+
+            <h3>Seating Tips for Panoramic Views</h3>
+            <ul>
+                <li><strong>Bora Bora flight (arriving):</strong> Sit on left side for stunning island views</li>
+                <li><strong>Bora Bora flight (departing):</strong> Sit on right side for views of island</li>
+                <li><strong>Return to Papeete:</strong> Sit on right side to see Moorea and sister islands</li>
+            </ul>
+
+            <div class="note">
+                Duration to Papeete from Dubai: ~18–20 hours with connections. Bora Bora flights from Papeete: ~1 hour.
+            </div>
+        </div>
+
+        <!-- PRACTICAL INFO -->
+        <div class="section">
+            <h2>Practical Information</h2>
+            <ul>
+                <li><strong>Visa:</strong> UK passport holders get visa-free entry for up to 90 days</li>
+                <li><strong>Currency:</strong> Prices shown in AED (equivalent). Local currency is CFP franc (XPF)</li>
+                <li><strong>Getting Around:</strong> Rental car, taxi, or hotel shuttle recommended</li>
+                <li><strong>Tipping:</strong> Not required but appreciated (5–10% for good service)</li>
+                <li><strong>Best Months:</strong> May–October (dry season, best weather)</li>
+                <li><strong>Island Hopping:</strong> 4 days ideal to experience Bora Bora. Rangiroa accessible by short flight if extending trip.</li>
+            </ul>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="section">
+            <h2>Trip Summary</h2>
+            <ul>
+                <li><strong>Duration:</strong> 4–6 nights (May 2027)</li>
+                <li><strong>Hotels:</strong> St. Regis, Four Seasons, InterContinental, or Westin — all excellent, overwater</li>
+                <li><strong>Dining:</strong> Excellent flexitarian options (Vaimiti, Lagoon, Snack Matira, Aloe Cafe)</li>
+                <li><strong>Activities:</strong> Overwater bungalow, manta rays, hiking, cooking classes, local exploration</li>
+                <li><strong>Best For:</strong> Luxury, relaxation, scenic beauty, excellent dining, cultural immersion</li>
+                <li><strong>Budget Note:</strong> Ultra-luxury destination; high-season pricing (May)</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
