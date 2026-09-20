@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bora Bora Trip Planner — Interactive Budget Tool</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -18,478 +14,200 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #1a2e4a;
-            padding-bottom: 20px;
-        }
+        header { text-align: center; margin-bottom: 40px; border-bottom: 2px solid #1a2e4a; padding-bottom: 20px; }
+        h1 { color: #1a2e4a; font-size: 2.2em; margin-bottom: 8px; }
+        .subtitle { color: #666; font-size: 1em; }
 
-        h1 {
-            color: #1a2e4a;
-            font-size: 2.2em;
-            margin-bottom: 8px;
-        }
+        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        @media (max-width: 1000px) { .content { grid-template-columns: 1fr; } }
 
-        .subtitle {
-            color: #666;
-            font-size: 1em;
-        }
+        .card { background: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a2e4a; font-size: 1.3em; margin-bottom: 6px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px; }
+        .card-note { font-size: 0.82em; color: #888; margin: 8px 0 16px; }
 
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; font-weight: 600; color: #1a2e4a; margin-bottom: 6px; font-size: 0.95em; }
 
-        @media (max-width: 1000px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
+        .option-list { display: flex; flex-direction: column; gap: 10px; }
+        .option-item {
+            display: flex; align-items: center; justify-content: space-between; gap: 10px;
+            padding: 10px 12px; border: 1px solid #e0e0e0; border-radius: 6px; cursor: pointer;
+            transition: border-color .15s, background .15s;
         }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .card h2 {
-            color: #1a2e4a;
-            font-size: 1.3em;
-            margin-bottom: 18px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 10px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            color: #1a2e4a;
-            margin-bottom: 6px;
-            font-size: 0.95em;
-        }
-
-        select, input[type="number"], input[type="radio"], input[type="checkbox"] {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.95em;
-        }
-
-        select {
-            width: 100%;
-            cursor: pointer;
-            background: white;
-        }
-
-        .slider-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        input[type="range"] {
-            flex: 1;
-            cursor: pointer;
-        }
-
-        .slider-value {
-            min-width: 45px;
-            text-align: center;
-            font-weight: bold;
-            color: #c9a84c;
-        }
-
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+        .option-item:hover { border-color: #c9a84c; }
+        .option-item.selected { border-color: #c9a84c; background: #fdf8ec; }
+        .option-item input { margin-right: 10px; cursor: pointer; }
+        .option-left { display: flex; align-items: center; }
+        .option-name { font-weight: 600; font-size: 0.92em; color: #1a2e4a; }
+        .option-sub { font-size: 0.78em; color: #888; display: block; margin-top: 1px; }
+        .option-price { font-weight: 700; color: #c9a84c; font-size: 0.9em; white-space: nowrap; }
 
         .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
+            display: flex; align-items: center; gap: 10px; cursor: pointer;
+            padding: 12px; border: 1px solid #e0e0e0; border-radius: 6px;
         }
+        .checkbox-item.selected { border-color: #c9a84c; background: #fdf8ec; }
+        input[type="checkbox"] { cursor: pointer; width: 18px; height: 18px; flex-shrink: 0; }
+        .checkbox-item label { margin: 0; font-weight: 400; cursor: pointer; flex: 1; }
 
-        input[type="checkbox"] {
-            cursor: pointer;
-            width: 18px;
-            height: 18px;
-        }
+        .budget-card { background: linear-gradient(135deg, #1a2e4a 0%, #2d4a6f 100%); color: white; position: sticky; top: 20px; }
+        .budget-card h2 { color: #c9a84c; border-bottom-color: #c9a84c; }
+        .budget-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .budget-row.total { font-weight: bold; font-size: 1.15em; margin-top: 10px; border-top: 2px solid #c9a84c; border-bottom: none; color: #c9a84c; padding-top: 16px; }
+        .budget-row.bonus { color: #ffe0b2; }
+        .budget-row:last-child { border-bottom: none; }
+        .budget-label { display: flex; flex-direction: column; gap: 2px; }
+        .budget-sublabel { font-size: 0.82em; color: #b0c4de; }
+        .budget-amount { text-align: right; font-weight: 600; white-space: nowrap; }
 
-        .checkbox-item label {
-            margin: 0;
-            font-weight: 400;
-            cursor: pointer;
-            flex: 1;
-        }
+        .assumptions { background: #f0f4f8; border-left: 4px solid #c9a84c; padding: 15px; margin-top: 20px; font-size: 0.88em; color: #555; }
+        .assumptions h4 { color: #1a2e4a; margin-bottom: 8px; font-size: 0.95em; }
+        .assumptions ul { margin-left: 20px; }
+        .assumptions li { margin-bottom: 4px; line-height: 1.45; }
 
-        .activity-price {
-            color: #c9a84c;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
+        .badge { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 0.72em; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+        .badge-bonus { background: #ffe0b2; color: #e65100; }
+        .badge-locked { background: #e3f2fd; color: #1a2e4a; }
 
-        .budget-card {
-            background: linear-gradient(135deg, #1a2e4a 0%, #2d4a6f 100%);
-            color: white;
-        }
-
-        .budget-card h2 {
-            color: #c9a84c;
-            border-bottom-color: #c9a84c;
-        }
-
-        .budget-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .budget-row.total {
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-top: 10px;
-            border-top: 2px solid #c9a84c;
-            border-bottom: none;
-            color: #c9a84c;
-        }
-
-        .budget-row:last-child {
-            border-bottom: none;
-        }
-
-        .budget-label {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .budget-sublabel {
-            font-size: 0.85em;
-            color: #b0c4de;
-        }
-
-        .budget-amount {
-            text-align: right;
-            font-weight: 600;
-        }
-
-        .percentage {
-            font-size: 0.85em;
-            color: #b0c4de;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .assumptions {
-            background: #f0f4f8;
-            border-left: 4px solid #c9a84c;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        .assumptions h4 {
-            color: #1a2e4a;
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-
-        .assumptions ul {
-            margin-left: 20px;
-        }
-
-        .assumptions li {
-            margin-bottom: 4px;
-            line-height: 1.4;
-        }
-
-        .info-badge {
-            display: inline-block;
-            background: #e3f2fd;
-            color: #1a2e4a;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            margin-top: 4px;
-        }
-
-        .month-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9em;
-            margin-top: 6px;
-        }
-
-        .month-may {
-            background: #c8e6c9;
-            color: #2e7d32;
-        }
-
-        .month-nov {
-            background: #ffe0b2;
-            color: #e65100;
-        }
+        .nav-links { margin-top: 20px; text-align: center; }
+        .nav-links a { display: inline-block; background: #c9a84c; color: #1a2e4a; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; margin: 0 10px; }
+        .nav-links a.back { background: #1a2e4a; color: white; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Bora Bora Trip Planner</h1>
-            <p class="subtitle">Interactive Budget Tool — Explore Options & See Real-Time Costs</p>
-            <div style="margin-top: 20px; text-align: center;">
-                <a href="bora-bora.html" style="display: inline-block; background: #c9a84c; color: #1a2e4a; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; margin: 0 10px;">📖 Travel Guide</a>
-                <a href="#" onclick="window.history.back(); return false;" style="display: inline-block; background: #1a2e4a; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; margin: 0 10px;">← Back</a>
+            <p class="subtitle">Interactive Budget Tool — Flight Class, Hotel &amp; Vegas Bonus, Real Prices</p>
+            <div class="nav-links">
+                <a href="../bora-bora.html">📖 Travel Guide</a>
+                <a href="#" class="back" onclick="window.history.back(); return false;">← Back</a>
             </div>
         </header>
 
         <div class="content">
             <!-- LEFT COLUMN: CONTROLS -->
             <div>
-                <!-- TRAVEL TIMING -->
+                <!-- FLIGHT CLASS -->
                 <div class="card">
-                    <h2>Travel Timing</h2>
-
-                    <div class="form-group">
-                        <label>Preferred Month</label>
-                        <div style="margin-top: 10px;">
-                            <div class="checkbox-item" style="margin-bottom: 10px;">
-                                <input type="radio" id="may" name="month" value="may" checked>
-                                <label for="may" style="margin: 0;">May 2027</label>
-                                <span class="month-badge month-may">BEST</span>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="radio" id="nov" name="month" value="nov">
-                                <label for="nov" style="margin: 0;">November 2027</label>
-                                <span class="month-badge month-nov">Wetter</span>
-                            </div>
-                        </div>
-                        <div class="info-badge">May: Dry season, best weather</div>
+                    <h2>Flight Class — Dubai ↔ Bora Bora</h2>
+                    <p class="card-note">Round trip, per person. No direct route exists — priced as Dubai→hub cabin + Air Tahiti Nui onward leg. Business/premium economy are aggregator estimates, not ticketed quotes.</p>
+                    <div class="option-list" id="flightOptions">
+                        <label class="option-item selected">
+                            <span class="option-left"><input type="radio" name="flightClass" value="economy" checked onchange="updateBudget()">
+                                <span><span class="option-name">Economy</span><span class="option-sub">~5,900 AED one-way · confirmed fare range</span></span>
+                            </span>
+                            <span class="option-price">11,726 AED RT</span>
+                        </label>
+                        <label class="option-item">
+                            <span class="option-left"><input type="radio" name="flightClass" value="premium" onchange="updateBudget()">
+                                <span><span class="option-name">Premium Economy</span><span class="option-sub">~11,900 AED one-way · estimated</span></span>
+                            </span>
+                            <span class="option-price">23,855 AED RT</span>
+                        </label>
+                        <label class="option-item">
+                            <span class="option-left"><input type="radio" name="flightClass" value="business" onchange="updateBudget()">
+                                <span><span class="option-name">Business</span><span class="option-sub">~28,400 AED one-way · estimated</span></span>
+                            </span>
+                            <span class="option-price">56,885 AED RT</span>
+                        </label>
                     </div>
                 </div>
 
                 <!-- BORA BORA HOTEL -->
                 <div class="card" style="margin-top: 20px;">
-                    <h2>Bora Bora — Main Hotel</h2>
-
-                    <div class="form-group">
-                        <label for="mainHotel">Select Hotel (Overwater Bungalows)</label>
-                        <select id="mainHotel" onchange="updateBudget()">
-                            <option value="stregis">St. Regis — Overwater Deluxe (8,441 AED/night)</option>
-                            <option value="fourseasons">Four Seasons — Overwater Premium (11,010 AED/night)</option>
-                        </select>
-                        <div class="info-badge">All prices in AED</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nights in Bora Bora</label>
-                        <div class="slider-group">
-                            <input type="range" id="boraboraLenght" min="4" max="6" value="5" oninput="updateBudget()">
-                            <span class="slider-value" id="boraboraLengthValue">5</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RANGIROA HOTEL -->
-                <div class="card" style="margin-top: 20px;">
-                    <h2>Rangiroa — Secondary Island</h2>
-
-                    <div class="form-group">
-                        <label for="rangihotel">Select Hotel</label>
-                        <select id="rangihotel" onchange="updateBudget()">
-                            <option value="kiaora">Kia Ora Resort & Spa — Overwater (5,138 AED/night)</option>
-                            <option value="maitai">Maitai Rangiroa — Beachfront (3,303 AED/night)</option>
-                            <option value="tiputa">Tiputa Lodge — Luxury Beachfront (4,037 AED/night)</option>
-                        </select>
-                        <div class="info-badge">Kia Ora: Premium choice, renovations complete by May 2027</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nights in Rangiroa</label>
-                        <div class="slider-group">
-                            <input type="range" id="rangiLength" min="1" max="3" value="2" oninput="updateBudget()">
-                            <span class="slider-value" id="rangiLengthValue">2</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CALIFORNIA HOTEL -->
-                <div class="card" style="margin-top: 20px;">
-                    <h2>California — 5 Nights</h2>
-
-                    <div class="form-group">
-                        <label for="caHotel">Select Hotel</label>
-                        <select id="caHotel" onchange="updateBudget()">
-                            <option value="labeverly">Beverly Hills, LA — Luxury (5,500 AED/night)</option>
-                            <option value="lanapa">Napa Valley — Wine Country (5,800 AED/night)</option>
-                            <option value="lamalibu">Malibu Beach — Coastal Luxury (6,200 AED/night)</option>
-                            <option value="lasantamonica">Santa Monica — Beachfront (5,000 AED/night)</option>
-                        </select>
-                        <div class="info-badge">5-night stay post Bora Bora/Rangiroa</div>
+                    <h2>Bora Bora Hotel <span class="badge badge-locked">5 nights · locked</span></h2>
+                    <p class="card-note">Single-island, single-hotel stay — decided 2026-09-20. Nightly rate × 5.</p>
+                    <div class="option-list" id="hotelOptions">
+                        <label class="option-item selected">
+                            <span class="option-left"><input type="radio" name="hotel" value="stregis" checked onchange="updateBudget()">
+                                <span><span class="option-name">St. Regis</span><span class="option-sub">Overwater Deluxe · ~2,350 USD/night</span></span>
+                            </span>
+                            <span class="option-price">8,625 AED/nt</span>
+                        </label>
+                        <label class="option-item">
+                            <span class="option-left"><input type="radio" name="hotel" value="fourseasons" onchange="updateBudget()">
+                                <span><span class="option-name">Four Seasons</span><span class="option-sub">Overwater · ~2,500 USD/night (off-peak)</span></span>
+                            </span>
+                            <span class="option-price">9,175 AED/nt</span>
+                        </label>
+                        <label class="option-item">
+                            <span class="option-left"><input type="radio" name="hotel" value="westin" onchange="updateBudget()">
+                                <span><span class="option-name">Westin</span><span class="option-sub">Renovated 2024 · ~1,308 USD/night + resort fee</span></span>
+                            </span>
+                            <span class="option-price">4,798 AED/nt</span>
+                        </label>
                     </div>
                 </div>
 
                 <!-- ACTIVITIES -->
                 <div class="card" style="margin-top: 20px;">
-                    <h2>Activities (Select All That Appeal)</h2>
-
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="act-glassboat" value="551" onchange="updateBudget()" checked>
-                            <label for="act-glassboat">Glass-Bottom Boat (Nautilus)</label>
-                            <span class="activity-price">551 AED</span>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="act-jetski" value="734" onchange="updateBudget()" checked>
-                            <label for="act-jetski">Jet Ski Lagoon Tour</label>
-                            <span class="activity-price">734 AED</span>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="act-paddle" value="294" onchange="updateBudget()">
-                            <label for="act-paddle">Paddleboard Rental (full day)</label>
-                            <span class="activity-price">294 AED</span>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="act-lagoon" value="440" onchange="updateBudget()">
-                            <label for="act-lagoon">Lagoon Snorkeling Tour (boat-based)</label>
-                            <span class="activity-price">440 AED</span>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="act-pearl" value="294" onchange="updateBudget()">
-                            <label for="act-pearl">Pearl Farm Tour + Cultural</label>
-                            <span class="activity-price">294 AED</span>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="act-spa" value="1101" onchange="updateBudget()" checked>
-                            <label for="act-spa">Luxury Spa Treatment (couples)</label>
-                            <span class="activity-price">1,101 AED</span>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="act-sunset" value="551" onchange="updateBudget()">
-                            <label for="act-sunset">Sunset Cruise</label>
-                            <span class="activity-price">551 AED</span>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="act-market" value="184" onchange="updateBudget()">
-                            <label for="act-market">Local Market & Village Tour</label>
-                            <span class="activity-price">184 AED</span>
-                        </div>
+                    <h2>Bora Bora Activities</h2>
+                    <div class="option-list">
+                        <label class="checkbox-item selected"><input type="checkbox" id="act-glassboat" value="551" onchange="updateBudget()" checked><label for="act-glassboat">Glass-Bottom Boat (Nautilus) — 551 AED</label></label>
+                        <label class="checkbox-item selected"><input type="checkbox" id="act-jetski" value="734" onchange="updateBudget()" checked><label for="act-jetski">Jet Ski Lagoon Tour — 734 AED</label></label>
+                        <label class="checkbox-item"><input type="checkbox" id="act-paddle" value="294" onchange="updateBudget()"><label for="act-paddle">Paddleboard Rental (full day) — 294 AED</label></label>
+                        <label class="checkbox-item"><input type="checkbox" id="act-lagoon" value="440" onchange="updateBudget()"><label for="act-lagoon">Lagoon Boat Tour (stay-aboard) — 440 AED</label></label>
+                        <label class="checkbox-item"><input type="checkbox" id="act-pearl" value="294" onchange="updateBudget()"><label for="act-pearl">Pearl Farm Tour + Cultural — 294 AED</label></label>
+                        <label class="checkbox-item selected"><input type="checkbox" id="act-spa" value="1101" onchange="updateBudget()" checked><label for="act-spa">Luxury Spa Treatment (couples) — 1,101 AED</label></label>
+                        <label class="checkbox-item"><input type="checkbox" id="act-sunset" value="551" onchange="updateBudget()"><label for="act-sunset">Sunset Cruise — 551 AED</label></label>
                     </div>
+                </div>
+
+                <!-- BONUS: EDC VEGAS -->
+                <div class="card" style="margin-top: 20px;">
+                    <h2>Bonus Option <span class="badge badge-bonus">not in base trip</span></h2>
+                    <p class="card-note">EDC Las Vegas 2027 runs two weekends — May 14–16 &amp; May 21–23 — overlapping the locked Eid al-Adha window. Ticket price only; Vegas flights/hotel/routing not yet planned (see california/research-decisions.md).</p>
+                    <label class="checkbox-item" id="edcRow">
+                        <input type="checkbox" id="act-edc" value="8684" onchange="updateBudget()">
+                        <label for="act-edc">EDC Las Vegas — 3-Day VIP Pass ×2 — <b>8,684 AED</b> <span style="color:#888;font-weight:400">(2026 VIP baseline ~$1,183pp; 2027 VIP pricing not yet released)</span></label>
+                    </label>
                 </div>
             </div>
 
             <!-- RIGHT COLUMN: BUDGET & SUMMARY -->
             <div>
-                <!-- BUDGET SUMMARY -->
                 <div class="card budget-card">
                     <h2>Budget Summary</h2>
 
                     <div class="budget-row">
-                        <div class="budget-label">
-                            <span>Flights (Dubai → Bora Bora RT)</span>
-                            <span class="budget-sublabel">Economy, 2 passengers</span>
-                        </div>
-                        <div class="budget-amount">11,722 AED</div>
+                        <div class="budget-label"><span id="flightLabel">Flights: Economy</span><span class="budget-sublabel">Round trip, 2 passengers</span></div>
+                        <div class="budget-amount" id="flightCost">23,452 AED</div>
                     </div>
 
                     <div class="budget-row">
-                        <div class="budget-label">
-                            <span id="mainHotelLabel">Bora Bora: St. Regis</span>
-                            <span class="budget-sublabel" id="mainHotelNights">5 nights × 8,441 AED</span>
-                        </div>
-                        <div class="budget-amount" id="mainHotelCost">42,205 AED</div>
+                        <div class="budget-label"><span id="hotelLabel">Bora Bora: St. Regis</span><span class="budget-sublabel" id="hotelNights">5 nights × 8,625 AED</span></div>
+                        <div class="budget-amount" id="hotelCost">43,123 AED</div>
                     </div>
 
                     <div class="budget-row">
-                        <div class="budget-label">
-                            <span id="rangiHotelLabel">Rangiroa: Kia Ora</span>
-                            <span class="budget-sublabel" id="rangiHotelNights">2 nights × 5,138 AED</span>
-                        </div>
-                        <div class="budget-amount" id="rangiHotelCost">10,276 AED</div>
-                    </div>
-
-                    <div class="budget-row">
-                        <div class="budget-label">
-                            <span>Activities & Tours (Bora Bora/Rangiroa)</span>
-                            <span class="budget-sublabel" id="activitiesDetail">4 selected</span>
-                        </div>
+                        <div class="budget-label"><span>Activities & Tours</span><span class="budget-sublabel" id="activitiesDetail">3 selected</span></div>
                         <div class="budget-amount" id="activitiesCost">2,386 AED</div>
                     </div>
 
-                    <div class="budget-row">
-                        <div class="budget-label">
-                            <span>Flights (Bora Bora → California)</span>
-                            <span class="budget-sublabel">2 passengers, economy</span>
-                        </div>
-                        <div class="budget-amount">4,400 AED</div>
-                    </div>
-
-                    <div class="budget-row">
-                        <div class="budget-label">
-                            <span id="caHotelLabel">California: Beverly Hills</span>
-                            <span class="budget-sublabel" id="caHotelNights">5 nights × 5,500 AED</span>
-                        </div>
-                        <div class="budget-amount" id="caHotelCost">27,500 AED</div>
+                    <div class="budget-row bonus" id="edcBudgetRow" style="display:none">
+                        <div class="budget-label"><span>Bonus: EDC Las Vegas VIP</span><span class="budget-sublabel">3-day pass × 2, ticket only</span></div>
+                        <div class="budget-amount">8,684 AED</div>
                     </div>
 
                     <div class="budget-row total">
-                        <span>TOTAL TRIP COST</span>
-                        <span id="totalBudget">111,551 AED</span>
+                        <span>TOTAL (Bora Bora leg)</span>
+                        <span id="totalBudget">68,961 AED</span>
                     </div>
-
                 </div>
 
-                <!-- ASSUMPTIONS & NOTES -->
                 <div class="assumptions">
                     <h4>📋 Assumptions & Notes</h4>
                     <ul>
-                        <li><strong>Flights:</strong> Economy round-trip 11,722 AED for 2 passengers from Dubai</li>
-                        <li><strong>Prices:</strong> 2026 rates used as proxy for 2027; actual may vary ±10–15%</li>
-                        <li><strong>Hotels:</strong> Per-night rates shown; prices vary by season (May lower than peak)</li>
-                        <li><strong>Activities:</strong> Per-person or per-couple; lunch/transport often included</li>
-                        <li><strong>Excluded:</strong> Meals & dining (not incremental cost), ground transport within islands</li>
-                        <li><strong>California leg:</strong> Not included in this tool (separate 5-night planning)</li>
-                        <li><strong>Currency:</strong> All prices in AED (1 USD ≈ 3.67 AED)</li>
-                        <li><strong>Vegetarian dining:</strong> Saint James, Le Corail, resort customization available</li>
-                    </ul>
-                </div>
-
-                <!-- TRIP SNAPSHOT -->
-                <div class="assumptions" style="margin-top: 20px; background: #e8f5e9; border-left-color: #4caf50;">
-                    <h4>✈️ Trip Snapshot</h4>
-                    <ul style="list-style: none; margin-left: 0;">
-                        <li><strong>Total nights:</strong> <span id="totalNights">12</span> (Bora Bora + Rangiroa + California)</li>
-                        <li><strong>Destinations:</strong> Bora Bora → Rangiroa → California</li>
-                        <li><strong>Month:</strong> <span id="selectedMonth">May 2027</span></li>
-                        <li><strong>Cost per person:</strong> <span id="perPersonCost">55,776 AED</span></li>
+                        <li><strong>Scope:</strong> Bora Bora leg only (flights, hotel, activities, EDC bonus). California leg (9 days, SFO/Napa + Big Sur + LA/San Diego) priced separately — still in progress, see california/research-decisions.md.</li>
+                        <li><strong>Flights:</strong> No confirmed Dubai→Bora Bora single-ticket fare exists publicly. Economy is a researched range; premium economy/business are built from the LAX–Papeete Air Tahiti Nui segment + a typical Dubai–hub premium fare, not a ticketed itinerary.</li>
+                        <li><strong>Hotels:</strong> Nightly rates are researched ranges, midpoint used. Four Seasons peak season can reach ~29,000 AED/night — this tool uses the off-peak figure since May is shoulder-to-dry, not peak-peak.</li>
+                        <li><strong>Westin fee:</strong> add ~385 AED/night destination fee (XPF 11,550) on top of the room rate shown — not yet folded into the total below.</li>
+                        <li><strong>EDC VIP:</strong> 2027 VIP pricing not yet released (only GA pricing confirmed: $399.99/$599.99). Figure shown is the 2026 VIP baseline as a placeholder.</li>
+                        <li><strong>Currency:</strong> All prices in AED (1 USD ≈ 3.67 AED, approximate).</li>
+                        <li><strong>Sourced:</strong> bora bora/research-decisions.md, updated 2026-09-20.</li>
                     </ul>
                 </div>
             </div>
@@ -497,91 +215,60 @@
     </div>
 
     <script>
-        // Hotel pricing data (all in AED)
-        const hotels = {
-            mainHotel: {
-                stregis: { name: 'St. Regis — Overwater Deluxe', price: 8441 },
-                fourseasons: { name: 'Four Seasons — Overwater Premium', price: 11010 }
-            },
-            rangihotel: {
-                kiaora: { name: 'Kia Ora Resort & Spa — Overwater', price: 5138 },
-                maitai: { name: 'Maitai Rangiroa — Beachfront', price: 3303 },
-                tiputa: { name: 'Tiputa Lodge — Luxury Beachfront', price: 4037 }
-            },
-            caHotel: {
-                labeverly: { name: 'Beverly Hills, LA — Luxury', price: 5500 },
-                lanapa: { name: 'Napa Valley — Wine Country', price: 5800 },
-                lamalibu: { name: 'Malibu Beach — Coastal Luxury', price: 6200 },
-                lasantamonica: { name: 'Santa Monica — Beachfront', price: 5000 }
-            }
+        const flights = {
+            economy:  { name: 'Economy',         rt: 11726 },
+            premium:  { name: 'Premium Economy', rt: 23855 },
+            business: { name: 'Business',         rt: 56885 }
         };
-
-        const flightDubaiToBorabora = 11722; // Round-trip for 2 passengers (AED)
-        const flightBoraboaToCA = 4400; // One-way for 2 passengers (AED)
-        const caNights = 5;
+        const hotels = {
+            stregis:     { name: 'St. Regis',     price: 8625 },
+            fourseasons: { name: 'Four Seasons',  price: 9175 },
+            westin:      { name: 'Westin',        price: 4798 }
+        };
+        const nights = 5;
 
         function updateBudget() {
-            // Get selected values
-            const mainHotel = document.getElementById('mainHotel').value;
-            const mainHotelData = hotels.mainHotel[mainHotel];
-            const mainHotelNights = parseInt(document.getElementById('boraboraLenght').value);
-
-            const rangiHotel = document.getElementById('rangihotel').value;
-            const rangiHotelData = hotels.rangihotel[rangiHotel];
-            const rangiNights = parseInt(document.getElementById('rangiLength').value);
-
-            const caHotel = document.getElementById('caHotel').value;
-            const caHotelData = hotels.caHotel[caHotel];
-
-            const month = document.querySelector('input[name="month"]:checked').value;
-
-            // Calculate hotel costs
-            const mainHotelCost = mainHotelData.price * mainHotelNights;
-            const rangiHotelCost = rangiHotelData.price * rangiNights;
-            const caHotelCost = caHotelData.price * caNights;
-
-            // Calculate activity costs
-            let activitiesCost = 0;
-            let activitiesCount = 0;
-            document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked').forEach(checkbox => {
-                activitiesCost += parseInt(checkbox.value);
-                activitiesCount++;
+            document.querySelectorAll('.option-item').forEach(el => {
+                const input = el.querySelector('input[type="radio"]');
+                el.classList.toggle('selected', input && input.checked);
+            });
+            document.querySelectorAll('.checkbox-item').forEach(el => {
+                const input = el.querySelector('input[type="checkbox"]');
+                el.classList.toggle('selected', input && input.checked);
             });
 
-            // Total budget
-            const totalBudget = flightDubaiToBorabora + mainHotelCost + rangiHotelCost + activitiesCost + flightBoraboaToCA + caHotelCost;
-            const perPersonCost = totalBudget / 2;
-            const totalNights = mainHotelNights + rangiNights + caNights;
+            const flightClass = document.querySelector('input[name="flightClass"]:checked').value;
+            const flightData = flights[flightClass];
+            const flightCost = flightData.rt * 2; // 2 passengers
 
-            // Update main hotel display
-            document.getElementById('mainHotelLabel').textContent = `Bora Bora: ${mainHotelData.name}`;
-            document.getElementById('mainHotelNights').textContent = `${mainHotelNights} nights × ${mainHotelData.price.toLocaleString()} AED`;
-            document.getElementById('mainHotelCost').textContent = `${mainHotelCost.toLocaleString()} AED`;
+            const hotel = document.querySelector('input[name="hotel"]:checked').value;
+            const hotelData = hotels[hotel];
+            const hotelCost = hotelData.price * nights;
 
-            // Update Rangiroa hotel display
-            document.getElementById('rangiHotelLabel').textContent = `Rangiroa: ${rangiHotelData.name}`;
-            document.getElementById('rangiHotelNights').textContent = `${rangiNights} nights × ${rangiHotelData.price.toLocaleString()} AED`;
-            document.getElementById('rangiHotelCost').textContent = `${rangiHotelCost.toLocaleString()} AED`;
+            let activitiesCost = 0, activitiesCount = 0;
+            document.querySelectorAll('#act-glassboat, #act-jetski, #act-paddle, #act-lagoon, #act-pearl, #act-spa, #act-sunset').forEach(cb => {
+                if (cb.checked) { activitiesCost += parseInt(cb.value); activitiesCount++; }
+            });
 
-            // Update California hotel display
-            document.getElementById('caHotelLabel').textContent = `California: ${caHotelData.name}`;
-            document.getElementById('caHotelNights').textContent = `${caNights} nights × ${caHotelData.price.toLocaleString()} AED`;
-            document.getElementById('caHotelCost').textContent = `${caHotelCost.toLocaleString()} AED`;
+            const edcChecked = document.getElementById('act-edc').checked;
+            const edcCost = edcChecked ? parseInt(document.getElementById('act-edc').value) : 0;
+            document.getElementById('edcBudgetRow').style.display = edcChecked ? 'flex' : 'none';
 
-            // Update activities
+            const totalBudget = flightCost + hotelCost + activitiesCost + edcCost;
+
+            document.getElementById('flightLabel').textContent = `Flights: ${flightData.name}`;
+            document.getElementById('flightCost').textContent = `${flightCost.toLocaleString()} AED`;
+
+            document.getElementById('hotelLabel').textContent = `Bora Bora: ${hotelData.name}`;
+            document.getElementById('hotelNights').textContent = `${nights} nights × ${hotelData.price.toLocaleString()} AED`;
+            document.getElementById('hotelCost').textContent = `${hotelCost.toLocaleString()} AED`;
+
             document.getElementById('activitiesDetail').textContent = `${activitiesCount} selected`;
             document.getElementById('activitiesCost').textContent = `${activitiesCost.toLocaleString()} AED`;
 
-            // Update totals
             document.getElementById('totalBudget').textContent = `${totalBudget.toLocaleString()} AED`;
-            document.getElementById('totalNights').textContent = totalNights;
-            document.getElementById('perPersonCost').textContent = `${perPersonCost.toLocaleString()} AED`;
-            document.getElementById('boraboraLengthValue').textContent = mainHotelNights;
-            document.getElementById('rangiLengthValue').textContent = rangiNights;
-            document.getElementById('selectedMonth').textContent = month === 'may' ? 'May 2027' : 'November 2027';
         }
 
-        // Initialize
         updateBudget();
     </script>
 </body>

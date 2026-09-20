@@ -22,5 +22,5 @@ holiday planning
 special location items:
 - 0 cost during visit. visiting family. flights only: dominica, uk, kenya
 - trinidad: travel during carinval in february. consider concert/band costs.
-- bora bora 4 nights + california 6 nights
+- bora bora 5 nights (one hotel) + california 9 days — DECIDED 2026-09-20: California leg first, then Bora Bora. Details in california/research-decisions.md and bora bora/research-decisions.md.
 - florida + ultra music festival (VIP) tickets (March)
