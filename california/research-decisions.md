@@ -49,6 +49,10 @@ Full visual + Bora Bora-era route diagram (pre-restructure, SF/Napa/Big Sur/LA o
 
 DXB–SFO fares used as May proxy (not confirmed for May specifically): Economy $575 / Premium Economy $1,623 / Business $4,280, RT pp, Emirates, mid-October snapshot. DXB–Vegas: RT economy $704–1,307 (midpoint $1,000 used), RT business from $3,711. Las Vegas → San Francisco: ~$90pp one-way, flat regardless of class (short domestic hop).
 
+## Car Rental (added 2026-09-20)
+
+Essential across all 3 bases (SFO/Napa → Big Sur → LA/San Diego) — not previously costed in the restructured plan (only existed in the old, superseded california.html). Added: ~260 AED/day mid-size × 9 days = **~2,340 AED**, folded into the California activities+meals line (now "activities + meals + car rental" = 9,840 AED total). Reflected in `bora-bora.html` and `bora bora/trip-planner.html`.
+
 ## Still Open / To Research
 
 - [ ] Finalize night allocation across SFO/Napa, Big Sur, LA/San Diego — must total 9 days California between Vegas (May 17) and Bora Bora departure (May 26)
