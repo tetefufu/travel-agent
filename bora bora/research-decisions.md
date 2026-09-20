@@ -26,10 +26,12 @@
 ## Key Decisions Made
 
 ### Trip Sequence
-- **DECIDED 2026-09-20:** California leg first, then Bora Bora. (Was previously unordered.)
+- **SUPERSEDED 2026-09-20 (later same day):** Sequence is now **Vegas/EDC → California → Bora Bora** (was "California first, then Bora Bora" earlier the same day, which itself replaced an unordered plan). Bora Bora remains the final leg either way — flies home from Bora Bora → DXB. See `california/research-decisions.md` for the Vegas leg detail.
+- Dates: Bora Bora May 27 – Jun 1, 2027 (5 nights), arriving from LAX (California leg ends in LA), departing to DXB via Papeete.
 
 ### Nights
-- **DECIDED 2026-09-20:** 5 nights Bora Bora, single hotel. (Supersedes notes.md's original "4 nights" special rule and this doc's earlier "nights TBD.")
+- **DECIDED 2026-09-20:** 5 nights Bora Bora. (Supersedes notes.md's original "4 nights" special rule and this doc's earlier "nights TBD.")
+- **Split-stay option added 2026-09-20:** optionally split as 2 nights at the main hotel (St. Regis/Four Seasons) + 3 nights at the Westin, in one Bora Bora stay — reopens the "single hotel" framing for this specific combination. Requires a resort-to-resort boat transfer (no direct service published by either resort; ~600 AED for 2 is an unconfirmed estimate). Toggle in `bora bora/trip-planner.html`.
 
 ### Island Strategy
 - **DECIDED:** Single island — Bora Bora only. No secondary island.
