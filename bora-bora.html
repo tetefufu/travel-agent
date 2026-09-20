@@ -113,6 +113,22 @@
 </div>
 <p style="font-size:0.8rem;margin:-10px 0 16px"><a href="bora bora/trip-planner.html" class="ext">🧮 Open the interactive planner</a> — toggle flight class, hotel, and the EDC Vegas bonus option with live pricing.</p>
 
+<!-- SUMMARY -->
+<h2>💰 Summary — Total Trip Cost (per couple, AED)</h2>
+<table>
+  <thead><tr><th>Category</th><th>Amount (AED)</th><th>Basis</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ Flights — all (DXB → California → Bora Bora → DXB)</td><td><b>20,526</b></td><td>Economy, 2pp. Premium economy/business cost more — see Flights below.</td></tr>
+    <tr><td>🏨 Bora Bora hotel (5 nights)</td><td><b>43,123</b></td><td>St. Regis default. Four Seasons 45,875 · Westin 23,990+fees.</td></tr>
+    <tr><td>🍽️ Bora Bora activities + meals</td><td><b>9,267</b></td><td>Tours/spa + estimated resort dining, 5 nights.</td></tr>
+    <tr><td>🏨 California hotel only</td><td><b>41,250</b></td><td><span class="badge b-est">📊 Placeholder</span> — 3-base split not yet locked.</td></tr>
+    <tr><td>🍽️ California activities + meals</td><td><b>7,500</b></td><td>Dining + tours/wine tastings, 9 days.</td></tr>
+    <tr><td>🎉 EDC Las Vegas (transfer + hotel + tickets)</td><td><b>11,920</b></td><td>Optional bonus. LA↔Vegas flight, 1 night, VIP ×2.</td></tr>
+    <tr class="budget-total"><td><b>TOTAL TRIP COST</b></td><td><b>133,586 AED</b></td><td><b>~$36,400 · ~66,793/person</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.75rem;color:#999;margin-top:6px">Includes the EDC Vegas bonus by default — drop it and the total is <b>121,666 AED</b>. Several inputs are placeholders pending open decisions (California night allocation, Vegas routing, 2027 EDC VIP pricing) — see each section below and <code>california/research-decisions.md</code> for what's still open. Meals are estimates, not researched line-by-line. Toggle flight class / hotel / EDC live → <a href="bora bora/trip-planner.html" class="ext">interactive planner</a>.</p>
+
 <!-- BEST TIME -->
 <h2>📅 Best Time to Go</h2>
 <table>
@@ -127,7 +143,19 @@
 <div class="rbox"><b>May 2027 — Optimal choice.</b> Dry season begins, minimal rainfall (90mm), lower humidity, moderate crowds, and better prices than peak June–August. Shoulder season delivers 90% of peak experience at 70–80% cost. Perfect for island hopping across multiple destinations.</div>
 
 <!-- FLIGHTS -->
-<h2>✈️ Flights — Dubai ↔ Bora Bora (round trip, per person)</h2>
+<h2>✈️ Flights — Full Trip (economy, 2 passengers)</h2>
+<table>
+  <thead><tr><th>Leg</th><th>Amount (AED)</th><th>Basis</th></tr></thead>
+  <tbody>
+    <tr><td>DXB → California (one-way)</td><td>4,400</td><td>Half of researched DXB↔SFO RT range (3,300–5,500)</td></tr>
+    <tr><td>California → Bora Bora (one-way)</td><td>4,400</td><td>Regional connector, rough estimate — not deeply researched</td></tr>
+    <tr><td>Bora Bora → DXB (one-way)</td><td>11,726</td><td>Half of researched DXB↔Bora Bora RT (23,452 for 2pp)</td></tr>
+    <tr class="budget-total"><td><b>Flights total</b></td><td><b>20,526</b></td><td>⚠️ Built from separate round-trip research, not a real multi-city quote</td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.78rem;color:#666;margin:-2px 0 10px">This is an estimate stitched from pairwise round-trip research, not an actual open-jaw/multi-city fare. Real multi-city pricing is often close to (sometimes cheaper than) this sum — get a direct quote before booking.</p>
+
+<h3 style="font-size:0.78rem;color:#1a2e4a;margin:8px 0 6px">Dubai ↔ Bora Bora — by class (round trip, per person)</h3>
 <table>
   <thead><tr><th>Class</th><th>Price RT (AED, pp)</th><th>Routing</th><th>Source</th></tr></thead>
   <tbody>
@@ -192,9 +220,55 @@
 </table>
 <p style="font-size:0.78rem;color:#666;margin:-2px 0 8px">Westin: full renovation, reopened Sept 2024 (ex–Le Meridien). Roughly half the entry rate of St. Regis/Four Seasons — real third tier, not a downgrade clone. Toggle hotel choice with live pricing → <a href="bora bora/trip-planner.html" class="ext">interactive planner</a>.</p>
 
+<h3 style="font-size:0.78rem;color:#1a2e4a;margin:12px 0 6px">Bora Bora — Activities + Meals (5 nights)</h3>
+<table>
+  <thead><tr><th>Item</th><th>Amount (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>🎯 Activities (glass-bottom boat, jet ski, spa)</td><td>2,386</td><td>Default selection — toggle in planner</td></tr>
+    <tr><td>🍽️ Meals (resort + fine dining, 5 nights)</td><td>~6,881</td><td><span class="badge b-est">📊 Estimate</span> ~375 USD/day for two — French Polynesia dining is expensive</td></tr>
+    <tr class="budget-total"><td><b>Bora Bora activities + meals total</b></td><td><b>9,267</b></td><td></td></tr>
+  </tbody>
+</table>
+
 <!-- CALIFORNIA -->
 <h2>🌴 California — First Leg (9 days)</h2>
 <p style="font-size:0.8rem;color:#666;margin-bottom:8px">⚠️ Under active restructure as of 2026-09-20 — 3 bases (SFO/Napa, Big Sur, LA/San Diego), plus an optional Vegas + EDC bonus night. Night allocation, hotel picks, and Vegas routing not yet locked. Full detail: <code>california/research-decisions.md</code>. Driving-time map: <a href="https://claude.ai/code/artifact/3ede090a-0ef1-483f-a4e3-8d82fcbf8c14" class="ext" target="_blank">Pacific Coast Run</a>.</p>
+
+<table>
+  <thead><tr><th>Base (placeholder split)</th><th>Nights</th><th>/ night (AED)</th><th>Total (AED)</th></tr></thead>
+  <tbody>
+    <tr><td>SFO / Napa (Auberge du Soleil-tier)</td><td>3</td><td>~3,850</td><td>11,550</td></tr>
+    <tr><td>Big Sur (Post Ranch Inn-tier)</td><td>2</td><td>~6,600</td><td>13,200</td></tr>
+    <tr><td>LA / San Diego</td><td>3</td><td>~5,500</td><td>16,500</td></tr>
+    <tr class="budget-total"><td colspan="3"><b>California hotel total (8 nights)</b></td><td><b>41,250</b></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.78rem;color:#666;margin:-2px 0 8px"><span class="badge b-est">📊 Placeholder</span> Night split not decided — see open items in <code>california/research-decisions.md</code>. Recalculate once locked.</p>
+
+<h3 style="font-size:0.78rem;color:#1a2e4a;margin:12px 0 6px">California — Activities + Meals (9 days)</h3>
+<table>
+  <thead><tr><th>Item</th><th>Amount (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>🎯 Activities (wine tasting, balloon, tours)</td><td>~2,000</td><td>Scaled up from california.html's 7-day estimate</td></tr>
+    <tr><td>🍽️ Meals (fine dining + casual, 9 days)</td><td>~5,500</td><td><span class="badge b-est">📊 Estimate</span> SF/Napa dining is expensive; French Laundry etc. not included separately</td></tr>
+    <tr class="budget-total"><td><b>California activities + meals total</b></td><td><b>7,500</b></td><td></td></tr>
+  </tbody>
+</table>
+
+<!-- EDC VEGAS -->
+<h2>🎉 EDC Las Vegas — Bonus Option</h2>
+<p style="font-size:0.8rem;color:#666;margin-bottom:8px">Not in the base California plan. EDC Las Vegas 2027 runs two weekends — May 14–16 & May 21–23 — overlapping the locked Eid al-Adha window. Routing (from LA base) and exact night not yet finalized.</p>
+<table>
+  <thead><tr><th>Item</th><th>Amount (AED)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>✈️ LA ↔ Vegas flight (2pp)</td><td>1,468</td><td><span class="badge b-est">📊 Estimate</span> ~200 USD pp RT</td></tr>
+    <tr><td>🏨 Vegas hotel (1 night, Strip)</td><td>1,468</td><td><span class="badge b-est">📊 Estimate</span> ~400 USD/night</td></tr>
+    <tr><td>🎫 EDC 3-Day VIP Pass ×2</td><td>8,684</td><td>2026 VIP baseline ~$1,183pp — 2027 VIP not yet released</td></tr>
+    <tr><td>🚕 Local transfers (airport/hotel/speedway)</td><td>300</td><td><span class="badge b-est">📊 Estimate</span></td></tr>
+    <tr class="budget-total"><td><b>EDC Vegas total</b></td><td><b>11,920</b></td><td></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.78rem;color:#666;margin:-2px 0 8px">Toggle this on/off live → <a href="bora bora/trip-planner.html" class="ext">interactive planner</a> (planner currently shows ticket cost only; full bundle above includes flights/hotel/transfer).</p>
 
 <!-- ITINERARY OVERVIEW -->
 <h2>🗓️ Itinerary Overview — sequence locked, day-by-day TBC</h2>
@@ -250,12 +324,14 @@
 
 <!-- INSTAGRAM SPOTS -->
 <h2>📸 Instagram Highlights</h2>
+<p style="font-size:0.78rem;color:#999;margin-bottom:8px">🖼️ Images pending — old stock photos removed, better/more accurate ones being sourced.</p>
 <div class="igrid">
-  <div class="icard"><img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=400&q=80" alt="Overwater bungalow"><p><b>Overwater bungalow deck</b> — turquoise lagoon, glass floor · #BoraBoraLife</p></div>
-  <div class="icard"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=400&q=80" alt="Mount Otemanu"><p><b>Mount Otemanu at sunrise</b> — coral pink sky · #IslandMagic</p></div>
-  <div class="icard"><img src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400&q=80" alt="Infinity pool"><p><b>Lagoon infinity pool</b> — blends into horizon · #LuxuryTravel</p></div>
-  <div class="icard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Sunset"><p><b>Sunset over lagoon</b> — from your deck · #IslandSunset</p></div>
-  <div class="icard"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="California coast"><p><b>California coastal drive</b> — Malibu or Big Sur · #CoastalVibes</p></div>
+  <div class="icard"><p><b>Overwater bungalow + Mount Otemanu</b> — the classic Bora Bora shot · #BoraBoraLife</p></div>
+  <div class="icard"><p><b>Westin infinity pool</b> — largest on the island, plunge-pool rooms · #LuxuryTravel</p></div>
+  <div class="icard"><p><b>Big Sur coastline</b> — Bixby Bridge / McWay Falls · #BigSur</p></div>
+  <div class="icard"><p><b>Napa Valley vineyard</b> — golden rows, wine country · #NapaValley</p></div>
+  <div class="icard"><p><b>Hollywood Sign</b> — Griffith Observatory viewpoint · #LosAngeles</p></div>
+  <div class="icard"><p><b>EDC Las Vegas</b> — festival lights, Dusk/Dawn weekends · #EDC2027</p></div>
 </div>
 
 <!-- PRACTICAL -->
@@ -273,21 +349,7 @@
   <dt>🌊 Water safety</dt><dd>Lagoon warm ~28°C · excellent visibility in May · reef-safe sunscreen mandatory</dd>
 </dl>
 
-<!-- BUDGET -->
-<h2>💰 Budget Summary — Bora Bora leg (per couple, AED)</h2>
-<table>
-  <thead><tr><th>Item</th><th>Amount (AED)</th><th>Notes</th></tr></thead>
-  <tbody>
-    <tr><td>✈️ Flights: DXB ↔ Bora Bora (round-trip, 2 pp, economy)</td><td>23,452</td><td>Premium economy 47,710 · Business 113,770</td></tr>
-    <tr><td>🏨 St. Regis Bora Bora (5 nights)</td><td>43,123</td><td>Four Seasons 45,875 · Westin 23,990+fees</td></tr>
-    <tr><td>🎯 Activities (lagoon tours, spa, glass-bottom boat)</td><td>~2,386</td><td>Default selection — toggle in planner</td></tr>
-    <tr class="budget-total"><td><b>TOTAL — Bora Bora leg (default: economy + St. Regis)</b></td><td><b>~68,961 AED</b></td><td><b>~$18,790</b></td></tr>
-    <tr><td>🎉 Bonus: EDC Las Vegas VIP (3-day, 2 pp)</td><td>+8,684</td><td>Not in base total — California-leg add-on, see below</td></tr>
-  </tbody>
-</table>
-<p style="font-size:0.75rem;color:#999;margin-top:6px">Bora Bora leg only — figures update live with flight class, hotel, and EDC toggle in the <a href="bora bora/trip-planner.html" class="ext">interactive planner</a>. California leg (9 days, 3 bases + optional Vegas) priced separately in <code>california/research-decisions.md</code> — not yet finalized. Meals excluded (not incremental cost). Prices are May 2027 estimates based on 2026 research; French Polynesia is one of the world's most expensive destinations.</p>
-
-<div class="footnote">🌏 California + Bora Bora Trip Plan · May 2027 · Eid al-Adha window · California first, then Bora Bora (5 nights) · Couple · Vegetarian-friendly · Interactive planner: bora bora/trip-planner.html</div>
+<div class="footnote">🌏 California + Bora Bora Trip Plan · May 2027 · Eid al-Adha window · California first, then Bora Bora (5 nights) · Couple · Vegetarian-friendly · Total trip cost: 133,586 AED (see Summary above) · Interactive planner: bora bora/trip-planner.html</div>
 
 </div>
 </body>
