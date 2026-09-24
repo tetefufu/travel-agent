@@ -26,8 +26,11 @@
 ## Key Decisions Made
 
 ### Trip Sequence
-- **SUPERSEDED 2026-09-20 (later same day):** Sequence is now **Vegas/EDC → California → Bora Bora** (was "California first, then Bora Bora" earlier the same day, which itself replaced an unordered plan). Bora Bora remains the final leg either way — flies home from Bora Bora → DXB. See `california/research-decisions.md` for the Vegas leg detail.
-- Dates: Bora Bora May 27 – Jun 1, 2027 (5 nights), arriving from LAX (California leg ends in LA), departing to DXB via Papeete.
+- **SUPERSEDED 2026-09-22:** Vegas dropped entirely (no EDC, no Coachella — user confirmed "no coachella no edc" after reviewing the festival-vs-cheap-week trade-off chart). Sequence is now **Dubai → San Francisco (direct) → coastal CA road trip (Carmel/Big Sur/Santa Barbara/LA) → Bora Bora → Dubai**, replacing the prior "Vegas/EDC → California → Bora Bora" sequence (itself a same-day supersession of an earlier "California first" plan on 2026-09-20).
+- **17-day itinerary locked 2026-09-22** (day-by-day table in `bora-bora.html`): 4 nights SF, 1 night Carmel/Big Sur, 1 night Santa Barbara, 3 nights LA, **5 nights Bora Bora**, then home.
+- Bora Bora is the final leg — flies home from Bora Bora → Papeete → Dubai. Departs for Bora Bora out of LAX (matches the confirmed fewest-stop Air Tahiti Nui nonstop route).
+- **Exact calendar dates still open** — no festival anchoring the window anymore. Preferences.md still prefers Eid al-Fitr/Eid al-Adha; Eid al-Adha 2027 is ~May 16–18. Use the St Regis weekly rate grid below to pick the cheapest week once dates are set.
+- `california/research-decisions.md`'s Vegas Option section and old SFO/Napa/Big Sur/LA/San Diego route are now superseded by this simpler 4-stop coastal route (no Napa, no San Diego, no Vegas).
 
 ### Nights
 - **DECIDED 2026-09-20:** 5 nights Bora Bora. (Supersedes notes.md's original "4 nights" special rule and this doc's earlier "nights TBD.")
@@ -64,6 +67,15 @@
 - **Airlines:** Emirates, Air Tahiti Nui, Air Tahiti
 - **Tip:** Book 2–4 months ahead; Sunday bookings ~6–13% cheaper; premium economy/business figures above are aggregator-derived estimates, not confirmed quotes — get a direct itinerary quote closer to booking (~3.67 AED/USD used for conversion)
 
+### Flight Search Strategy (added 2026-09-21)
+Full route is DXB → Las Vegas → SFO → (drive California) → LAX → Bora Bora (Papeete) → DXB — 4 legs on unrelated carriers/alliances, so **book as 4 separate one-way tickets**, not one multi-city PNR.
+- **DXB → Las Vegas** (no nonstop, 1+ stop e.g. via Addis Ababa): use **ITA Matrix** (matrix.itasoftware.com) to surface routing options Google Flights hides.
+- **Las Vegas → SFO**: commodity domestic hop, flat pricing everywhere — book close to date, don't over-shop.
+- **LAX → Bora Bora (Papeete)**: Air Tahiti Nui is the only nonstop from LAX (French Bee is the budget alt) — near-monopoly route, book directly once CA dates lock rather than shopping around.
+- **Bora Bora → DXB**: trickiest/priciest leg, no confirmed single fare exists — get a live combined quote from a travel agent or Air Tahiti Nui/Emirates directly; online engines often miss the best through-routing (via Auckland or Paris).
+- **Search/save tools:** Google Flights (multi-city mode + price-tracking bell icon) is the best all-in-one for comparing + saving legs, even though it won't ticket this itinerary as one fare. Skyscanner multi-city + price alerts as a second opinion. ITA Matrix for the awkward DXB↔Vegas/Bora Bora legs specifically.
+- Since legs are self-connected (separate tickets), build 3+ hour buffers at LAS/SFO/LAX and get travel insurance covering missed connections.
+
 ### Hotels (Overwater Bungalows)
 | Hotel | Type | Price/Night | Notes |
 |-------|------|-------------|-------|
@@ -73,6 +85,94 @@
 | Westin Bora Bora | Overwater (std) | ~$945–$1,670 (~3,500–6,100 AED, approx.) + XPF 11,550/night destination fee | Base rate before packages; plunge-pool overwater rooms cost more |
 
 **Westin — new option, renovated 2024:** Formerly Le Meridien Bora Bora; full property-wide renovation + Marriott rebrand, reopened Sept 2024, named to Travel+Leisure's 2025 It List. 142 villas total, 128 overwater — most of any Bora Bora resort, many with private plunge pools. Has the **largest infinity pool on the island** (swim-up bar, frames Mt. Otemanu) — strong fit given the no-sea-swimming constraint. Vegetarian menu at signature restaurant Maere reported good by guests; other outlets: Tipanier (French-Polynesian bistro), Te Ava (poolside), Vara Vara (beachside). **Positioning:** priced meaningfully below St. Regis/Four Seasons (roughly half the entry rate) — a real third tier, not just a cheaper clone; trade-off is Westin brand tier vs. St. Regis/FS ultra-luxury tier, but newest renovation of the three and pool is arguably the best of the group for a non-swimmer.
+
+### Live Pricing Research — 2027 dates (browser research, 2026-09-22)
+Source: official fourseasons.com and marriott.com (St. Regis) booking engines, live search — 2 adults, 4-night midweek stays (Mon check-in → Fri check-out) to avoid weekend surcharges:
+- Early April: Apr 5–9, 2027
+- Mid April: Apr 19–23, 2027
+- Early May: May 3–7, 2027
+- Mid May: May 17–21, 2027 (Four Seasons entry-level Overwater Bungalow sold out this window)
+
+**Four Seasons — full room list, AED/night** (before ~15% resort fee + service charge; cheaper rate plan shown where two existed):
+
+| Room | Early Apr | Mid Apr | Early May | Mid May |
+|---|---|---|---|---|
+| Beach-View Overwater Bungalow | 10,093 | 7,407 | 8,683 | sold out |
+| Lagoon-View Overwater Bungalow | 10,787 | 8,115 | 9,334 | sold out |
+| Mountain-View Overwater Bungalow | 11,697 | 8,352 | 9,650 | sold out |
+| Premier Mtn-View Overwater Bungalow | 12,373 | 9,028 | 10,551 | sold out |
+| Beach-View Plunge Pool Suite | 12,295 | 8,950 | 10,446 | not shown |
+| Lagoon-View Plunge Pool Suite | 13,285 | 9,940 | 11,767 | 13,254 |
+| Mountain-View Plunge Pool Suite | 14,941 | 11,596 | 10,481 | 15,462 |
+| Otemanu Suite w/ Plunge Pool | 16,465 | 18,222 | 19,101 | 18,442–19,101 |
+| 2BR Herenui w/ Plunge Pool | n/a | 22,303 | 22,326 | 22,140 |
+| 2BR Poerava w/ Plunge Pool | n/a | 23,256 | 23,279 | 23,094 |
+| 1BR Beachfront Villa Estate | 43,427 | 30,638 | **23,597** | 29,524 |
+| 2BR Deluxe Beachfront Villa | 50,051 | 37,261 | 30,221 | 36,147 |
+| 2BR Premier Beachfront Villa | 51,640 | 38,851 | 31,811 | 37,737 |
+| 3BR Premier Beachfront Villa | n/a | 60,776 | 57,879 | 60,185 |
+
+- **"4th night free" promo is inconsistent** — toggles on/off by date and room category, not a fixed perk. Reliable on Beachfront Villas across all 4 windows; on entry bungalows it only appeared in April, not May.
+- **Villa Estate is the most date-sensitive room** — 43,427 (early Apr) → 23,597 (early May), nearly half.
+- **Breakfast is not a separate line-item cost.** No bare "room only" rate exists on this engine — Bed & Breakfast and "Experience More" rate plans price identically wherever both appear. A perceived ~2,000 AED/day "breakfast" gap was actually the price difference between two different room categories (e.g. base bungalow vs. plunge-pool suite), not a breakfast surcharge.
+
+**St. Regis — full room list, USD/night** (site has no AED display; add ~11% Daily Destination Fee on top). Prices in flat seasonal bands, not exact-week — mid-April and early-May are byte-identical:
+
+| Room | Early Apr 5–9 | Mid Apr 19–23 / Early May 3–7 | Mid May 17–21 |
+|---|---|---|---|
+| Reef Side Garden 1BR Villa | not offered | 1,829 | 2,191 |
+| Overwater Superior | 2,267 | 2,168 | 2,643 |
+| Overwater Deluxe | 2,345 | 2,246 | 2,747 |
+| Beachside Villa | 2,483 | 2,384 | 2,198* |
+| Overwater Deluxe Otemanu | 3,013 | 2,912 | 2,723 |
+| Overwater Premier Otemanu | 3,741 | 3,642 | 3,456 |
+| Reef Side Royal Garden 2BR | 3,865 | 3,766 | 3,580 |
+| Overwater Royal w/ Pool (1BR) | 5,162 | 5,063 | sold out |
+| Overwater Royal w/ Pool 2BR | 7,251 | 7,152 | 6,966 |
+| Royal Estate 3BR | 24,045 (fixed, all periods) | same | same |
+
+*Beachside cheaper than Superior/Deluxe in mid-May — likely a room-specific promo, not a genuine tier inversion.
+
+- **No "4th night free" or any stackable night-count discount found anywhere on St. Regis** — discounting mechanism is purely the seasonal band, unlike Four Seasons' promo toggle.
+
+### St. Regis — Full Weekly Rate Grid, Apr–May 2027 (added 2026-09-22, browser research)
+Live marriott.com search, every Mon–Sat (5-night) week from 5 Apr to 5 Jun 2027, 2 adults, all room categories shown for that week (availability varies week to week — not every room shows every week). Full data (77 rows: week × room × USD/AED per-night and total): `bora bora/st-regis-weekly-rates-2027.csv`. Converted at 3.67 AED/USD.
+
+**Entry-level Overwater Superior, AED/night, by week** (cheapest → priciest room tier consistently offered every week):
+| Week (Mon–Sat) | AED/night | USD/night |
+|---|---|---|
+| 5–10 Apr | 8,467 | 2,307 |
+| 12–17 Apr | 8,467 | 2,307 |
+| 19–24 Apr | 8,114 | 2,211 |
+| 26 Apr–1 May | 8,845 | 2,410 |
+| 3–8 May | 7,839 | 2,136 |
+| 10–15 May | 7,887 | 2,149 |
+| 17–22 May | 8,273 | 2,254 |
+| 24–29 May | 10,790 (package rate — no plain prepay Superior available this week) | 2,940 |
+| 31 May–5 Jun | 7,736 | 2,108 |
+
+- **Cheapest entry-level week: 31 May–5 Jun (7,736 AED/night / 2,108 USD).** Early May (3–8 May) close behind at 7,839 AED.
+- **24–29 May is the outlier** — the plain prepay Superior rate wasn't offered; only a bundled "package" rate showed, pricing it *above* Deluxe (2,940 vs 2,283 USD) — a rate-plan quirk, not a real tier inversion (same pattern noted for St Regis before).
+- **Royal Estate 3BR is a flat 88,245 AED/night (24,045 USD) in every single week checked** — a fixed non-refundable prepay rate, doesn't move with season at all.
+- **Reef Side Garden 1BR and Overwater Premier Otemanu are intermittently unavailable** — Reef Side Garden 1BR only showed for 19–24 Apr and 17–22 May; Premier Otemanu was missing for 19 Apr–15 May entirely (4 straight weeks), reappearing 24 May onward.
+- Full per-room breakdown for all 9 weeks in the CSV.
+
+### Four Seasons — Weekly Rate Grid (added 2026-09-22, user-supplied)
+Full Mon–Sun weeks, entry-level Overwater Bungalow, AED/night (rounded):
+
+| Week (Mon start) | Price/night | Tier |
+|---|---|---|
+| 19 Apr 2027 | ~7,000 | Cheap |
+| 26 Apr 2027 | ~6,000 | **Cheapest** |
+| 3 May 2027 | ~8,000 | Mid |
+| 10 May 2027 | ~6,000 | **Cheapest** |
+| 17 May 2027+ | 10,000+ | Expensive — all weeks from here up |
+
+- Coachella 2027 (Apr 9–11 & 16–18) ends the Sunday right before the 19 Apr week starts — near-zero gap for a California road trip if that week is chosen.
+- **EDC Las Vegas Dusk (May 14–16) falls entirely inside the 10 May week**, and **EDC Dawn (May 21–23) falls inside the 17 May+ week** — you cannot attend EDC and start that same Bora Bora week; EDC forces the trip into the 17 May+ (10k+) bucket if chosen, since it's the first available week that starts after EDC ends (May 17, one day after Dusk finishes).
+- Net: the cheap weeks (19 Apr–16 May) are only compatible with **Coachella or no festival** — none of them work with EDC without a scheduling conflict. See chart/decision below.
+
+**Bottom line (converting St Regis USD → AED @ 3.67):** Four Seasons entry bungalow (7,407–8,683 AED, Apr/May) edges out St. Regis Overwater Superior (7,957–9,700 AED) and has the 4th-night-free lever St. Regis lacks. St. Regis is more date-stable if travel dates might shift. Westin remains the value tier at roughly half FS's entry rate. **Early May (May 3–7) is the standout window** — cheapest across nearly every room category at all three hotels, and where the FS Villa Estate hits its lowest point (23,597 AED/night).
 
 ### Multi-Island Options (Inter-Island Flights)
 - **Rangiroa:** $636 RT from Bora Bora (snorkeling, relaxed vibes)

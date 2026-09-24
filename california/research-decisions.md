@@ -1,9 +1,9 @@
 # California Leg — Research & Decisions
 
 **Travelers:** Couple (age 41, Dubai-based, UK passport)
-**Sequence:** SUPERSEDED 2026-09-20 (later same day) — trip order is now **Vegas/EDC → California → Bora Bora**, not California-first. California is the middle leg, arriving from Las Vegas (→SFO) and departing to Bora Bora from LAX. See "Vegas Option" section below, now locked.
-**Status:** Major restructure in progress 2026-09-20 — original california.html (SF + Napa + Big Sur, 6 nights) is now superseded by the plan below. Do not treat california.html as current until it's rebuilt to match.
-**Dates:** May 17–26, 2027 (9 days), between Vegas (May 13–17) and Bora Bora (May 27–Jun 1). Full trip dated scaffold in bora-bora.html.
+**Sequence:** SUPERSEDED 2026-09-22 — Vegas dropped entirely (no EDC, no Coachella). Trip is now **Dubai → San Francisco (direct) → coastal road trip → Bora Bora**. Everything below in "Vegas Option" and the SFO/Napa/Big Sur/LA/San Diego route structure is superseded — see `bora bora/research-decisions.md` for the current sequence and `bora-bora.html` for the locked 17-day itinerary (4 nights SF, 1 night Carmel/Big Sur, 1 night Santa Barbara, 3 nights LA, 5 nights Bora Bora).
+**Status:** SUPERSEDED 2026-09-22 (was already mid-restructure since 2026-09-20). Do not treat this file's route/Vegas detail as current — kept only for the DXB–SFO flight research (still valid) and driving-distance data (still useful for the coastal leg).
+**Dates:** No longer date-locked — the Vegas/EDC/Eid-al-Adha window that drove the old May 17–26 dates no longer applies. See `bora bora/research-decisions.md` for current date status.
 
 ---
 
@@ -34,7 +34,7 @@ Full visual + Bora Bora-era route diagram (pre-restructure, SF/Napa/Big Sur/LA o
 - **Dates:** 4 nights, May 13–17, 2027 — arrival buffer May 13, EDC Dusk weekend Fri 14–Sun 16, checkout May 17.
 - **Big find:** **EDC Las Vegas 2027 runs two weekends — May 14–16 ("Dusk") and May 21–23 ("Dawn")** at Las Vegas Motor Speedway, part of a new 12-day "EDC Week" format for 2027. Anchored to **Dusk weekend (May 14–16)** — overlaps the locked Eid al-Adha window (~May 15–18) almost exactly.
 - Sources: [EDC Las Vegas official](https://lasvegas.electricdaisycarnival.com/), [Music Festival Wizard](https://www.musicfestivalwizard.com/festivals/edc-las-vegas-2027/)
-- Other April/May 2027 EDM-adjacent events found: Coachella (Apr 9–11 & 16–18, Indio — outside the May window), Lightning in a Bottle (May 26–30, Buena Vista Lake — after the Eid window)
+- Other April/May 2027 EDM-adjacent events found: Coachella — **dates officially confirmed** (Pollstar, announced 2026-04-20): Weekend 1 Apr 9–11, Weekend 2 Apr 16–18, 2027, Empire Polo Club, Indio — outside the May Eid window, so not in scope for this trip. Lightning in a Bottle (May 26–30, Buena Vista Lake — after the Eid window)
 - **Interactive tool offers 3 options:** No Vegas / Vegas + EDC / Vegas, no EDC (pool day/club night instead of festival tickets) — see `bora bora/trip-planner.html`.
 - **EDC VIP price grounding (2026-09-20):** 2026 VIP Elevated Experience sold out; sale-period pricing ran $900–1,200, door price $1,500+. Used $1,100pp as the 2026 reference (mid-range, not door price), **+10% → $1,210pp** for 2027 estimate. 2027 VIP pricing not yet officially released — only GA pricing confirmed ($399.99/$599.99).
 - **Routing resolved:** California base order stays **SFO/Napa → Big Sur → LA/San Diego** (unchanged) — arriving from Vegas lands at SFO first, and the leg already ends in LA where the Bora Bora flight (via LAX, fewest-stop route) departs from. No extra domestic hop needed at either end.
