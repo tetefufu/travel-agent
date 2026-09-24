@@ -1,0 +1,50 @@
+Base,Hotel,Checkin date,BB week this feeds,AED/night,Notes
+San Francisco,Fairmont San Francisco,Fri 26 Mar 2027,5-10 Apr,1815,
+San Francisco,Fairmont San Francisco,Fri 2 Apr 2027,12-17 Apr,1880,
+San Francisco,Fairmont San Francisco,Fri 9 Apr 2027,19-24 Apr,1815,
+San Francisco,Fairmont San Francisco,Fri 16 Apr 2027,26 Apr-1 May,1967,
+San Francisco,Fairmont San Francisco,Fri 23 Apr 2027,3-8 May,1815,
+San Francisco,Fairmont San Francisco,Fri 30 Apr 2027,10-15 May,1815,
+San Francisco,Fairmont San Francisco,Fri 7 May 2027,17-22 May,1815,Eid al-Adha week
+San Francisco,Fairmont San Francisco,Fri 14 May 2027,24-29 May,3018,Price spike - cause not identified (not a known CA holiday weekend)
+San Francisco,Fairmont San Francisco,Fri 21 May 2027,31 May-5 Jun,1815,
+Carmel,L'Auberge Carmel,Mon 29 Mar 2027,5-10 Apr,2352,
+Carmel,L'Auberge Carmel,Mon 5 Apr 2027,12-17 Apr,2968,
+Carmel,L'Auberge Carmel,Mon 12 Apr 2027,19-24 Apr,2969,
+Carmel,L'Auberge Carmel,Mon 19 Apr 2027,26 Apr-1 May,2969,
+Carmel,L'Auberge Carmel,Mon 26 Apr 2027,3-8 May,2968,
+Carmel,L'Auberge Carmel,Mon 3 May 2027,10-15 May,3174,
+Carmel,L'Auberge Carmel,Mon 10 May 2027,17-22 May,3175,Eid al-Adha week
+Carmel,L'Auberge Carmel,Mon 17 May 2027,24-29 May,3174,
+Carmel,L'Auberge Carmel,Mon 24 May 2027,31 May-5 Jun,3174,
+Big Sur,Post Ranch Inn,Tue 30 Mar 2027,5-10 Apr,8461,
+Big Sur,Post Ranch Inn,Tue 6 Apr 2027,12-17 Apr,8054,
+Big Sur,Post Ranch Inn,Tue 13 Apr 2027,19-24 Apr,8466,
+Big Sur,Post Ranch Inn,Tue 20 Apr 2027,26 Apr-1 May,8435,
+Big Sur,Post Ranch Inn,Tue 27 Apr 2027,3-8 May,8466,
+Big Sur,Post Ranch Inn,Tue 4 May 2027,10-15 May,8466,
+Big Sur,Post Ranch Inn,Tue 11 May 2027,17-22 May,8461,Eid al-Adha week
+Big Sur,Post Ranch Inn,Tue 18 May 2027,24-29 May,8054,
+Big Sur,Post Ranch Inn,Tue 25 May 2027,31 May-5 Jun,8461,
+Santa Barbara,Rosewood Miramar Beach,Wed 31 Mar 2027,5-10 Apr,7594,
+Santa Barbara,Rosewood Miramar Beach,Wed 7 Apr 2027,12-17 Apr,8235,
+Santa Barbara,Rosewood Miramar Beach,Wed 14 Apr 2027,19-24 Apr,8171,
+Santa Barbara,Rosewood Miramar Beach,Wed 21 Apr 2027,26 Apr-1 May,7849,
+Santa Barbara,Rosewood Miramar Beach,Wed 28 Apr 2027,3-8 May,7957,
+Santa Barbara,Rosewood Miramar Beach,Wed 5 May 2027,10-15 May,,SOLD OUT - no availability this date
+Santa Barbara,Rosewood Miramar Beach,Wed 12 May 2027,17-22 May,8618,Eid al-Adha week
+Santa Barbara,Rosewood Miramar Beach,Wed 19 May 2027,24-29 May,8297,
+Santa Barbara,Rosewood Miramar Beach,Wed 26 May 2027,31 May-5 Jun,,SOLD OUT - no availability this date
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 1 Apr 2027,5-10 Apr,4712,
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 8 Apr 2027,12-17 Apr,4712,
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 15 Apr 2027,19-24 Apr,4712,
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 22 Apr 2027,26 Apr-1 May,4712,
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 29 Apr 2027,3-8 May,,SOLD OUT - no availability this date
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 6 May 2027,10-15 May,4715,
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 13 May 2027,17-22 May,4712,Eid al-Adha week
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 20 May 2027,24-29 May,4712,
+Los Angeles,Waldorf Astoria Beverly Hills,Thu 27 May 2027,31 May-5 Jun,4712,US Memorial Day weekend (29-31 May) falls inside this stay
+
+Source: Google Hotels (google.com/travel/hotels) live calendar search, browser automation, 2 adults, researched 2026-09-24. Google Hotels shows an aggregated "from" nightly rate across booking sites for each property - not a specific confirmed room category, unlike the Bora Bora hotels' own booking engines. One hotel picked per base per user decision (2026-09-24: "one strong pick per base, full 9 weeks" over a 2-option swap dropdown) - all luxury tier per preferences.md, chosen for pool quality given the no-sea-swim constraint (Post Ranch Inn's infinity pool, Rosewood Miramar's oceanfront pool). LA (Waldorf Astoria Beverly Hills) and SF-most-weeks show flat/near-flat pricing - both read as published rack rates rather than dynamic pricing.
+
+LAX-SFO one-way economy (for route families needing the CA-leg hop): ~AED 480 pp, nonstop, multiple carriers (Alaska/Delta/United/Southwest), Google Flights live search 2026-09-24.

@@ -1,0 +1,21 @@
+"Week (Mon-Sat, 5 nights)",Room,XPF/night,AED/night,Notes
+Mon 5 - Sat 10 Apr 2027,Lowest available room,,,SOLD OUT - no availability this week (confirmed via marriott.com live search)
+Mon 5 - Sat 10 Apr 2027,Overwater w/ Plunge Pool (estimated),,,SOLD OUT
+Mon 12 - Sat 17 Apr 2027,Lowest available room,166490,5830,"""Lowest Regular Rate"" teaser on marriott.com search results, fee-inclusive"
+Mon 12 - Sat 17 Apr 2027,Overwater w/ Plunge Pool (estimated),,8079,Estimated - not independently priced; scaled from base rate using Four Seasons' plunge-pool premium ratio (~1.21x), flagged as estimate
+Mon 19 - Sat 24 Apr 2027,Lowest available room,190640,6677,"""Lowest Regular Rate"" teaser, fee-inclusive"
+Mon 19 - Sat 24 Apr 2027,Overwater w/ Plunge Pool (estimated),,8079,Estimated - see note above
+Mon 26 Apr - Sat 1 May 2027,Lowest available room,189740,6644,"""Lowest Regular Rate"" teaser, fee-inclusive"
+Mon 26 Apr - Sat 1 May 2027,Overwater w/ Plunge Pool (estimated),,8039,Estimated - see note above
+Mon 3 - Sat 8 May 2027,Lowest available room,242915,8507,"""Lowest Regular Rate"" teaser, fee-inclusive. Notably higher than neighboring weeks - likely cheaper room categories already sold out this week (same pattern as St Regis 24-29 May anomaly)"
+Mon 3 - Sat 8 May 2027,Overwater w/ Plunge Pool (estimated),,10294,Estimated - see note above
+Mon 10 - Sat 15 May 2027,Lowest available room,159290,5579,"""Lowest Regular Rate"" teaser, fee-inclusive"
+Mon 10 - Sat 15 May 2027,Overwater w/ Plunge Pool (estimated),,6751,Estimated - see note above
+Mon 17 - Sat 22 May 2027,Lowest available room,188390,6597,"""Lowest Regular Rate"" teaser, fee-inclusive - Eid al-Adha week"
+Mon 17 - Sat 22 May 2027,Overwater w/ Plunge Pool (estimated),,7982,Estimated - see note above
+Mon 24 - Sat 29 May 2027,Lowest available room,188990,6618,"""Lowest Regular Rate"" teaser, fee-inclusive - US Memorial Day weekend adjacent"
+Mon 24 - Sat 29 May 2027,Overwater w/ Plunge Pool (estimated),,8008,Estimated - see note above
+Mon 31 May - Sat 5 Jun 2027,Lowest available room,194090,6796,"""Lowest Regular Rate"" teaser, fee-inclusive"
+Mon 31 May - Sat 5 Jun 2027,Overwater w/ Plunge Pool (estimated),,8223,Estimated - see note above
+
+Source: marriott.com live search (propertyCode BOBWI), browser automation, 2 adults, researched 2026-09-24. Figure is the property's cheapest available room that week (category not guaranteed to be Overwater - Westin has garden/beach rooms too, though most inventory is overwater), already includes the XPF destination fee per the site's own display. XPF converted to AED via XPF->USD (0.00954, live rate 2026-09-24) then USD->AED at project-standard 3.67. Plunge-pool room could not be reliably reached through the Marriott booking flow via automation (its "Continue"/room-selection step did not respond) - the AED figure is a flagged estimate, not an independently sourced quote. Upgrade path: get a live per-room quote directly from marriott.com or by phone before booking.

@@ -1,0 +1,21 @@
+"Week (Mon-Sat, 5 nights)",Room,USD/night,AED/night,Notes
+Mon 5 - Sat 10 Apr 2027,Beach-View Overwater Bungalow Suite,2629,9649,Advance Purchase rate; before ~15% resort fee + service charge
+Mon 5 - Sat 10 Apr 2027,Beach-View Overwater Suite with Plunge Pool,3227,11842,Advance Purchase rate; before ~15% resort fee + service charge
+Mon 12 - Sat 17 Apr 2027,Beach-View Overwater Bungalow Suite,,,SOLD OUT - no availability this week (confirmed via live search)
+Mon 12 - Sat 17 Apr 2027,Beach-View Overwater Suite with Plunge Pool,,,SOLD OUT - no availability this week (confirmed via live search)
+Mon 19 - Sat 24 Apr 2027,Beach-View Overwater Bungalow Suite,1953,7168,Advance Purchase rate
+Mon 19 - Sat 24 Apr 2027,Beach-View Overwater Suite with Plunge Pool,2358,8653,Advance Purchase rate
+Mon 26 Apr - Sat 1 May 2027,Beach-View Overwater Bungalow Suite,1759,6457,Advance Purchase rate
+Mon 26 Apr - Sat 1 May 2027,Beach-View Overwater Suite with Plunge Pool,2117,7769,Advance Purchase rate
+Mon 3 - Sat 8 May 2027,Beach-View Overwater Bungalow Suite,2346,8610,Bed and Breakfast rate - no Advance Purchase rate offered this week
+Mon 3 - Sat 8 May 2027,Beach-View Overwater Suite with Plunge Pool,2117,7769,Advance Purchase rate - cheaper than base bungalow this week (rate-plan quirk not tier inversion; same pattern seen at St Regis)
+Mon 10 - Sat 15 May 2027,Beach-View Overwater Bungalow Suite,1759,6457,Advance Purchase rate
+Mon 10 - Sat 15 May 2027,Beach-View Overwater Suite with Plunge Pool,2117,7769,Advance Purchase rate
+Mon 17 - Sat 22 May 2027,Beach-View Overwater Bungalow Suite,2862,10504,Advance Purchase rate - Eid al-Adha week
+Mon 17 - Sat 22 May 2027,Beach-View Overwater Suite with Plunge Pool,3465,12717,Advance Purchase rate - Eid al-Adha week
+Mon 24 - Sat 29 May 2027,Beach-View Overwater Bungalow Suite,2675,9819,Advance Purchase rate - US Memorial Day weekend adjacent
+Mon 24 - Sat 29 May 2027,Beach-View Overwater Suite with Plunge Pool,3286,12060,Advance Purchase rate - US Memorial Day weekend adjacent
+Mon 31 May - Sat 5 Jun 2027,Beach-View Overwater Bungalow Suite,2601,9545,Advance Purchase rate
+Mon 31 May - Sat 5 Jun 2027,Beach-View Overwater Suite with Plunge Pool,3261,11965,Advance Purchase rate
+
+Source: fourseasons.com live search, browser automation, 2 adults, researched 2026-09-24. AED converted from displayed USD at 3.67 AED/USD (site defaults to USD; figures shown are before Resort Fee ~10% + Service Charge ~5%, consistent with existing St Regis grid treatment).

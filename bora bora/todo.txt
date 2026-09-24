@@ -1,0 +1,9 @@
+- do we drive back to sfo/lax (round trip in car) or fly back
+- united have a possible avenue to PPT from LAX (skip a leg)?
+- [done 2026-09-24] confirm hotel areas for california — SF/Carmel/Big Sur/Santa Barbara/LA, one hotel picked per base
+- [done 2026-09-24] get idea of hotel prices in areas above — full 9-week grid, see california-weekly-rates-2027.csv
+- Actually book flights
+- Actually book hotel
+- Actually book hotels in california
+
+flights: [done 2026-09-24] try LAX to SFO — real fare found, ~480 AED pp one-way economy

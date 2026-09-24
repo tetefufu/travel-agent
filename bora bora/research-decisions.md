@@ -254,9 +254,56 @@ Full Mon–Sun weeks, entry-level Overwater Bungalow, AED/night (rounded):
 **Use this to explore scenarios before committing to final itinerary.**
 
 ### Next Steps
-- [ ] Use trip-planner.html to explore 3-4 scenarios
-- [ ] Lock in: hotel choice, night breakdown, activity mix
-- [ ] Build day-by-day itinerary (activities, dining, rest days)
+- [x] Use trip-planner.html to explore 3-4 scenarios — superseded 2026-09-24: `trip-planner.html` deleted, its budget logic folded into `bora-bora.html` directly
+- [x] Lock in: hotel choice, night breakdown, activity mix
+- [x] Build day-by-day itinerary (activities, dining, rest days)
 - [ ] Create Google Maps (restaurants, activities, resorts)
 - [ ] Vegetarian dining checklist per island
-- [ ] Final HTML output (output.md format)
+- [x] Final HTML output (output.md format)
+
+---
+
+## Page Rebuild — 2026-09-24
+
+User asked to discuss and drastically simplify the page: much less info, more fits on one screen (especially mobile). Rebuilt `bora bora/bora-bora.html` as a single self-contained, date-driven page (deleted `trip-planner.html` — logic absorbed, data was stale). Structure: sticky total bar → trip cost summary (5 lines) → compact one-line-per-day itinerary → option selector (week / flights / BB hotel / activities / CA hotels, read-only). Everything not in that structure (best-time table, flights explainer, hotel comparison tables, restaurants, activities prose, seating tips, practical info, old trip summary, all day photos) was cut — still available in this file and in `hotel-review-comparison.md`.
+
+**California nights corrected to 10** (SF 3 · Carmel 1 · Big Sur 1 · Santa Barbara 1 · LA 4), matching Days 2–11 of the locked 17-day itinerary — the old budget table's "9 nights" was never reconciled with it and was wrong.
+
+### Date-driven price database
+The page embeds a `RATES` object keyed by the 9 researched Bora Bora weeks (5 Apr – 5 Jun 2027, same weeks as `st-regis-weekly-rates-2027.csv`). Changing the week dropdown recomputes every date in the itinerary and every price in the summary from that table — no interpolation, every number is a real researched rate for that exact week. A `file://` page can't fetch a sibling JSON, so the CSVs below are the source of truth and the page embeds a hand-transcribed copy.
+
+### Four Seasons & Westin — brought to St Regis's per-week parity
+Live-priced both across all 9 weeks (browser automation, fourseasons.com / marriott.com, 2 adults, researched 2026-09-24). Full data: `four-seasons-weekly-rates-2027.csv`, `westin-weekly-rates-2027.csv`.
+
+- **Four Seasons**: Beach-View Overwater Bungalow (Advance Purchase rate) tracked as the entry room, plus Beach-View OWB-with-Plunge-Pool for the split-hotel option. **Sold out 12–17 Apr** — confirmed genuinely unavailable (matches the calendar's struck-through dates), not a scraping gap.
+- **Westin**: marriott.com property code is `BOBWI` (not guessable from the URL slug — found via `site:marriott.com` search). Its booking flow's room-selection step ("Continue") didn't respond reliably to automation, so the tracked figure is the search page's "Lowest Regular Rate" teaser (whichever room is cheapest that week, fee-inclusive) rather than a named room category like Four Seasons/St Regis. **Sold out 5–10 Apr.** The 3–8 May week is a notable outlier (8,507 AED vs ~5,600–6,800 AED neighboring weeks) — likely cheaper categories already sold, same pattern as St Regis's 24–29 May anomaly.
+- **Westin plunge-pool room could not be reliably priced** through the booking flow via automation. Used as a flagged estimate: Four Seasons' own plunge-pool premium is a consistent ~1.21× over its base bungalow across all 9 weeks, applied to Westin's base rate. Upgrade path: get a live quote directly from marriott.com or by phone before booking.
+- XPF (Westin's native currency) converted via live XPF→USD rate (0.00954, checked 2026-09-24) then the project's standard 3.67 AED/USD — not a fixed peg, re-check closer to booking.
+
+### California hotels — first real pricing (previously a pure placeholder)
+User decision 2026-09-24: **one strong hotel pick per base, full 9-week grid** (not 2–3 swappable options — that was the original plan but was scoped down given ~45 lookups was already a lot). All luxury tier per `preferences.md`, picked with pool quality in mind for the no-sea-swim constraint:
+
+| Base | Nights | Hotel | Why |
+|---|---|---|---|
+| San Francisco | 3 | Fairmont San Francisco | |
+| Carmel | 1 | L'Auberge Carmel | |
+| Big Sur | 1 | Post Ranch Inn | Infinity pool — the standout pool choice of the CA leg |
+| Santa Barbara | 1 | Rosewood Miramar Beach | Oceanfront pool |
+| Los Angeles | 4 | Waldorf Astoria Beverly Hills | |
+
+Priced via Google Hotels (live per-day calendar, 2 adults) rather than each hotel's own site — one property page load surfaces a full month of rates at once, versus one query per week on a hotel's own engine. The tradeoff: it's an aggregated "from" rate, not a named room category the way the Bora Bora hotels are. Full grid: `california-weekly-rates-2027.csv`.
+
+Two things worth knowing before booking:
+- **LA (Waldorf Astoria) and most SF (Fairmont) weeks are flat/near-flat** (~4,712 AED and ~1,815 AED respectively almost every week) — reads as published rack rate rather than dynamic pricing. SF's 14 May week spikes to 3,018 AED for no identified reason (not a known CA holiday).
+- **Sold-out gaps**: Rosewood Miramar Beach (5 May, 26 May) and Waldorf Astoria (29 Apr) had zero availability on their exact CA-leg date. The page shows these with a nearest-available-week fallback, flagged ★.
+- **US Memorial Day (29–31 May 2027) falls inside the LA stay of the cheapest Bora Bora week** (31 May–5 Jun) — this was the reason a full per-week grid was chosen over interpolating from 2 reference weeks; a flat interpolation would have missed this real seasonal spike. In practice Waldorf Astoria's rate didn't move for it (flat-rate property), but a different LA hotel might.
+
+Also got a real **LAX↔SFO one-way economy fare (~480 AED pp)** via Google Flights, replacing the old planner's placeholder 330 AED flat guess — needed because the cheapest flight options (route families 2 and 3 in `Flight Leg options.txt`) fly the Bora Bora leg out of SFO or arrive into LAX, not matching the road trip's natural SF→LA endpoints.
+
+### Flight route families
+`Flight Leg options.txt`'s 12 options fall into 3 route "families" by trip-number prefix (not by class letter A–D):
+- **1x** (DXB↔SFO out, LAX↔DXB back): matches the road trip's natural endpoints — no extra domestic hop needed.
+- **2x** (DXB↔SFO out and back): cheapest family, but the BB flight departs SFO while the traveler is physically in LA at the end of the road trip — needs a LAX→SFO hop before Day 12.
+- **3x** (DXB↔LAX out and back): arrives LAX, but the road trip starts in San Francisco — needs the LAX→SFO hop right after arrival instead (Day 1–2).
+
+The page's itinerary text rewrites the affected days (1, 2, 11, 12, 17) based on which family is selected, so it never contradicts the chosen flights.

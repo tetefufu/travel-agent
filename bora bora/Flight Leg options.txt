@@ -1,0 +1,72 @@
+Flight Leg options — full trip breakdown (AED, 2 passengers), sorted cheapest to most expensive
+
+Trip | Route             | Airline (stops)         | Class            |   Price pp |  Total 2pax |  Trip Total
+-----+-------------------+-------------------------+------------------+------------+-------------+------------
+2C   | DXB > SFO         | Turkish Airlines (1s)   | Economy          |      1,900 |       3,800 |
+2C   | SFO > PPT > SFO   | United (0s)             | Economy          |      2,400 |       4,800 |
+2C   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+2C   | SFO > DXB         | Turkish Airlines (1s)   | Economy          |      1,900 |       3,800 |      15,400
+     |                   |                         |                  |            |             |
+2A   | DXB > SFO         | Emirates (0s)           | Economy          |      2,000 |       4,000 |
+2A   | SFO > PPT > SFO   | United (0s)             | Economy          |      2,400 |       4,800 |
+2A   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+2A   | SFO > DXB         | Emirates (0s)           | Economy          |      2,000 |       4,000 |      15,800
+     |                   |                         |                  |            |             |
+1A   | DXB > SFO         | Emirates (0s)           | Economy          |      2,000 |       4,000 |
+1A   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Economy          |      4,400 |       8,800 |
+1A   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+1A   | LAX > DXB         | Emirates (0s)           | Economy          |      2,300 |       4,600 |      20,400
+     |                   |                         |                  |            |             |
+1C   | DXB > SFO         | Turkish Airlines (1s)   | Economy          |      1,900 |       3,800 |
+1C   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Economy          |      4,400 |       8,800 |
+1C   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+1C   | LAX > DXB         | British Airways (1s)    | Economy          |      2,600 |       5,200 |      20,800
+     |                   |                         |                  |            |             |
+3A   | DXB > LAX         | Emirates (0s)           | Economy          |      2,300 |       4,600 |
+3A   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Economy          |      4,400 |       8,800 |
+3A   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+3A   | LAX > DXB         | Emirates (0s)           | Economy          |      2,300 |       4,600 |      21,000
+     |                   |                         |                  |            |             |
+3C   | DXB > LAX         | British Airways (1s)    | Economy          |      2,600 |       5,200 |
+3C   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Economy          |      4,400 |       8,800 |
+3C   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+3C   | LAX > DXB         | British Airways (1s)    | Economy          |      2,600 |       5,200 |      22,200
+     |                   |                         |                  |            |             |
+2D   | DXB > SFO         | Emirates (0s)           | Premium Economy  |      3,000 |       6,000 |
+2D   | SFO > PPT > SFO   | French Bee (0s)         | Premium Economy  |      4,900 |       9,800 |
+2D   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+2D   | SFO > DXB         | Emirates (0s)           | Premium Economy  |      3,000 |       6,000 |      24,800
+     |                   |                         |                  |            |             |
+1D   | DXB > SFO         | Emirates (0s)           | Premium Economy  |      3,000 |       6,000 |
+1D   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Premium Economy  |      7,000 |      14,000 |
+1D   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+1D   | LAX > DXB         | Emirates (0s)           | Premium Economy  |      3,800 |       7,600 |      30,600
+     |                   |                         |                  |            |             |
+3D   | DXB > LAX         | Emirates (0s)           | Premium Economy  |      3,800 |       7,600 |
+3D   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Premium Economy  |      7,000 |      14,000 |
+3D   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+3D   | LAX > DXB         | Emirates (0s)           | Premium Economy  |      3,800 |       7,600 |      32,200
+     |                   |                         |                  |            |             |
+2B   | DXB > SFO         | Emirates (0s)           | Business         |     17,300 |      34,600 |
+2B   | SFO > PPT > SFO   | United (0s)             | Economy          |      2,400 |       4,800 |
+2B   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+2B   | SFO > DXB         | Emirates (0s)           | Business         |     17,300 |      34,600 |      77,000
+     |                   |                         |                  |            |             |
+1B   | DXB > SFO         | Emirates (0s)           | Business         |     17,300 |      34,600 |
+1B   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Economy          |      4,400 |       8,800 |
+1B   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+1B   | LAX > DXB         | Emirates (0s)           | Business         |     23,900 |      47,800 |      94,200
+     |                   |                         |                  |            |             |
+3B   | DXB > LAX         | Emirates (0s)           | Business         |     23,900 |      47,800 |
+3B   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Economy          |      4,400 |       8,800 |
+3B   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
+3B   | LAX > DXB         | Emirates (0s)           | Business         |     23,900 |      47,800 |     107,400
+
+Notes:
+- 0s = nonstop, 1s = 1 stop.
+- 1x = DXB<>SFO out, LAX<>DXB back (drive SFO to LAX for the CA leg). 2x = DXB<>SFO out, SFO<>DXB back (no driving, stay SFO both ends). 3x = DXB<>LAX out and back (all through LAX).
+- A = Emirates Economy. B = Emirates Business. C = cheapest connecting-airline Economy. D = Premium Economy (Emirates on DXB legs; Air Tahiti Nui Manava Premium on LAX<>PPT; French Bee Premium on SFO<>PPT).
+- PPT > BOB > PPT stays Economy in every trip — Air Tahiti's ATR turboprop on this route has no premium cabin.
+- Air Tahiti Nui Poerava business class excluded from this comparison per earlier request.
+- Cheapest overall: 2C (Turkish Economy, SFO both ends) - AED 15,400 for 2. Cheapest Premium Economy: 2D - AED 24,800 for 2. Cheapest with Emirates Economy: 2A - AED 15,800 for 2.
+- Figures are current live-market estimates rounded to nearest 100 AED, not confirmed April-May 2027 fares (not released yet).
