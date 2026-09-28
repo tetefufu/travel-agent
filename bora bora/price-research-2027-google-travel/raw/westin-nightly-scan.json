@@ -1,0 +1,21 @@
+{
+  "hotel": "The Westin Bora Bora Resort & Spa",
+  "source": "google.com/search -> Nightly price panel -> google.com/travel hotel detail Prices tab",
+  "purpose": "Redo of existing marriott.com-direct scrape (westin-weekly-rates-2027.csv), which could not get a named overwater room category. Google Travel resolved this gap.",
+  "queries": [
+    {
+      "dates": "Fri 1 Jan - Sun 3 Jan 2027 (default dates, outside travel window)",
+      "rooms": [
+        {"room": "Overwater, Bungalow, 1 King, Lagoon access, Terrace", "AED_per_night": 8305, "note": "entry-level overwater bungalow - real named category, resolves the gap in the original marriott.com scrape"},
+        {"room": "Lagoon View Overwater, Bungalow, 1 King, Lagoon view, Lagoon access, Terrace", "AED_per_night": 8505},
+        {"room": "Island View Overwater, Bungalow, 1 King, Island view, Lagoon access, Terrace", "AED_per_night": 8725}
+      ]
+    },
+    {
+      "dates": "Mon 10 - Sat 15 May 2027 (actual travel-window week; existing CSV has 'Lowest available room' = 5,579 AED/night for this week)",
+      "cheapest_official_site_AED_per_night": 6418,
+      "cheapest_OTA_AED_per_night": {"Expedia.com": 6714, "Hotels.com": 6714, "Trip.com": 8497, "Agoda": 6899},
+      "note": "Room name not disclosed for this query - likely the standard/lowest room, not the overwater bungalow. ~15% higher than the existing marriott.com-direct figure for the same week (5,579 AED), plausible day-to-day fluctuation."
+    }
+  ]
+}

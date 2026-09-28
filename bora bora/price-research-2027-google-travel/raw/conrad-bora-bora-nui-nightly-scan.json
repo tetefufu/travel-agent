@@ -1,0 +1,27 @@
+{
+  "hotel": "Conrad Bora Bora Nui",
+  "source": "google.com/travel hotel detail page, Prices tab, calendar 1-night price hints (gl=ae, hl=en-AE, 2 adults)",
+  "note": "Calendar day-tiles show an indicative 'best price for a 1-night stay' which is LOWER than the actual 5-night 'stay total' quote read from the Featured Options list for the same dates (e.g. Apr 5 tile shows AED 9,891 but the Mon5-Sat10 5-night query's official-site nightly rate is AED 11,410). Used only to gauge relative cheap/expensive weeks, not as the booked rate.",
+  "daily_1night_price_hints_AED": {
+    "2027-04-01": 9899, "2027-04-02": 9899, "2027-04-03": 9799, "2027-04-04": 9901,
+    "2027-04-05": 9891, "2027-04-06": 9835, "2027-04-07": 9901, "2027-04-08": 9843, "2027-04-09": 9891, "2027-04-10": 9891, "2027-04-11": 9899,
+    "2027-04-12": 9891, "2027-04-13": 9891, "2027-04-14": 9899, "2027-04-15": 9899, "2027-04-16": 9891, "2027-04-17": 9891, "2027-04-18": 9806,
+    "2027-04-19": 9899, "2027-04-20": 9899, "2027-04-21": 9899, "2027-04-22": 9826, "2027-04-23": 9899, "2027-04-24": 9891, "2027-04-25": 9851,
+    "2027-04-26": 10100, "2027-04-27": 9899, "2027-04-28": 9891, "2027-04-29": 9891, "2027-04-30": null,
+    "2027-05-01": null, "2027-05-02": null, "2027-05-03": null, "2027-05-04": null,
+    "2027-05-05": 10100, "2027-05-06": 10400, "2027-05-07": 10100, "2027-05-08": 10200, "2027-05-09": 10400,
+    "2027-05-10": 10400, "2027-05-11": 10400, "2027-05-12": 10400, "2027-05-13": 10400, "2027-05-14": 10400, "2027-05-15": 10200, "2027-05-16": 10400,
+    "2027-05-17": 10400, "2027-05-18": 10400, "2027-05-19": 10400, "2027-05-20": 10400, "2027-05-21": 11500, "2027-05-22": 10400, "2027-05-23": 10400,
+    "2027-05-24": 10100, "2027-05-25": 10400, "2027-05-26": 10400, "2027-05-27": 10400, "2027-05-28": 10400, "2027-05-29": 10400, "2027-05-30": 10400
+  },
+  "notes": "null = calendar showed '--' (checkin not bookable that date, likely sold out). April is uniformly cheaper than May; May 3-4 checkin unavailable; May 21 is a spike (11.5K).",
+  "precise_5night_week_queries": [
+    {"week": "Mon 5 - Sat 10 Apr 2027", "official_site_AED_per_night": 11410, "room_breakdown_shown": false},
+    {"week": "Mon 19 - Sat 24 Apr 2027", "official_site_AED_per_night": 11410, "room_breakdown_shown": false},
+    {"week": "Mon 10 - Sat 15 May 2027", "official_site_AED_per_night": 11902, "room_breakdown_shown": true, "rooms": [
+      {"room": "Tropical Beach View Villa", "AED_per_night": 11902, "note": "beach/garden category, likely NOT overwater"},
+      {"room": "Tropical Pool Villa", "AED_per_night": 12056, "note": "judgment call: treated as overwater villa w/ pool"},
+      {"room": "Endless View Pool Villa", "AED_per_night": 12737, "note": "judgment call: treated as overwater villa w/ pool, premium tier"}
+    ]}
+  ]
+}

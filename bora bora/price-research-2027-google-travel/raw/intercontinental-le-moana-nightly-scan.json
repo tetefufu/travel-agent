@@ -1,0 +1,21 @@
+{
+  "hotel": "InterContinental Bora Bora Le Moana Resort",
+  "source": "google.com/search hotel knowledge panel -> Nightly price -> google.com/travel hotel detail Prices tab",
+  "queries": [
+    {
+      "dates": "Fri 1 Jan - Sun 3 Jan 2027 (default dates, outside travel window - used only to confirm real room names and rate-plan structure)",
+      "official_site_note": "IHG official listing price hidden behind 'Get price' click (rate-parity gating)",
+      "rooms": [
+        {"room": "1 king overwater bungalow beach view", "plan": "Ihg advance saver (room only)", "AED_per_night": 5252},
+        {"room": "Bungalow (view unspecified)", "plan": "Ihg advance saver (room only)", "AED_per_night": 5405},
+        {"room": "1 king overwater bungalow beach view", "plan": "Ihg advance saver + breakfast", "AED_per_night": 5460}
+      ]
+    },
+    {
+      "dates": "Mon 10 - Sat 15 May 2027 (actual travel-window week)",
+      "note": "Room breakdown collapsed to single aggregator list on this query (UI only shows named-room breakdown on first/default load); room name not re-disclosed",
+      "cheapest_official_site_AED_per_night": 5203,
+      "cheapest_OTA_AED_per_night": {"Trip.com": 5205, "Expedia.com": 5205, "Booking.com": 5273, "Vio.com": 4841}
+    }
+  ]
+}

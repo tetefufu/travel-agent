@@ -1,0 +1,22 @@
+{
+  "hotel": "Hotel Maitai Polynesia (Bora Bora)",
+  "source": "google.com/search -> Check availability -> google.com/travel hotel detail Prices tab (Expedia.com listing)",
+  "data_confidence_caveat": "Google's aggregator never surfaced a room literally named 'Overwater Bungalow' for this hotel in either query, despite the property having that category per hotel-seasonal-pricing.csv and prior research. Only Standard Room (Garden/Ocean View) and Bungalow, Beachfront were shown - likely sold out on the aggregator side or not marketed by Expedia for these dates.",
+  "queries": [
+    {
+      "dates": "Fri 1 Jan - Sun 3 Jan 2027 (default dates, outside travel window)",
+      "rooms": [
+        {"room": "Standard Room, Garden View", "plan": "breakfast", "AED_per_night": 939},
+        {"room": "Standard Room, Ocean View", "plan": "breakfast", "AED_per_night": 1254},
+        {"room": "Bungalow, Beachfront", "plan": "breakfast", "AED_per_night": 2146}
+      ]
+    },
+    {
+      "dates": "Mon 10 - Sat 15 May 2027 (actual travel-window week)",
+      "rooms": [
+        {"room": "Standard Room, Ocean View", "plan": "breakfast", "AED_per_night": 1345}
+      ],
+      "note": "Overwater Bungalow and Beachfront Bungalow not shown by the aggregator for this week"
+    }
+  ]
+}

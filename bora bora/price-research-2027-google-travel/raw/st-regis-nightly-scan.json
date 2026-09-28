@@ -1,0 +1,20 @@
+{
+  "hotel": "The St. Regis Bora Bora Resort",
+  "source": "google.com/search -> Check availability -> google.com/travel hotel detail Prices tab",
+  "purpose": "Cross-check / redo of existing marriott.com-direct scrape (st-regis-weekly-rates-2027.csv) using Google Travel aggregator per user request",
+  "queries": [
+    {
+      "dates": "Fri 1 Jan - Sun 3 Jan 2027 (default dates, outside travel window)",
+      "rooms": [
+        {"room": "Reef side Garden, 1 Bedroom Villa, 1 King, Ocean view, Garden level, Private pool", "AED_per_night": 11904},
+        {"room": "Overwater Superior, Villa, 1 King, Lagoon view, Lagoon access", "AED_per_night": 13824}
+      ]
+    },
+    {
+      "dates": "Mon 10 - Sat 15 May 2027 (actual travel-window week, matches existing CSV's row for this week: Overwater Superior = 7,887 AED/night per marriott.com direct)",
+      "cheapest_official_site_AED_per_night": 9333,
+      "cheapest_OTA_AED_per_night": {"Vio.com": 9336, "Expedia.com": 9336, "Booking.com": 9708, "Trip.com": 13814},
+      "note": "Room name NOT disclosed by aggregator for this query. Google's cheapest figure (~9,335 AED) is ~18% HIGHER than the existing marriott.com-direct Overwater Superior rate (7,887 AED) for the identical week - likely reflects a different/higher room tier or a less-discounted rate channel, not a straight re-measurement of the same room. Kept as a separate reference point, does NOT supersede the existing direct-site figure."
+    }
+  ]
+}

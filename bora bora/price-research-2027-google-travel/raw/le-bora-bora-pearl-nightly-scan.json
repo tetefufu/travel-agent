@@ -1,0 +1,22 @@
+{
+  "hotel": "Le Bora Bora by Pearl Resorts",
+  "source": "google.com/search hotel knowledge panel -> Nightly price -> google.com/travel hotel detail Prices tab (Expedia.com listing, inline room breakdown)",
+  "queries": [
+    {
+      "dates": "Fri 1 Jan - Sun 3 Jan 2027 (default dates, outside travel window)",
+      "rooms": [
+        {"room": "Villa, Private Pool, Garden Area", "plan": "breakfast", "AED_per_night": 7098},
+        {"room": "Bungalow, Lagoon View, Overwater", "plan": "breakfast", "AED_per_night": 7698},
+        {"room": "Villa, 1 Bedroom, Private Pool, Beachside", "plan": "breakfast", "AED_per_night": 9118}
+      ]
+    },
+    {
+      "dates": "Mon 10 - Sat 15 May 2027 (actual travel-window week)",
+      "rooms": [
+        {"room": "Villa, Private Pool, Garden Area", "plan": "breakfast", "AED_per_night": 6761},
+        {"room": "Bungalow, Lagoon View, Overwater", "plan": "breakfast", "AED_per_night": 8014},
+        {"room": "Villa, 1 Bedroom, Private Pool, Beachside", "plan": "breakfast", "AED_per_night": 9494}
+      ]
+    }
+  ]
+}

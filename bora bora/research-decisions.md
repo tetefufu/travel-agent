@@ -307,3 +307,53 @@ Also got a real **LAX↔SFO one-way economy fare (~480 AED pp)** via Google Flig
 - **3x** (DXB↔LAX out and back): arrives LAX, but the road trip starts in San Francisco — needs the LAX→SFO hop right after arrival instead (Day 1–2).
 
 The page's itinerary text rewrites the affected days (1, 2, 11, 12, 17) based on which family is selected, so it never contradicts the chosen flights.
+
+---
+
+## Hotel price research — round 2, Google Travel (2026-09-27)
+
+User asked to expand hotel coverage beyond St Regis/Four Seasons/Westin and switch methodology to Google Travel's aggregator (`google.com/travel/search`), whose live date-picker was expected to let us scan a whole month of nightly prices at once. **`bora-bora.html` was NOT touched this round** — this is research/data-collection only, exactly as scoped.
+
+### Step 0 — Overwater bungalow validation (gate)
+
+Checked all 7 candidate hotels before researching prices:
+
+| Hotel | Has overwater bungalows? | Evidence | Included? |
+|---|---|---|---|
+| Conrad Bora Bora Nui | Yes (86 of 114 rooms) | Hilton room list, multiple travel guides | Yes |
+| InterContinental Bora Bora Resort & Thalasso Spa | Yes, but **closed** | See below | **No — excluded** |
+| InterContinental Bora Bora Le Moana Resort | Yes (mixed beach + overwater) | ihg.com room list | Yes |
+| Le Bora Bora by Pearl Resorts | Yes (mixed) | leborabora.com room list | Yes |
+| Maitai Polynesia Bora Bora | Yes (mixed, 4 room tiers) | hotel's own room list | Yes |
+| Royal Bora Bora | **No** — 80 garden-side standard rooms only, no overwater/stilt structures at all | Booking.com, Hotels.com, wanderinparadise.com all agree | **No — excluded** |
+| Village Temanuata | **No** — beach/garden bungalows only; the overwater units visible from its beach belong to the neighboring InterContinental, not this property | Oyster.com (explicit, most reliable source found) | **No — excluded** |
+
+**New finding during Step 0/1, not caught by a simple "has overwater bungalows" check:** InterContinental Bora Bora Resort & Thalasso Spa **closed its doors on 1 June 2026 for a top-to-bottom renovation**, with no reopening date announced (confirmed via the hotel's own site, ihg.com, and Google's AI Overview). It cannot be booked for Apr–Jun 2027 at all, so it's excluded from this round regardless of its overwater inventory. Revisit if IHG announces a reopening date before booking.
+
+### Methodology constraints discovered mid-task (superseding parts of the original plan)
+
+1. **Browser automation can only operate on `google.com` domains** — the claude-in-chrome tooling used for this research does not have permission to interact with hotel or OTA sites directly (hilton.com, marriott.com, ihg.com, leborabora.com, hotelmaitai.com, etc. all returned "Permission denied"). This ruled out the plan's Step 3 ("click through to the hotel's own booking page"). **Adapted approach:** stayed entirely within Google's own hotel-detail page (`google.com/travel/search`), which — for several hotels — surfaces its own inline room-and-rate-plan breakdown ("Featured options" list) without needing to leave Google. Where it didn't, the cheapest aggregator figure was used instead, with the gap noted per row.
+2. **Google's room breakdown is inconsistent, not a stable calendar heatmap.** The date-picker's daily price hints (when present) are lower "best price for a 1-night stay" teasers that don't match the real 5-night quote, so they were used only to gauge relative cheap/expensive stretches (see Conrad's raw scan), not as booked rates. The inline named-room breakdown sometimes appears on a query and sometimes collapses to a single aggregate figure on the very next query for the same hotel, with no obvious trigger — this is a Google UI quirk, not a data quality issue on our end.
+3. **Scope reduction:** given (1) and (2), each hotel was checked at 1–2 representative dates (the default "Fri 1 Jan – Sun 3 Jan 2027" query, which reliably shows named rooms, plus the actual Mon 10 – Sat 15 May 2027 travel-window week) rather than the full 4–6 week grid the original plan called for. This is a deliberate, documented trade-off to get real, live-sourced coverage across all included hotels rather than exhausting the session on one or two. **Extending any of these to the full 9-week grid is a straightforward follow-up** using the same method now that it's proven out.
+
+### Results per hotel
+
+All raw query data: `bora bora/price-research-2027-google-travel/raw/*.json`. Cleaned CSVs at `bora bora/` root.
+
+- **Conrad Bora Bora Nui** (`conrad-bora-bora-nui-weekly-rates-2027.csv`) — Apr weeks flat around 11,410 AED/night (room not itemized by the aggregator). For Mon 10–15 May, three named rooms appeared: Tropical Beach View Villa (11,902, **likely NOT overwater** — beach/garden category), Tropical Pool Villa (12,056) and Endless View Pool Villa (12,737) — the latter two treated as overwater villas w/ private pool as a judgment call (Conrad's real room names weren't independently cross-checked against a floor plan; flagged in the CSV).
+- **InterContinental Bora Bora Le Moana Resort** (`intercontinental-le-moana-weekly-rates-2027.csv`) — confirmed real room name and **two rate plans for the same overwater room**: "1 king overwater bungalow beach view" at 5,252 AED/night room-only vs 5,460 AED/night with breakfast (reference date). For the actual May 10–15 week, the aggregator collapsed to a single ~5,205 AED/night figure with the room name undisclosed.
+- **Le Bora Bora by Pearl Resorts** (`le-bora-bora-pearl-weekly-rates-2027.csv`) — cleanest result of the round: "Bungalow, Lagoon View, Overwater" is a real, consistently-named room, priced at 7,698 AED/night (reference date, breakfast included) and 8,014 AED/night for the actual Mon 10–15 May week, alongside garden-villa (6,761) and beachside-villa (9,494) comparables.
+- **Hotel Maitai Polynesia** (`maitai-polynesia-weekly-rates-2027.csv`) — **data gap**: despite the hotel having a genuine "Overwater Bungalow" category (per `hotel-seasonal-pricing.csv`), Google's aggregator never surfaced it in either query — only Standard Room (Garden/Ocean View) and a beachfront (not overwater) bungalow. Likely sold out on the OTA side for these dates rather than a research error; treat Maitai's overwater rate as **unconfirmed** this round.
+- **St. Regis (redo)** (`st-regis-weekly-rates-2027-googletravel.csv`) — confirms the "Overwater Superior" room name matches the existing `st-regis-weekly-rates-2027.csv`. For the actual Mon 10–15 May week, Google's cheapest aggregate (9,335 AED/night, room undisclosed) is **~18% higher** than the existing marriott.com-direct figure for the identical week (7,887 AED/night) — kept as a separate cross-check row, does **not** supersede the original file.
+- **Westin (redo)** (`westin-weekly-rates-2027-googletravel.csv`) — **this round's best find**: resolves the original scrape's known gap (marriott.com's booking flow wouldn't disclose a named room, only a generic "Lowest Regular Rate" teaser). Google's aggregator names three real overwater categories at the reference date: "Overwater, Bungalow, 1 King, Lagoon access, Terrace" (8,305 AED/night, entry-level), Lagoon View Overwater (8,505), Island View Overwater (8,725). For the actual May 10–15 week the aggregate collapsed to 6,418 AED/night (room undisclosed, ~15% above the existing 5,579 AED figure for the same week) — again a cross-check, not a replacement.
+
+### Excluded from this round
+
+Royal Bora Bora and Village Temanuata (no overwater bungalows, see Step 0 table) and InterContinental Bora Bora Resort & Thalasso Spa (closed for renovation, no reopening date). No CSVs produced for these three.
+
+### Suggested follow-ups
+
+- Extend any hotel above to the full 9-week grid using the same method now it's proven (set check-in/check-out via the calendar's `find`-able date cells, read the "Featured options" list).
+- Re-check Maitai's Overwater Bungalow availability on different dates or via a direct call, since the aggregator gap looks like a booking-inventory issue rather than the room not existing.
+- Watch for an InterContinental Thalasso Spa reopening announcement before ruling it out long-term.
+- If any of these hotels should be wired into `bora-bora.html`'s `RATES` object and hotel-selector array, that's a separate follow-up task — not done here.
