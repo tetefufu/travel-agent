@@ -105,6 +105,7 @@
       <tr><td>California car rental, meals, activities</td><td id="c-camisc">—</td></tr>
       <tr class="total"><td>Total</td><td id="c-total">—</td></tr>
     </table>
+    <div class="note">Sakhi &amp; Joel each owe, per month: <span id="c-sakhimonthly">—</span>. Based on <code>bora bora/finance.txt</code> (27,000 AED already allocated from the Sri Lanka leftover), split 50/50, saved by March 2027.</div>
   </section>
 
   <section id="itinerarySection">
@@ -166,6 +167,7 @@ const WEEKS = [
   {id:'2027-05-17', label:'17–22 May 2027', eid:true,  cheapest:false},
   {id:'2027-05-24', label:'24–29 May 2027', eid:false, cheapest:false},
   {id:'2027-05-31', label:'31 May–5 Jun 2027', eid:false, cheapest:true},
+  {id:'2027-05-15', label:'15–20 May 2027', eid:false, cheapest:false, booked:true},
 ];
 
 // Bora Bora hotel rates AED/night, entry-level room. null = sold out that week.
@@ -180,6 +182,8 @@ const BB_RATES = {
   '2027-05-17': {stregis:8273,  fourseasons:10504, fourseasonsPlunge:12717, westin:6597,  westinPlunge:7982},
   '2027-05-24': {stregis:10790, fourseasons:9819,  fourseasonsPlunge:12060, westin:6618,  westinPlunge:8008},
   '2027-05-31': {stregis:7736,  fourseasons:9545,  fourseasonsPlunge:11965, westin:6796,  westinPlunge:8223},
+  // booked trip: 1,736,884 XPF / 5 nights, converted ≈58,000 AED total — real price, not a research estimate
+  '2027-05-15': {stregis:11600, fourseasons:null,  fourseasonsPlunge:null,  westin:null,  westinPlunge:null},
 };
 // fallback rate to use when a week is sold out (nearest available week), flagged with ★ in UI
 const BB_FALLBACK = {fourseasons:8409, westin:5830, westinPlunge:8079}; // fourseasons: avg of w1/w3; westin/-plunge: w2 value
@@ -228,9 +232,23 @@ const FLIGHTS = [
   {id:'2B', group:2, label:'Business (via SFO)', total:77000},
   {id:'1B', group:1, label:'Business (SFO out / LAX back)', total:94200},
   {id:'3B', group:3, label:'Business (via LAX)', total:107400},
+  // Qatar quotes via flywithaccess.com — unverified reseller, see footer caution note
+  {id:'1Q', group:1, label:'Business — Qatar Airways (SFO out / LAX back) ⚠ verify fare source', total:34000},
+  {id:'3Q', group:3, label:'Business — Qatar Airways (via LAX) ⚠ verify fare source', total:29000},
 ];
 const HOP_COST_PP = 480; // AED, LAX<->SFO one-way economy, Google Flights live search
 const HOP_COST = HOP_COST_PP * 2;
+
+// Savings split: finance.txt — 53k budget - 26k Sri Lanka = 27k already allocated.
+// Remaining shortfall (live trip total - 27k) split 50/50, saved by March 2027.
+const ALREADY_ALLOCATED = 27000; // AED
+const SAVINGS_DEADLINE = new Date(2027, 2, 1); // March 2027
+function monthsUntilDeadline(){
+  const now = new Date();
+  const months = (SAVINGS_DEADLINE.getFullYear() - now.getFullYear()) * 12
+               + (SAVINGS_DEADLINE.getMonth() - now.getMonth());
+  return Math.max(1, months);
+}
 
 const ACTIVITIES = [
   {id:'glassboat', name:'Glass-Bottom Boat (Nautilus)', price:551, checked:true},
@@ -309,6 +327,7 @@ function populateWeekSelect(){
     let tag = '';
     if(w.eid) tag = ' — Eid al-Adha';
     if(w.cheapest) tag = ' — cheapest researched';
+    if(w.booked) tag = ' — BOOKED';
     return `<option value="${i}">${w.label}${tag}</option>`;
   }).join('');
   sel.value = WEEKS.length - 1; // default to cheapest week
@@ -486,12 +505,21 @@ function updateBudget(){
   document.getElementById('c-total').textContent = total.toLocaleString() + ' AED';
   document.getElementById('totalAmt').textContent = total.toLocaleString() + ' AED';
 
+  // savings split (live — recalculates with total)
+  const monthsLeft = monthsUntilDeadline();
+  const shortfall = Math.max(0, total - ALREADY_ALLOCATED);
+  const perPersonMonthly = Math.round(shortfall / monthsLeft / 2);
+  document.getElementById('c-sakhimonthly').textContent =
+    perPersonMonthly.toLocaleString() + ' AED/month (' + monthsLeft + ' mo left to Mar 2027)';
+
   // footer note
   const anyEst = bbHotelEstimated || ca.anyEstimated;
   document.getElementById('footerNotes').innerHTML =
     `Prices are 2-passenger, AED, from live researched rates (24 Sep 2026) for the exact selected week — not interpolated. ` +
     (anyEst ? `★ marks a line where the exact week was sold out on the booking engine at research time; nearest available week's rate is shown as a flagged estimate. ` : '') +
-    `California car rental/meals/activities and Bora Bora dining are unresearched placeholder estimates, unchanged methodology from prior planning. Split-hotel transfer cost (${WESTIN_SPLIT_TRANSFER} AED) is unconfirmed. Full sourcing: <code>bora bora/research-decisions.md</code>.`;
+    `California car rental/meals/activities and Bora Bora dining are unresearched placeholder estimates, unchanged methodology from prior planning. Split-hotel transfer cost (${WESTIN_SPLIT_TRANSFER} AED) is unconfirmed. ` +
+    `Qatar Airways fares (1Q/3Q) were quoted via flywithaccess.com — an unverified reseller (young domain, hidden owner, part of a cluster of near-identical discount-broker sites) — confirm directly with Qatar before paying. ` +
+    `Full sourcing: <code>bora bora/research-decisions.md</code>.`;
 }
 
 /* ---------- Self-test ---------- */
