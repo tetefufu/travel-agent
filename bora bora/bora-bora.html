@@ -27,6 +27,7 @@
   }
   .stickybar .label{font-size:0.75em; opacity:.8; text-transform:uppercase; letter-spacing:.04em;}
   .stickybar .amt{font-size:1.25em; font-weight:700; color:var(--gold);}
+  .stickybar .monthly{font-size:0.8em; color:#fff; opacity:.85; border-bottom:1px dotted rgba(255,255,255,.5); margin-right:10px; white-space:nowrap;}
 
   section{margin-bottom:22px;}
   h2{
@@ -92,20 +93,18 @@
 
   <div class="stickybar">
     <span class="label">Total trip cost (2 pax)</span>
+    <span class="monthly" id="c-sakhimonthly">—</span>
     <span class="amt" id="totalAmt">—</span>
   </div>
 
   <section id="summarySection">
-    <h2>Trip Cost Summary</h2>
     <table class="costs">
       <tr><td>Flights</td><td id="c-flights">—</td></tr>
       <tr><td>Bora Bora hotel</td><td id="c-bbhotel">—</td></tr>
       <tr><td>Bora Bora activities + meals</td><td id="c-bbmisc">—</td></tr>
       <tr><td>California hotels (10 nights)</td><td id="c-cahotel">—</td></tr>
       <tr><td>California car rental, meals, activities</td><td id="c-camisc">—</td></tr>
-      <tr class="total"><td>Total</td><td id="c-total">—</td></tr>
     </table>
-    <div class="note">Sakhi &amp; Joel each owe, per month: <span id="c-sakhimonthly">—</span>. Based on <code>bora bora/finance.txt</code> (27,000 AED already allocated from the Sri Lanka leftover), split 50/50, saved by March 2027.</div>
   </section>
 
   <section id="itinerarySection">
@@ -122,29 +121,33 @@
     </div>
 
     <div class="field">
-      <label class="fieldlabel">Flights (2 pax, all legs)</label>
-      <select id="flightSelect"></select>
-      <div class="hop-row" id="hopRow">
-        <div class="opt-row selected" style="cursor:default;">
-          <span class="oname">LAX ↔ SFO domestic hop<span class="opt-sub" id="hopSubtext"></span></span>
-          <span class="oprice" id="hopPrice">—</span>
+      <details>
+        <summary>Flights (2 pax, all legs)</summary>
+        <select id="flightSelect"></select>
+        <div class="hop-row" id="hopRow">
+          <div class="opt-row selected" style="cursor:default;">
+            <span class="oname">LAX ↔ SFO domestic hop<span class="opt-sub" id="hopSubtext"></span></span>
+            <span class="oprice" id="hopPrice">—</span>
+          </div>
         </div>
-      </div>
-      <label class="opt-row" style="margin-top:6px;">
-        <input type="checkbox" id="extraHop">
-        <span class="oname">Extra SFO ↔ LAX flight<span class="opt-sub">one-way, with 1 checked bag — independent of the flight option picked above</span></span>
-        <span class="oprice" id="extraHopPrice">—</span>
-      </label>
-      <label class="opt-row" style="margin-top:6px;">
-        <input type="checkbox" id="bufferNight">
-        <span class="oname">Add LAX/SFO buffer night after Bora Bora<span class="opt-sub">de-risks the BOB→PPT→hub→DXB same-day connection — adds 1 day to the itinerary</span></span>
-        <span class="oprice" id="bufferNightPrice">—</span>
-      </label>
+        <label class="opt-row" style="margin-top:6px;">
+          <input type="checkbox" id="extraHop">
+          <span class="oname">Extra SFO ↔ LAX flight<span class="opt-sub">one-way, with 1 checked bag — independent of the flight option picked above</span></span>
+          <span class="oprice" id="extraHopPrice">—</span>
+        </label>
+        <label class="opt-row" style="margin-top:6px;">
+          <input type="checkbox" id="bufferNight">
+          <span class="oname">Add LAX/SFO buffer night after Bora Bora<span class="opt-sub">de-risks the BOB→PPT→hub→DXB same-day connection — adds 1 day to the itinerary</span></span>
+          <span class="oprice" id="bufferNightPrice">—</span>
+        </label>
+      </details>
     </div>
 
     <div class="field">
-      <label class="fieldlabel">Bora Bora hotel</label>
-      <div id="bbHotelOptions"></div>
+      <details>
+        <summary>Bora Bora hotel</summary>
+        <div id="bbHotelOptions"></div>
+      </details>
     </div>
 
     <div class="field">
@@ -155,13 +158,15 @@
     </div>
 
     <div class="field">
-      <label class="fieldlabel">California hotels (fixed picks, priced for selected week)</label>
-      <div id="caHotels"></div>
-      <label class="opt-row" style="margin-top:6px;">
-        <input type="checkbox" id="caCheap">
-        <span class="oname">Use cheaper 4.7★+ picks instead<span class="opt-sub" id="caCheapSub"></span></span>
-        <span class="oprice" id="caCheapPrice">—</span>
-      </label>
+      <details>
+        <summary>California hotels (fixed picks, priced for selected week)</summary>
+        <div id="caHotels"></div>
+        <label class="opt-row" style="margin-top:6px;">
+          <input type="checkbox" id="caCheap">
+          <span class="oname">Use cheaper 4.7★+ picks instead<span class="opt-sub" id="caCheapSub"></span></span>
+          <span class="oprice" id="caCheapPrice">—</span>
+        </label>
+      </details>
     </div>
   </section>
 
@@ -574,15 +579,16 @@ function updateBudget(){
 
   // total
   const total = flightTotal + bbHotelCost + act.total + caHotelTotal + bufferCost + caMisc;
-  document.getElementById('c-total').textContent = total.toLocaleString() + ' AED';
   document.getElementById('totalAmt').textContent = total.toLocaleString() + ' AED';
 
   // savings split (live — recalculates with total)
   const monthsLeft = monthsUntilDeadline();
   const shortfall = Math.max(0, total - ALREADY_ALLOCATED);
   const perPersonMonthly = Math.round(shortfall / monthsLeft / 2);
-  document.getElementById('c-sakhimonthly').textContent =
-    perPersonMonthly.toLocaleString() + ' AED/month (' + monthsLeft + ' mo left to Mar 2027)';
+  const monthlyLabel = perPersonMonthly.toLocaleString() + ' AED/month';
+  const sakhiEl = document.getElementById('c-sakhimonthly');
+  sakhiEl.textContent = monthlyLabel;
+  sakhiEl.title = `Sakhi & Joel each owe, per month: ${monthlyLabel} (${monthsLeft} mo left to Mar 2027). Based on bora bora/finance.txt (27,000 AED already allocated from the Sri Lanka leftover), split 50/50, saved by March 2027.`;
 
   // footer note
   const anyEst = bbHotelEstimated || ca.anyEstimated;
