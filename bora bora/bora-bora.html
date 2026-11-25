@@ -201,7 +201,7 @@ const CA_RATES = {
   '2027-05-24': {sf:3018, carmel:3174, bigsur:8054, sb:8297, la:4712},
   '2027-05-31': {sf:1815, carmel:3174, bigsur:8461, sb:null, la:4712},
 };
-const CA_FALLBACK = {la:4712, sb:8288}; // la: flat-rate property, safe substitute; sb: avg of neighbouring weeks
+const CA_FALLBACK = {la:4712, sb:8288, sf:1815, carmel:3174, bigsur:8466}; // la/sb: flat-rate/avg of neighbouring weeks; sf/carmel/bigsur: nearest researched week (2027-05-10), used when a whole week (e.g. the booked BB week) has no CA research
 const CA_HOTELS = [
   {key:'sf', name:'Fairmont San Francisco', nights:3},
   {key:'carmel', name:"L'Auberge Carmel", nights:1},
@@ -330,7 +330,9 @@ function populateWeekSelect(){
     if(w.booked) tag = ' — BOOKED';
     return `<option value="${i}">${w.label}${tag}</option>`;
   }).join('');
-  sel.value = WEEKS.length - 1; // default to cheapest week
+  // default to the booked week if there is one, else the cheapest researched week
+  const bookedIdx = WEEKS.findIndex(w=>w.booked);
+  sel.value = bookedIdx !== -1 ? bookedIdx : WEEKS.length - 1;
 }
 
 function populateFlightSelect(){
@@ -395,14 +397,14 @@ function renderItinerary(weekIso, family){
 
 function getBBRate(weekIdx, key){
   const w = WEEKS[weekIdx];
-  const r = BB_RATES[w.id][key];
-  if(r !== null) return {value:r, estimated:false};
+  const r = (BB_RATES[w.id] || {})[key];
+  if(r !== null && r !== undefined) return {value:r, estimated:false};
   return {value:BB_FALLBACK[key], estimated:true};
 }
 function getCARate(weekIdx, key){
   const w = WEEKS[weekIdx];
-  const r = CA_RATES[w.id][key];
-  if(r !== null) return {value:r, estimated:false};
+  const r = (CA_RATES[w.id] || {})[key];
+  if(r !== null && r !== undefined) return {value:r, estimated:false};
   return {value:CA_FALLBACK[key], estimated:true};
 }
 
