@@ -135,6 +135,11 @@
         <span class="oname">Extra SFO ↔ LAX flight<span class="opt-sub">one-way, with 1 checked bag — independent of the flight option picked above</span></span>
         <span class="oprice" id="extraHopPrice">—</span>
       </label>
+      <label class="opt-row" style="margin-top:6px;">
+        <input type="checkbox" id="bufferNight">
+        <span class="oname">Add LAX/SFO buffer night after Bora Bora<span class="opt-sub">de-risks the BOB→PPT→hub→DXB same-day connection — adds 1 day to the itinerary</span></span>
+        <span class="oprice" id="bufferNightPrice">—</span>
+      </label>
     </div>
 
     <div class="field">
@@ -408,15 +413,27 @@ function populateCAHotels(){
   `).join('');
 }
 
-function renderItinerary(weekIso, family){
+const RETURN_HUB = {1:'LAX', 2:'SFO', 3:'LAX'};
+
+function renderItinerary(weekIso, family, bufferNight){
   const el = document.getElementById('itinerary');
   const overrides = FAMILY_OVERRIDES[family];
+  const dayText = {...GENERIC_DAYS, ...overrides};
+  const dayLoc = {...LOC_FOR_DAY};
+  const totalDays = bufferNight ? 18 : 17;
+  if(bufferNight){
+    const hub = RETURN_HUB[family];
+    dayText[17] = `Bora Bora (BOB) → Papeete (PPT) → ${hub}, buffer night (flight-delay safety margin)`;
+    dayLoc[17] = hub === 'LAX' ? 'Los Angeles' : 'San Francisco';
+    dayText[18] = `${hub} → Dubai`;
+    dayLoc[18] = 'In Transit';
+  }
   let html = '';
   let lastLoc = null;
-  for(let n=1; n<=17; n++){
+  for(let n=1; n<=totalDays; n++){
     const date = addDays(weekIso, n-12);
-    const text = overrides[n] || GENERIC_DAYS[n];
-    const loc = LOC_FOR_DAY[n];
+    const text = dayText[n];
+    const loc = dayLoc[n];
     if(loc !== lastLoc){
       html += `<div class="loc-hd">${loc}</div>`;
       lastLoc = loc;
@@ -488,9 +505,10 @@ function updateBudget(){
   const week = WEEKS[weekIdx];
   const flight = FLIGHTS[flightIdx];
   const hotelKey = document.querySelector('input[name="bbhotel"]:checked').value;
+  const bufferNight = document.getElementById('bufferNight').checked;
 
   // itinerary
-  renderItinerary(week.id, flight.group);
+  renderItinerary(week.id, flight.group, bufferNight);
 
   // flights + hop
   const hopRow = document.getElementById('hopRow');
@@ -541,12 +559,21 @@ function updateBudget(){
     ? ' — ' + CA_CHEAP_HOTELS.map(h=>h.name).join(' · ')
     : '';
 
+  // buffer night — one extra hub-city hotel night, same rate source (cheap toggle aware)
+  const hub = RETURN_HUB[flight.group];
+  const hubKey = hub === 'LAX' ? 'la' : 'sf';
+  const hubNightRate = useCACheap
+    ? CA_CHEAP_HOTELS.find(h=>h.key===hubKey).nightRate
+    : getCARate(weekIdx, hubKey).value;
+  document.getElementById('bufferNightPrice').textContent = hubNightRate.toLocaleString() + ' AED (' + hub + ')';
+  const bufferCost = bufferNight ? hubNightRate : 0;
+
   // CA misc
   const caMisc = Math.round(CA_MISC_PER_NIGHT * CA_NIGHTS_TOTAL);
   document.getElementById('c-camisc').textContent = caMisc.toLocaleString() + ' AED';
 
   // total
-  const total = flightTotal + bbHotelCost + act.total + caHotelTotal + caMisc;
+  const total = flightTotal + bbHotelCost + act.total + caHotelTotal + bufferCost + caMisc;
   document.getElementById('c-total').textContent = total.toLocaleString() + ' AED';
   document.getElementById('totalAmt').textContent = total.toLocaleString() + ' AED';
 
@@ -596,6 +623,15 @@ function selfTest(){
   assertEq('group1 flight id', FLIGHTS[2].id, '1A');
   assertEq('group1 has no hop', FLIGHTS[2].group, 1);
   assertEq('group3 flight id', FLIGHTS[4].id, '3A');
+  // buffer-night itinerary variant
+  assertEq('return hub group1', RETURN_HUB[1], 'LAX');
+  assertEq('return hub group2', RETURN_HUB[2], 'SFO');
+  assertEq('return hub group3', RETURN_HUB[3], 'LAX');
+  renderItinerary(WEEKS[0].id, 3, true);
+  const itinHtml = document.getElementById('itinerary').innerHTML;
+  assertEq('buffer night adds day 18', itinHtml.includes('D18'), true);
+  assertEq('buffer night day18 text', itinHtml.includes('LAX → Dubai'), true);
+  updateBudget(); // restore itinerary DOM to the real current selections after the probe above
   console.log('selfTest results:', results);
   const failed = results.filter(r=>!r.pass);
   console.log(failed.length===0 ? `selfTest: all ${results.length} checks passed` : `selfTest: ${failed.length}/${results.length} FAILED`);
@@ -614,6 +650,7 @@ function init(){
   document.getElementById('flightSelect').addEventListener('change', updateBudget);
   document.getElementById('extraHop').addEventListener('change', updateBudget);
   document.getElementById('caCheap').addEventListener('change', updateBudget);
+  document.getElementById('bufferNight').addEventListener('change', updateBudget);
   document.querySelectorAll('input[name="bbhotel"]').forEach(r=>r.addEventListener('change', updateBudget));
   ACTIVITIES.forEach(a=>{
     document.getElementById('act-'+a.id).addEventListener('change', updateBudget);
