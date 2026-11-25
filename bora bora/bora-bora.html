@@ -355,7 +355,8 @@ function populateFlightSelect(){
   sel.innerHTML = FLIGHTS.map((f,i)=>
     `<option value="${i}">${f.id} — ${f.label} — ${f.total.toLocaleString()} AED</option>`
   ).join('');
-  sel.value = 0; // cheapest first
+  const defaultIdx = FLIGHTS.findIndex(f=>f.id==='3F');
+  sel.value = defaultIdx !== -1 ? defaultIdx : 0; // default to Qatar 3F, else cheapest
 }
 
 function populateBBHotels(){
