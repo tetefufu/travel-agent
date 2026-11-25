@@ -88,7 +88,7 @@
 <div class="wrap">
   <header>
     <h1>Dubai → California → Bora Bora</h1>
-    <p class="subtitle">17 days · 2027 · SF → coastal road trip → Bora Bora</p>
+    <p class="subtitle"><span id="dayCount">17</span> days · 2027 · SF → coastal road trip → Bora Bora</p>
   </header>
 
   <div class="stickybar">
@@ -136,7 +136,7 @@
           <span class="oprice" id="extraHopPrice">—</span>
         </label>
         <label class="opt-row" style="margin-top:6px;">
-          <input type="checkbox" id="bufferNight">
+          <input type="checkbox" id="bufferNight" checked>
           <span class="oname">Add LAX/SFO buffer night after Bora Bora<span class="opt-sub">de-risks the BOB→PPT→hub→DXB same-day connection — adds 1 day to the itinerary</span></span>
           <span class="oprice" id="bufferNightPrice">—</span>
         </label>
@@ -242,6 +242,7 @@ const CA_CHEAP_HOTELS = [
 ];
 const CA_CHEAP_TOTAL = CA_CHEAP_HOTELS.reduce((s,h)=>s+h.nightRate*h.nights, 0);
 const CA_MISC_PER_NIGHT = 1093; // car rental + meals + activities, unchanged methodology from prior estimate, scaled to 10 CA nights
+const CA_ONEWAY_DROPFEE = 735; // AED, ~$200 USD midpoint of $100-300 one-way SF->LA drop fee range (Hertz/Avis/Enterprise, researched Nov 2026) — confirm exact fee with chosen rental company at booking
 const CA_NIGHTS_TOTAL = 10;
 const BB_NIGHTS = 5;
 const BB_MEALS_EST = 6881; // fixed resort/fine dining estimate for 5 nights, unchanged from prior research
@@ -426,6 +427,7 @@ function renderItinerary(weekIso, family, bufferNight){
   const dayText = {...GENERIC_DAYS, ...overrides};
   const dayLoc = {...LOC_FOR_DAY};
   const totalDays = bufferNight ? 18 : 17;
+  document.getElementById('dayCount').textContent = totalDays;
   if(bufferNight){
     const hub = RETURN_HUB[family];
     dayText[17] = `Bora Bora (BOB) → Papeete (PPT) → ${hub}, buffer night (flight-delay safety margin)`;
@@ -582,8 +584,8 @@ function updateBudget(){
   document.getElementById('bufferNightPrice').textContent = hubNightRate.toLocaleString() + ' AED (' + hub + ')';
   const bufferCost = bufferNight ? hubNightRate : 0;
 
-  // CA misc
-  const caMisc = Math.round(CA_MISC_PER_NIGHT * CA_NIGHTS_TOTAL);
+  // CA misc (car rental + meals + activities, plus the one-way SF->LA rental drop fee)
+  const caMisc = Math.round(CA_MISC_PER_NIGHT * CA_NIGHTS_TOTAL) + CA_ONEWAY_DROPFEE;
   document.getElementById('c-camisc').textContent = caMisc.toLocaleString() + ' AED';
 
   // total
@@ -604,7 +606,7 @@ function updateBudget(){
   document.getElementById('footerNotes').innerHTML =
     `Prices are 2-passenger, AED, from live researched rates (24 Sep 2026) for the exact selected week — not interpolated. ` +
     (anyEst ? `★ marks a line where the exact week was sold out on the booking engine at research time; nearest available week's rate is shown as a flagged estimate. ` : '') +
-    `California car rental/meals/activities and Bora Bora dining are unresearched placeholder estimates, unchanged methodology from prior planning. Split-hotel transfer cost (${WESTIN_SPLIT_TRANSFER} AED) is unconfirmed. ` +
+    `California car rental/meals/activities and Bora Bora dining are unresearched placeholder estimates, unchanged methodology from prior planning. Includes a ${CA_ONEWAY_DROPFEE.toLocaleString()} AED one-way SF→LA rental drop fee (researched range, not a confirmed quote). Split-hotel transfer cost (${WESTIN_SPLIT_TRANSFER} AED) is unconfirmed. ` +
     `Qatar Airways fares (1Q/3Q) were quoted via flywithaccess.com — an unverified reseller (young domain, hidden owner, part of a cluster of near-identical discount-broker sites) — confirm directly with Qatar before paying. ` +
     `Full sourcing: <code>bora bora/research-decisions.md</code>.`;
 }
