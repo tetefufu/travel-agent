@@ -412,7 +412,7 @@ function populateCAHotels(){
   const el = document.getElementById('caHotels');
   el.innerHTML = CA_HOTELS.map(h=>`
     <div class="ca-row">
-      <span>${h.name}<span class="cn"> — ${h.nights} night${h.nights>1?'s':''}</span></span>
+      <span><span id="can-${h.key}">${h.name}</span><span class="cn"> — ${h.nights} night${h.nights>1?'s':''}</span></span>
       <span id="cah-${h.key}">—</span>
     </div>
   `).join('');
@@ -489,16 +489,25 @@ function computeActivitiesCost(){
   return {total: total + BB_MEALS_EST, count};
 }
 
-function computeCAHotelCost(weekIdx){
+function computeCAHotelCost(weekIdx, useCACheap){
   let total = 0;
   let anyEstimated = false;
   CA_HOTELS.forEach(h=>{
-    const r = getCARate(weekIdx, h.key);
-    total += r.value * h.nights;
-    if(r.estimated) anyEstimated = true;
+    const nameCell = document.getElementById('can-'+h.key);
     const cell = document.getElementById('cah-'+h.key);
-    if(cell){
-      cell.textContent = (r.value*h.nights).toLocaleString() + ' AED' + (r.estimated?' ★':'');
+    if(useCACheap){
+      const ch = CA_CHEAP_HOTELS.find(c=>c.key===h.key);
+      const cost = ch.nightRate * ch.nights;
+      total += cost;
+      if(nameCell) nameCell.textContent = ch.name;
+      if(cell) cell.textContent = cost.toLocaleString() + ' AED';
+    } else {
+      const r = getCARate(weekIdx, h.key);
+      const cost = r.value * h.nights;
+      total += cost;
+      if(r.estimated) anyEstimated = true;
+      if(nameCell) nameCell.textContent = h.name;
+      if(cell) cell.textContent = cost.toLocaleString() + ' AED' + (r.estimated?' ★':'');
     }
   });
   return {total, anyEstimated};
@@ -555,9 +564,9 @@ function updateBudget(){
   });
 
   // CA hotels
-  const ca = computeCAHotelCost(weekIdx);
   const useCACheap = document.getElementById('caCheap').checked;
-  const caHotelTotal = useCACheap ? CA_CHEAP_TOTAL : ca.total;
+  const ca = computeCAHotelCost(weekIdx, useCACheap);
+  const caHotelTotal = ca.total;
   document.getElementById('c-cahotel').textContent = caHotelTotal.toLocaleString() + ' AED' + (!useCACheap && ca.anyEstimated?' ★':'');
   document.getElementById('caCheapPrice').textContent = CA_CHEAP_TOTAL.toLocaleString() + ' AED';
   document.getElementById('caCheapSub').textContent = useCACheap
