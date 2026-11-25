@@ -61,6 +61,14 @@ Trip | Route             | Airline (stops)         | Class            |   Price 
 3B   | LAX > PPT > LAX   | Air Tahiti Nui (0s)     | Economy          |      4,400 |       8,800 |
 3B   | PPT > BOB > PPT   | Air Tahiti (0s)         | Economy          |      1,500 |       3,000 |
 3B   | LAX > DXB         | Emirates (0s)           | Business         |     23,900 |      47,800 |     107,400
+     |                   |                         |                  |            |             |
+1Q   | DXB<>SFO / LAX<>DXB (RT)| Qatar Airways (quoted) | Business         |     17,000 |      34,000 |      34,000*
+     |                   |                         |                  |            |             |
+3Q   | DXB<>LAX (RT)     | Qatar Airways (quoted)  | Business         |     14,500 |      29,000 |      29,000*
+     |                   |                         |                  |            |             |
+3E   | DXB > LAX         | Emirates (0s)           | Economy          |      2,300 |       4,600 |
+3E   | LAX > BOB > LAX   | Qatar Airways (1s, PPT) | Economy Semi-Flex|      8,543 |      17,085 |
+3E   | LAX > DXB         | Emirates (0s)           | Economy          |      2,300 |       4,600 |      26,285**
 
 Notes:
 - 0s = nonstop, 1s = 1 stop.
@@ -70,3 +78,5 @@ Notes:
 - Air Tahiti Nui Poerava business class excluded from this comparison per earlier request.
 - Cheapest overall: 2C (Turkish Economy, SFO both ends) - AED 15,400 for 2. Cheapest Premium Economy: 2D - AED 24,800 for 2. Cheapest with Emirates Economy: 2A - AED 15,800 for 2.
 - Figures are current live-market estimates rounded to nearest 100 AED, not confirmed April-May 2027 fares (not released yet).
+- * 1Q/3Q are lump-sum Business quotes sourced from flywithaccess.com, not itemized leg-by-leg like the rows above (Tahiti-leg inclusion unconfirmed). This reseller is unverified — young domain, hidden owner, part of a cluster of near-identical discount-broker sites — confirm directly with Qatar before paying. See caution note in bora-bora.html footer.
+- ** 3E's LAX<>BOB leg (17,085 AED / $4,652.18, Economy Semi-Flex, 1 stop via PPT) is a real, confirmed quote from qatarairways.com for 14→21 May 2027 (ties directly to the booked St Regis week). Paired here with the cheapest Emirates DXB<>LAX economy round trip to complete the itinerary. Unlike 1Q/3Q, this one is a verified direct-from-airline quote, not a reseller fare.
