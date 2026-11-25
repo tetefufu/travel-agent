@@ -152,6 +152,11 @@
     <div class="field">
       <label class="fieldlabel">California hotels (fixed picks, priced for selected week)</label>
       <div id="caHotels"></div>
+      <label class="opt-row" style="margin-top:6px;">
+        <input type="checkbox" id="caCheap">
+        <span class="oname">Use cheaper 4.7★+ picks instead<span class="opt-sub" id="caCheapSub"></span></span>
+        <span class="oprice" id="caCheapPrice">—</span>
+      </label>
     </div>
   </section>
 
@@ -214,6 +219,18 @@ const CA_HOTELS = [
   {key:'sb', name:'Rosewood Miramar Beach (Santa Barbara)', nights:1},
   {key:'la', name:'Waldorf Astoria Beverly Hills', nights:4},
 ];
+// Cheaper alternative, all 4.7★+ Tripadvisor except Big Sur (no 4.7★+ option exists there
+// at a sane price — true Big Sur lodging is either budget/no-frills or ultra-luxury like
+// Post Ranch Inn above; Glen Oaks is the closest practical match at 4.6★).
+// Flat current ballpark rates (USD→AED @ ~3.6725), not tied to a specific researched week.
+const CA_CHEAP_HOTELS = [
+  {key:'sf', name:'The Inn at Union Square (4.7★, 2,562 reviews)', nightRate:661, nights:3},
+  {key:'carmel', name:"Vagabond's House Inn (4.7★, 530 reviews)", nightRate:1939, nights:1},
+  {key:'bigsur', name:'Glen Oaks Big Sur, 2BR cabin (4.6★, 1,585 reviews)', nightRate:918, nights:1},
+  {key:'sb', name:'Santa Barbara Inn (4.7★, breakfast incl.)', nightRate:1061, nights:1},
+  {key:'la', name:'Montrose at Beverly Hills, West Hollywood (4.7★, 1,357 reviews)', nightRate:1117, nights:4},
+];
+const CA_CHEAP_TOTAL = CA_CHEAP_HOTELS.reduce((s,h)=>s+h.nightRate*h.nights, 0);
 const CA_MISC_PER_NIGHT = 1093; // car rental + meals + activities, unchanged methodology from prior estimate, scaled to 10 CA nights
 const CA_NIGHTS_TOTAL = 10;
 const BB_NIGHTS = 5;
@@ -516,14 +533,20 @@ function updateBudget(){
 
   // CA hotels
   const ca = computeCAHotelCost(weekIdx);
-  document.getElementById('c-cahotel').textContent = ca.total.toLocaleString() + ' AED' + (ca.anyEstimated?' ★':'');
+  const useCACheap = document.getElementById('caCheap').checked;
+  const caHotelTotal = useCACheap ? CA_CHEAP_TOTAL : ca.total;
+  document.getElementById('c-cahotel').textContent = caHotelTotal.toLocaleString() + ' AED' + (!useCACheap && ca.anyEstimated?' ★':'');
+  document.getElementById('caCheapPrice').textContent = CA_CHEAP_TOTAL.toLocaleString() + ' AED';
+  document.getElementById('caCheapSub').textContent = useCACheap
+    ? ' — ' + CA_CHEAP_HOTELS.map(h=>h.name).join(' · ')
+    : '';
 
   // CA misc
   const caMisc = Math.round(CA_MISC_PER_NIGHT * CA_NIGHTS_TOTAL);
   document.getElementById('c-camisc').textContent = caMisc.toLocaleString() + ' AED';
 
   // total
-  const total = flightTotal + bbHotelCost + act.total + ca.total + caMisc;
+  const total = flightTotal + bbHotelCost + act.total + caHotelTotal + caMisc;
   document.getElementById('c-total').textContent = total.toLocaleString() + ' AED';
   document.getElementById('totalAmt').textContent = total.toLocaleString() + ' AED';
 
@@ -590,6 +613,7 @@ function init(){
   document.getElementById('weekSelect').addEventListener('change', updateBudget);
   document.getElementById('flightSelect').addEventListener('change', updateBudget);
   document.getElementById('extraHop').addEventListener('change', updateBudget);
+  document.getElementById('caCheap').addEventListener('change', updateBudget);
   document.querySelectorAll('input[name="bbhotel"]').forEach(r=>r.addEventListener('change', updateBudget));
   ACTIVITIES.forEach(a=>{
     document.getElementById('act-'+a.id).addEventListener('change', updateBudget);
