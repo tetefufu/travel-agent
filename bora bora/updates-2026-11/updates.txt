@@ -11,3 +11,31 @@ Run flights past chatgpt and check for holes risks
 Ask claude to confirm all options exhausted 
 
 How much is flight lax to sfo - because dxb/lax return is 27k total. dxb/sfo/lax is 34k
+
+---
+
+real quote from qatar:
+
+✈️ Bora Bora Flights – May 2027
+
+Outbound – Friday 14 May
+
+- Depart: Los Angeles (LAX) at 23:00
+- Arrive: Bora Bora (BOB) at 08:05 on Saturday 15 May
+- Duration: 12h 05m
+- Stops: 1
+
+Return – Thursday 20 May
+
+- Depart: Bora Bora (BOB) at 18:20
+- Arrive: Los Angeles (LAX) at 10:35 on Friday 21 May
+- Duration: 13h 15m
+- Stops: 1
+
+Passengers: 2 adults
+Cabin: Economy Semi Flex
+Total price: $4,652.18 USD (both passengers, including taxes and fees)
+
+Cost per person: $2,326.09 USD
+
+Note: Airline, flight numbers and connecting airport not visible in the booking screenshot.

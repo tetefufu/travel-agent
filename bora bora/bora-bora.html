@@ -130,6 +130,11 @@
           <span class="oprice" id="hopPrice">—</span>
         </div>
       </div>
+      <label class="opt-row" style="margin-top:6px;">
+        <input type="checkbox" id="extraHop">
+        <span class="oname">Extra SFO ↔ LAX flight<span class="opt-sub">one-way, with 1 checked bag — independent of the flight option picked above</span></span>
+        <span class="oprice" id="extraHopPrice">—</span>
+      </label>
     </div>
 
     <div class="field">
@@ -235,9 +240,16 @@ const FLIGHTS = [
   // Qatar quotes via flywithaccess.com — unverified reseller, see footer caution note
   {id:'1Q', group:1, label:'Business — Qatar Airways (SFO out / LAX back) ⚠ verify fare source', total:34000},
   {id:'3Q', group:3, label:'Business — Qatar Airways (via LAX) ⚠ verify fare source', total:29000},
+  // Real quote, 14→21 May 2027: LAX<>BOB direct (1 stop via PPT), Economy Semi-Flex,
+  // $4,652.18 total (2pax) ≈ 17,085 AED, + Emirates DXB<>LAX economy round trip (9,200 AED)
+  {id:'3E', group:3, label:'Economy Semi-Flex — real LAX↔BOB quote (+ Emirates DXB↔LAX)', total:26285},
 ];
 const HOP_COST_PP = 480; // AED, LAX<->SFO one-way economy, Google Flights live search
 const HOP_COST = HOP_COST_PP * 2;
+
+// Separate, manually-toggled extra SFO<->LAX flight — independent of the auto hop-row above.
+const EXTRA_HOP_PP = 400; // AED, ~$109 Alaska Saver one-way incl. 1 checked bag
+const EXTRA_HOP_COST = EXTRA_HOP_PP * 2;
 
 // Savings split: finance.txt — 53k budget - 26k Sri Lanka = 27k already allocated.
 // Remaining shortfall (live trip total - 27k) split 50/50, saved by March 2027.
@@ -471,6 +483,10 @@ function updateBudget(){
   } else {
     hopRow.classList.remove('show');
   }
+  document.getElementById('extraHopPrice').textContent = EXTRA_HOP_COST.toLocaleString() + ' AED';
+  if(document.getElementById('extraHop').checked){
+    flightTotal += EXTRA_HOP_COST;
+  }
   document.getElementById('c-flights').textContent = flightTotal.toLocaleString() + ' AED';
 
   // BB hotel — update all radio prices, highlight selected
@@ -569,6 +585,7 @@ function init(){
 
   document.getElementById('weekSelect').addEventListener('change', updateBudget);
   document.getElementById('flightSelect').addEventListener('change', updateBudget);
+  document.getElementById('extraHop').addEventListener('change', updateBudget);
   document.querySelectorAll('input[name="bbhotel"]').forEach(r=>r.addEventListener('change', updateBudget));
   ACTIVITIES.forEach(a=>{
     document.getElementById('act-'+a.id).addEventListener('change', updateBudget);
