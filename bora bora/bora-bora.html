@@ -237,12 +237,15 @@ const FLIGHTS = [
   {id:'2B', group:2, label:'Business (via SFO)', total:77000},
   {id:'1B', group:1, label:'Business (SFO out / LAX back)', total:94200},
   {id:'3B', group:3, label:'Business (via LAX)', total:107400},
-  // Qatar quotes via flywithaccess.com — unverified reseller, see footer caution note
-  {id:'1Q', group:1, label:'Business — Qatar Airways (SFO out / LAX back) ⚠ verify fare source', total:34000},
-  {id:'3Q', group:3, label:'Business — Qatar Airways (via LAX) ⚠ verify fare source', total:29000},
+  // Qatar quotes via flywithaccess.com — unverified reseller, see footer caution note.
+  // Quoted figures are DXB<>SFO/LAX long-haul only; + TAHITI_LEGS_ECONOMY (11,800 AED: LAX<>PPT<>LAX + PPT<>BOB<>PPT) added below.
+  {id:'1Q', group:1, label:'Business — Qatar Airways (SFO out / LAX back) ⚠ verify fare source', total:34000+11800},
+  {id:'3Q', group:3, label:'Business — Qatar Airways (via LAX) ⚠ verify fare source', total:29000+11800},
   // Real quote, 14→21 May 2027: LAX<>BOB direct (1 stop via PPT), Economy Semi-Flex,
   // $4,652.18 total (2pax) ≈ 17,085 AED, + Emirates DXB<>LAX economy round trip (9,200 AED)
   {id:'3E', group:3, label:'Economy Semi-Flex — real LAX↔BOB quote (+ Emirates DXB↔LAX)', total:26285},
+  // Verified quote direct from qatarairways.com — DXB<>LAX long-haul only; Tahiti legs added below
+  {id:'3F', group:3, label:'Business — Qatar Airways DXB↔LAX return (verified, + Tahiti economy legs)', total:43440+11800},
 ];
 const HOP_COST_PP = 480; // AED, LAX<->SFO one-way economy, Google Flights live search
 const HOP_COST = HOP_COST_PP * 2;
